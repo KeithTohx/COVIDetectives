@@ -1,5 +1,6 @@
 # ID_Assg3
 
+Our project educates users on the pandemic through gamification.
 ## Design Process
 
 ## Features
