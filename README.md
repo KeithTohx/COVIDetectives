@@ -4,6 +4,9 @@
 
 ## Features
 
+### Existing Features
+### Features to Implement in the Future
+
 ## Technologies Used
 
 ## Testing
