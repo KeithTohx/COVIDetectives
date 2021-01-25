@@ -24,3 +24,6 @@ function typing(disp,speed){
     }
 }
 typing(disp,150)
+$(document).ready(function(){
+    $("#checkpoint-1").hide();
+})
