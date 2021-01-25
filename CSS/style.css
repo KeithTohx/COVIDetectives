@@ -17,3 +17,12 @@
     width: 200px;    
     margin: 0 auto;
 }
+
+#genderM, #genderF {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    height: 380px;
+}
