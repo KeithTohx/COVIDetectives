@@ -32,7 +32,7 @@ $(document).ready(function(){
 })
 function clue1() {
   $("#startGame").hide();
-  $("#checkpoint-2").show();
+  $("#checkpoint-1").show();
   $("#checkpoint-1 h2").css({ "margin-top": "100px" });
   $("#checkpoint-1 h2,#checkpoint-1 div").css({ "text-align": "center" });
   $("#clue1").css({
