@@ -53,4 +53,7 @@ function clue1() {
     "margin-left": "70%",
     "border-style": "none",
   });
+  let disp = "Eric Royal Lab Report"
+  let dom = "#clue1 h2"
+  typing(disp,150,dom)
 }
