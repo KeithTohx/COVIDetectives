@@ -60,7 +60,7 @@ typing(disp,120,dom)
 }
 // transition to next show map
 $("#map2Button").click(function(){
-  $("#checkpoint-1").append(`<div id = map2></div>`)
+  $("#checkpoint-1").append(`<div id = "map2"></div>`)
   $("#clue1").remove()
 })
 // Next function
