@@ -77,10 +77,10 @@ function userChar(){
 
 function scene1_2(){
     var disp1 = "Head Detective, you are in the meeting room in the Headquarter of Detectives and given the following information.";
-    var dom1 = "#scene1-intro"
+    var dom1 = "#scene1-intro";
 
-    var disp2 = "You left the meeting room and head out to find Sir Suriv...";
-    var dom2 = "#scene2-intro"
+    var disp2 = "After understanding the whole situation, you left the meeting room and head out to find Sir Suriv...";
+    var dom2 = "#scene2-intro";
 
     typingline(disp1, 100, dom1).then(function(){
     $("#scene1-intro").delay(800).fadeOut(1600, function(){
@@ -134,7 +134,7 @@ function map1(){
 
 function scene3(){
     var disp1 = "As you walk into Viole city, you see symptoms of people getting sick.";
-    var dom1 = "#scene3-intro"
+    var dom1 = "#scene3-intro";
 
     var disp2 = `A question pops into your head: "What happened here?"`;
     var dom2 = "#scene3-text1";
