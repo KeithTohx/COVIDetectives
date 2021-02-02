@@ -19,6 +19,7 @@ function typingline(disp, speed, dom) {
 }
 
 $("#clipboard").hide();
+$("#information").hide();
 userChar();
 
 function userChar(){
@@ -125,7 +126,9 @@ function map1(){
         <li>Ace City</li>
         </ul>`);
         //need fix map1
-        scene3();
+        $("#map1-intro").delay(1000).fadeOut(1600, function(){
+            scene3();
+        });
     });
 };
 
@@ -133,18 +136,75 @@ function scene3(){
     var disp1 = "As you walk into Viole city, you see symptoms of people getting sick.";
     var dom1 = "#scene3-intro"
 
-    var disp2 = `A question pops into your head: What happened here?"`;
+    var disp2 = `A question pops into your head: "What happened here?"`;
     var dom2 = "#scene3-text1";
-    var disp3 = "You then head towards the administration office of the city.";
+    var disp3 = "You then walk towards the administration office of the city...";
     var dom3 = "#scene3-text2";
 
     typingline(disp1, 100, dom1).then(function(){
-    typingline(disp2, 100, dom2).then(function(){
-        typingline(disp3, 100, dom3).then(function(){
-            $("#scene3-intro").delay(800).fadeOut(1600);
-            $("#scene3-text1").delay(800).fadeOut(1600);
-            $("#scene3-text2").delay(800).fadeOut(1600);
+        typingline(disp2, 100, dom2).then(function(){
+            typingline(disp3, 100, dom3).then(function(){
+                $("#scene3-intro").delay(800).fadeOut(1600);
+                $("#scene3-text1").delay(800).fadeOut(1600);
+                $("#scene3-text2").delay(800).fadeOut(1600, function(){
+                    scene4();
+                });
             });
         });
     });
-}
+};
+
+function scene4(){
+    var disp1 = "The Mayor of the city came to greet you.";
+    var disp2 = `"Dear Head Detective, have you come to see the situation?"   `;
+    var disp3 = "You nodded you head.   ";
+    var disp4 = `He replied, "Well, this is the doing of Sir Suriv testing out a type of virus..."    `
+    var disp5 = "He then searched his drawers for a moment.    ";
+    var disp6 = `"We are still investigating the situation. Here's what we know at the moment. Please have a look."   `
+    var disp7 = "He handed you a deck of information:";
+    
+    var dom1 = "#scene4-intro";
+    var dom2 = "#scene4-text";
+    
+    function typingline(disp, speed, dom) {
+      var char = 0;
+      //Create a promise so that .then can the next function will wait till this
+      // function execute finish. Promise will return a result
+      return new Promise(function (resolve) {
+        //At set interval, the function will change the text on the screen
+        //when it is finish it will clear interval
+      var test = setInterval(type, speed);
+      function type() {
+        if (char <= disp.length) {
+          var display = disp.slice(0, char);
+          $(dom).text(display);
+          char++;
+        } else {
+          clearInterval(test);
+          resolve("done");
+        }
+      }}) 
+    }
+    
+    typingline(disp1, 100, dom1).then(function(){
+      $("#scene4-intro").delay(800).fadeOut(1600, function(){
+        typingline(disp2, 120, dom2).then(function(){
+          typingline(disp3, 120, dom2).then(function(){
+            typingline(disp4, 120, dom2).then(function(){
+              typingline(disp5, 120, dom2).then(function(){
+                typingline(disp6, 120, dom2).then(function(){
+                  typingline(disp7, 100, dom2).then(function(){
+                    $("#scene4-text").delay(800).fadeOut(1600, function(){
+                      $("#information").fadeIn(1600);
+                      $("#information").prepend(`
+                      <h4>Virus Information</h4>`);
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+};
