@@ -216,6 +216,7 @@ down Sir Suriv.`;
     });
   });
 }
+//Missing newspaper page 2 function to be added soon
 function scene7() {
   $("#newspaperPage2").remove();
   $("#checkpoint-1").append(`<div id ="scene7">
@@ -323,4 +324,18 @@ function scene8(){
       })
     })
   })
+}
+function preEncounter(){
+  $("#scene8").remove();
+  var noOfQuestion = 5;
+  $("#checkpoint-1").append(`<div id="pre-encounter">
+  <h1>Encounter!</h1><br>
+  <h3>Defeat Sir Suriv and obtain the vial of virus</h3><br>
+  <h3>Try your best to answer all questions right</h3><br>
+  <h3>There are X number of questions.</h3><br>
+  <h3>Good luck.</h3>
+  <button id="questionsButton">Arrest him!</button>
+  </div>`);
+  $("#pre-encounter").css({"margin":"0px 200px"})
+  $("#questionsButton").css({"border-style":"none","background-color":"white","font-size":"14pt","margin-left":"60%"})
 }
