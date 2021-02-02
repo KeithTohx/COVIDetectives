@@ -96,3 +96,68 @@ $("#map2Button").click(function () {
   });
 });
 // Next function
+function scene6() {
+  $("#map2").remove();
+  //setting up elements to append content
+  $("#checkpoint-1").append(`<div id ="scene6">
+  <div id="firstSentence"></div>
+  <div id="secondSentence"></div>
+  <div id="thirdSentence"></div>
+  <div id="fourthSentence"></div>
+  <div id="fifthSentence"></div>
+  <div id="sixthSentence"></div>
+  <div id="eclipses1"></div>
+  <div id="sevenSentence"></div>
+  <div id="eightSentence"></div>
+  </div>`);
+  $("#scene6").css({
+    "font-size": "16pt",
+    "text-align": "center",
+  });
+  //setting up elements to change text and the respective text
+  let firstSentence = "You rush to Ascend City";
+  let domFirst = "#firstSentence";
+  let secondSentence = "A once glamorous city now looks desolate . . .";
+  let domSecond = "#secondSentence";
+  let thirdSentence = "Looking around . . .";
+  let domThird = "#thirdSentence";
+  //fourth - sixth display at the same time
+  let fourthSentence = "Few people are walking on the streets!";
+  let domFourth = "#fourthSentence";
+  let fifthSentence = "People are rushing to buy food!";
+  let domFifth = "#fifthSentence";
+  let sixthSentence = "Many people had masks on their faces!";
+  let domSixth = "#sixthSentence";
+  let domEclipse1 = "#eclipses1";
+  let seventhSentence =
+    "The wind blew, and a piece of newspaper rolled towards your feet.";
+  let domSeven = "#sevenSentence";
+  let eightSentence = "You picked it up and saw . . .";
+  let domEight = "#eightSentence";
+  let eclipses = "-----------------------------------------";
+  //Codes to create typing effect
+  typingline(firstSentence, 50, domFirst).then(function () {
+    typingline(secondSentence, 75, domSecond).then(function () {
+      typingline(thirdSentence, 50, domThird).then(function () {
+        typingline(fourthSentence, 50, domFourth);
+        typingline(fifthSentence, 60, domFifth);
+        typingline(sixthSentence, 60, domSixth).then(function () {
+          typingline(eclipses, 125, domEclipse1).then(function () {
+            typingline(seventhSentence, 40, domSeven).then(function () {
+              typingline(eightSentence, 50, domEight).then(function () {
+                $("#checkpoint-1").append(
+                  `<button id = "newspaperButton">Pick newspaper up!</button>`
+                );
+                $("#newspaperButton").css({
+                  "border-style": "none",
+                  "margin-left": "75%",
+                });
+                $("#newspaperButton").click(newspaper);
+              });
+            });
+          });
+        });
+      });
+    });
+  });
+}
