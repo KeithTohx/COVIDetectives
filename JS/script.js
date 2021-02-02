@@ -79,8 +79,20 @@ function clue1() {
   typing(disp, 120, dom);
 }
 // transition to next show map
-$("#map2Button").click(function(){
-  $("#checkpoint-1").append(`<div id = "map2"></div>`)
-  $("#clue1").remove()
-})
+$("#map2Button").click(function () {
+  $("#checkpoint-1").append(
+    `<div id = "map2"><img class ="img-fluid" src='#' alt="map image"></div>`
+  );
+  $("#clue1").remove();
+  //when it is clicked
+  $("#map2 img").click(function (evt) {
+    var offset = $(this).offset();
+    var x = offset.left;
+    var y = offset.top;
+    var mousex = evt.pageX - x;
+    var mousey = evt.pageY - y;
+    //If above selection is correct
+    scene6();
+  });
+});
 // Next function
