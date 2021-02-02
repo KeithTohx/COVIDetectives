@@ -51,31 +51,32 @@ function typingline(disp, speed, dom) {
 
 //Checkpoint 1 onwards
 function clue1() {
-$("#startGame").hide();
-$("#checkpoint-1").show();
-$("#checkpoint-1 h2").css({ "margin-top": "100px" });
-$("#checkpoint-1 h2,#checkpoint-1 div").css({ "text-align": "center" });
-$("#clue1").css({
-  "border-style": "solid",
-  "border-width": "1px",
-  "border-color": "black",
-  "font-size": "20pt",
-  "margin-top": "50px",
-});
-$("#checkpoint-1 h3").css({ "text-align": "left" });
-$("#clue1 li").css({ "text-align": "left" });
-$("#clue1 ol").css({ "margin-left": "25px", padding: "0px" });
-$("#clue1 section").css({ "margin-left": "145px" });
-$("#clue1 section div").css({ "text-align": "left" });
-$("#clue1-filler").css({ "margin-bottom": "100px" });
-$("#map2Button").css({
-  "font-size": "12pt",
-  "margin-left": "70%",
-  "border-style": "none",
-});
-let disp = "Eric Royal Lab Report"
-let dom = "#clue1 h2"
-typing(disp,120,dom)
+  $("#startGame").hide();
+  $("#checkpoint-1").show();
+  $("#checkpoint-1").css({ "margin-top": "100px" });
+  $("#checkpoint-1 h2").css({ "margin-top": "50px" });
+  $("#checkpoint-1 h2,#checkpoint-1 div").css({ "text-align": "center" });
+  $("#clue1").css({
+    "border-style": "solid",
+    "border-width": "1px",
+    "border-color": "black",
+    "font-size": "20pt",
+    "margin-top": "50px",
+  });
+  $("#checkpoint-1 h3").css({ "text-align": "left" });
+  $("#clue1 li").css({ "text-align": "left" });
+  $("#clue1 ol").css({ "margin-left": "25px", padding: "0px" });
+  $("#clue1 section").css({ "margin-left": "145px" });
+  $("#clue1 section div").css({ "text-align": "left" });
+  $("#clue1-filler").css({ "margin-bottom": "50px" });
+  $("#map2Button").css({
+    "font-size": "12pt",
+    "margin-left": "70%",
+    "border-style": "none",
+  });
+  let disp = "Eric Royal Lab Report";
+  let dom = "#clue1 h2";
+  typing(disp, 120, dom);
 }
 // transition to next show map
 $("#map2Button").click(function(){
