@@ -118,11 +118,33 @@ function map1(){
     var dom = "#map1-intro"
 
     typingline(disp, 100,dom).then(function(){
-    $("#map1-intro").append(`<ul>
-    <li>Headquarter</li>
-    <li><a href="scene3.html">Viole City</a></li>
-    <li>Ascend City</li>
-    <li>Ace City</li>
-    </ul>`);
+        $("#map1-intro").append(`<ul>
+        <li>Headquarter</li>
+        <li>Viole City</li>
+        <li>Ascend City</li>
+        <li>Ace City</li>
+        </ul>`);
+        //need fix map1
+        scene3();
+    });
+};
+
+function scene3(){
+    var disp1 = "As you walk into Viole city, you see symptoms of people getting sick.";
+    var dom1 = "#scene3-intro"
+
+    var disp2 = `A question pops into your head: What happened here?"`;
+    var dom2 = "#scene3-text1";
+    var disp3 = "You then head towards the administration office of the city.";
+    var dom3 = "#scene3-text2";
+
+    typingline(disp1, 100, dom1).then(function(){
+    typingline(disp2, 100, dom2).then(function(){
+        typingline(disp3, 100, dom3).then(function(){
+            $("#scene3-intro").delay(800).fadeOut(1600);
+            $("#scene3-text1").delay(800).fadeOut(1600);
+            $("#scene3-text2").delay(800).fadeOut(1600);
+            });
+        });
     });
 }
