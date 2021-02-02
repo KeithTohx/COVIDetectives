@@ -105,8 +105,24 @@ function scene1_2(){
     clipboard.addEventListener('click', function() {
         $("#clipboard").fadeOut(1600, function(){
             typingline(disp2, 80, dom2).then(function(){
-                $("#scene2-intro").delay(800).fadeOut(1600);
+                $("#scene2-intro").delay(800).fadeOut(1600, function(){
+                    map1();
+                });
             });
         });
     });
 };
+
+function map1(){
+    var disp = "Click on the next city to proceed:";
+    var dom = "#map1-intro"
+
+    typingline(disp, 100,dom).then(function(){
+    $("#map1-intro").append(`<ul>
+    <li>Headquarter</li>
+    <li><a href="scene3.html">Viole City</a></li>
+    <li>Ascend City</li>
+    <li>Ace City</li>
+    </ul>`);
+    });
+}
