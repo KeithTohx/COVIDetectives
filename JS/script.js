@@ -216,3 +216,63 @@ down Sir Suriv.`;
     });
   });
 }
+function scene7() {
+  $("#newspaperPage2").remove();
+  $("#checkpoint-1").append(`<div id ="scene7">
+  <div id="firstSentence"></div>
+  <div id="secondSentence"></div>
+  <div id="thirdSentence"></div>
+  <div id="fourthSentence"></div>
+  <div id="fifthSentence"></div>
+  <div id="sixthSentence"></div>
+  <div id="sevenSentence"></div>
+  <div id="eightSentence"></div>
+  </div>`);
+  //Css styling
+  $("#checkpoint-1").css({"font-size":"18pt"})
+  //The element selector
+  let domFirst = "#firstSentence";
+  let domSecond = "#secondSentence";
+  let domThird = "#thirdSentence";
+  let domFourth = "#fourthSentence";
+  let domFifth = "#fifthSentence";
+  let domSixth = "#sixthSentence";
+  let domSeven = "#sevenSentence";
+  let domEight = "#eightSentence";
+  //Sentences
+  let firstSentence= "You rushed over to the abandoned factory location seen from the newspaper"
+  let secondSentence="When you arrived at the location, you see police tape around the building"
+  let thirdSentence = "You tried to cross over the tape, and a police officer tried to stop you"
+  let fourthSentence = "You showed your detective pass and entered the abandoned building"
+  let fifthSentence = `"HA HA HA HA HA HA HA HA"`
+  let sixthSentence = "You heard a maniac laughter a distance away, and you walked towards the sound"
+  let sevenSentence = ". . . . ."
+  let eightSentence = "The laughter seems to be behind these doors"
+  typingline(firstSentence,50,domFirst).then(
+    function(){
+      typingline(secondSentence,75,domSecond).then(function(){
+        typingline(thirdSentence,50,domThird).then(function(){
+          //Maybe can allow player to choose the police pass
+          typingline(fourthSentence,50,domFourth).then(function(){
+            typingline(fifthSentence,50,domFifth).then(function(){
+              typingline(sixthSentence,50,domSixth).then(function(){
+                typingline(sevenSentence,500,domSeven).then(function(){
+                  typingline(eightSentence,50,domEight).then(function(){
+                    $("#checkpoint-1").append(`<button id = "scene8Button">Kick the doors open!</button>`)
+                    $("#scene8Button").css({
+                      "border-style": "none",
+                      "margin-left": "75%",
+                      "backgound-color":"white",
+                      "font-size":"10pt"
+                    });
+                    $("#scene8Button").click(scene8)
+                  })
+                })
+              })
+            })
+          })
+        })
+      })
+    }
+  )
+}
