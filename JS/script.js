@@ -161,3 +161,58 @@ function scene6() {
     });
   });
 }
+function newspaper() {
+  $("#scene6, #newspaperButton").remove();
+  $("#checkpoint-1").append(`<div id = "newspaper">
+  <h2>The Current Times</h2>
+  <div class ="row">
+    <div class = "col-sm" id = "newspaperLeft">
+      <h4></h4>
+      <p></p>
+      <button>Read More On Page 2 -></button>
+    </div>
+    <div class = "col-sm" id = "newspaperRight">
+      <h2></h2>
+      <div id = "newspaperRightName"></div>
+      <div id = "newspaperRightLastSeen"></div>
+      <div id ="newspaperRightStatus"></div>
+    </div>
+  </div>
+</div>`);
+  $("#checkpoint-1").css({ "font-size": "14pt" });
+  $("#checkpoint-1 h2").css({ "text-align": "center" });
+  $("#checkpoint-1 .col-sm").css({ margin: "auto 40px" });
+  $("#newspaperLeft p,#newspaperLeft h4,#newspaperRight").css({
+    "margin-top": "30px",
+  });
+  $("#newspaperLeft button").css({
+    "font-size": "9pt",
+    "background-color": "white",
+    "border-style": "none none solid none",
+    "margin-left": "65%",
+  });
+  let domh4 = "#newspaperLeft h4";
+  let heading = "Safe Distancing Measures Implemented";
+  typingline(heading, 100, domh4);
+  let domp = "#newspaperLeft p";
+  let paragraph = `With advance intel from Viole City, Ascend City 
+has started to implement safe-distancing
+measures. Citizens are to wear a mask at all 
+times when they are out of their homes. Citizens
+are to stay 1 meter or 6 feet apart when in queue.
+Avoid crowded places. Now Ascend city is hunting
+down Sir Suriv.`;
+  typingline(paragraph, 30, domp);
+  let name = "Name : Sir Suriv";
+  let lastScene = "Last Seen : Abandoned Factory";
+  let status = "Status : Police cordoning of area suspected";
+  typingline("Wanted", 125, "#newspaperRight h2").then(function () {
+    typingline(name, 50, "#newspaperRightName").then(function () {
+      typingline(lastScene, 50, "#newspaperRightLastSeen").then(function () {
+        typingline(status, 50, "#newspaperRightStatus").then(function () {
+          $("#newspaperRight").append(`<img src="#" alt="map location">`);
+        });
+      });
+    });
+  });
+}
