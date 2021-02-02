@@ -276,3 +276,51 @@ function scene7() {
     }
   )
 }
+function scene8(){
+  $("#scene7, #scene8Button").remove();
+  $("#checkpoint-1").append(`<div id ="scene8">
+  <div id="firstSentence"></div>
+  <div id="secondSentence"></div>
+  <div id="thirdSentence"></div>
+  <div id="fourthSentence"></div>
+  <div id="fifthSentence"></div>
+  <div id="sixthSentence"></div>
+  <div id="sevenSentence"></div>
+  <div id="eightSentence"></div>
+  </div>`);
+  //Css styling
+  $("#checkpoint-1").css({"font-size":"18pt"})
+  //The element selector
+  let domFirst = "#firstSentence";
+  let domSecond = "#secondSentence";
+  let domThird = "#thirdSentence";
+  let domFourth = "#fourthSentence";
+  let domFifth = "#fifthSentence";
+  let domSixth = "#sixthSentence";
+  let domSeven = "#sevenSentence";
+  //Sentences
+  let firstSentence =`"Boom!"`
+  let secondSentence="The doors burst open!"
+  let thirdSentence = "Sir Suriv turn around with a look of surprise"
+  let fourthSentence = `"Well Well Well. Look who is here. Head Detective ${name}"`
+  let fifthSentence = `You snorted,"Freeze! By the way am I famous?"`
+  let sixthSentence = `"Surrender yourself now. You have the right to remain silent and refuse to answer questions. Anything you say may be used against you in a court of law. You have the right to consult an attorney before speaking to the police and to have an attorney present during questioning now or in the future."`
+  let seventhSentence = `He replied,"Your reputation precedes you. Ha Ha Ha"`
+  typingline(firstSentence,50,domFirst).then(function(){
+    typingline(secondSentence,50,domSecond).then(function(){
+      typingline(thirdSentence,50,domThird).then(function(){
+        typingline(fourthSentence,50,domFourth).then(function(){
+          typingline(fifthSentence,50,domFifth).then(function(){
+            typingline(sixthSentence,30,domSixth).then(function(){
+              typingline(seventhSentence,50,domSeven).then(function(){
+                typingline("           ", 400, "#eightSentence").then(function(){
+                  preEncounter()
+                })
+              })
+            })
+          })
+        })
+      })
+    })
+  })
+}
