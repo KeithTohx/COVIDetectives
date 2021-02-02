@@ -52,7 +52,32 @@ function typingline(disp, speed, dom) {
 //Checkpoint 1 onwards
 function clue1() {
   $("#startGame").hide();
-  $("#checkpoint-1").show();
+  $("#checkpoint-1").append(`<div id="clue1">
+  <h2></h2>
+  <div>
+      ------------------------------------------------------------------------------
+  </div>
+  <section>
+      <h3>Objective :</h3>
+      <ol>
+          <li>Head to Ascend</li>
+          <li>Spread the virus</li>
+          <li>Create Panic</li>
+      </ol>
+  </section>
+  <div>
+      ------------------------------------------------------------------------------
+  </div>
+  <section>
+      <div>
+          Time left : Not much time!
+      </div>
+      <div>Target : Whole world</div>
+      <div>Aim : Disrupt World Peace</div>
+  </section>
+  <button id ="map2Button">Next</button>
+  <div id="clue1-filler"></div>
+</div>`);
   $("#checkpoint-1").css({ "margin-top": "100px" });
   $("#checkpoint-1 h2").css({ "margin-top": "50px" });
   $("#checkpoint-1 h2,#checkpoint-1 div").css({ "text-align": "center" });
@@ -77,7 +102,7 @@ function clue1() {
   let disp = "Eric Royal Lab Report";
   let dom = "#clue1 h2";
   typing(disp, 120, dom);
-}
+
 // transition to next show map
 $("#map2Button").click(function () {
   $("#checkpoint-1").append(
@@ -94,7 +119,7 @@ $("#map2Button").click(function () {
     //If above selection is correct
     scene6();
   });
-});
+});}
 // Next function
 function scene6() {
   $("#map2").remove();
