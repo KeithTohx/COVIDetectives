@@ -13,22 +13,9 @@ start.addEventListener("click", function () {
 });
 
 var disp = "It's great to see you, Detective!";
-var dom = "#heading"
-typing(disp, 150,dom);
-function typing(disp, speed, dom) {
-  var char = 0;
-  var test = setInterval(type, speed);
-  function type() {
-    if (char <= disp.length) {
-      var display = disp.slice(0, char);
-      $(dom).text(display);
-      char++;
-      console.log(char);
-    } else {
-      clearInterval(test);
-    }
-  }
-}
+var dom = "#heading";
+typingline(disp, 150, dom);
+
 function typingline(disp, speed, dom) {
   var char = 0;
   //Create a promise so that .then can the next function will wait till this
