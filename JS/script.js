@@ -2,6 +2,34 @@ $(document).ready(function(){
   $("#checkpoint-1").hide();
   $("#clipboard").hide();
   $("#information").hide();
+
+  function getGlobal() {
+    var settings = {
+      "url": "https://disease.sh/v3/covid-19/all", 
+      "method": "GET",
+      "timeout": 0,
+      "headers": {
+        //"Cookie": "__cfduid=d4e60a8e28f2e90c24e2a1fdcaaea8ead1611282633"
+      },
+    };
+
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+
+      var casesG = response.cases;
+      var criticalG = response.critical;
+      var deathsG = response.deaths;
+      var recoveredG = response.recovered;
+  
+      //display into html the global's content
+      $("#globalCases").append(casesG);
+      $("#globalCritical").append(criticalG);
+      $("#globalDeaths").append(deathsG);
+      $("#globalRecovered").append(recoveredG);
+    });
+  }
+  getGlobal();
+  
   userChar();
 })
 

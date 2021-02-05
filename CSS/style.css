@@ -33,3 +33,14 @@
     align-items: center;
     /*height: 450px;*/
 }
+
+#globalDetails p {
+    font-size: 15px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-family: 'Cabin', sans-serif;
+}
+#globalDetails h3 {
+    text-align: center;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
