@@ -33,13 +33,11 @@ $(document).ready(function(){
   userChar();
 })
 
-let acknowledge = document.getElementById("ackn");
-acknowledge.addEventListener("click", function () {
+$("#ackn").click(function () {
   window.location.href = "acknowledge.html";
 });
 
-let start = document.getElementById("start");
-start.addEventListener("click", function () {
+$("#start").click(function () {
   window.location.href = "start.html";
 });
 
@@ -71,8 +69,7 @@ function userChar(){
   $('div#userInputM').hide();  
   $('div#userInputF').hide(); 
 
-  let genderMale = document.getElementById('male');
-  genderMale.addEventListener('click', function() {
+  $("#male").click(function () {
     if (document.getElementById('genderF'))
     {
         document.getElementById('genderF').remove(); 
@@ -88,8 +85,7 @@ function userChar(){
     $('div#userInputM').show();  
   });
 
-  let genderFemale = document.getElementById('female');
-  genderFemale.addEventListener('click', function() {
+  $("#female").click(function () {
     if (document.getElementById('genderM'))
     {
         document.getElementById('genderM').remove();
@@ -105,15 +101,13 @@ function userChar(){
     $('div#userInputF').show(); 
   });
 
-  let continueM = document.getElementById('continueM');
-  continueM.addEventListener('click', function() {
+  $("#continueM").click(function () {
     document.getElementById('genderM').remove(); 
     document.getElementById('userHeading').remove();
     scene1_2();
   });
 
-  let continueF = document.getElementById('continueF');
-  continueF.addEventListener('click', function() {
+  $("#continueF").click(function () {
     document.getElementById('genderF').remove(); 
     document.getElementById('userHeading').remove();
     scene1_2();
@@ -147,8 +141,7 @@ function scene1_2(){
     });
   });
 
-  let clipboard = document.getElementById('misson');
-  clipboard.addEventListener('click', function() {
+  $("#misson").click(function () {
       $("#clipboard").fadeOut(1600, function(){
           typingline(disp2, 80, dom2).then(function(){
               $("#scene2-intro").delay(800).fadeOut(1600, function(){
