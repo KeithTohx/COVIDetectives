@@ -1111,3 +1111,74 @@ function encounterReview(qRight) {
     postEncounter(qRight);
   });
 }
+function postEncounter(qRight) {
+  $("#encounterReview").remove();
+  $("#checkpoint-1").append(`<div id ="postEncounter">
+  <div id="firstSentence"></div>
+  <div id="secondSentence"></div>
+  <div id="thirdSentence"></div>
+  <div id="fourthSentence"></div>
+  <div id="fifthSentence"></div>
+  <div id="sixthSentence"></div>
+  <div id="sevenSentence"></div>
+  <div id="eightSentence"></div>
+  </div>`);
+  let domFirst = "#firstSentence";
+  let domSecond = "#secondSentence";
+  let domThird = "#thirdSentence";
+  let domFourth = "#fourthSentence";
+  let domFifth = "#fifthSentence";
+  let domSixth = "#sixthSentence";
+  let domSeven = "#sevenSentence";
+  let domEight = "#eightSentence";
+  let firstSentence;
+  let secondSentence;
+  let thirdSentence;
+  if (qRight > 3) {
+    firstSentence = "You thought you got him";
+    secondSentence = "His reaction was faster, he stunt you with a taser!";
+    thirdSentence = `"Close one! Too naive Head Detective ${name}`;
+  } else {
+    firstSentence = "You almost got him!";
+    secondSentence =
+      "You let him slipped away and stunt you due to your mistakes!";
+    thirdSentence = `"See you next time Head Detective ${name}, I am the first to escape from your grasp`;
+  }
+  let fourthSentence = `Ha Ha Ha"`;
+  let fifthSentence =
+    "He laughed as he walked away and escape via the sewers under the factory";
+  let sixthSentence =
+    "As you lie on the floor groaning and cursing, you saw a note on the wall";
+  let seventhSentence = "        ";
+  let eightSentence = `"Ace City!"`;
+  let nineSentence = "You panicked and soon lost consciousness";
+  typingline(firstSentence, 75, domFirst).then(function () {
+    typingline(secondSentence, 50, domSecond).then(function () {
+      typingline(thirdSentence, 50, domThird).then(function () {
+        typingline(fourthSentence, 150, domFourth).then(function () {
+          typingline(fifthSentence, 50, domFifth).then(function () {
+            typingline(sixthSentence, 50, domSixth).then(function () {
+              typingline(seventhSentence, 250, domSeven).then(function () {
+                typingline(eightSentence, 50, domSeven).then(function () {
+                  typingline(nineSentence, 50, domEight).then(function () {
+                    //add button to next function
+                    $("#checkpoint-1").append(
+                      `<button id = "hospitalButton">Next</button>`
+                    );
+                    $("#hospitalButton").css({
+                      "border-style": "none",
+                      "margin-left": "75%",
+                      "backgound-color": "white",
+                      "font-size": "10pt",
+                    });
+                    $("#hospitalButton").click(hospitalScene);
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  });
+}
