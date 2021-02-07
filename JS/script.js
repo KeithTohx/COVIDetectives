@@ -578,7 +578,136 @@ down Sir Suriv.`;
   });
   $("button").click(newspaperp2);
 }
-//Missing newspaper page 2 function to be added soon
+function newspaperp2() {
+  $("#newspaper, #newspaperButton").remove();
+  $("#checkpoint-1").append(`<div id = "newspaperp2">
+  <h2>The Current Times</h2>
+  <div class ="row">
+    <div class = "col-sm" id = "newspaperLeft">
+    <div id = "safeMangementMeasure">
+      <h4></h4>
+      <p></p>
+      </div>
+      <div id="masks">
+      <h4></h4>
+      <p></p>
+      </div>    
+    </div>
+    <div class = "col-sm" id = "newspaperRight">
+      <div id = "safeDistancingMeasure">
+      <h4>Safe Distancing Measure</h4>
+      <p></p>
+      </div>
+      <div id ="travelRestriction">
+      <h4></h4>
+      <p></p>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>`);
+  $("#checkpoint-1").css({ "font-size": "14pt" });
+  $("#checkpoint-1 h2").css({ "text-align": "center" });
+  $("#checkpoint-1 .col-sm").css({ margin: "auto 40px" });
+  $("#newspaperLeft p,#newspaperLeft h4,#newspaperRight").css({
+    "margin-top": "30px",
+  });
+  //Safe Distancing Measures portion
+  let domp = "#safeMangementMeasure p";
+  let domh4 = "#safeMangementMeasure h4";
+  let heading = "Safe Management Measures";
+  let paragraph = `Company are to review their workplace measures. Jobs that can be done at home, 
+  employees should work from home.
+  Employers should ensure that there is work-life balance for employees working at home.`;
+  typingline(heading, 75, domh4);
+  typingline(paragraph, 20, domp).then(function () {
+    $("#safeMangementMeasure").append(
+      `<nav><button><a href = "https://www.mom.gov.sg/covid-19/requirements-for-safe-management-measures" target ="blank">Click for more information</a></button></nav>`
+    );
+    $("#safeMangementMeasure button").css({
+      "font-size": "9pt",
+      "background-color": "white",
+      "border-style": "ridge",
+      "border-radius": "15px",
+      "border-width": "1px",
+      "text-decoration": "none",
+    });
+  });
+  // Mask portion
+  let domMaskHeading = "#masks h4";
+  let maskHeading = "Importance of wearing a mask";
+  let dompMask = "#masks p";
+  let maskP = `All citizens are to wear a masks when they leave their house. 
+    Masks should be worn at all times except when exercising or eating.
+    Wearing a mask helps to reduce the spread of virus.`;
+  typingline(maskHeading, 75, domMaskHeading);
+  typingline(maskP, 20, dompMask).then(function () {
+    $("#masks").append(
+      `<nav><button><a href = "https://www.gov.sg/article/the-science-behind-why-masks-help-prevent-covid-19-spread" target ="blank">Click for more information</a></button></nav>`
+    );
+    $("#masks button").css({
+      "font-size": "9pt",
+      "background-color": "white",
+      "border-style": "ridge",
+      "border-radius": "15px",
+      "border-width": "1px",
+      "text-decoration": "none",
+    });
+  });
+  let domSDMp = "#safeDistancingMeasure p";
+  let domSDMh4 = "#safeDistancingMeasure h4";
+  let headingSDM = "Safe Distancing Measures";
+  let pSDM = `Safe distancing measures are implemented to keep citizens safe.
+   Citizens are to stand at least 1m or 6 feet apart from one another in queue, indoor and outdoor spaces. 
+   Covid-19 can be transmitted easily through close contact.`;
+  typingline(headingSDM, 75, domSDMh4);
+  typingline(pSDM, 20, domSDMp).then(function () {
+    $("#safeDistancingMeasure").append(
+      `<nav><button><a href = "https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/social-distancing.html" target ="blank">Click for more information</a></button></nav><br>`
+    );
+    $("#safeDistancingMeasure button").css({
+      "font-size": "9pt",
+      "background-color": "white",
+      "border-style": "ridge",
+      "border-radius": "15px",
+      "border-width": "1px",
+      "text-decoration": "none",
+    });
+  });
+  let domTRp = "#travelRestriction p";
+  let domTRh4 = "#travelRestriction h4";
+  let headingTR = "Travel Restriction";
+  let pTR = `During this period, citizens are not allowed to leave the city to travel to other city.
+  This is to stop the spread of the virus. Citizens are also advised not to travel for activities 
+  that are large social gathering such as party or mass events such as concert. Citizens are also advised
+  not to go on a holiday cruise during this period`;
+  typingline(headingTR, 75, domTRh4);
+  typingline(pTR, 15, domTRp).then(function () {
+    $("#travelRestriction").append(
+      `<nav><button><a href = "https://www.cdc.gov/coronavirus/2019-ncov/travelers/travel-during-covid19.html" target ="blank">Click for more information</a></button></nav>`
+    );
+    $("#travelRestriction button").css({
+      "font-size": "9pt",
+      "background-color": "white",
+      "border-style": "ridge",
+      "border-radius": "15px",
+      "border-width": "1px",
+      "text-decoration": "none",
+    });
+    $("#newspaperp2").append(
+      `<button id="scene7Button">Read Finish-></button>`
+    );
+    $("#scene7Button").css({
+      "font-size": "13pt",
+      "background-color": "white",
+      "border-style": "ridge",
+      "border-radius": "15px",
+      "border-width": "1px",
+      "margin-left": "45%",
+    });
+    $("#scene7Button").click(scene7);
+  });
+}
 function scene7() {
   $("#newspaperPage2").remove();
   $("#checkpoint-1").append(`<div id ="scene7">
