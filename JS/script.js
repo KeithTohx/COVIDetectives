@@ -367,6 +367,10 @@ function showdown1(){
                           <div style="background-color: cadetblue;">#8</div>
                           </div>
                           <button id="showdownSubmit" class="showdownSubmit">Submit</button>`);
+
+                          $("#showdownSubmit").click(function(){
+                            $("#showdown1-intro").fadeOut(1600);
+                          });
                         });
                     });
                 });
