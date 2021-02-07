@@ -10,53 +10,58 @@
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cabin&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=ZCOOL+QingKe+HuangYou&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <div class="container" style="padding: 20px;" id="startGame">
-        <div class="row">
-            <div class="col-sm">
-                <h1>Virus COVID-19</h1>
-                <h3 id="heading"></h3>
-                <p>
-                    The department of healthcare requires your help in the fight against virus COVID-19.</br>
-                    The department had found evidence of a scientist named Sir Suriv escaping with a vial of virus
-                    COVID-19 from a secret royal lab in Viole City.
-                </p>
-                <p>
-                    Locate Sir Suriv and find what is his intention with that vial!</br>
-                    Good Luck!
-                </p>
-                <div>
-                    <lottie-player src="https://assets2.lottiefiles.com/private_files/lf30_NsaPt3.json"
-                        background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay>
-                    </lottie-player>
+    <div class="container" style="padding: 20px;">
+        <div id="startGame">
+            <div class="row">
+                <div class="col-sm">
+                    <h1>Virus COVID-19</h1>
+                    <h3 id="heading"></h3>
+                    <p>
+                        The department of healthcare requires your help in the fight against virus COVID-19.</br>
+                        The department had found evidence of a scientist named Sir Suriv escaping with a vial of virus
+                        COVID-19 from a secret royal lab in Viole City.
+                    </p>
+                    <p>
+                        Locate Sir Suriv and find what is his intention with that vial!</br>
+                        Good Luck!
+                    </p>
+                    <div>
+                        <lottie-player src="https://assets2.lottiefiles.com/private_files/lf30_NsaPt3.json"
+                            background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay>
+                        </lottie-player>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm">
-            <!-- global covid-19 cases -->
-            <div id="globalDetails" class="flex-container">
-                <h2>Global COVID-19 Statistics</h2>
-                <div style="background-color: lightcoral;">
-                  <h3 id="globalCases" style="color: darkred;"></h3>
-                  <p>Total Cases</p>
+                <div class="col-sm">
+                    <!-- global covid-19 cases -->
+                    <div id="globalDetails" class="flex-container">
+                        <h2>Global COVID-19 Statistics</h2>
+                        <div style="background-color: lightcoral;">
+                            <h3 id="globalCases" style="color: darkred;"></h3>
+                            <p>Total Cases</p>
+                        </div>
+                        <div style="background-color: lightsalmon;">
+                            <h3 id="globalCritical" style="color: saddlebrown;"></h3>
+                            <p>Critical</p>
+                        </div>
+                        <div style="background-color: lightslategray;">
+                            <h3 id="globalDeaths"></h3>
+                            <p>Deaths</p>
+                        </div>
+                        <div style="background-color: aquamarine;">
+                            <h3 id="globalRecovered" style="color: darkgreen;"></h3>
+                            <p>Recovered</p>
+                        </div>
+                    </div>
+                    <button id="start" class="startBtn" style="margin-top: 10px; text-align: center;">Start
+                        Searching</button>
+                    <button id="ackn" class="acknBtn"
+                        style="margin-top: 10px; text-align: center;">Acknowledgements</button>
                 </div>
-                <div style="background-color: lightsalmon;">
-                  <h3 id="globalCritical" style="color: saddlebrown;"></h3>
-                  <p>Critical</p>
-                </div>
-                <div style="background-color: lightslategray;">
-                  <h3 id="globalDeaths"></h3>
-                  <p>Deaths</p>
-                </div>
-                <div style="background-color: aquamarine;">
-                  <h3 id="globalRecovered" style="color: darkgreen;"></h3>
-                  <p>Recovered</p>
-                </div>
-              </div>
-            <button id="start" class="startBtn" style="margin-top: 10px; text-align: center;">Start Searching</button>
-            <button id="ackn" class="acknBtn" style="margin-top: 10px; text-align: center;">Acknowledgements</button>
             </div>
         </div>
     </div>
