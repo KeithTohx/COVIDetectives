@@ -2,7 +2,6 @@ $(document).ready(function(){
   $("#checkpoint-1").hide();
   $('div#userInputM').hide();  
   $('div#userInputF').hide(); 
-
   function getGlobal() {
     var settings = {
       "url": "https://disease.sh/v3/covid-19/all", 
@@ -370,7 +369,7 @@ function showdown1(){
 
                           $("#showdownSubmit").click(function(){
                             $("#showdown1-intro").fadeOut(1600, function(){
-                              clue1();
+                              //clue1();
                             });
                           });
                         });
@@ -381,10 +380,9 @@ function showdown1(){
     });
   });
 }
-let domScene = "#scenes"
+let domScene = "#startGame"
 //Checkpoint 1 onwards
 function clue1() {
-  $(domScene).hide();
   $(domScene).append(`<div id="clue1">
   <h2></h2>
   <div>
