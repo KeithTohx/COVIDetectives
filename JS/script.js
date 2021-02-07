@@ -537,6 +537,7 @@ function newspaper() {
     </div>
   </div>
 </div>`);
+  $("button").hide();
   $("#checkpoint-1").css({ "font-size": "14pt" });
   $("#checkpoint-1 h2").css({ "text-align": "center" });
   $("#checkpoint-1 .col-sm").css({ margin: "auto 40px" });
@@ -551,7 +552,7 @@ function newspaper() {
   });
   let domh4 = "#newspaperLeft h4";
   let heading = "Safe Distancing Measures Implemented";
-  typingline(heading, 100, domh4);
+  typingline(heading, 70, domh4);
   let domp = "#newspaperLeft p";
   let paragraph = `With advance intel from Viole City, Ascend City 
 has started to implement safe-distancing
@@ -560,19 +561,22 @@ times when they are out of their homes. Citizens
 are to stay 1 meter or 6 feet apart when in queue.
 Avoid crowded places. Now Ascend city is hunting
 down Sir Suriv.`;
-  typingline(paragraph, 30, domp);
+  typingline(paragraph, 20, domp).then(function () {
+    $("button").show();
+  });
   let name = "Name : Sir Suriv";
   let lastScene = "Last Seen : Abandoned Factory";
   let status = "Status : Police cordoning of area suspected";
-  typingline("Wanted", 125, "#newspaperRight h2").then(function () {
-    typingline(name, 50, "#newspaperRightName").then(function () {
-      typingline(lastScene, 50, "#newspaperRightLastSeen").then(function () {
-        typingline(status, 50, "#newspaperRightStatus").then(function () {
+  typingline("Wanted", 100, "#newspaperRight h2").then(function () {
+    typingline(name, 30, "#newspaperRightName").then(function () {
+      typingline(lastScene, 30, "#newspaperRightLastSeen").then(function () {
+        typingline(status, 30, "#newspaperRightStatus").then(function () {
           $("#newspaperRight").append(`<img src="#" alt="map location">`);
         });
       });
     });
   });
+  $("button").click(newspaperp2);
 }
 //Missing newspaper page 2 function to be added soon
 function scene7() {
