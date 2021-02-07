@@ -339,7 +339,7 @@ function showdown1(){
   var disp2 = `The situation is worsening...`;
   var disp3 = `You decided to head towards the Lab.`;
   var disp4 = `BANG! You kicked open the lab door...`;
-  var disp5 = `You are now in the Lab. Click on the symptoms of COVID-19 to find traces left behid by the villian!`;
+  var disp5 = `You are now in the Lab. Click on the symptoms of COVID-19 to find traces left behind by the villian!`;
 
   var dom1 = "#showdown1-text1";
   var dom2 = "#showdown1-text2";
@@ -356,17 +356,17 @@ function showdown1(){
                 typingline(disp4, 100, dom4).then(function(){
                     $("#showdown1-text4").fadeOut(1600, function(){
                         typingline(disp5, 100, dom5).then(function(){
-                            $("#showdown1-intro").append(`<div id="showdown1-quiz" class="flex-container2">
-                            <div style="background-color: cadetblue;">#1</div>
-                            <div style="background-color: cadetblue;">#2</div>
-                            <div style="background-color: cadetblue;">#3</div>
-                            <div style="background-color: cadetblue;">#4</div>
-                            <div style="background-color: cadetblue;">#5</div>
-                            <div style="background-color: cadetblue;">#6</div>
-                            <div style="background-color: cadetblue;">#7</div>
-                            <div style="background-color: cadetblue;">#8</div>
-                            <button id="showdownSubmit" class="showdownSubmit" style="margin: 10px;">Submit</button>
-                            </div>`);
+                          $("#showdown1-intro").append(`<div id="showdown1-quiz" class="flex-container2">
+                          <div style="background-color: cadetblue;">#1</div>
+                          <div style="background-color: cadetblue;">#2</div>
+                          <div style="background-color: cadetblue;">#3</div>
+                          <div style="background-color: cadetblue;">#4</div>
+                          <div style="background-color: cadetblue;">#5</div>
+                          <div style="background-color: cadetblue;">#6</div>
+                          <div style="background-color: cadetblue;">#7</div>
+                          <div style="background-color: cadetblue;">#8</div>
+                          </div>
+                          <button id="showdownSubmit" class="showdownSubmit">Submit</button>`);
                         });
                     });
                 });
