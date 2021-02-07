@@ -1396,3 +1396,247 @@ function missingVial() {
   });
   $("#questionsButton").click(finalQuiz);
 }
+//To update questions and layout
+function finalQuiz() {
+  $("#missingVial").remove();
+  $("#checkpoint-1").append(`<div id = "finalQuiz">
+  <div class ="row">
+    <div class = "col-sm" id ="player">
+      <h3>${name}</h3>
+      <img src ="#" alt= "Player character">
+      <div>
+        <div class="healthBar">
+            <p class ="health"id="playerHealth">Health</p>
+        </div>
+    </div>
+    </div>
+    <div class = "col-sm" id ="villain">
+      <h3>Sir Suriv</h3>
+      <img src ="#" alt= "Villain character">
+      <div>
+        <div class="healthBar">
+            <div class ="health"id="villainHealth"><span>Health</span></div>
+        </div>
+    </div>
+    </div>
+  </div>
+  <div id="question">
+    <div id="question1"></div>
+    <div id = "q1A"></div>
+    <div id = "q1B"></div>
+    <div id = "q1C"></div>
+    <div id = "q1D"></div>
+    <div>Click on the options below</div>
+    <div class="row">
+      <button class = "col-sm" id = "optionA">A</button>
+      <button class = "col-sm" id = "optionB">B</button>
+      <button class = "col-sm" id = "optionC">C</button>
+      <button class = "col-sm" id = "optionD">D</button>
+    </div>
+  </div>
+</div>`);
+  $(".healthBar").css({
+    width: "80%",
+    "border-style": "solid",
+    "border-width": "1px",
+    margin: "0px auto",
+    "border-radius": "10px",
+  });
+  $(".health").css({
+    margin: "0px",
+    "text-align": "center",
+    "background-color": "lightgreen",
+    "border-radius": "10px",
+  });
+  $("button").css({
+    margin: "5px",
+    "border-radius": "5px",
+    "border-width": "1px",
+  });
+  // dom buttons
+  let domOptionA = "#optionA";
+  let domOptionB = "#optionB";
+  let domOptionC = "#optionC";
+  let domOptionD = "#optionD";
+  // dom question
+  let domQuestion1 = "#question1";
+  let domQuestions = "#questions";
+  //Questions
+  // To be created later
+  let question1 = "Answer is c";
+  let question2 = "Answer is A";
+  let question3 = "Answer is C";
+  let question4 = "Answer is D";
+  let question5 = "Answer is B";
+  //number of questions right
+  let qRight = 0;
+  let playerHealth = 100;
+  let villainHealth = 100;
+  firstQuestion().then(function (message) {
+    validateOption(message);
+    //Remove question and add new question
+    questionSet();
+    secondQuestion().then(function (message) {
+      validateOption(message);
+      questionSet();
+      thirdQuestion().then(function (message) {
+        validateOption(message);
+        questionSet();
+        fourthQuestion().then(function (message) {
+          validateOption(message);
+          questionSet();
+          fifthQuestion().then(function (message) {
+            validateOption(message);
+            vialFound(qRight);
+          });
+        });
+      });
+    });
+  });
+  function validateOption(message) {
+    if (message == "true") {
+      //Need add points
+      villainHealth -= 19.8;
+      let disp = villainHealth + "%";
+      $("#villainHealth").css({ width: disp });
+      if (villainHealth < 25) {
+        $("#villainHealth").css({ "background-color": "red" });
+      } else if (villainHealth < 45) {
+        $("#villainHealth").css({ "background-color": "orange" });
+      } else if (villainHealth < 65) {
+        $("#villainHealth").css({ "background-color": "yellow" });
+      }
+      qRight += 1;
+    } else {
+      playerHealth -= 19.9;
+      let disp = playerHealth + "%";
+      // need deduct point
+      $("#playerHealth").css({ width: disp });
+      if (playerHealth < 25) {
+        $("#playerHealth").css({ "background-color": "red" });
+      } else if (playerHealth < 45) {
+        $("#playerHealth").css({ "background-color": "orange" });
+      } else if (playerHealth < 65) {
+        $("#playerHealth").css({ "background-color": "yellow" });
+      }
+    }
+  }
+  function questionSet() {
+    $("#question").remove();
+    $("#finalQuiz").append(`
+    <div id="question">
+    <div id="questions"></div>
+    <div id = "q1A"></div>
+    <div id = "q1B"></div>
+    <div id = "q1C"></div>
+    <div id = "q1D"></div>
+    <div>Click on the options below</div>
+    <div class="row">
+      <button class = "col-sm" id = "optionA">A</button>
+      <button class = "col-sm" id = "optionB">B</button>
+      <button class = "col-sm" id = "optionC">C</button>
+      <button class = "col-sm" id = "optionD">D</button>
+    </div>
+  </div>`);
+    $("button").css({
+      margin: "5px",
+      "border-radius": "5px",
+      "border-width": "1px",
+    });
+  }
+  function firstQuestion() {
+    let optionA = "A is wrong";
+    let optionB = "B is wrong";
+    let optionC = "C is correct";
+    let optionD = "D is wrong";
+    typingline(question1, 50, domQuestion1);
+    typingline(optionA, 50, "#q1A");
+    typingline(optionB, 50, "#q1B");
+    typingline(optionC, 50, "#q1C");
+    typingline(optionD, 50, "#q1D");
+    return new Promise(function (resolve) {
+      $(`${domOptionA},${domOptionB},${domOptionD}`).click(function () {
+        resolve("false");
+      });
+      $(domOptionC).click(function () {
+        resolve("true");
+      });
+    });
+  }
+  function secondQuestion() {
+    let optionA = "A is right";
+    let optionB = "B is wrong";
+    let optionC = "C is wrong";
+    let optionD = "D is wrong";
+    typingline(question2, 50, domQuestions);
+    typingline(optionA, 50, "#q1A");
+    typingline(optionB, 50, "#q1B");
+    typingline(optionC, 50, "#q1C");
+    typingline(optionD, 50, "#q1D");
+    return new Promise(function (resolve) {
+      $(`${domOptionC},${domOptionB},${domOptionD}`).click(function () {
+        resolve("false");
+      });
+      $(domOptionA).click(function () {
+        resolve("true");
+      });
+    });
+  }
+  function thirdQuestion() {
+    let optionA = "A is wrong";
+    let optionB = "B is wrong";
+    let optionC = "C is correct";
+    let optionD = "D is wrong";
+    typingline(question3, 50, domQuestions);
+    typingline(optionA, 50, "#q1A");
+    typingline(optionB, 50, "#q1B");
+    typingline(optionC, 50, "#q1C");
+    typingline(optionD, 50, "#q1D");
+    return new Promise(function (resolve) {
+      $(`${domOptionA},${domOptionB},${domOptionD}`).click(function () {
+        resolve("false");
+      });
+      $(domOptionC).click(function () {
+        resolve("true");
+      });
+    });
+  }
+  function fourthQuestion() {
+    let optionA = "A is wrong";
+    let optionB = "B is wrong";
+    let optionC = "C is wrong";
+    let optionD = "D is right";
+    typingline(question4, 50, domQuestions);
+    typingline(optionA, 50, "#q1A");
+    typingline(optionB, 50, "#q1B");
+    typingline(optionC, 50, "#q1C");
+    typingline(optionD, 50, "#q1D");
+    return new Promise(function (resolve) {
+      $(`${domOptionC},${domOptionB},${domOptionA}`).click(function () {
+        resolve("false");
+      });
+      $(domOptionD).click(function () {
+        resolve("true");
+      });
+    });
+  }
+  function fifthQuestion() {
+    let optionA = "A is wrong";
+    let optionB = "B is right";
+    let optionC = "C is wrong";
+    let optionD = "D is wrong";
+    typingline(question5, 50, domQuestions);
+    typingline(optionA, 50, "#q1A");
+    typingline(optionB, 50, "#q1B");
+    typingline(optionC, 50, "#q1C");
+    typingline(optionD, 50, "#q1D");
+    return new Promise(function (resolve) {
+      $(`${domOptionC},${domOptionD},${domOptionA}`).click(function () {
+        resolve("false");
+      });
+      $(domOptionB).click(function () {
+        resolve("true");
+      });
+    });
+  }
+}
