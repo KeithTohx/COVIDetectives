@@ -1318,3 +1318,62 @@ function overview() {
     });
   });
 }
+function mission() {
+  $("#overview, #missionButton").remove();
+  $("#checkpoint-1").append(`
+  <div id="mission">
+  <h3></h3>
+  <h5></h5>
+  <p></p>
+  <div id = "filler"></div>
+  <ol>
+    <li id = "list1"></li>
+    <li id = "list2"></li>
+    <li id = "list3"></li>
+  </ol>
+  <div id = "filler2"></div>
+  <div id = "time"></div>
+  <div id="aim"></div>
+  </div>`);
+  typingline("Mission Report", 50, "h4");
+  typingline(`Head Detective ${name}`, 75, "h5");
+  typingline(
+    `You are injured, However this
+ is a pressing issue. As our best
+ Detective...
+ `,
+    30,
+    "p"
+  );
+  typingline("Head to Ace City", 50, "#list1").then(function () {
+    typingline(
+      "Find the location of hidden vial of vaccine",
+      30,
+      "#list2"
+    ).then(function () {
+      typingline(
+        "Retrieve the vial of vaccine and deliver it back to headquarters",
+        30,
+        "#list3"
+      );
+    });
+  });
+  typingline(
+    "--------------------------------------------------------------------------------",
+    50,
+    "#filler, #filler2"
+  ).then(function () {
+    $("#checkpoint-1").append(
+      `<button id = "missingVialButton">Search!</button>`
+    );
+    $("#missingVialButton").css({
+      "border-style": "none",
+      "margin-left": "75%",
+      "backgound-color": "white",
+      "font-size": "10pt",
+    });
+    $("#missingVialButton").click(missingVial);
+  });
+  typingline("Time left: Not much time", 30, "#time");
+  typingline("Aim: Maintain World Peace By Creating A Vaccine", 30, "#aim");
+}
