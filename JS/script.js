@@ -381,11 +381,11 @@ function showdown1(){
     });
   });
 }
-
+let domScene = "#scenes"
 //Checkpoint 1 onwards
 function clue1() {
-  $("#startGame").hide();
-  $("#checkpoint-1").append(`<div id="clue1">
+  $(domScene).hide();
+  $(domScene).append(`<div id="clue1">
   <h2></h2>
   <div>
       ------------------------------------------------------------------------------
@@ -411,9 +411,8 @@ function clue1() {
   <button id ="map2Button">Next</button>
   <div id="clue1-filler"></div>
 </div>`);
-  $("#checkpoint-1").css({ "margin-top": "100px" });
-  $("#checkpoint-1 h2").css({ "margin-top": "50px" });
-  $("#checkpoint-1 h2,#checkpoint-1 div").css({ "text-align": "center" });
+  $("h2").css({ "margin-top": "50px" });
+  $("h2,div").css({ "text-align": "center" });
   $("#clue1").css({
     "border-style": "solid",
     "border-width": "1px",
@@ -421,7 +420,7 @@ function clue1() {
     "font-size": "20pt",
     "margin-top": "50px",
   });
-  $("#checkpoint-1 h3").css({ "text-align": "left" });
+  $("h3").css({ "text-align": "left" });
   $("#clue1 li").css({ "text-align": "left" });
   $("#clue1 ol").css({ "margin-left": "25px", padding: "0px" });
   $("#clue1 section").css({ "margin-left": "145px" });
@@ -434,11 +433,11 @@ function clue1() {
   });
   let disp = "Eric Royal Lab Report";
   let dom = "#clue1 h2";
-  typing(disp, 120, dom);
+  typingline(disp, 120, dom);
 
 // transition to next show map
 $("#map2Button").click(function () {
-  $("#checkpoint-1").append(
+  $(domScene).append(
     `<div id = "map2"><img class ="img-fluid" src='#' alt="map image"></div>`
   );
   $("#clue1").remove();
@@ -457,7 +456,7 @@ $("#map2Button").click(function () {
 function scene6() {
   $("#map2").remove();
   //setting up elements to append content
-  $("#checkpoint-1").append(`<div id ="scene6">
+  $(domScene).append(`<div id ="scene6">
   <div id="firstSentence"></div>
   <div id="secondSentence"></div>
   <div id="thirdSentence"></div>
@@ -521,7 +520,7 @@ function scene6() {
 }
 function newspaper() {
   $("#scene6, #newspaperButton").remove();
-  $("#checkpoint-1").append(`<div id = "newspaper">
+  $(domScene).append(`<div id = "newspaper">
   <h2>The Current Times</h2>
   <div class ="row">
     <div class = "col-sm" id = "newspaperLeft">
@@ -580,7 +579,7 @@ down Sir Suriv.`;
 }
 function newspaperp2() {
   $("#newspaper, #newspaperButton").remove();
-  $("#checkpoint-1").append(`<div id = "newspaperp2">
+  $(domScene).append(`<div id = "newspaperp2">
   <h2>The Current Times</h2>
   <div class ="row">
     <div class = "col-sm" id = "newspaperLeft">
@@ -710,7 +709,7 @@ function newspaperp2() {
 }
 function scene7() {
   $("#newspaperp2").remove();
-  $("#checkpoint-1").append(`<div id ="scene7">
+  $(domScene).append(`<div id ="scene7">
   <div id="firstSentence"></div>
   <div id="secondSentence"></div>
   <div id="thirdSentence"></div>
@@ -775,7 +774,7 @@ function scene7() {
 }
 function scene8() {
   $("#scene7, #scene8Button").remove();
-  $("#checkpoint-1").append(`<div id ="scene8">
+  $(domScene).append(`<div id ="scene8">
   <div id="firstSentence"></div>
   <div id="secondSentence"></div>
   <div id="thirdSentence"></div>
@@ -826,7 +825,7 @@ function scene8() {
 function preEncounter() {
   $("#scene8").remove();
   var noOfQuestion = 5;
-  $("#checkpoint-1").append(`<div id="pre-encounter">
+  $(domScene).append(`<div id="pre-encounter">
   <h1>Encounter!</h1><br>
   <h3>Defeat Sir Suriv and obtain the vial of virus</h3><br>
   <h3>Try your best to answer all questions right</h3><br>
@@ -845,7 +844,7 @@ function preEncounter() {
 }
 function encounter() {
   $("#pre-encounter").remove();
-  $("#checkpoint-1").append(`<div id = "encounter">
+  $(domScene).append(`<div id = "encounter">
   <div class ="row">
     <div class = "col-sm" id ="player">
       <h3>${name}</h3>
@@ -1088,7 +1087,7 @@ function encounter() {
 }
 function encounterReview(qRight) {
   $("#encounter").remove();
-  $("#checkpoint-1").append(`<div id = "encounterReview">
+  $(domScene).append(`<div id = "encounterReview">
   <h1>You got <span id ="qRight"></span>/5 questions correct!</h1>
   <div id ="statement"></div>
   <button>Next</button>
@@ -1113,7 +1112,7 @@ function encounterReview(qRight) {
 }
 function postEncounter(qRight) {
   $("#encounterReview").remove();
-  $("#checkpoint-1").append(`<div id ="postEncounter">
+  $(domScene).append(`<div id ="postEncounter">
   <div id="firstSentence"></div>
   <div id="secondSentence"></div>
   <div id="thirdSentence"></div>
@@ -1184,7 +1183,7 @@ function postEncounter(qRight) {
 }
 function hospitalScene() {
   $("#postEncounter, #hospitalButton").remove();
-  $("#checkpoint-1").append(`<div id ="hospitalScene">
+  $(domScene).append(`<div id ="hospitalScene">
   <div><span id = "firstSpan"></span> <span id = "secondSpan"></span> <span id = "thirdSpan"></span> <span id = "fourthSpan"></span></div>
   <div id="firstSentence"></div>
   <div id="secondSentence"></div>
@@ -1265,7 +1264,7 @@ function hospitalScene() {
 }
 function overview() {
   $("#hospitalScene,#viewReportButton").remove();
-  $("#checkpoint-1").append(`
+  $(domScene).append(`
   <div id="overview">
         <h1></h1>
         <div id="firstSentence"></div>
@@ -1320,7 +1319,7 @@ function overview() {
 }
 function mission() {
   $("#overview, #missionButton").remove();
-  $("#checkpoint-1").append(`
+  $(domScene).append(`
   <div id="mission">
   <h3></h3>
   <h5></h5>
@@ -1379,7 +1378,7 @@ function mission() {
 }
 function missingVial() {
   $("#mission,#missingVialButton").remove();
-  $("#checkpoint-1").append(`<div id="missingVial">
+  $(domScene).append(`<div id="missingVial">
   <h1>Missing Vial!</h1><br>
   <h3>Get information on the location of the vial of virus</h3><br>
   <h3>Try your best to answer all questions right</h3><br>
@@ -1399,7 +1398,7 @@ function missingVial() {
 //To update questions and layout
 function finalQuiz() {
   $("#missingVial").remove();
-  $("#checkpoint-1").append(`<div id = "finalQuiz">
+  $(domScene).append(`<div id = "finalQuiz">
   <div class ="row">
     <div class = "col-sm" id ="player">
       <h3>${name}</h3>
@@ -1642,7 +1641,7 @@ function finalQuiz() {
 }
 function vialFound(marks) {
   $("#finalQuiz").remove();
-  $("#checkpoint-1").append(`<div id ="vialFound">
+  $(domScene).append(`<div id ="vialFound">
   <div id="firstSentence"></div>
   <div id="secondSentence"></div>
   <div id="thirdSentence"></div>
@@ -1682,7 +1681,7 @@ function vialFound(marks) {
 }
 function endOfGame() {
   $("#vialFound,#endOfGameButton").remove();
-  $("#checkpoint-1").append(`
+  $(domScene).append(`
   <div id = "endOfGame">
   <div class = "row">
   <div class ="col-sm"><img src="#" alt="image of award"></div>
