@@ -1640,3 +1640,43 @@ function finalQuiz() {
     });
   }
 }
+function vialFound(marks) {
+  $("#finalQuiz").remove();
+  $("#checkpoint-1").append(`<div id ="vialFound">
+  <div id="firstSentence"></div>
+  <div id="secondSentence"></div>
+  <div id="thirdSentence"></div>
+  </div>`);
+  let domFirst = "#firstSentence";
+  let domSecond = "#secondSentence";
+  let domThird = "#thirdSentence";
+  let firstSentence;
+  let secondSentence;
+  let thirdSentence;
+  if (marks > 3) {
+    firstSentence = "You found the location of the vial";
+    secondSentence = "You secure the vial and sent it to the headquarters";
+    thirdSentence = `Head Detective ${name}were awarded a medal of bravery`;
+  } else {
+    firstSentence =
+      "You almost did not managed to find the vial. With your experience, you managed to locate the vial.";
+    secondSentence = "You secure the vial and sent it to the headquarters";
+    thirdSentence = `Head Detective ${name}were awarded a medal of bravery`;
+  }
+  typingline(firstSentence, 30, domFirst).then(function () {
+    typingline(secondSentence, 30, domSecond).then(function () {
+      typingline(thirdSentence, 30, domThird).then(function () {
+        $("#checkpoint-1").append(
+          `<button id = "endOfGameButton">Finish!</button>`
+        );
+        $("#endOfGameButton").css({
+          "border-style": "none",
+          "margin-left": "75%",
+          "backgound-color": "white",
+          "font-size": "10pt",
+        });
+        $("#endOfGameButton").click(endOfGame);
+      });
+    });
+  });
+}
