@@ -1,13 +1,13 @@
-$(document).ready(function(){
+$(document).ready(function () {
   $("#checkpoint-1").hide();
-  $('div#userInputM').hide();  
-  $('div#userInputF').hide(); 
+  $("div#userInputM").hide();
+  $("div#userInputF").hide();
   function getGlobal() {
     var settings = {
-      "url": "https://disease.sh/v3/covid-19/all", 
-      "method": "GET",
-      "timeout": 0,
-      "headers": {
+      url: "https://disease.sh/v3/covid-19/all",
+      method: "GET",
+      timeout: 0,
+      headers: {
         //"Cookie": "__cfduid=d4e60a8e28f2e90c24e2a1fdcaaea8ead1611282633"
       },
     };
@@ -19,7 +19,7 @@ $(document).ready(function(){
       var criticalG = response.critical;
       var deathsG = response.deaths;
       var recoveredG = response.recovered;
-  
+
       //display into html the global's content
       $("#globalCases").append(casesG);
       $("#globalCritical").append(criticalG);
@@ -28,16 +28,20 @@ $(document).ready(function(){
     });
   }
   getGlobal();
-})
+});
 
 $("#ackn").click(function () {
   window.location.href = "acknowledge.html";
 });
 
 $("#start").click(function () {
-  $("#startGame").fadeOut(1600, function(){
-    $("body").append(`<div id="charInfo" class="container" style="padding: 30px;"></div>`);
-    $("#charInfo").append(`<h2 id="userHeading" style="text-align: center;">How Should We Address You?</h2>
+  $("#startGame").fadeOut(1600, function () {
+    $("body").append(
+      `<div id="charInfo" class="container" style="padding: 30px;"></div>`
+    );
+    $(
+      "#charInfo"
+    ).append(`<h2 id="userHeading" style="text-align: center;">How Should We Address You?</h2>
   <div class="row">
     <div id="genderM" class="col-sm">
       <a href="#" id="male" role="button" style="text-decoration: none;">Male</a><br>
@@ -65,25 +69,25 @@ function typingline(disp, speed, dom) {
   return new Promise(function (resolve) {
     //At set interval, the function will change the text on the screen
     //when it is finish it will clear interval
-  var test = setInterval(type, speed);
-  function type() {
-    if (char <= disp.length) {
-      var display = disp.slice(0, char);
-      $(dom).text(display);
-      char++;
-    } else {
-      clearInterval(test);
-      resolve("done");
+    var test = setInterval(type, speed);
+    function type() {
+      if (char <= disp.length) {
+        var display = disp.slice(0, char);
+        $(dom).text(display);
+        char++;
+      } else {
+        clearInterval(test);
+        resolve("done");
+      }
     }
-  }}) 
+  });
 }
 
-function userChar(){
+function userChar() {
   $("#male").click(function () {
-    if (document.getElementById('genderF'))
-    {
-        document.getElementById('genderF').remove(); 
-        $("#userInputM").prepend(`<div id="userInputM" style="padding-top: 20px;">
+    if (document.getElementById("genderF")) {
+      document.getElementById("genderF").remove();
+      $("#userInputM").prepend(`<div id="userInputM" style="padding-top: 20px;">
         <label for="userName">Enter Your Name: </label>
         <input type="text" id="userNameM" name="userName" placeholder="Name" style="width: 300px;"><br>
         <label for="userName">Enter Your Age: </label>
@@ -92,22 +96,23 @@ function userChar(){
         <input type="text" id="userCountryM" name="userCountry" placeholder="Country" style="width: 300px;"><br>
         </div>
         <button id="continueM" class="continueBtn" style="margin-top: 10px; text-align: center;">Continue</button>
-        `); 
+        `);
     }
-    $('div#userInputM').show();  
+    $("div#userInputM").show();
 
     $("#continueM").click(function () {
-      document.getElementById('charInfo').remove(); 
-      $("body").append(`<div id="scenes" class="container" style="padding: 20px;">`);
+      document.getElementById("charInfo").remove();
+      $("body").append(
+        `<div id="scenes" class="container" style="padding: 20px;">`
+      );
       scene1_2();
     });
   });
 
   $("#female").click(function () {
-    if (document.getElementById('genderM'))
-    {
-        document.getElementById('genderM').remove();
-        $("#userInputF").prepend(`<div id="userInputF" style="padding-top: 20px;">
+    if (document.getElementById("genderM")) {
+      document.getElementById("genderM").remove();
+      $("#userInputF").prepend(`<div id="userInputF" style="padding-top: 20px;">
         <label for="userName">Enter Your Name: </label>
         <input type="text" id="userNameF" name="userName" placeholder="Name" style="width: 300px;"><br>
         <label for="userName">Enter Your Age: </label>
@@ -118,32 +123,38 @@ function userChar(){
         <button id="continueF" class="continueBtn" style="margin-top: 10px; text-align: center;">Continue</button>
         `);
     }
-    $('div#userInputF').show(); 
-  
+    $("div#userInputF").show();
+
     $("#continueF").click(function () {
-      document.getElementById('charInfo').remove();
-      $("body").append(`<div id="scenes" class="container" style="padding: 20px;">`);
-      scene1_2(); 
+      document.getElementById("charInfo").remove();
+      $("body").append(
+        `<div id="scenes" class="container" style="padding: 20px;">`
+      );
+      scene1_2();
     });
   });
-};
+}
 
-function scene1_2(){
+function scene1_2() {
   $("#scenes").append(`<h4 id="scene1-intro"></h4>
   <div class="clipboard" id="clipboard"></div>
   <h4 id="scene2-intro"></h4>`);
   $("#clipboard").hide();
 
-  var disp1 = "Head Detective, you are in a meeting room in the Headquarter of Detectives and given the following information:";
+  var disp1 =
+    "Head Detective, you are in a meeting room in the Headquarter of Detectives and given the following information:";
   var dom1 = "#scene1-intro";
 
-  var disp2 = "After understanding the whole situation, you left the meeting room and head out to find Sir Suriv...";
+  var disp2 =
+    "After understanding the whole situation, you left the meeting room and head out to find Sir Suriv...";
   var dom2 = "#scene2-intro";
 
-  typingline(disp1, 80, dom1).then(function(){
-    $("#scene1-intro").delay(800).fadeOut(1600, function(){
-      $("#clipboard").fadeIn(1600);
-      $("#clipboard").prepend(`
+  typingline(disp1, 80, dom1).then(function () {
+    $("#scene1-intro")
+      .delay(800)
+      .fadeOut(1600, function () {
+        $("#clipboard").fadeIn(1600);
+        $("#clipboard").prepend(`
       <h4 style="text-align: left; padding: 20px;"><i>To Head Detective,</i></h4>
       <h4>Background Information</h4>
       <p>
@@ -159,44 +170,49 @@ function scene1_2(){
       <h4 style="text-align: left; padding: 20px;"><i>From Global Task Force</i></h4>
       <button id="misson" class="missonBtn" style="margin: 10px;">Next</button>`);
 
-      $("#misson").click(function () {
-        $("#clipboard").fadeOut(1600, function(){
-            typingline(disp2, 80, dom2).then(function(){
-                $("#scene2-intro").delay(800).fadeOut(1600, function(){
-                    map1();
+        $("#misson").click(function () {
+          $("#clipboard").fadeOut(1600, function () {
+            typingline(disp2, 80, dom2).then(function () {
+              $("#scene2-intro")
+                .delay(800)
+                .fadeOut(1600, function () {
+                  map1();
                 });
             });
+          });
         });
       });
-    });
   });
-};
+}
 
-function map1(){
+function map1() {
   $("#scenes").append(`<h4 id="map1-intro"></h4>`);
   var disp = "Click on the next city to proceed:";
-  var dom = "#map1-intro"
+  var dom = "#map1-intro";
 
-  typingline(disp, 100,dom).then(function(){
-      $("#map1-intro").append(`<ul>
+  typingline(disp, 100, dom).then(function () {
+    $("#map1-intro").append(`<ul>
       <li>Headquarter</li>
       <li>Viole City</li>
       <li>Ascend City</li>
       <li>Ace City</li>
       </ul>`);
-      //need fix map1 (replace with img)
-      $("#map1-intro").delay(1000).fadeOut(1600, function(){
-          scene3();
+    //need fix map1 (replace with img)
+    $("#map1-intro")
+      .delay(1000)
+      .fadeOut(1600, function () {
+        scene3();
       });
   });
-};
+}
 
-function scene3(){
+function scene3() {
   $("#scenes").append(`<h4 id="scene3-intro"></h4>
   <h4 id="scene3-text1"></h4>
   <h4 id="scene3-text2"></h4>`);
 
-  var disp1 = "As you walk into Viole city, you see symptoms of people getting sick.";
+  var disp1 =
+    "As you walk into Viole city, you see symptoms of people getting sick.";
   var dom1 = "#scene3-intro";
 
   var disp2 = `A question pops into your head: "What happened here?"`;
@@ -204,20 +220,22 @@ function scene3(){
   var disp3 = "You then walk towards the administration office of the city...";
   var dom3 = "#scene3-text2";
 
-  typingline(disp1, 100, dom1).then(function(){
-      typingline(disp2, 100, dom2).then(function(){
-          typingline(disp3, 100, dom3).then(function(){
-              $("#scene3-intro").delay(800).fadeOut(1600);
-              $("#scene3-text1").delay(800).fadeOut(1600);
-              $("#scene3-text2").delay(800).fadeOut(1600, function(){
-                  scene4();
-              });
+  typingline(disp1, 100, dom1).then(function () {
+    typingline(disp2, 100, dom2).then(function () {
+      typingline(disp3, 100, dom3).then(function () {
+        $("#scene3-intro").delay(800).fadeOut(1600);
+        $("#scene3-text1").delay(800).fadeOut(1600);
+        $("#scene3-text2")
+          .delay(800)
+          .fadeOut(1600, function () {
+            scene4();
           });
       });
+    });
   });
-};
+}
 
-function scene4(){
+function scene4() {
   $("#scenes").append(`<h4 id="scene4-intro"></h4>
   <h4 id="scene4-text1"></h4>
   <h4 id="scene4-text2"></h4>
@@ -229,11 +247,11 @@ function scene4(){
   var disp1 = "The Mayor of the city came to greet you.";
   var disp2 = `"Dear Head Detective, have you come to see the situation?"`;
   var disp3 = "You nodded you head.";
-  var disp4 = `He replied, "Well, this is the doing of Sir Suriv testing out a type of virus..."`
+  var disp4 = `He replied, "Well, this is the doing of Sir Suriv testing out a type of virus..."`;
   var disp5 = "He then searched his drawers for a moment.";
   var disp6 = `"We are still investigating the situation. Here's what we know at this moment. Please have a look."`;
   var disp7 = "He handed you a deck of information:";
-  
+
   var dom1 = "#scene4-intro";
   var dom2 = "#scene4-text1";
   var dom3 = "#scene4-text2";
@@ -241,7 +259,7 @@ function scene4(){
   var dom5 = "#scene4-text4";
   var dom6 = "#scene4-text5";
   var dom7 = "#scene4-text6";
-  
+
   function typingline(disp, speed, dom) {
     var char = 0;
     //Create a promise so that .then can the next function will wait till this
@@ -249,34 +267,40 @@ function scene4(){
     return new Promise(function (resolve) {
       //At set interval, the function will change the text on the screen
       //when it is finish it will clear interval
-    var test = setInterval(type, speed);
-    function type() {
-      if (char <= disp.length) {
-        var display = disp.slice(0, char);
-        $(dom).text(display);
-        char++;
-      } else {
-        clearInterval(test);
-        resolve("done");
+      var test = setInterval(type, speed);
+      function type() {
+        if (char <= disp.length) {
+          var display = disp.slice(0, char);
+          $(dom).text(display);
+          char++;
+        } else {
+          clearInterval(test);
+          resolve("done");
+        }
       }
-    }}) 
+    });
   }
-  
-  typingline(disp1, 100, dom1).then(function(){
-    $("#scene4-intro").delay(800).fadeOut(1600, function(){
-      typingline(disp2, 80, dom2).then(function(){
-        typingline(disp3, 80, dom3).then(function(){
-          typingline(disp4, 80, dom4).then(function(){
-            typingline(disp5, 80, dom5).then(function(){
-              typingline(disp6, 80, dom6).then(function(){
-                typingline(disp7, 80, dom7).then(function(){
-                  $("#scene4-text1").delay(800).fadeOut(1600);
-                  $("#scene4-text2").delay(800).fadeOut(1600);
-                  $("#scene4-text3").delay(800).fadeOut(1600);
-                  $("#scene4-text4").delay(800).fadeOut(1600);
-                  $("#scene4-text5").delay(800).fadeOut(1600);
-                  $("#scene4-text6").delay(800).fadeOut(1600, function(){
-                    scene5();
+
+  typingline(disp1, 100, dom1).then(function () {
+    $("#scene4-intro")
+      .delay(800)
+      .fadeOut(1600, function () {
+        typingline(disp2, 80, dom2).then(function () {
+          typingline(disp3, 80, dom3).then(function () {
+            typingline(disp4, 80, dom4).then(function () {
+              typingline(disp5, 80, dom5).then(function () {
+                typingline(disp6, 80, dom6).then(function () {
+                  typingline(disp7, 80, dom7).then(function () {
+                    $("#scene4-text1").delay(800).fadeOut(1600);
+                    $("#scene4-text2").delay(800).fadeOut(1600);
+                    $("#scene4-text3").delay(800).fadeOut(1600);
+                    $("#scene4-text4").delay(800).fadeOut(1600);
+                    $("#scene4-text5").delay(800).fadeOut(1600);
+                    $("#scene4-text6")
+                      .delay(800)
+                      .fadeOut(1600, function () {
+                        scene5();
+                      });
                   });
                 });
               });
@@ -284,11 +308,10 @@ function scene4(){
           });
         });
       });
-    });
   });
-};
+}
 
-function scene5(){
+function scene5() {
   $("#scenes").append(`<div class="information" id="information"></div>`);
   $("#information").hide();
 
@@ -301,7 +324,9 @@ function scene5(){
   </div>
   <button id="symptomsBtn1" class="symptomsBtn1" style="margin: 10px;">Next</button>`);
 
-  $("#symptomTitle").append(`<h5 style="text-align: right">Symptoms of Virus:</h5>`);
+  $("#symptomTitle").append(
+    `<h5 style="text-align: right">Symptoms of Virus:</h5>`
+  );
   $("#symptomList").append(`<h5><ol>
   <li>Fever</li><li>Cough</li><li>Chills</li><li>Lose sense of smell</li><li>Headache</li></ol></h5>`);
   $("#symptoms").after(`<div id="rates" class="flex-container">
@@ -309,25 +334,25 @@ function scene5(){
   <div style="padding: 30px; background-color:lightgrey;"><h5 id="infectedRate">Infected Rate:</h5></div>
   </div>`);
 
-  $("#symptomsBtn1").click(function(){
+  $("#symptomsBtn1").click(function () {
     $("#symptoms").fadeOut(1600);
     $("#rates").fadeOut(1600);
-    $("#symptomsBtn1").fadeOut(1600, function(){
-        $("#information").append(`<h5>Cities informed: Ascend City, Ace City</h5>
+    $("#symptomsBtn1").fadeOut(1600, function () {
+      $("#information").append(`<h5>Cities informed: Ascend City, Ace City</h5>
         <h5>Villian Last Seen: Viole Secret Royal Lab</h5>
         <h5>Image of Lab:</h5>
         <button id="symptomsBtn2" class="symptomsBtn2" style="margin: 10px;">Next</button>`);
 
-        $("#symptomsBtn2").click(function(){
-            $("#information").fadeOut(1600, function(){
-              showdown1();
-            });
+      $("#symptomsBtn2").click(function () {
+        $("#information").fadeOut(1600, function () {
+          showdown1();
         });
+      });
     });
   });
 }
 
-function showdown1(){
+function showdown1() {
   $("#scenes").append(`<h4 id="showdown1-text1"></h4>
   <h4 id="showdown1-text2"></h4>
   <h4 id="showdown1-text3"></h4>
@@ -346,16 +371,18 @@ function showdown1(){
   var dom4 = "#showdown1-text4";
   var dom5 = "#showdown1-intro";
 
-  typingline(disp1, 100, dom1).then(function(){
-    typingline(disp2, 80, dom2).then(function(){
-        typingline(disp3, 80, dom3).then(function(){
-            $("#showdown1-text1").fadeOut(1600);
-            $("#showdown1-text2").fadeOut(1600);
-            $("#showdown1-text3").fadeOut(1600, function(){
-                typingline(disp4, 100, dom4).then(function(){
-                    $("#showdown1-text4").fadeOut(1600, function(){
-                        typingline(disp5, 100, dom5).then(function(){
-                          $("#showdown1-intro").append(`<div id="showdown1-quiz" class="flex-container2">
+  typingline(disp1, 100, dom1).then(function () {
+    typingline(disp2, 80, dom2).then(function () {
+      typingline(disp3, 80, dom3).then(function () {
+        $("#showdown1-text1").fadeOut(1600);
+        $("#showdown1-text2").fadeOut(1600);
+        $("#showdown1-text3").fadeOut(1600, function () {
+          typingline(disp4, 100, dom4).then(function () {
+            $("#showdown1-text4").fadeOut(1600, function () {
+              typingline(disp5, 100, dom5).then(function () {
+                $(
+                  "#showdown1-intro"
+                ).append(`<div id="showdown1-quiz" class="flex-container2">
                             <div style="background-color: cadetblue;"><p>#1 </br> Nosebleeds</p></div>
                             <div style="background-color: cadetblue;"><p>#2 </br> Cough</p></div>
                             <div style="background-color: cadetblue;"><p>#3 </br> Fever</p></div>
@@ -367,20 +394,20 @@ function showdown1(){
                             </div>
                             <button id="showdownSubmit" class="showdownSubmit">Submit</button>`);
 
-                          $("#showdownSubmit").click(function(){
-                            $("#showdown1-intro").fadeOut(1600, function(){
-                              //clue1();
-                            });
-                          });
-                        });
-                    });
+                $("#showdownSubmit").click(function () {
+                  $("#showdown1-intro").fadeOut(1600, function () {
+                    clue1();
+                  });
                 });
+              });
             });
+          });
         });
+      });
     });
   });
 }
-let domScene = "#startGame"
+let domScene = "#scenes";
 //Checkpoint 1 onwards
 function clue1() {
   $(domScene).append(`<div id="clue1">
@@ -433,23 +460,24 @@ function clue1() {
   let dom = "#clue1 h2";
   typingline(disp, 120, dom);
 
-// transition to next show map
-$("#map2Button").click(function () {
-  $(domScene).append(
-    `<div id = "map2"><img class ="img-fluid" src='#' alt="map image"></div>`
-  );
-  $("#clue1").remove();
-  //when it is clicked
-  $("#map2 img").click(function (evt) {
-    var offset = $(this).offset();
-    var x = offset.left;
-    var y = offset.top;
-    var mousex = evt.pageX - x;
-    var mousey = evt.pageY - y;
-    //If above selection is correct
-    scene6();
+  // transition to next show map
+  $("#map2Button").click(function () {
+    $(domScene).append(
+      `<div id = "map2"><img class ="img-fluid" src='#' alt="map image"></div>`
+    );
+    $("#clue1").remove();
+    //when it is clicked
+    $("#map2 img").click(function (evt) {
+      var offset = $(this).offset();
+      var x = offset.left;
+      var y = offset.top;
+      var mousex = evt.pageX - x;
+      var mousey = evt.pageY - y;
+      //If above selection is correct
+      scene6();
+    });
   });
-});}
+}
 // Next function
 function scene6() {
   $("#map2").remove();
@@ -500,7 +528,7 @@ function scene6() {
           typingline(eclipses, 125, domEclipse1).then(function () {
             typingline(seventhSentence, 40, domSeven).then(function () {
               typingline(eightSentence, 50, domEight).then(function () {
-                $("#checkpoint-1").append(
+                $(domScene).append(
                   `<button id = "newspaperButton">Pick newspaper up!</button>`
                 );
                 $("#newspaperButton").css({
@@ -535,9 +563,9 @@ function newspaper() {
   </div>
 </div>`);
   $("button").hide();
-  $("#checkpoint-1").css({ "font-size": "14pt" });
-  $("#checkpoint-1 h2").css({ "text-align": "center" });
-  $("#checkpoint-1 .col-sm").css({ margin: "auto 40px" });
+  $(domScene).css({ "font-size": "14pt" });
+  $("h2").css({ "text-align": "center" });
+  $(".col-sm").css({ margin: "auto 40px" });
   $("#newspaperLeft p,#newspaperLeft h4,#newspaperRight").css({
     "margin-top": "30px",
   });
@@ -603,9 +631,9 @@ function newspaperp2() {
   </div>
   <br>
 </div>`);
-  $("#checkpoint-1").css({ "font-size": "14pt" });
-  $("#checkpoint-1 h2").css({ "text-align": "center" });
-  $("#checkpoint-1 .col-sm").css({ margin: "auto 40px" });
+  $(domScene).css({ "font-size": "14pt" });
+  $("h2").css({ "text-align": "center" });
+  $(".col-sm").css({ margin: "auto 40px" });
   $("#newspaperLeft p,#newspaperLeft h4,#newspaperRight").css({
     "margin-top": "30px",
   });
@@ -718,7 +746,7 @@ function scene7() {
   <div id="eightSentence"></div>
   </div>`);
   //Css styling
-  $("#checkpoint-1").css({ "font-size": "18pt" });
+  $(domScene).css({ "font-size": "18pt" });
   //The element selector
   let domFirst = "#firstSentence";
   let domSecond = "#secondSentence";
@@ -751,7 +779,7 @@ function scene7() {
             typingline(sixthSentence, 50, domSixth).then(function () {
               typingline(sevenSentence, 500, domSeven).then(function () {
                 typingline(eightSentence, 50, domEight).then(function () {
-                  $("#checkpoint-1").append(
+                  $(domScene).append(
                     `<button id = "scene8Button">Kick the doors open!</button>`
                   );
                   $("#scene8Button").css({
@@ -783,7 +811,7 @@ function scene8() {
   <div id="eightSentence"></div>
   </div>`);
   //Css styling
-  $("#checkpoint-1").css({ "font-size": "18pt" });
+  $(domScene).css({ "font-size": "18pt" });
   //The element selector
   let domFirst = "#firstSentence";
   let domSecond = "#secondSentence";
@@ -1159,7 +1187,7 @@ function postEncounter(qRight) {
                 typingline(eightSentence, 50, domSeven).then(function () {
                   typingline(nineSentence, 50, domEight).then(function () {
                     //add button to next function
-                    $("#checkpoint-1").append(
+                    $(domScene).append(
                       `<button id = "hospitalButton">Next</button>`
                     );
                     $("#hospitalButton").css({
@@ -1235,7 +1263,7 @@ function hospitalScene() {
                           typingline(eightSentence, 50, domEight).then(
                             function () {
                               //Add button to next function
-                              $("#checkpoint-1").append(
+                              $(domScene).append(
                                 `<button id = "viewReportButton">View Report</button>`
                               );
                               $("#viewReportButton").css({
@@ -1297,7 +1325,7 @@ function overview() {
           typingline(fourthSentence, 50, domFourth).then(function () {
             typingline(fifthSentence, 50, domFifth).then(function () {
               typingline(sixthSentence, 50, domSixth).then(function () {
-                $("#checkpoint-1").append(
+                $(domScene).append(
                   `<button id = "missionButton">Mission!</button>`
                 );
                 $("#missionButton").css({
@@ -1360,9 +1388,7 @@ function mission() {
     50,
     "#filler, #filler2"
   ).then(function () {
-    $("#checkpoint-1").append(
-      `<button id = "missingVialButton">Search!</button>`
-    );
+    $(domScene).append(`<button id = "missingVialButton">Search!</button>`);
     $("#missingVialButton").css({
       "border-style": "none",
       "margin-left": "75%",
@@ -1663,7 +1689,7 @@ function vialFound(marks) {
   typingline(firstSentence, 30, domFirst).then(function () {
     typingline(secondSentence, 30, domSecond).then(function () {
       typingline(thirdSentence, 30, domThird).then(function () {
-        $("#checkpoint-1").append(
+        $(domScene).append(
           `<button id = "endOfGameButton">Finish!</button>`
         );
         $("#endOfGameButton").css({
@@ -1695,9 +1721,13 @@ function endOfGame() {
   <div id = "reminder"></div>
   </div>
   `);
-  typingline("Statistics",50,"h3")
-  typingline(`
+  typingline("Statistics", 50, "h3");
+  typingline(
+    `
   Everyone has to do their part to stop the spread of a pandemic. By following trusted 
   news source, guidance from governments and heath organisations and reacting calmly, we will
-  be able to tide through this crisis`,20,"#reminder")
+  be able to tide through this crisis`,
+    20,
+    "#reminder"
+  );
 }
