@@ -1263,3 +1263,58 @@ function hospitalScene() {
     });
   });
 }
+function overview() {
+  $("#hospitalScene,#viewReportButton").remove();
+  $("#checkpoint-1").append(`
+  <div id="overview">
+        <h1></h1>
+        <div id="firstSentence"></div>
+        <br>
+        <h3></h3>
+        <div id="secondSentence"></div>
+        <div id="thirdSentence"></div>
+        <h4></h4>
+        <div id="fourthSentence"></div>
+        <div id="fifthSentence"></div>
+        <div id="sixthSentence"></div>
+      </div>
+  </div>`);
+  let domFirst = "#firstSentence";
+  let domSecond = "#secondSentence";
+  let domThird = "#thirdSentence";
+  let domFourth = "#fourthSentence";
+  let domFifth = "#fifthSentence";
+  let domSixth = "#sixthSentence";
+  let firstSentence = `Sir Suriv was caught on ${date} in Ace City`;
+  let secondSentence = `Due to the alerts given by Viole city and WHO"`;
+  let thirdSentence = `Ace City was notified and managed to capture Sir Suriv`;
+  let fourthSentence = `One of the method Ace City use is contact tracing`;
+  let fifthSentence = ``;
+  let sixthSentence = "However, the vial of virus is still missing!";
+  typingline("Overview", 50, "h1").then(function () {
+    typingline(firstSentence, 75, domFirst);
+    typingline("Debrief", 50, "h3").then(function () {
+      typingline(secondSentence, 50, domSecond).then(function () {
+        typingline(thirdSentence, 50, domThird).then(function () {
+          typingline("Contact Tracing", 50, "h4");
+          typingline(fourthSentence, 50, domFourth).then(function () {
+            typingline(fifthSentence, 50, domFifth).then(function () {
+              typingline(sixthSentence, 50, domSixth).then(function () {
+                $("#checkpoint-1").append(
+                  `<button id = "missionButton">Mission!</button>`
+                );
+                $("#missionButton").css({
+                  "border-style": "none",
+                  "margin-left": "75%",
+                  "backgound-color": "white",
+                  "font-size": "10pt",
+                });
+                $("#missionButton").click(mission);
+              });
+            });
+          });
+        });
+      });
+    });
+  });
+}
