@@ -1,7 +1,5 @@
 $(document).ready(function(){
   $("#checkpoint-1").hide();
-  $("#clipboard").hide();
-  $("#information").hide();
   $('div#userInputM').hide();  
   $('div#userInputF').hide(); 
 
@@ -38,7 +36,8 @@ $("#ackn").click(function () {
 });
 
 $("#start").click(function () {
-  $("#startGame").fadeOut(2000, function(){
+  $("#startGame").fadeOut(1600, function(){
+    $("body").append(`<div id="charInfo" class="container" style="padding: 30px;"></div>`);
     $("#charInfo").append(`<h2 id="userHeading" style="text-align: center;">How Should We Address You?</h2>
   <div class="row">
     <div id="genderM" class="col-sm">
@@ -51,7 +50,7 @@ $("#start").click(function () {
       <div id="userInputF" style="padding-top: 20px;">
       </div>
     </div>
-  </div>`);
+    </div>`);
     userChar();
   });
 });
@@ -100,6 +99,7 @@ function userChar(){
 
     $("#continueM").click(function () {
       document.getElementById('charInfo').remove(); 
+      $("body").append(`<div id="scenes" class="container" style="padding: 20px;">`);
       scene1_2();
     });
   });
@@ -122,20 +122,26 @@ function userChar(){
     $('div#userInputF').show(); 
   
     $("#continueF").click(function () {
-      document.getElementById('charInfo').remove(); 
-      scene1_2();
+      document.getElementById('charInfo').remove();
+      $("body").append(`<div id="scenes" class="container" style="padding: 20px;">`);
+      scene1_2(); 
     });
   });
 };
 
 function scene1_2(){
-  var disp1 = "Head Detective, you are in the meeting room in the Headquarter of Detectives and given the following information.";
+  $("#scenes").append(`<h4 id="scene1-intro"></h4>
+  <div class="clipboard" id="clipboard"></div>
+  <h4 id="scene2-intro"></h4>`);
+  $("#clipboard").hide();
+
+  var disp1 = "Head Detective, you are in the meeting room in the Headquarter of Detectives and given the following information:";
   var dom1 = "#scene1-intro";
 
   var disp2 = "After understanding the whole situation, you left the meeting room and head out to find Sir Suriv...";
   var dom2 = "#scene2-intro";
 
-  typingline(disp1, 100, dom1).then(function(){
+  typingline(disp1, 80, dom1).then(function(){
     $("#scene1-intro").delay(800).fadeOut(1600, function(){
       $("#clipboard").fadeIn(1600);
       $("#clipboard").prepend(`
@@ -151,22 +157,24 @@ function scene1_2(){
           Locate Sir Suriv and find out what is his intention with that val<br>
           Apprehend him as soon as possible. The whole world is counting on you to bring about peace.
       </p>
-      <h4 style="text-align: left; padding: 20px;"><i>From Global Task Force</i></h4>`);
-    });
-  });
+      <h4 style="text-align: left; padding: 20px;"><i>From Global Task Force</i></h4>
+      <button id="misson" class="missonBtn" style="margin: 10px;">Next</button>`);
 
-  $("#misson").click(function () {
-      $("#clipboard").fadeOut(1600, function(){
-          typingline(disp2, 80, dom2).then(function(){
-              $("#scene2-intro").delay(800).fadeOut(1600, function(){
-                  map1();
-              });
-          });
+      $("#misson").click(function () {
+        $("#clipboard").fadeOut(1600, function(){
+            typingline(disp2, 80, dom2).then(function(){
+                $("#scene2-intro").delay(800).fadeOut(1600, function(){
+                    map1();
+                });
+            });
+        });
       });
+    });
   });
 };
 
 function map1(){
+  $("#scenes").append(`<h4 id="map1-intro"></h4>`);
   var disp = "Click on the next city to proceed:";
   var dom = "#map1-intro"
 
@@ -185,6 +193,10 @@ function map1(){
 };
 
 function scene3(){
+  $("#scenes").append(`<h4 id="scene3-intro"></h4>
+  <h4 id="scene3-text1"></h4>
+  <h4 id="scene3-text2"></h4>`);
+
   var disp1 = "As you walk into Viole city, you see symptoms of people getting sick.";
   var dom1 = "#scene3-intro";
 
@@ -207,16 +219,31 @@ function scene3(){
 };
 
 function scene4(){
+  $("#scenes").append(`<h4 id="scene4-intro"></h4>
+  <h4 id="scene4-text1"></h4>
+  <h4 id="scene4-text2"></h4>
+  <h4 id="scene4-text3"></h4>
+  <h4 id="scene4-text4"></h4>
+  <h4 id="scene4-text5"></h4>
+  <h4 id="scene4-text6"></h4>
+  <div class="information" id="information"></div>`);
+  $("#information").hide();
+
   var disp1 = "The Mayor of the city came to greet you.";
-  var disp2 = `"Dear Head Detective, have you come to see the situation?"   `;
-  var disp3 = "You nodded you head.   ";
-  var disp4 = `He replied, "Well, this is the doing of Sir Suriv testing out a type of virus..."    `
-  var disp5 = "He then searched his drawers for a moment.    ";
-  var disp6 = `"We are still investigating the situation. Here's what we know at this moment. Please have a look."   `
+  var disp2 = `"Dear Head Detective, have you come to see the situation?"`;
+  var disp3 = "You nodded you head.";
+  var disp4 = `He replied, "Well, this is the doing of Sir Suriv testing out a type of virus..."`
+  var disp5 = "He then searched his drawers for a moment.";
+  var disp6 = `"We are still investigating the situation. Here's what we know at this moment. Please have a look."`;
   var disp7 = "He handed you a deck of information:";
   
   var dom1 = "#scene4-intro";
-  var dom2 = "#scene4-text";
+  var dom2 = "#scene4-text1";
+  var dom3 = "#scene4-text2";
+  var dom4 = "#scene4-text3";
+  var dom5 = "#scene4-text4";
+  var dom6 = "#scene4-text5";
+  var dom7 = "#scene4-text6";
   
   function typingline(disp, speed, dom) {
     var char = 0;
@@ -240,16 +267,22 @@ function scene4(){
   
   typingline(disp1, 100, dom1).then(function(){
     $("#scene4-intro").delay(800).fadeOut(1600, function(){
-      typingline(disp2, 120, dom2).then(function(){
-        typingline(disp3, 120, dom2).then(function(){
-          typingline(disp4, 120, dom2).then(function(){
-            typingline(disp5, 120, dom2).then(function(){
-              typingline(disp6, 120, dom2).then(function(){
-                typingline(disp7, 100, dom2).then(function(){
-                  $("#scene4-text").delay(800).fadeOut(1600, function(){
+      typingline(disp2, 80, dom2).then(function(){
+        typingline(disp3, 80, dom3).then(function(){
+          typingline(disp4, 80, dom4).then(function(){
+            typingline(disp5, 80, dom5).then(function(){
+              typingline(disp6, 80, dom6).then(function(){
+                typingline(disp7, 80, dom7).then(function(){
+                  $("#scene4-text1").delay(800).fadeOut(1600);
+                  $("#scene4-text2").delay(800).fadeOut(1600);
+                  $("#scene4-text3").delay(800).fadeOut(1600);
+                  $("#scene4-text4").delay(800).fadeOut(1600);
+                  $("#scene4-text5").delay(800).fadeOut(1600);
+                  $("#scene4-text6").delay(800).fadeOut(1600, function(){
                     $("#information").fadeIn(1600);
                     $("#information").prepend(`
-                    <h4>Virus Information</h4>`);
+                    <h4>Virus Information</h4>
+                    <button id="symptoms" class="symptomsBtn" style="margin: 10px;">Next</button>`);
                   });
                 });
               });
