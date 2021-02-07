@@ -2,6 +2,8 @@ $(document).ready(function(){
   $("#checkpoint-1").hide();
   $("#clipboard").hide();
   $("#information").hide();
+  $('div#userInputM').hide();  
+  $('div#userInputF').hide(); 
 
   function getGlobal() {
     var settings = {
@@ -36,8 +38,22 @@ $("#ackn").click(function () {
 });
 
 $("#start").click(function () {
-  $("#startGame").fadeOut(2000);
-  userChar();
+  $("#startGame").fadeOut(2000, function(){
+    $("#charInfo").append(`<h2 id="userHeading" style="text-align: center;">How Should We Address You?</h2>
+  <div class="row">
+    <div id="genderM" class="col-sm">
+      <a href="#" id="male" role="button" style="text-decoration: none;">Male</a><br>
+      <div id="userInputM" style="padding-top: 20px;">
+      </div>
+    </div>
+    <div id="genderF" class="col-sm">
+      <a href="#" id="female" role="button" style="text-decoration: none;">Female</a><br>
+      <div id="userInputF" style="padding-top: 20px;">
+      </div>
+    </div>
+  </div>`);
+    userChar();
+  });
 });
 
 var disp = "It's great to see you, Detective!";
@@ -65,9 +81,6 @@ function typingline(disp, speed, dom) {
 }
 
 function userChar(){
-  $('div#userInputM').hide();  
-  $('div#userInputF').hide(); 
-
   $("#male").click(function () {
     if (document.getElementById('genderF'))
     {
@@ -79,9 +92,16 @@ function userChar(){
         <input type="number" id="userAgeM" name="userAge" placeholder="Age" style="width: 300px;"><br>
         <label for="userName">Enter Your Country: </label>
         <input type="text" id="userCountryM" name="userCountry" placeholder="Country" style="width: 300px;"><br>
-        </div>`); 
+        </div>
+        <button id="continueM" class="continueBtn" style="margin-top: 10px; text-align: center;">Continue</button>
+        `); 
     }
     $('div#userInputM').show();  
+
+    $("#continueM").click(function () {
+      document.getElementById('charInfo').remove(); 
+      scene1_2();
+    });
   });
 
   $("#female").click(function () {
@@ -95,19 +115,16 @@ function userChar(){
         <input type="number" id="userAgeF" name="userAge" placeholder="Age" style="width: 300px;"><br>
         <label for="userName">Enter Your Country: </label>
         <input type="text" id="userCountryF" name="userCountry" placeholder="Country" style="width: 300px;"><br>
-        </div>`);
+        </div>
+        <button id="continueF" class="continueBtn" style="margin-top: 10px; text-align: center;">Continue</button>
+        `);
     }
     $('div#userInputF').show(); 
-  });
-
-  $("#continueM").click(function () {
-    document.getElementById('charInfo').remove(); 
-    scene1_2();
-  });
-
-  $("#continueF").click(function () {
-    document.getElementById('charInfo').remove(); 
-    scene1_2();
+  
+    $("#continueF").click(function () {
+      document.getElementById('charInfo').remove(); 
+      scene1_2();
+    });
   });
 };
 
@@ -195,7 +212,7 @@ function scene4(){
   var disp3 = "You nodded you head.   ";
   var disp4 = `He replied, "Well, this is the doing of Sir Suriv testing out a type of virus..."    `
   var disp5 = "He then searched his drawers for a moment.    ";
-  var disp6 = `"We are still investigating the situation. Here's what we know at the moment. Please have a look."   `
+  var disp6 = `"We are still investigating the situation. Here's what we know at this moment. Please have a look."   `
   var disp7 = "He handed you a deck of information:";
   
   var dom1 = "#scene4-intro";
