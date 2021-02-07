@@ -1182,3 +1182,84 @@ function postEncounter(qRight) {
     });
   });
 }
+function hospitalScene() {
+  $("#postEncounter, #hospitalButton").remove();
+  $("#checkpoint-1").append(`<div id ="hospitalScene">
+  <div><span id = "firstSpan"></span> <span id = "secondSpan"></span> <span id = "thirdSpan"></span> <span id = "fourthSpan"></span></div>
+  <div id="firstSentence"></div>
+  <div id="secondSentence"></div>
+  <div id="thirdSentence"></div>
+  <div id="fourthSentence"></div>
+  <div id="fifthSentence"></div>
+  <div id="sixthSentence"></div>
+  <div id="sevenSentence"></div>
+  <div id="eightSentence"></div>
+  </div>`);
+
+  let domFirst = "#firstSentence";
+  let domSecond = "#secondSentence";
+  let domThird = "#thirdSentence";
+  let domFourth = "#fourthSentence";
+  let domFifth = "#fifthSentence";
+  let domSixth = "#sixthSentence";
+  let domSeven = "#sevenSentence";
+  let domEight = "#eightSentence";
+  let domSpan1 = "#firstSpan";
+  let domSpan2 = "#secondSpan";
+  let domSpan3 = "#thirdSpan";
+  let domSpan4 = "#fourthSpan";
+  $(domSpan1).css({ "font-size": "20pt" });
+  $(domSpan2).css({ "font-size": "18pt" });
+  $(domSpan3).css({ "font-size": "16pt" });
+  $(domSpan4).css({ "font-size": "14pt" });
+  let span = `"HA"`;
+  let firstSentence =
+    "You woke up in a start! The laugther continued to ring in your head";
+  let secondSentence = `"Good Morning, Head Detective ${name}! I hope that you are not badly hurt from the incident"`;
+  let thirdSentence = `Someone wearing a neat business suit greeted you.`;
+  let fourthSentence = `You focused your eyes and looked at that person`;
+  let fifthSentence = `'Minister of Health!'`;
+  let sixthSentence = "You exclaimed inwardly.";
+  let seventhSentence = `'What is he doing here?'`;
+  let eightSentence =
+    "Seeing your puzzled look, the minister handed you a report.";
+  typingline(span, 100, domSpan1).then(function () {
+    typingline(span, 100, domSpan2).then(function () {
+      typingline(span, 100, domSpan3).then(function () {
+        typingline(span, 100, domSpan4).then(function () {
+          typingline(firstSentence, 75, domFirst).then(function () {
+            typingline(secondSentence, 50, domSecond).then(function () {
+              typingline(thirdSentence, 50, domThird).then(function () {
+                typingline(fourthSentence, 150, domFourth).then(function () {
+                  typingline(fifthSentence, 50, domFifth).then(function () {
+                    typingline(sixthSentence, 50, domSixth).then(function () {
+                      typingline(seventhSentence, 250, domSeven).then(
+                        function () {
+                          typingline(eightSentence, 50, domEight).then(
+                            function () {
+                              //Add button to next function
+                              $("#checkpoint-1").append(
+                                `<button id = "viewReportButton">View Report</button>`
+                              );
+                              $("#viewReportButton").css({
+                                "border-style": "none",
+                                "margin-left": "75%",
+                                "backgound-color": "white",
+                                "font-size": "10pt",
+                              });
+                              $("#viewReportButton").click(overview);
+                            }
+                          );
+                        }
+                      );
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  });
+}
