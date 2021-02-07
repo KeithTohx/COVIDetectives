@@ -26,6 +26,10 @@
     font-size: 20px;
 }
 
+.flex-container2 p {
+    padding: 10px;
+}
+
 .startBtn, .acknBtn, .backBtn, .showdownSubmit {
     display: block;
     width: 200px;    
