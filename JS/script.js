@@ -823,7 +823,7 @@ function scene8() {
     });
   });
 }
-function preEncounter(){
+function preEncounter() {
   $("#scene8").remove();
   var noOfQuestion = 5;
   $("#checkpoint-1").append(`<div id="pre-encounter">
@@ -834,6 +834,12 @@ function preEncounter(){
   <h3>Good luck.</h3>
   <button id="questionsButton">Arrest him!</button>
   </div>`);
-  $("#pre-encounter").css({"margin":"0px 200px"})
-  $("#questionsButton").css({"border-style":"none","background-color":"white","font-size":"14pt","margin-left":"60%"})
+  $("#pre-encounter").css({ margin: "0px 200px" });
+  $("#questionsButton").css({
+    "border-style": "none",
+    "background-color": "white",
+    "font-size": "14pt",
+    "margin-left": "60%",
+  });
+  $("#questionsButton").click(encounter);
 }
