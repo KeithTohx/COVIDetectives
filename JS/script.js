@@ -225,9 +225,7 @@ function scene4(){
   <h4 id="scene4-text3"></h4>
   <h4 id="scene4-text4"></h4>
   <h4 id="scene4-text5"></h4>
-  <h4 id="scene4-text6"></h4>
-  <div class="information" id="information"></div>`);
-  $("#information").hide();
+  <h4 id="scene4-text6"></h4>`);
 
   var disp1 = "The Mayor of the city came to greet you.";
   var disp2 = `"Dear Head Detective, have you come to see the situation?"`;
@@ -279,10 +277,7 @@ function scene4(){
                   $("#scene4-text4").delay(800).fadeOut(1600);
                   $("#scene4-text5").delay(800).fadeOut(1600);
                   $("#scene4-text6").delay(800).fadeOut(1600, function(){
-                    $("#information").fadeIn(1600);
-                    $("#information").prepend(`
-                    <h4>Virus Information</h4>
-                    <button id="symptoms" class="symptomsBtn" style="margin: 10px;">Next</button>`);
+                    scene5();
                   });
                 });
               });
@@ -293,6 +288,45 @@ function scene4(){
     });
   });
 };
+
+function scene5(){
+  $("#scenes").append(`<div class="information" id="information"></div>`);
+  $("#information").hide();
+
+  $("#information").fadeIn(1600);
+  $("#information").prepend(`
+  <h4 style="padding-bottom: 20px;">Virus Information</h4>
+  <div class="row" id="symptoms"">
+  <div class="col-sm" id="symptomTitle"></div>
+  <div class="col-sm" id="symptomList"></div>
+  </div>
+  <button id="symptomsBtn1" class="symptomsBtn1" style="margin: 10px;">Next</button>`);
+
+  $("#symptomTitle").append(`<h5 style="text-align: right">Symptoms of Virus:</h5>`);
+  $("#symptomList").append(`<h5><ol>
+  <li>Fever</li><li>Cough</li><li>Chills</li><li>Lose sense of smell</li><li>Headache</li></ol></h5>`);
+  $("#symptoms").after(`<div id="rates" class="flex-container">
+  <div style="padding: 30px; background-color:lightgrey;"><h5 id="deathRate">Death Rate:</h5></div>
+  <div style="padding: 30px; background-color:lightgrey;"><h5 id="infectedRate">Infected Rate:</h5></div>
+  </div>`);
+
+  $("#symptomsBtn1").click(function(){
+    $("#symptoms").fadeOut(1600);
+    $("#rates").fadeOut(1600);
+    $("#symptomsBtn1").fadeOut(1600, function(){
+        $("#information").append(`<h5>Cities informed: Ascend City, Ace City</h5>
+        <h5>Villian Last Seen: Viole Secret Royal Lab</h5>
+        <h5>Image of Lab:</h5>
+        <button id="symptomsBtn2" class="symptomsBtn2" style="margin: 10px;">Next</button>`);
+
+        $("#symptomsBtn2").click(function(){
+            $("#information").fadeOut(1600, function(){
+              showdown1();
+            });
+        });
+    });
+  });
+}
 
 //Checkpoint 1 onwards
 function clue1() {
