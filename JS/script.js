@@ -328,6 +328,54 @@ function scene5(){
   });
 }
 
+function showdown1(){
+  $("#scenes").append(`<h4 id="showdown1-text1"></h4>
+  <h4 id="showdown1-text2"></h4>
+  <h4 id="showdown1-text3"></h4>
+  <h4 id="showdown1-text4"></h4>
+  <h4 id="showdown1-intro"></h4>`);
+
+  var disp1 = `You returned the pile of information to the Mayor.`;
+  var disp2 = `The situation is worsening...`;
+  var disp3 = `You decided to head towards the Lab.`;
+  var disp4 = `BANG! You kicked open the lab door...`;
+  var disp5 = `You are now in the Lab. Click on the symptoms of COVID-19 to find traces left behid by the villian!`;
+
+  var dom1 = "#showdown1-text1";
+  var dom2 = "#showdown1-text2";
+  var dom3 = "#showdown1-text3";
+  var dom4 = "#showdown1-text4";
+  var dom5 = "#showdown1-intro";
+
+  typingline(disp1, 100, dom1).then(function(){
+    typingline(disp2, 80, dom2).then(function(){
+        typingline(disp3, 80, dom3).then(function(){
+            $("#showdown1-text1").fadeOut(1600);
+            $("#showdown1-text2").fadeOut(1600);
+            $("#showdown1-text3").fadeOut(1600, function(){
+                typingline(disp4, 100, dom4).then(function(){
+                    $("#showdown1-text4").fadeOut(1600, function(){
+                        typingline(disp5, 100, dom5).then(function(){
+                            $("#showdown1-intro").append(`<div id="showdown1-quiz" class="flex-container2">
+                            <div style="background-color: cadetblue;">#1</div>
+                            <div style="background-color: cadetblue;">#2</div>
+                            <div style="background-color: cadetblue;">#3</div>
+                            <div style="background-color: cadetblue;">#4</div>
+                            <div style="background-color: cadetblue;">#5</div>
+                            <div style="background-color: cadetblue;">#6</div>
+                            <div style="background-color: cadetblue;">#7</div>
+                            <div style="background-color: cadetblue;">#8</div>
+                            <button id="showdownSubmit" class="showdownSubmit" style="margin: 10px;">Submit</button>
+                            </div>`);
+                        });
+                    });
+                });
+            });
+        });
+    });
+  });
+}
+
 //Checkpoint 1 onwards
 function clue1() {
   $("#startGame").hide();
