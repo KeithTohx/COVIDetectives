@@ -29,8 +29,6 @@ $(document).ready(function(){
     });
   }
   getGlobal();
-  
-  userChar();
 })
 
 $("#ackn").click(function () {
@@ -38,7 +36,8 @@ $("#ackn").click(function () {
 });
 
 $("#start").click(function () {
-  window.location.href = "start.html";
+  $("#startGame").fadeOut(2000);
+  userChar();
 });
 
 var disp = "It's great to see you, Detective!";
@@ -102,14 +101,12 @@ function userChar(){
   });
 
   $("#continueM").click(function () {
-    document.getElementById('genderM').remove(); 
-    document.getElementById('userHeading').remove();
+    document.getElementById('charInfo').remove(); 
     scene1_2();
   });
 
   $("#continueF").click(function () {
-    document.getElementById('genderF').remove(); 
-    document.getElementById('userHeading').remove();
+    document.getElementById('charInfo').remove(); 
     scene1_2();
   });
 };
