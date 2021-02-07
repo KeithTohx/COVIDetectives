@@ -28,3 +28,4 @@ Our project educates users on the pandemic through gamification.
 ## Testing
 
 ## Credits
+* API: COVID-19 Data from [Disease.sh](https://disease.sh/docs/)
