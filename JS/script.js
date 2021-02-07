@@ -135,7 +135,7 @@ function scene1_2(){
   <h4 id="scene2-intro"></h4>`);
   $("#clipboard").hide();
 
-  var disp1 = "Head Detective, you are in the meeting room in the Headquarter of Detectives and given the following information:";
+  var disp1 = "Head Detective, you are in a meeting room in the Headquarter of Detectives and given the following information:";
   var dom1 = "#scene1-intro";
 
   var disp2 = "After understanding the whole situation, you left the meeting room and head out to find Sir Suriv...";
@@ -185,7 +185,7 @@ function map1(){
       <li>Ascend City</li>
       <li>Ace City</li>
       </ul>`);
-      //need fix map1
+      //need fix map1 (replace with img)
       $("#map1-intro").delay(1000).fadeOut(1600, function(){
           scene3();
       });
