@@ -1086,3 +1086,28 @@ function encounter() {
     });
   }
 }
+function encounterReview(qRight) {
+  $("#encounter").remove();
+  $("#checkpoint-1").append(`<div id = "encounterReview">
+  <h1>You got <span id ="qRight"></span>/5 questions correct!</h1>
+  <div id ="statement"></div>
+  <button>Next</button>
+</div>`);
+  $("button").css({
+    "border-style": "none",
+    "margin-left": "55%",
+    "backgound-color": "white",
+    "font-size": "10pt",
+  });
+  $("#qRight").text(qRight);
+  if (qRight > 3) {
+    let statement = "Excellent work detective!";
+    $("#statement").text(statement);
+  } else {
+    let statement = "Try again next time detective";
+    $("#statement").text(statement);
+  }
+  $("#encounterReview button").click(function () {
+    postEncounter(qRight);
+  });
+}
