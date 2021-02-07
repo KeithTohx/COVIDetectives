@@ -1377,3 +1377,22 @@ function mission() {
   typingline("Time left: Not much time", 30, "#time");
   typingline("Aim: Maintain World Peace By Creating A Vaccine", 30, "#aim");
 }
+function missingVial() {
+  $("#mission,#missingVialButton").remove();
+  $("#checkpoint-1").append(`<div id="missingVial">
+  <h1>Missing Vial!</h1><br>
+  <h3>Get information on the location of the vial of virus</h3><br>
+  <h3>Try your best to answer all questions right</h3><br>
+  <h3>There are X number of questions.</h3><br>
+  <h3>Good luck.</h3>
+  <button id="questionsButton">Start Finding!</button>
+  </div>`);
+  $("#missingVial").css({ margin: "0px 200px" });
+  $("#questionsButton").css({
+    "border-style": "none",
+    "background-color": "white",
+    "font-size": "14pt",
+    "margin-left": "60%",
+  });
+  $("#questionsButton").click(finalQuiz);
+}
