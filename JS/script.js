@@ -1680,3 +1680,27 @@ function vialFound(marks) {
     });
   });
 }
+function endOfGame() {
+  $("#vialFound,#endOfGameButton").remove();
+  $("#checkpoint-1").append(`
+  <div id = "endOfGame">
+  <div class = "row">
+  <div class ="col-sm"><img src="#" alt="image of award"></div>
+  <div class ="col-sm">
+  <h3></h3>
+  <div>Country: <span id ="Country"></span></div>
+  <div>Cases: <span id = "Cases"></span></div>
+  <div>Recovered: <span id = "Recovered></span></div>
+  <div>Dead: <span id = "Dead"></span></div>
+  </div>
+  </div>
+  <div>Reminder:</div>
+  <div id = "reminder"></div>
+  </div>
+  `);
+  typingline("Statistics",50,"h3")
+  typingline(`
+  Everyone has to do their part to stop the spread of a pandemic. By following trusted 
+  news source, guidance from governments and heath organisations and reacting calmly, we will
+  be able to tide through this crisis`,20,"#reminder")
+}
