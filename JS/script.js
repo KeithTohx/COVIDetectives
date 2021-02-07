@@ -357,19 +357,21 @@ function showdown1(){
                     $("#showdown1-text4").fadeOut(1600, function(){
                         typingline(disp5, 100, dom5).then(function(){
                           $("#showdown1-intro").append(`<div id="showdown1-quiz" class="flex-container2">
-                          <div style="background-color: cadetblue;">#1</div>
-                          <div style="background-color: cadetblue;">#2</div>
-                          <div style="background-color: cadetblue;">#3</div>
-                          <div style="background-color: cadetblue;">#4</div>
-                          <div style="background-color: cadetblue;">#5</div>
-                          <div style="background-color: cadetblue;">#6</div>
-                          <div style="background-color: cadetblue;">#7</div>
-                          <div style="background-color: cadetblue;">#8</div>
-                          </div>
-                          <button id="showdownSubmit" class="showdownSubmit">Submit</button>`);
+                            <div style="background-color: cadetblue;"><p>#1 </br> Nosebleeds</p></div>
+                            <div style="background-color: cadetblue;"><p>#2 </br> Cough</p></div>
+                            <div style="background-color: cadetblue;"><p>#3 </br> Fever</p></div>
+                            <div style="background-color: cadetblue;"><p>#4 </br> Hunger</p></div>
+                            <div style="background-color: cadetblue;"><p>#5 </br> Lose sense of smell</p></div>
+                            <div style="background-color: cadetblue;"><p>#6 </br> Chills</p></div>
+                            <div style="background-color: cadetblue;"><p>#7 </br> Stomach ache</p></div>
+                            <div style="background-color: cadetblue;"><p>#8 </br> Headache</p></div>
+                            </div>
+                            <button id="showdownSubmit" class="showdownSubmit">Submit</button>`);
 
                           $("#showdownSubmit").click(function(){
-                            $("#showdown1-intro").fadeOut(1600);
+                            $("#showdown1-intro").fadeOut(1600, function(){
+                              clue1();
+                            });
                           });
                         });
                     });
