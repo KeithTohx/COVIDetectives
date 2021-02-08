@@ -36,13 +36,11 @@ $("#ackn").click(function () {
 
 $("#start").click(function () {
   $("#startGame").fadeOut(1600, function () {
-    $("body").append(
+    $("#content").append(
       `<div id="charInfo" class="container" style="padding: 30px;"></div>`
     );
-    $(
-      "#charInfo"
-    ).append(`<h2 id="userHeading" style="text-align: center;">How Should We Address You?</h2>
-  <div class="row">
+    $("#charInfo").append(`<h2 id="userHeading" style="text-align: center;">How Should We Address You?</h2>
+    <div class="row">
     <div id="genderM" class="col-sm">
       <a href="#" id="male" role="button" style="text-decoration: none;">Male</a><br>
       <div id="userInputM" style="padding-top: 20px;">
@@ -102,7 +100,7 @@ function userChar() {
 
     $("#continueM").click(function () {
       document.getElementById("charInfo").remove();
-      $("body").append(
+      $("#content").append(
         `<div id="scenes" class="container" style="padding: 20px;">`
       );
       scene1_2();
@@ -127,7 +125,7 @@ function userChar() {
 
     $("#continueF").click(function () {
       document.getElementById("charInfo").remove();
-      $("body").append(
+      $("#content").append(
         `<div id="scenes" class="container" style="padding: 20px;">`
       );
       scene1_2();
@@ -171,6 +169,7 @@ function scene1_2() {
       <button id="misson" class="missonBtn" style="margin: 10px;">Next</button>`);
 
         $("#misson").click(function () {
+          $("#misson").remove()
           $("#clipboard").fadeOut(1600, function () {
             typingline(disp2, 80, dom2).then(function () {
               $("#scene2-intro")
