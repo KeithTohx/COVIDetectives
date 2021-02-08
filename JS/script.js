@@ -35,6 +35,7 @@ $("#ackn").click(function () {
 });
 
 $("#start").click(function () {
+  $("#start").remove();
   $("#startGame").fadeOut(1600, function () {
     $("#content").append(
       `<div id="charInfo" class="container" style="padding: 30px;"></div>`
@@ -168,6 +169,11 @@ function scene1_2() {
       <h4 style="text-align: left; padding: 20px;"><i>From Global Task Force</i></h4>
       <button id="misson" class="missonBtn" style="margin: 10px;">Next</button>`);
 
+        $("#misson").css({
+          "font-size": "12pt",
+          "margin-left": "70%",
+          "border-style": "none",
+        });
         $("#misson").click(function () {
           $("#misson").remove()
           $("#clipboard").fadeOut(1600, function () {
@@ -322,7 +328,11 @@ function scene5() {
   <div class="col-sm" id="symptomList"></div>
   </div>
   <button id="symptomsBtn1" class="symptomsBtn1" style="margin: 10px;">Next</button>`);
-
+  $("#symptomsBtn1").css({
+    "font-size": "12pt",
+    "margin-left": "70%",
+    "border-style": "none",
+  });
   $("#symptomTitle").append(
     `<h5 style="text-align: right">Symptoms of Virus:</h5>`
   );
@@ -334,15 +344,20 @@ function scene5() {
   </div>`);
 
   $("#symptomsBtn1").click(function () {
+    $("#symptomsBtn1").remove();
     $("#symptoms").fadeOut(1600);
-    $("#rates").fadeOut(1600);
-    $("#symptomsBtn1").fadeOut(1600, function () {
+    $("#rates").fadeOut(1600, function () {
       $("#information").append(`<h5>Cities informed: Ascend City, Ace City</h5>
         <h5>Villian Last Seen: Viole Secret Royal Lab</h5>
         <h5>Image of Lab:</h5>
         <button id="symptomsBtn2" class="symptomsBtn2" style="margin: 10px;">Next</button>`);
-
+      $("#symptomsBtn2").css({
+        "font-size": "12pt",
+        "margin-left": "70%",
+        "border-style": "none",
+      });
       $("#symptomsBtn2").click(function () {
+        $("#symptomsBtn2").remove();
         $("#information").fadeOut(1600, function () {
           showdown1();
         });
@@ -382,18 +397,19 @@ function showdown1() {
                 $(
                   "#showdown1-intro"
                 ).append(`<div id="showdown1-quiz" class="flex-container2">
-                            <div style="background-color: cadetblue;"><p>#1 </br> Nosebleeds</p></div>
-                            <div style="background-color: cadetblue;"><p>#2 </br> Cough</p></div>
-                            <div style="background-color: cadetblue;"><p>#3 </br> Fever</p></div>
-                            <div style="background-color: cadetblue;"><p>#4 </br> Hunger</p></div>
-                            <div style="background-color: cadetblue;"><p>#5 </br> Lose sense of smell</p></div>
-                            <div style="background-color: cadetblue;"><p>#6 </br> Chills</p></div>
-                            <div style="background-color: cadetblue;"><p>#7 </br> Stomach ache</p></div>
-                            <div style="background-color: cadetblue;"><p>#8 </br> Headache</p></div>
-                            </div>
-                            <button id="showdownSubmit" class="showdownSubmit">Submit</button>`);
+                          <div style="background-color: cadetblue;"><p>#1 </br> Nosebleeds</p></div>
+                          <div style="background-color: cadetblue;"><p>#2 </br> Cough</p></div>
+                          <div style="background-color: cadetblue;"><p>#3 </br> Fever</p></div>
+                          <div style="background-color: cadetblue;"><p>#4 </br> Hunger</p></div>
+                          <div style="background-color: cadetblue;"><p>#5 </br> Lose sense of smell</p></div>
+                          <div style="background-color: cadetblue;"><p>#6 </br> Chills</p></div>
+                          <div style="background-color: cadetblue;"><p>#7 </br> Stomach ache</p></div>
+                          <div style="background-color: cadetblue;"><p>#8 </br> Headache</p></div>
+                          </div>
+                          <button id="showdownSubmit" class="showdownSubmit">Submit</button>`);
 
                 $("#showdownSubmit").click(function () {
+                  $("#showdownSubmit").remove();
                   $("#showdown1-intro").fadeOut(1600, function () {
                     clue1();
                   });
