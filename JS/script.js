@@ -2,678 +2,678 @@
 //List of Country
 let jsonCountry = [
   {
-    "country": "Afghanistan"
+    country: "Afghanistan",
   },
   {
-    "country": "Albania"
+    country: "Albania",
   },
   {
-    "country": "Algeria"
+    country: "Algeria",
   },
   {
-    "country": "Andorra"
+    country: "Andorra",
   },
   {
-    "country": "Angola"
+    country: "Angola",
   },
   {
-    "country": "Anguilla"
+    country: "Anguilla",
   },
   {
-    "country": "Antigua and Barbuda"
+    country: "Antigua and Barbuda",
   },
   {
-    "country": "Argentina"
+    country: "Argentina",
   },
   {
-    "country": "Armenia"
+    country: "Armenia",
   },
   {
-    "country": "Aruba"
+    country: "Aruba",
   },
   {
-    "country": "Australia"
+    country: "Australia",
   },
   {
-    "country": "Austria"
+    country: "Austria",
   },
   {
-    "country": "Azerbaijan"
+    country: "Azerbaijan",
   },
   {
-    "country": "Bahamas"
+    country: "Bahamas",
   },
   {
-    "country": "Bahrain"
+    country: "Bahrain",
   },
   {
-    "country": "Bangladesh"
+    country: "Bangladesh",
   },
   {
-    "country": "Barbados"
+    country: "Barbados",
   },
   {
-    "country": "Belarus"
+    country: "Belarus",
   },
   {
-    "country": "Belgium"
+    country: "Belgium",
   },
   {
-    "country": "Belize"
+    country: "Belize",
   },
   {
-    "country": "Benin"
+    country: "Benin",
   },
 
   {
-    "country": "Bermuda"
+    country: "Bermuda",
   },
   {
-    "country": "Bhutan"
+    country: "Bhutan",
   },
   {
-    "country": "Bolivia"
+    country: "Bolivia",
   },
   {
-    "country": "Bosnia"
+    country: "Bosnia",
   },
   {
-    "country": "Botswana"
+    country: "Botswana",
   },
   {
-    "country": "Brazil"
+    country: "Brazil",
   },
   {
-    "country": "British Virgin Islands"
+    country: "British Virgin Islands",
   },
   {
-    "country": "Brunei"
+    country: "Brunei",
   },
   {
-    "country": "Bulgaria"
+    country: "Bulgaria",
   },
   {
-    "country": "Burkina Faso"
+    country: "Burkina Faso",
   },
   {
-    "country": "Burundi"
+    country: "Burundi",
   },
   {
-    "country": "Cabo Verde"
+    country: "Cabo Verde",
   },
   {
-    "country": "Cambodia"
+    country: "Cambodia",
   },
   {
-    "country": "Cameroon"
+    country: "Cameroon",
   },
   {
-    "country": "Canada"
+    country: "Canada",
   },
   {
-    "country": "Caribbean Netherlands"
+    country: "Caribbean Netherlands",
   },
   {
-    "country": "Cayman Islands"
+    country: "Cayman Islands",
   },
   {
-    "country": "Central African Republic"
+    country: "Central African Republic",
   },
   {
-    "country": "Chad"
+    country: "Chad",
   },
   {
-    "country": "Channel Islands"
+    country: "Channel Islands",
   },
   {
-    "country": "Chile"
+    country: "Chile",
   },
   {
-    "country": "China"
+    country: "China",
   },
   {
-    "country": "Colombia"
+    country: "Colombia",
   },
   {
-    "country": "Comoros"
+    country: "Comoros",
   },
   {
-    "country": "Congo"
+    country: "Congo",
   },
   {
-    "country": "Costa Rica"
+    country: "Costa Rica",
   },
   {
-    "country": "Croatia"
+    country: "Croatia",
   },
   {
-    "country": "Cuba"
+    country: "Cuba",
   },
   {
-    "country": "Curaçao"
+    country: "Curaçao",
   },
   {
-    "country": "Cyprus"
+    country: "Cyprus",
   },
   {
-    "country": "Czechia"
+    country: "Czechia",
   },
   {
-    "country": "Côte d'Ivoire"
+    country: "Côte d'Ivoire",
   },
   {
-    "country": "DRC"
+    country: "DRC",
   },
   {
-    "country": "Denmark"
+    country: "Denmark",
   },
   {
-    "country": "Diamond Princess"
+    country: "Diamond Princess",
   },
   {
-    "country": "Djibouti"
+    country: "Djibouti",
   },
   {
-    "country": "Dominica"
+    country: "Dominica",
   },
   {
-    "country": "Dominican Republic"
+    country: "Dominican Republic",
   },
   {
-    "country": "Ecuador"
+    country: "Ecuador",
   },
   {
-    "country": "Egypt"
+    country: "Egypt",
   },
   {
-    "country": "El Salvador"
+    country: "El Salvador",
   },
   {
-    "country": "Equatorial Guinea"
+    country: "Equatorial Guinea",
   },
   {
-    "country": "Eritrea"
+    country: "Eritrea",
   },
   {
-    "country": "Estonia"
+    country: "Estonia",
   },
   {
-    "country": "Ethiopia"
+    country: "Ethiopia",
   },
   {
-    "country": "Falkland Islands (Malvinas)"
+    country: "Falkland Islands (Malvinas)",
   },
   {
-    "country": "Faroe Islands"
+    country: "Faroe Islands",
   },
   {
-    "country": "Fiji"
+    country: "Fiji",
   },
   {
-    "country": "Finland"
+    country: "Finland",
   },
   {
-    "country": "France"
+    country: "France",
   },
   {
-    "country": "French Guiana"
+    country: "French Guiana",
   },
   {
-    "country": "French Polynesia"
+    country: "French Polynesia",
   },
   {
-    "country": "Gabon"
+    country: "Gabon",
   },
   {
-    "country": "Gambia"
+    country: "Gambia",
   },
   {
-    "country": "Georgia"
+    country: "Georgia",
   },
   {
-    "country": "Germany"
+    country: "Germany",
   },
   {
-    "country": "Ghana"
+    country: "Ghana",
   },
   {
-    "country": "Gibraltar"
+    country: "Gibraltar",
   },
   {
-    "country": "Greece"
+    country: "Greece",
   },
   {
-    "country": "Greenland"
+    country: "Greenland",
   },
   {
-    "country": "Grenada"
+    country: "Grenada",
   },
   {
-    "country": "Guadeloupe"
+    country: "Guadeloupe",
   },
   {
-    "country": "Guatemala"
+    country: "Guatemala",
   },
   {
-    "country": "Guinea"
+    country: "Guinea",
   },
   {
-    "country": "Guinea-Bissau"
+    country: "Guinea-Bissau",
   },
   {
-    "country": "Guyana"
+    country: "Guyana",
   },
   {
-    "country": "Haiti"
+    country: "Haiti",
   },
 
   {
-    "country": "Holy See (Vatican City State)"
+    country: "Holy See (Vatican City State)",
   },
   {
-    "country": "Honduras"
+    country: "Honduras",
   },
   {
-    "country": "Hong Kong"
+    country: "Hong Kong",
   },
   {
-    "country": "Hungary"
+    country: "Hungary",
   },
   {
-    "country": "Iceland"
+    country: "Iceland",
   },
   {
-    "country": "India"
+    country: "India",
   },
   {
-    "country": "Indonesia"
+    country: "Indonesia",
   },
   {
-    "country": "Iran"
+    country: "Iran",
   },
   {
-    "country": "Iraq"
+    country: "Iraq",
   },
   {
-    "country": "Ireland"
+    country: "Ireland",
   },
   {
-    "country": "Isle of Man"
+    country: "Isle of Man",
   },
   {
-    "country": "Israel"
+    country: "Israel",
   },
   {
-    "country": "Italy"
+    country: "Italy",
   },
   {
-    "country": "Jamaica"
+    country: "Jamaica",
   },
   {
-    "country": "Japan"
+    country: "Japan",
   },
   {
-    "country": "Jordan"
+    country: "Jordan",
   },
   {
-    "country": "Kazakhstan"
+    country: "Kazakhstan",
   },
   {
-    "country": "Kenya"
+    country: "Kenya",
   },
   {
-    "country": "Kuwait"
+    country: "Kuwait",
   },
   {
-    "country": "Kyrgyzstan"
+    country: "Kyrgyzstan",
   },
   {
-    "country": "Lao People's Democratic Republic"
+    country: "Lao People's Democratic Republic",
   },
   {
-    "country": "Latvia"
+    country: "Latvia",
   },
   {
-    "country": "Lebanon"
+    country: "Lebanon",
   },
   {
-    "country": "Lesotho"
+    country: "Lesotho",
   },
   {
-    "country": "Liberia"
+    country: "Liberia",
   },
   {
-    "country": "Libyan Arab Jamahiriya"
+    country: "Libyan Arab Jamahiriya",
   },
   {
-    "country": "Liechtenstein"
+    country: "Liechtenstein",
   },
   {
-    "country": "Lithuania"
+    country: "Lithuania",
   },
   {
-    "country": "Luxembourg"
+    country: "Luxembourg",
   },
   {
-    "country": "MS Zaandam"
+    country: "MS Zaandam",
   },
   {
-    "country": "Macao"
+    country: "Macao",
   },
   {
-    "country": "Macedonia"
+    country: "Macedonia",
   },
   {
-    "country": "Madagascar"
+    country: "Madagascar",
   },
   {
-    "country": "Malawi"
+    country: "Malawi",
   },
   {
-    "country": "Malaysia"
+    country: "Malaysia",
   },
   {
-    "country": "Maldives"
+    country: "Maldives",
   },
   {
-    "country": "Mali"
+    country: "Mali",
   },
   {
-    "country": "Malta"
+    country: "Malta",
   },
   {
-    "country": "Marshall Islands"
+    country: "Marshall Islands",
   },
   {
-    "country": "Martinique"
+    country: "Martinique",
   },
   {
-    "country": "Mauritania"
+    country: "Mauritania",
   },
   {
-    "country": "Mauritius"
+    country: "Mauritius",
   },
   {
-    "country": "Mayotte"
+    country: "Mayotte",
   },
   {
-    "country": "Mexico"
+    country: "Mexico",
   },
   {
-    "country": "Micronesia"
+    country: "Micronesia",
   },
   {
-    "country": "Moldova"
+    country: "Moldova",
   },
   {
-    "country": "Monaco"
+    country: "Monaco",
   },
   {
-    "country": "Mongolia"
+    country: "Mongolia",
   },
   {
-    "country": "Montenegro"
+    country: "Montenegro",
   },
   {
-    "country": "Montserrat"
+    country: "Montserrat",
   },
   {
-    "country": "Morocco"
+    country: "Morocco",
   },
   {
-    "country": "Mozambique"
-  },
-
-  {
-    "country": "Myanmar"
-  },
-  {
-    "country": "Namibia"
-  },
-  {
-    "country": "Nepal"
-  },
-  {
-    "country": "Netherlands"
+    country: "Mozambique",
   },
 
   {
-    "country": "New Caledonia"
+    country: "Myanmar",
   },
   {
-    "country": "New Zealand"
+    country: "Namibia",
   },
   {
-    "country": "Nicaragua"
+    country: "Nepal",
   },
   {
-    "country": "Niger"
-  },
-  {
-    "country": "Nigeria"
-  },
-  {
-    "country": "Norway"
-  },
-  {
-    "country": "Oman"
-  },
-  {
-    "country": "Pakistan"
-  },
-  {
-    "country": "Palestine"
-  },
-  {
-    "country": "Panama"
-  },
-  {
-    "country": "Papua New Guinea"
-  },
-  {
-    "country": "Paraguay"
-  },
-  {
-    "country": "Peru"
-  },
-  {
-    "country": "Philippines"
-  },
-  {
-    "country": "Poland"
-  },
-  {
-    "country": "Portugal"
-  },
-  {
-    "country": "Qatar"
-  },
-  {
-    "country": "Romania"
-  },
-  {
-    "country": "Russia"
-  },
-  {
-    "country": "Rwanda"
-  },
-  {
-    "country": "Réunion"
-  },
-  {
-    "country": "S. Korea"
-  },
-  {
-    "country": "Saint Kitts and Nevis"
-  },
-  {
-    "country": "Saint Lucia"
-  },
-  {
-    "country": "Saint Martin"
-  },
-  {
-    "country": "Saint Pierre Miquelon"
-  },
-  {
-    "country": "Saint Vincent and the Grenadines"
-  },
-  {
-    "country": "Samoa"
-  },
-  {
-    "country": "San Marino"
-  },
-  {
-    "country": "Sao Tome and Principe"
-  },
-  {
-    "country": "Saudi Arabia"
-  },
-  {
-    "country": "Senegal"
-  },
-  {
-    "country": "Serbia"
-  },
-  {
-    "country": "Seychelles"
-  },
-  {
-    "country": "Sierra Leone"
+    country: "Netherlands",
   },
 
   {
-    "country": "Singapore"
+    country: "New Caledonia",
   },
   {
-    "country": "Sint Maarten"
+    country: "New Zealand",
   },
   {
-    "country": "Slovakia"
+    country: "Nicaragua",
   },
   {
-    "country": "Slovenia"
+    country: "Niger",
   },
   {
-    "country": "Solomon Islands"
+    country: "Nigeria",
   },
   {
-    "country": "Somalia"
+    country: "Norway",
   },
   {
-    "country": "South Africa"
+    country: "Oman",
   },
   {
-    "country": "South Sudan"
+    country: "Pakistan",
   },
   {
-    "country": "Spain"
+    country: "Palestine",
   },
   {
-    "country": "Sri Lanka"
+    country: "Panama",
   },
   {
-    "country": "St. Barth"
+    country: "Papua New Guinea",
   },
   {
-    "country": "Sudan"
+    country: "Paraguay",
   },
   {
-    "country": "Suriname"
+    country: "Peru",
   },
   {
-    "country": "Swaziland"
+    country: "Philippines",
   },
   {
-    "country": "Sweden"
+    country: "Poland",
+  },
+  {
+    country: "Portugal",
+  },
+  {
+    country: "Qatar",
+  },
+  {
+    country: "Romania",
+  },
+  {
+    country: "Russia",
+  },
+  {
+    country: "Rwanda",
+  },
+  {
+    country: "Réunion",
+  },
+  {
+    country: "S. Korea",
+  },
+  {
+    country: "Saint Kitts and Nevis",
+  },
+  {
+    country: "Saint Lucia",
+  },
+  {
+    country: "Saint Martin",
+  },
+  {
+    country: "Saint Pierre Miquelon",
+  },
+  {
+    country: "Saint Vincent and the Grenadines",
+  },
+  {
+    country: "Samoa",
+  },
+  {
+    country: "San Marino",
+  },
+  {
+    country: "Sao Tome and Principe",
+  },
+  {
+    country: "Saudi Arabia",
+  },
+  {
+    country: "Senegal",
+  },
+  {
+    country: "Serbia",
+  },
+  {
+    country: "Seychelles",
+  },
+  {
+    country: "Sierra Leone",
   },
 
   {
-    "country": "Switzerland"
+    country: "Singapore",
   },
   {
-    "country": "Syrian Arab Republic"
+    country: "Sint Maarten",
   },
   {
-    "country": "Taiwan"
+    country: "Slovakia",
   },
   {
-    "country": "Tajikistan"
+    country: "Slovenia",
   },
   {
-    "country": "Tanzania"
+    country: "Solomon Islands",
   },
   {
-    "country": "Thailand"
-  },
-
-  {
-    "country": "Timor-Leste"
+    country: "Somalia",
   },
   {
-    "country": "Togo"
-  },
-
-  {
-    "country": "Trinidad and Tobago"
+    country: "South Africa",
   },
   {
-    "country": "Tunisia"
+    country: "South Sudan",
   },
   {
-    "country": "Turkey"
+    country: "Spain",
   },
   {
-    "country": "Turks and Caicos Islands"
+    country: "Sri Lanka",
   },
   {
-    "country": "UAE"
+    country: "St. Barth",
   },
   {
-    "country": "UK"
+    country: "Sudan",
   },
   {
-    "country": "USA"
+    country: "Suriname",
   },
   {
-    "country": "Uganda"
+    country: "Swaziland",
+  },
+  {
+    country: "Sweden",
   },
 
   {
-    "country": "Ukraine"
+    country: "Switzerland",
   },
   {
-    "country": "Uruguay"
+    country: "Syrian Arab Republic",
   },
   {
-    "country": "Uzbekistan"
+    country: "Taiwan",
   },
   {
-    "country": "Vanuatu"
+    country: "Tajikistan",
   },
   {
-    "country": "Venezuela"
+    country: "Tanzania",
   },
   {
-    "country": "Vietnam"
+    country: "Thailand",
+  },
+
+  {
+    country: "Timor-Leste",
   },
   {
-    "country": "Wallis and Futuna"
+    country: "Togo",
+  },
+
+  {
+    country: "Trinidad and Tobago",
   },
   {
-    "country": "Western Sahara"
+    country: "Tunisia",
   },
   {
-    "country": "Yemen"
+    country: "Turkey",
   },
   {
-    "country": "Zambia"
+    country: "Turks and Caicos Islands",
   },
   {
-    "country": "Zimbabwe"
-  }
-]
+    country: "UAE",
+  },
+  {
+    country: "UK",
+  },
+  {
+    country: "USA",
+  },
+  {
+    country: "Uganda",
+  },
+
+  {
+    country: "Ukraine",
+  },
+  {
+    country: "Uruguay",
+  },
+  {
+    country: "Uzbekistan",
+  },
+  {
+    country: "Vanuatu",
+  },
+  {
+    country: "Venezuela",
+  },
+  {
+    country: "Vietnam",
+  },
+  {
+    country: "Wallis and Futuna",
+  },
+  {
+    country: "Western Sahara",
+  },
+  {
+    country: "Yemen",
+  },
+  {
+    country: "Zambia",
+  },
+  {
+    country: "Zimbabwe",
+  },
+];
 $(document).ready(function () {
   $("#checkpoint-1").hide();
   $("div#userInputM").hide();
@@ -764,100 +764,123 @@ function typingline(disp, speed, dom) {
 function userChar() {
   $("#male").click(function () {
     document.getElementById("genderF").remove();
-    let dom = "#userInputM"
-    form(dom)
+    let dom = "#userInputM";
+    form(dom);
   });
 
   $("#female").click(function () {
     document.getElementById("genderM").remove();
-    let dom = "#userInputF"
-    form(dom)
+    let dom = "#userInputF";
+    form(dom);
   });
-  function form(dom){
-      $(dom).append(`<div id="userInput" style="padding-top: 20px;">
-      <div><label for="userName">Enter Your Name: </label>
+  function form(dom) {
+    $(dom).append(`<div id="userInput" style="padding-top: 20px;">
+      <div id = "name"><label for="userName">Enter Your Name: </label>
         <input type="text" id="userName" name="userName" placeholder="Name" style="width: 300px;"></div><br>
-      <div><label for="userName">Enter Your Age: </label>
-        <input type="number" id="userAgeM" name="userAge" placeholder="Age" style="width: 300px;"></div><br>
-      <div><label for="userName">Enter Your Country: </label>
+      <div id = "age"><label for="userName">Enter Your Age: </label>
+        <input type="number" id="userAge" name="userAge" placeholder="Age" style="width: 300px;"></div><br>
+      <div id = "uCountry"><label for="userName">Enter Your Country: </label>
         <input type="text" id="userCountry" name="userCountry" placeholder="Country" style="width: 300px;"></div>
         <button id="continue" class="continueBtn" style="margin-top: 10px; text-align: center;">Continue</button></div>
         `);
-    $(dom).css({ width: "600px","margin":"0px auto"});
+    $(dom).css({ width: "600px", margin: "0px auto" });
     $("div").css({ "margin-top": "10px" });
     $("label").css({ float: "left" });
     $("input").css({ float: "right" });
-    $("#userInput").css({padding:"0px","margin":"0px","justify-content":"center"})
-    $("button").css({"float":"right"})
+    $("#userInput").css({
+      padding: "0px",
+      margin: "0px",
+      "justify-content": "center",
+    });
+    $("button").css({ float: "right" });
     //Search function
-    $("#userCountry").keyup(function(){
-      $("#countryList").remove()
-      let userInput = $("#userCountry").val().toUpperCase()
-      let inputLength = userInput.length
-      let index = []
-      
-      for(i = 0;i<jsonCountry.length;i++){
-        let countryName = jsonCountry[i].country.slice(0,inputLength).toUpperCase();
-        
-        if (userInput == countryName){
-          index.push(i)
-          console.log(i)
-          console.log(index)
-          
-        }
-      }
-      $(".container").append(
-        "<div id='countryList'></div>"
-      )
-      for(a = 0; a<index.length;a++){
-        let countryNumber = index[a]
-        console.log(countryNumber)
-        let countryName = jsonCountry[countryNumber].country
-        $("#countryList").append(`<div><button id = '${countryNumber}' class = "country" value = "${countryName}">${countryName}</button></div>`)
-        $(`#${countryNumber}`).css({"width":"298px","border-style":"none","background-color":"white"})
-      }
-      $("#countryList").css({"border-style":"none solid solid solid","width":"300px","border-width":"1px"})
-    $(".country").click(function(){
-    let country = $(this).val();
-    $("#userCountry").val(country)
-    $("#countryList").remove()
-    })
-    })
-    //Validate Form
-    $("#continue").click(function(){
-      $("#userName,#userAge").css({"background-color":"white"})
-      $("small").remove()
-      userName = $("#userName").val()
-      let userAge = $("#userAge").val()
-      let country = $("#userCountry").val()
-      let countryFilled = false
-      if (country.length == 0){
-        $("#userCountry").css({"background-color":"pink"})
-        $("#userCountry").append(`<small id = "countryError">Please enter your country</small>`)
-      }else{
-        countryFilled = true;
-      }
-      if(userAge <= 0 && userName.length == 0){
-        $("#userName").css({"background-color":"pink"})
-        $("#userName").append(`<small id = "nameError">Enter your name</small>`)
-        $("#userAge").css({"background-color":"pink"})
-        $("#userAge").append(`<small id = "ageError">You have to be at least 1 years old to play this game</small>`)
-      }
-      else if (userName.length ==0){
-        $("#userName").css({"background-color":"pink"})
-        $("#userName").append(`<small id = "nameError">Enter your name</small>`)
-      }
-      else if (userAge <= 0){
-        $("#userAge").css({"background-color":"pink"})
-        $("#userAge").append(`<small id = "ageError">You have to be at least 1 years old to play this game</small>`)
-      }else{
-        if (countryFilled == true){
-          scene1_2()
-        }
-      }
-    })
+    $("#userCountry").keyup(function () {
+      $("#countryList").remove();
+      let userInput = $("#userCountry").val().toUpperCase();
+      let inputLength = userInput.length;
+      let index = [];
 
-    }
+      for (i = 0; i < jsonCountry.length; i++) {
+        let countryName = jsonCountry[i].country
+          .slice(0, inputLength)
+          .toUpperCase();
+
+        if (userInput == countryName) {
+          index.push(i);
+          console.log(i);
+          console.log(index);
+        }
+      }
+      $("#uCountry").append("<div id='countryList'></div>");
+      for (a = 0; a < index.length; a++) {
+        let countryNumber = index[a];
+        console.log(countryNumber);
+        let countryName = jsonCountry[countryNumber].country;
+        $("#countryList").append(
+          `<div><button id = '${countryNumber}' class = "country" value = "${countryName}">${countryName}</button></div>`
+        );
+        $(`#${countryNumber}`).css({
+          width: "298px",
+          "border-style": "none",
+          "background-color": "white",
+        });
+      }
+      $("#countryList").css({
+        "border-style": "none solid solid solid",
+        width: "300px",
+        "border-width": "1px",
+        "float":"right",
+        "font-size":"10pt"
+      });
+      $(".country").click(function () {
+        let country = $(this).val();
+        $("#userCountry").val(country);
+        $("#countryList").remove();
+      });
+    });
+    //Validate Form
+    $("#continue").click(function () {
+      $("#userName,#userAge,#userCountry").css({ "background-color": "white" });
+      userName = $("#userName").val();
+      let userAge = $("#userAge").val();
+      let country = $("#userCountry").val();
+      let countryFilled = false;
+      if (country.length == 0) {
+        $("#userCountry").css({ "background-color": "pink" });
+      } 
+      else {
+        let isInList = false;
+        for (i = 0; i < jsonCountry.length; i++) {
+          let countryName = jsonCountry[i].country;
+          if (countryName == country) {
+            isInList = true;
+            break;
+          } else {
+            continue;
+          }
+        }
+        if (isInList == true) {
+          countryFilled = true;
+        }
+      }
+      if ((userAge <= 0 || userAge == null) && userName.length == 0) {
+        $("#userName").css({ "background-color": "pink" });
+        $("#userAge").css({ "background-color": "pink" });
+      } else if (userName.length == 0) {
+        $("#userName").css({ "background-color": "pink" });
+      } else if (userAge <= 0 || userAge == null) {
+        $("#userAge").css({ "background-color": "pink" });
+      } else {console.log("hi")
+        if (countryFilled == true) {
+          document.getElementById("charInfo").remove();
+          $("#content").append(
+            `<div id="scenes" class="container" style="padding: 20px;">`
+          );
+          scene1_2();
+        }
+      }
+    });
+  }
 }
 
 function scene1_2() {
