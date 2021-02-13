@@ -2,6 +2,7 @@ $(document).ready(function () {
   $("#checkpoint-1").hide();
   $("div#userInputM").hide();
   $("div#userInputF").hide();
+  var userName;
   function getGlobal() {
     var settings = {
       url: "https://disease.sh/v3/covid-19/all",
@@ -40,7 +41,9 @@ $("#start").click(function () {
     $("#content").append(
       `<div id="charInfo" class="container" style="padding: 30px;"></div>`
     );
-    $("#charInfo").append(`<h2 id="userHeading" style="text-align: center;">How Should We Address You?</h2>
+    $(
+      "#charInfo"
+    ).append(`<h2 id="userHeading" style="text-align: center;">How Should We Address You?</h2>
     <div class="row">
     <div id="genderM" class="col-sm">
       <a href="#" id="male" role="button" style="text-decoration: none;">Male</a><br>
@@ -84,54 +87,101 @@ function typingline(disp, speed, dom) {
 
 function userChar() {
   $("#male").click(function () {
-    if (document.getElementById("genderF")) {
-      document.getElementById("genderF").remove();
-      $("#userInputM").prepend(`<div id="userInputM" style="padding-top: 20px;">
-        <label for="userName">Enter Your Name: </label>
-        <input type="text" id="userNameM" name="userName" placeholder="Name" style="width: 300px;"><br>
-        <label for="userName">Enter Your Age: </label>
-        <input type="number" id="userAgeM" name="userAge" placeholder="Age" style="width: 300px;"><br>
-        <label for="userName">Enter Your Country: </label>
-        <input type="text" id="userCountryM" name="userCountry" placeholder="Country" style="width: 300px;"><br>
-        </div>
-        <button id="continueM" class="continueBtn" style="margin-top: 10px; text-align: center;">Continue</button>
-        `);
-    }
-    $("div#userInputM").show();
-
-    $("#continueM").click(function () {
-      document.getElementById("charInfo").remove();
-      $("#content").append(
-        `<div id="scenes" class="container" style="padding: 20px;">`
-      );
-      scene1_2();
-    });
+    document.getElementById("genderF").remove();
+    let dom = "#userInputM"
+    form(dom)
   });
 
   $("#female").click(function () {
-    if (document.getElementById("genderM")) {
-      document.getElementById("genderM").remove();
-      $("#userInputF").prepend(`<div id="userInputF" style="padding-top: 20px;">
-        <label for="userName">Enter Your Name: </label>
-        <input type="text" id="userNameF" name="userName" placeholder="Name" style="width: 300px;"><br>
-        <label for="userName">Enter Your Age: </label>
-        <input type="number" id="userAgeF" name="userAge" placeholder="Age" style="width: 300px;"><br>
-        <label for="userName">Enter Your Country: </label>
-        <input type="text" id="userCountryF" name="userCountry" placeholder="Country" style="width: 300px;"><br>
-        </div>
-        <button id="continueF" class="continueBtn" style="margin-top: 10px; text-align: center;">Continue</button>
-        `);
-    }
-    $("div#userInputF").show();
-
-    $("#continueF").click(function () {
-      document.getElementById("charInfo").remove();
-      $("#content").append(
-        `<div id="scenes" class="container" style="padding: 20px;">`
-      );
-      scene1_2();
-    });
+    document.getElementById("genderM").remove();
+    let dom = "#userInputF"
+    form(dom)
   });
+  function form(dom){
+      $(dom).append(`<div id="userInput" style="padding-top: 20px;">
+      <div><label for="userName">Enter Your Name: </label>
+        <input type="text" id="userName" name="userName" placeholder="Name" style="width: 300px;"></div><br>
+      <div><label for="userName">Enter Your Age: </label>
+        <input type="number" id="userAgeM" name="userAge" placeholder="Age" style="width: 300px;"></div><br>
+      <div><label for="userName">Enter Your Country: </label>
+        <input type="text" id="userCountry" name="userCountry" placeholder="Country" style="width: 300px;"></div>
+        <button id="continue" class="continueBtn" style="margin-top: 10px; text-align: center;">Continue</button></div>
+        `);
+    $(dom).css({ width: "600px","margin":"0px auto"});
+    $("div").css({ "margin-top": "10px" });
+    $("label").css({ float: "left" });
+    $("input").css({ float: "right" });
+    $("#userInput").css({padding:"0px","margin":"0px","justify-content":"center"})
+    $("button").css({"float":"right"})
+    //Search function
+    $("#userCountry").keyup(function(){
+      $("#countryList").remove()
+      let userInput = $("#userCountry").val().toUpperCase()
+      let inputLength = userInput.length
+      let index = []
+      
+      for(i = 0;i<jsonCountry.length;i++){
+        let countryName = jsonCountry[i].country.slice(0,inputLength).toUpperCase();
+        
+        if (userInput == countryName){
+          index.push(i)
+          console.log(i)
+          console.log(index)
+          
+        }
+      }
+      $(".container").append(
+        "<div id='countryList'></div>"
+      )
+      for(a = 0; a<index.length;a++){
+        let countryNumber = index[a]
+        console.log(countryNumber)
+        let countryName = jsonCountry[countryNumber].country
+        $("#countryList").append(`<div><button id = '${countryNumber}' class = "country" value = "${countryName}">${countryName}</button></div>`)
+        $(`#${countryNumber}`).css({"width":"298px","border-style":"none","background-color":"white"})
+      }
+      $("#countryList").css({"border-style":"none solid solid solid","width":"300px","border-width":"1px"})
+    $(".country").click(function(){
+    let country = $(this).val();
+    $("#userCountry").val(country)
+    $("#countryList").remove()
+    })
+    })
+    //Validate Form
+    $("#continue").click(function(){
+      $("#userName,#userAge").css({"background-color":"white"})
+      $("small").remove()
+      userName = $("#userName").val()
+      let userAge = $("#userAge").val()
+      let country = $("#userCountry").val()
+      let countryFilled = false
+      if (country.length == 0){
+        $("#userCountry").css({"background-color":"pink"})
+        $("#userCountry").append(`<small id = "countryError">Please enter your country</small>`)
+      }else{
+        countryFilled = true;
+      }
+      if(userAge <= 0 && userName.length == 0){
+        $("#userName").css({"background-color":"pink"})
+        $("#userName").append(`<small id = "nameError">Enter your name</small>`)
+        $("#userAge").css({"background-color":"pink"})
+        $("#userAge").append(`<small id = "ageError">You have to be at least 1 years old to play this game</small>`)
+      }
+      else if (userName.length ==0){
+        $("#userName").css({"background-color":"pink"})
+        $("#userName").append(`<small id = "nameError">Enter your name</small>`)
+      }
+      else if (userAge <= 0){
+        $("#userAge").css({"background-color":"pink"})
+        $("#userAge").append(`<small id = "ageError">You have to be at least 1 years old to play this game</small>`)
+      }else{
+        if (countryFilled == true){
+          scene1_2()
+        }
+      }
+    })
+
+    }
 }
 
 function scene1_2() {
@@ -175,7 +225,7 @@ function scene1_2() {
           "border-style": "none",
         });
         $("#misson").click(function () {
-          $("#misson").remove()
+          $("#misson").remove();
           $("#clipboard").fadeOut(1600, function () {
             typingline(disp2, 80, dom2).then(function () {
               $("#scene2-intro")
@@ -1704,9 +1754,7 @@ function vialFound(marks) {
   typingline(firstSentence, 30, domFirst).then(function () {
     typingline(secondSentence, 30, domSecond).then(function () {
       typingline(thirdSentence, 30, domThird).then(function () {
-        $(domScene).append(
-          `<button id = "endOfGameButton">Finish!</button>`
-        );
+        $(domScene).append(`<button id = "endOfGameButton">Finish!</button>`);
         $("#endOfGameButton").css({
           "border-style": "none",
           "margin-left": "75%",
