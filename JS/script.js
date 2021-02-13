@@ -674,11 +674,12 @@ let jsonCountry = [
     country: "Zimbabwe",
   },
 ];
+var userName;
 $(document).ready(function () {
   $("#checkpoint-1").hide();
   $("div#userInputM").hide();
   $("div#userInputF").hide();
-  var userName;
+  
   function getGlobal() {
     var settings = {
       url: "https://disease.sh/v3/covid-19/all",
@@ -712,8 +713,10 @@ $("#ackn").click(function () {
 });
 
 $("#start").click(function () {
-  $("#start").remove();
-  $("#startGame").fadeOut(1600, function () {
+  $("#start,#ackn").remove();
+  let pastGame = localStorage.checkpoint
+  if(pastGame == null){
+    $("#startGame").fadeOut(750, function () {
     $("#content").append(
       `<div id="charInfo" class="container" style="padding: 30px;"></div>`
     );
@@ -734,6 +737,51 @@ $("#start").click(function () {
     </div>`);
     userChar();
   });
+  }else{
+    $("#startGame").remove()
+    $("#content").append(
+      `<div id="scenes" class="container" style="padding: 20px;">`
+    );
+    if (pastGame == 1){
+      scene1_2()
+    }
+    else if(pastGame == 2){
+      map1()
+    }else if (pastGame == 3){
+      scene3()
+    }else if(pastGame == 4){
+      scene4()
+    }else if(pastGame == 5){
+      scene5()
+    }else if(pastGame == 6){
+      showdown1()
+    }
+    else if(pastGame == 7){
+      clue1()
+    }else if(pastGame == 8){
+      scene6()
+    }
+    else if(pastGame == 9){
+      newspaper()
+    }else if(pastGame == 10){
+      scene7()
+    }else if(pastGame == 11){
+      scene8()
+    }else if(pastGame == 12){
+      preEncounter()
+    }else if(pastGame == 13){
+      hospitalScene()
+    }
+    else if (pastGame == 14){
+      overview()
+    }else if(pastGame == 15){
+      mission()
+    }
+    else if (pastGame == 16){
+      missingVial()
+    }
+  }
+  
 });
 
 var disp = "It's great to see you, Detective!";
@@ -861,6 +909,8 @@ function userChar() {
         }
         if (isInList == true) {
           countryFilled = true;
+        }else{
+          $("#userCountry").css({ "background-color": "pink" });
         }
       }
       if ((userAge <= 0 || userAge == null) && userName.length == 0) {
@@ -884,6 +934,7 @@ function userChar() {
 }
 
 function scene1_2() {
+  localStorage.checkpoint = 1
   $("#scenes").append(`<h4 id="scene1-intro"></h4>
   <div class="clipboard" id="clipboard"></div>
   <h4 id="scene2-intro"></h4>`);
@@ -940,6 +991,7 @@ function scene1_2() {
 }
 
 function map1() {
+  localStorage.checkpoint = 2
   $("#scenes").append(`<h4 id="map1-intro"></h4>`);
   var disp = "Click on the next city to proceed:";
   var dom = "#map1-intro";
@@ -961,6 +1013,7 @@ function map1() {
 }
 
 function scene3() {
+  localStorage.checkpoint = 3
   $("#scenes").append(`<h4 id="scene3-intro"></h4>
   <h4 id="scene3-text1"></h4>
   <h4 id="scene3-text2"></h4>`);
@@ -990,6 +1043,7 @@ function scene3() {
 }
 
 function scene4() {
+  localStorage.checkpoint = 4
   $("#scenes").append(`<h4 id="scene4-intro"></h4>
   <h4 id="scene4-text1"></h4>
   <h4 id="scene4-text2"></h4>
@@ -1066,6 +1120,7 @@ function scene4() {
 }
 
 function scene5() {
+  localStorage.checkpoint = 5
   $("#scenes").append(`<div class="information" id="information"></div>`);
   $("#information").hide();
 
@@ -1116,6 +1171,7 @@ function scene5() {
 }
 
 function showdown1() {
+  localStorage.checkpoint = 6
   $("#scenes").append(`<h4 id="showdown1-text1"></h4>
   <h4 id="showdown1-text2"></h4>
   <h4 id="showdown1-text3"></h4>
@@ -1174,6 +1230,7 @@ function showdown1() {
 let domScene = "#scenes";
 //Checkpoint 1 onwards
 function clue1() {
+  localStorage.checkpoint = 7
   $(domScene).append(`<div id="clue1">
   <h2></h2>
   <div>
@@ -1244,6 +1301,7 @@ function clue1() {
 }
 // Next function
 function scene6() {
+  localStorage.checkpoint = 8
   $("#map2").remove();
   //setting up elements to append content
   $(domScene).append(`<div id ="scene6">
@@ -1309,6 +1367,7 @@ function scene6() {
   });
 }
 function newspaper() {
+  localStorage.checkpoint = 9
   $("#scene6, #newspaperButton").remove();
   $(domScene).append(`<div id = "newspaper">
   <h2>The Current Times</h2>
@@ -1498,6 +1557,7 @@ function newspaperp2() {
   });
 }
 function scene7() {
+  localStorage.checkpoint = 10
   $("#newspaperp2").remove();
   $(domScene).append(`<div id ="scene7">
   <div id="firstSentence"></div>
@@ -1563,6 +1623,7 @@ function scene7() {
   });
 }
 function scene8() {
+  localStorage.checkpoint = 11
   $("#scene7, #scene8Button").remove();
   $(domScene).append(`<div id ="scene8">
   <div id="firstSentence"></div>
@@ -1613,8 +1674,8 @@ function scene8() {
   });
 }
 function preEncounter() {
+  localStorage.checkpoint = 12
   $("#scene8").remove();
-  var noOfQuestion = 5;
   $(domScene).append(`<div id="pre-encounter">
   <h1>Encounter!</h1><br>
   <h3>Defeat Sir Suriv and obtain the vial of virus</h3><br>
@@ -1972,6 +2033,7 @@ function postEncounter(qRight) {
   });
 }
 function hospitalScene() {
+  localStorage.checkpoint = 13
   $("#postEncounter, #hospitalButton").remove();
   $(domScene).append(`<div id ="hospitalScene">
   <div><span id = "firstSpan"></span> <span id = "secondSpan"></span> <span id = "thirdSpan"></span> <span id = "fourthSpan"></span></div>
@@ -2053,6 +2115,7 @@ function hospitalScene() {
   });
 }
 function overview() {
+  localStorage.checkpoint = 14
   $("#hospitalScene,#viewReportButton").remove();
   $(domScene).append(`
   <div id="overview">
@@ -2108,6 +2171,7 @@ function overview() {
   });
 }
 function mission() {
+  localStorage.checkpoint = 15
   $("#overview, #missionButton").remove();
   $(domScene).append(`
   <div id="mission">
@@ -2165,6 +2229,7 @@ function mission() {
   typingline("Aim: Maintain World Peace By Creating A Vaccine", 30, "#aim");
 }
 function missingVial() {
+  localStorage.checkpoint = 16
   $("#mission,#missingVialButton").remove();
   $(domScene).append(`<div id="missingVial">
   <h1>Missing Vial!</h1><br>
