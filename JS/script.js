@@ -2582,10 +2582,9 @@ function endOfGame() {
   ).then(function(){
     $("#reminder").append(`<div><button>Leaderboard</button></div>`)
     $("button").css({
-      "border-style": "none",
+      "border-style": "ridged",
       "background-color": "white",
       "font-size": "14pt",
-      "margin-left": "60%",
     });
     $("button").click(leaderboard)
   })
@@ -2652,6 +2651,12 @@ $.ajax(settings).done(function (response) {
     }
     $("table").append(`<tr><td>${dataName}</td><td>${dataPoint}</td><td>${disp}</td></tr>`)
   }
+  $("#leaderBoard").append(`<button><a href="acknowledge.html">Acknowledgement</a></button>`)
+  $("button").css({
+    "border-style": "ridged",
+    "background-color": "white",
+    "font-size": "14pt",
+  });
   function sortTime(task1, task2) {
     if (task1.time > task2.time) {
       return 1;
