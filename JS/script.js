@@ -922,21 +922,6 @@ function userChar() {
           $("#content").append(
             `<div id="scenes" class="container" style="padding: 20px;">`
           );
-          var settings = {
-            url: `https://disease.sh/v3/covid-19/countries/${country}`,
-            method: "GET",
-            timeout: 0,
-            
-          };
-      
-          $.ajax(settings).done(function (response) {
-            console.log(response);
-            localStorage.case = response.cases
-            localStorage.death = response.deaths
-            localStorage.recover = response.recovered
-            localStorage.critical = response.critical
-            localStorage.test = response.test
-          });        
           scene1_2();
         }
       }
@@ -2543,6 +2528,21 @@ function vialFound(marks) {
 }
 
 function endOfGame() {
+  let country = localStorage.getItem("country")
+  var settings = {
+    url: `https://disease.sh/v3/covid-19/countries/${country}`,
+    method: "GET",
+    timeout: 0,
+    
+  };
+  $.ajax(settings).done(function (response) {
+    $("#Country").text(country)
+    $("#Cases").text(response.cases)
+    $("#Recovered").text(response.recovered)
+    $("#Critical").text(response.critical)
+    $("#Dead").text(response.deaths)
+    $("#Test").text(response.tests)
+  });        
   localStorage.removeItem("checkpoint");
   $("#vialFound,#endOfGameButton").remove();
   $(domScene).append(`
@@ -2553,13 +2553,16 @@ function endOfGame() {
   <h3></h3>
   <div>Country: <span id ="Country"></span></div>
   <div>Cases: <span id = "Cases"></span></div>
-  <div>Recovered: <span id = "Recovered></span></div>
+  <div>Recovered: <span id = "Recovered"></span></div>
+  <div>Critical: <span id = "Critical"></span></div>
   <div>Dead: <span id = "Dead"></span></div>
+  <div>Number of tests: <span id = "Test"></span></div>
   </div>
   </div>
   <div>Reminder:</div>
   <div id = "reminder"></div>
   </div>
+  <button>Leaderboard</button>
   `);
   typingline("Statistics", 50, "h3");
   typingline(
