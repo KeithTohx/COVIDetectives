@@ -674,7 +674,6 @@ let jsonCountry = [
     country: "Zimbabwe",
   },
 ];
-var userName;
 $(document).ready(function () {
   $("#checkpoint-1").hide();
   $("div#userInputM").hide();
@@ -715,7 +714,7 @@ $("#ackn").click(function () {
 $("#start").click(function () {
   $("#start,#ackn").remove();
   let pastGame = localStorage.checkpoint;
-  if (pastGame != null) {
+  if (pastGame >0 && pastGame <17) {
     $("#startGame").remove();
     $("#content").append(
       `<div id="scenes" class="container" style="padding: 20px;">`
@@ -752,28 +751,6 @@ $("#start").click(function () {
       mission();
     } else if (pastGame == 16) {
       missingVial();
-    } else {
-      $("#startGame").fadeOut(750, function () {
-        $("#content").append(
-          `<div id="charInfo" class="container" style="padding: 30px;"></div>`
-        );
-        $(
-          "#charInfo"
-        ).append(`<h2 id="userHeading" style="text-align: center;">How Should We Address You?</h2>
-        <div class="row">
-        <div id="genderM" class="col-sm">
-          <a href="#" id="male" role="button" style="text-decoration: none;">Male</a><br>
-          <div id="userInputM" style="padding-top: 20px;">
-          </div>
-        </div>
-        <div id="genderF" class="col-sm">
-          <a href="#" id="female" role="button" style="text-decoration: none;">Female</a><br>
-          <div id="userInputF" style="padding-top: 20px;">
-          </div>
-        </div>
-        </div>`);
-        userChar();
-      });
     }
   } else {
     $("#startGame").fadeOut(750, function () {
@@ -845,7 +822,7 @@ function userChar() {
         <input type="number" id="userAge" name="userAge" placeholder="Age" style="width: 300px;"></div><br>
       <div id = "uCountry"><label for="userName">Enter Your Country: </label>
         <input type="text" id="userCountry" name="userCountry" placeholder="Country" style="width: 300px;"></div>
-        <button id="continue" class="continueBtn" style="margin-top: 10px; text-align: center;">Continue</button></div>
+        <div id = "button"><button id="continue" class="continueBtn" style="margin-top: 10px; text-align: center;">Continue</button></div></div>
         `);
     $(dom).css({ width: "600px", margin: "0px auto" });
     $("div").css({ "margin-top": "10px" });
@@ -856,7 +833,8 @@ function userChar() {
       margin: "0px",
       "justify-content": "center",
     });
-    $("button").css({ float: "right" });
+    $("button").css({ float: "left","border-width":"1px","border-radius":"15px","font-size":"12pt"});
+    $("#button").css({"text-align":"left"})
     //Search function
     $("#userCountry").keyup(function () {
       $("#countryList").remove();
@@ -905,7 +883,7 @@ function userChar() {
     //Validate Form
     $("#continue").click(function () {
       $("#userName,#userAge,#userCountry").css({ "background-color": "white" });
-      userName = $("#userName").val();
+      let userName = $("#userName").val();
       let userAge = $("#userAge").val();
       let country = $("#userCountry").val();
       let countryFilled = false;
@@ -938,10 +916,27 @@ function userChar() {
       } else {
         console.log("hi");
         if (countryFilled == true) {
+          localStorage.name = userName;
+          localStorage.country = country;
           document.getElementById("charInfo").remove();
           $("#content").append(
             `<div id="scenes" class="container" style="padding: 20px;">`
           );
+          var settings = {
+            url: `https://disease.sh/v3/covid-19/countries/${country}`,
+            method: "GET",
+            timeout: 0,
+            
+          };
+      
+          $.ajax(settings).done(function (response) {
+            console.log(response);
+            localStorage.case = response.cases
+            localStorage.death = response.deaths
+            localStorage.recover = response.recovered
+            localStorage.critical = response.critical
+            localStorage.test = response.test
+          });        
           scene1_2();
         }
       }
@@ -2546,6 +2541,7 @@ function vialFound(marks) {
     });
   });
 }
+
 function endOfGame() {
   localStorage.removeItem("checkpoint");
   $("#vialFound,#endOfGameButton").remove();
