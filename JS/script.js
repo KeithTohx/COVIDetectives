@@ -2533,7 +2533,14 @@ function endOfGame() {
     url: `https://disease.sh/v3/covid-19/countries/${country}`,
     method: "GET",
     timeout: 0,
-    
+    error: function(){
+    $("#Country").text(country)
+    $("#Cases").text(0)
+    $("#Recovered").text(0)
+    $("#Critical").text(0)
+    $("#Dead").text(0)
+    $("#Test").text(0)
+    }
   };
   $.ajax(settings).done(function (response) {
     $("#Country").text(country)
@@ -2562,7 +2569,7 @@ function endOfGame() {
   <div>Reminder:</div>
   <div id = "reminder"></div>
   </div>
-  <button>Leaderboard</button>
+  
   `);
   typingline("Statistics", 50, "h3");
   typingline(
@@ -2570,7 +2577,98 @@ function endOfGame() {
   Everyone has to do their part to stop the spread of a pandemic. By following trusted 
   news source, guidance from governments and heath organisations and reacting calmly, we will
   be able to tide through this crisis`,
-    20,
+    15,
     "#reminder"
-  );
+  ).then(function(){
+    $("#reminder").append(`<div><button>Leaderboard</button></div>`)
+    $("button").css({
+      "border-style": "none",
+      "background-color": "white",
+      "font-size": "14pt",
+      "margin-left": "60%",
+    });
+    $("button").click(leaderboard)
+  })
+  
+}
+function leaderboard(){
+  $("#endOfGame,button").remove()
+  $(domScene).append(`<div id="leaderBoard">
+  <h2>Leader Board</h2>
+  <table width="100%">
+    <tr>
+      <th>Name</th>
+      <th>Point</th>
+      <th>Time taken</th>
+    </tr>
+  </table>
+</div>`)
+  let apiKey = "6028ae7d5ad3610fb5bb5fe6";
+var settings = {
+  async: true,
+  crossDomain: true,
+  url: "https://leaderboard-30f1.restdb.io/rest/leaderboard",
+  method: "GET",
+  headers: {
+    "content-type": "application/json",
+    "x-apikey": apiKey,
+    "cache-control": "no-cache",
+  },
+};
+$.ajax(settings).done(function (response) {
+  response.sort(sortTime);
+  response.sort(sortPoints);
+  console.log(response);
+  let len;
+  if (response.length < 30) {
+    len = response.length;
+  } else {
+    len = 30;
+  }
+  for (i = 0; i < len; i++) {
+    let data = response[i];
+    let dataName = data.name;
+    let dataPoint = data.points;
+    let dataTime = data.time;
+    //Convert to Seconds
+    dataTime = Math.floor(dataTime / 1000);
+    //Calculate min
+    let sec;
+    let min;
+    let hour;
+    let disp;
+    sec = dataTime % 60;
+    dataTime -= sec;
+    disp = `${sec} Second`
+    if (dataTime > 0) {
+      let totalMin = dataTime / 60;
+      min = totalMin % 60;
+      disp = `${min} Minute `+disp
+      totalMin -= min;
+      if (totalMin > 0) {
+        hour = totalMin / 60;
+        disp = `${hour} Hour `+disp
+      }
+    }
+    $("table").append(`<tr><td>${dataName}</td><td>${dataPoint}</td><td>${disp}</td></tr>`)
+  }
+  function sortTime(task1, task2) {
+    if (task1.time > task2.time) {
+      return 1;
+    } else if (task1.time < task2.time) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+  function sortPoints(task1, task2) {
+    if (task1.points < task2.points) {
+      return 1;
+    } else if (task1.points > task2.points) {
+      return -1;
+    } else {
+      return 0;
+    }
+  }
+});
 }
