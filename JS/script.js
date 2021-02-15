@@ -1181,7 +1181,7 @@ function showdown1() {
   var disp2 = `The situation is worsening...`;
   var disp3 = `You decided to head towards the Lab.`;
   var disp4 = `BANG! You kicked open the lab door...`;
-  var disp5 = `You are now in the Lab. Click on the symptoms of COVID-19 to find traces left behind by the villian!`;
+  var disp5 = `You are now in the Lab. Click on the 5 symptoms of COVID-19 to find traces left behind by the villian!`;
 
   var dom1 = "#showdown1-text1";
   var dom2 = "#showdown1-text2";
@@ -1198,25 +1198,142 @@ function showdown1() {
           typingline(disp4, 100, dom4).then(function () {
             $("#showdown1-text4").fadeOut(1600, function () {
               typingline(disp5, 100, dom5).then(function () {
-                $(
-                  "#showdown1-intro"
-                ).append(`<div id="showdown1-quiz" class="flex-container2">
-                          <div style="background-color: cadetblue;"><p>#1 </br> Nosebleeds</p></div>
-                          <div style="background-color: cadetblue;"><p>#2 </br> Cough</p></div>
-                          <div style="background-color: cadetblue;"><p>#3 </br> Fever</p></div>
-                          <div style="background-color: cadetblue;"><p>#4 </br> Hunger</p></div>
-                          <div style="background-color: cadetblue;"><p>#5 </br> Lose sense of smell</p></div>
-                          <div style="background-color: cadetblue;"><p>#6 </br> Chills</p></div>
-                          <div style="background-color: cadetblue;"><p>#7 </br> Stomach ache</p></div>
-                          <div style="background-color: cadetblue;"><p>#8 </br> Headache</p></div>
-                          </div>
-                          <button id="showdownSubmit" class="showdownSubmit">Submit</button>`);
+                $("#showdown1-intro").append(`<div id="showdown1-quiz" class="flex-container2">
+                <div id="nosebleed" style="background-color: cadetblue;"><p>#1 </br> Nosebleed</p></div>
+                <div id="cough" style="background-color: cadetblue;"><p>#2 </br> Cough</p></div>
+                <div id="fever" style="background-color: cadetblue;"><p>#3 </br> Fever</p></div>
+                <div id="hunger" style="background-color: cadetblue;"><p>#4 </br> Hunger</p></div>
+                <div id="smell" style="background-color: cadetblue;"><p>#5 </br> Lose sense of smell</p></div>
+                <div id="chills" style="background-color: cadetblue;"><p>#6 </br> Chills</p></div>
+                <div id="stomachache" style="background-color: cadetblue;"><p>#7 </br> Stomach ache</p></div>
+                <div id="headache" style="background-color: cadetblue;"><p>#8 </br> Headache</p></div>
+                </div>
+                <button id="showdownSubmit" class="showdownSubmit">Submit</button>`);
 
-                $("#showdownSubmit").click(function () {
+                let count = 0;
+                let correct = 0;
+
+                $("#cough").click(function(){
+                    if (count==5)
+                    {
+                        alert("You have selected 5 symptoms already. Please click Submit.");
+                    }
+                    if (count<5)
+                    {
+                        count++;
+                        correct++;
+                        $("#cough").css({
+                            "background-color" : "lightblue"
+                        });
+                    }
+                });
+                $("#fever").click(function(){
+                    if (count==5)
+                    {
+                        alert("You have selected 5 symptoms already. Please click Submit.");
+                    }
+                    if (count<5)
+                    {
+                        count++;
+                        correct++;
+                        $("#fever").css({
+                            "background-color" : "lightblue"
+                        });
+                    }
+                });
+                $("#smell").click(function(){
+                    if (count==5)
+                    {
+                        alert("You have selected 5 symptoms already. Please click Submit.");
+                    }
+                    if (count<5)
+                    {
+                        count++;
+                        correct++;
+                        $("#smell").css({
+                            "background-color" : "lightblue"
+                        });
+                    }
+                });
+                $("#chills").click(function(){
+                    if (count==5)
+                    {
+                        alert("You have selected 5 symptoms already. Please click Submit.");
+                    }
+                    if (count<5)
+                    {
+                        count++;
+                        correct++;
+                        $("#chills").css({
+                            "background-color" : "lightblue"
+                        });
+                    }
+                });
+                $("#headache").click(function(){
+                    if (count==5)
+                    {
+                        alert("You have selected 5 symptoms already. Please click Submit.");
+                    }
+                    if (count<5)
+                    {
+                        count++;
+                        correct++;
+                        $("#headache").css({
+                            "background-color" : "lightblue"
+                        });
+                    }
+                });
+                $("#nosebleed").click(function(){
+                    if (count==5)
+                    {
+                        alert("You have selected 5 symptoms already. Please click Submit.");
+                    }
+                    if (count<5)
+                    {
+                        count++;
+                        $("#nosebleed").css({
+                            "background-color" : "lightblue"
+                        });
+                    }
+                });
+                $("#hunger").click(function(){
+                    if (count==5)
+                    {
+                        alert("You have selected 5 symptoms already. Please click Submit.");
+                    }
+                    if (count<5)
+                    {
+                        count++;
+                        $("#hunger").css({
+                            "background-color" : "lightblue"
+                        });
+                    }
+                });
+                $("#stomachache").click(function(){
+                    if (count==5)
+                    {
+                        alert("You have selected 5 symptoms already. Please click Submit.");
+                    }
+                    if (count<5)
+                    {
+                        count++;
+                        $("#stomachache").css({
+                            "background-color" : "lightblue"
+                        });
+                    }
+                });
+
+                $("#showdownSubmit").click(function(){
                   $("#showdownSubmit").remove();
-                  $("#showdown1-intro").fadeOut(1600, function () {
-                    clue1();
-                  });
+                  $("#showdown1-intro").append(`<h4 style="text-align: center;">Your score: ${correct}/5</h4>`);
+                  $("#showdown1-intro").append(`<button id="showdownNext" class="showdownNext">Next</button>`);
+
+                  $("#showdownNext").click(function(){
+                    $("#showdownNext").remove();
+                    $("#showdown1-intro").fadeOut(1600, function () {
+                      clue1();
+                    });
+                  })
                 });
               });
             });
