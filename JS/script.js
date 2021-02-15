@@ -1328,6 +1328,12 @@ function showdown1() {
                   $("#showdown1-intro").append(`<h4 style="text-align: center;">Your score: ${correct}/5</h4>`);
                   $("#showdown1-intro").append(`<button id="showdownNext" class="showdownNext">Next</button>`);
 
+                  $("#showdownNext").css({
+                    "font-size": "12pt",
+                    "margin-left": "70%",
+                    "border-style": "none",
+                  });
+
                   $("#showdownNext").click(function(){
                     $("#showdownNext").remove();
                     $("#showdown1-intro").fadeOut(1600, function () {
