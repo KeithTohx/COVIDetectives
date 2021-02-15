@@ -918,6 +918,9 @@ function userChar() {
         if (countryFilled == true) {
           localStorage.name = userName;
           localStorage.country = country;
+          let d = new Date()
+          let time = d.getTime()
+          localStorage.time = time
           document.getElementById("charInfo").remove();
           $("#content").append(
             `<div id="scenes" class="container" style="padding: 20px;">`
@@ -2549,7 +2552,30 @@ function endOfGame() {
     $("#Critical").text(response.critical)
     $("#Dead").text(response.deaths)
     $("#Test").text(response.tests)
-  });        
+  });       
+  let apiKey = "6028ae7d5ad3610fb5bb5fe6";
+  let username = localStorage.getItem("name")
+  let d = new Date()
+  let time = d.getTime()-localStorage.getItem("time")
+  let point = localStorage.getItem("points")
+  var jsondata = {"name": username,"points": point,"time":time};
+var setting = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://leaderboard-30f1.restdb.io/rest/leaderboard",
+  "method": "POST",
+  "headers": {
+    "content-type": "application/json",
+    "x-apikey": apiKey,
+    "cache-control": "no-cache"
+  },
+  "processData": false,
+  "data": JSON.stringify(jsondata)
+}
+
+$.ajax(setting).done(function (response) {
+  console.log(response);
+});
   localStorage.removeItem("checkpoint");
   $("#vialFound,#endOfGameButton").remove();
   $(domScene).append(`
@@ -2602,7 +2628,7 @@ function leaderboard(){
     </tr>
   </table>
 </div>`)
-  let apiKey = "6028ae7d5ad3610fb5bb5fe6";
+let apiKey = "6028ae7d5ad3610fb5bb5fe6";
 var settings = {
   async: true,
   crossDomain: true,
