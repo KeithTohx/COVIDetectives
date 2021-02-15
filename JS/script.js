@@ -1354,6 +1354,7 @@ let domScene = "#scenes";
 function clue1() {
   localStorage.checkpoint = 7;
   $(domScene).append(`<div id="clue1">
+  <img src="#" alt="plan">
   <h2></h2>
   <div>
       ------------------------------------------------------------------------------
@@ -1386,7 +1387,7 @@ function clue1() {
     "border-width": "1px",
     "border-color": "black",
     "font-size": "20pt",
-    "margin-top": "50px",
+    "margin-top": "50px","background-color":"#EEEEEE"
   });
   $("h3").css({ "text-align": "left" });
   $("#clue1 li").css({ "text-align": "left" });
@@ -1399,7 +1400,7 @@ function clue1() {
     "margin-left": "70%",
     "border-style": "none",
   });
-  let disp = "Eric Royal Lab Report";
+  let disp = "Viole Royal Lab Report";
   let dom = "#clue1 h2";
   typingline(disp, 120, dom);
 
@@ -2740,6 +2741,7 @@ $.ajax(setting).done(function (response) {
   
 }
 function leaderboard(){
+  localStorage.clear()
   $("#endOfGame,button").remove()
   $(domScene).append(`<div id="leaderBoard">
   <h2>Leader Board</h2>
