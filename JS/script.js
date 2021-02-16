@@ -1239,7 +1239,7 @@ function showdown1() {
         $("#showdown1-text3").fadeOut(1600, function () {
           typingline(disp4, 60, dom4).then(function () {
             $("#showdown1-text4").fadeOut(1600, function () {
-              typingline(disp5, 60, dom5).then(function () {
+              typingline(disp5, 30, dom5).then(function () {
                 $(
                   "#showdown1-intro"
                 ).append(`<div id="showdown1-quiz" class="flex-container2">
@@ -1283,8 +1283,8 @@ function showdown1() {
                     $("#cough").css({
                       "background-color": "cadetblue",
                     });
-                    count -= 1;
-                    correct -= 1;
+                    count--;
+                    correct--;
                     cough = false;
                   }
                 });
@@ -1301,14 +1301,14 @@ function showdown1() {
                       $("#fever").css({
                         "background-color": "lightblue",
                       });
+                      fever = true;
                     }
-                    fever = true;
                   } else {
                     $("#fever").css({
                       "background-color": "cadetblue",
                     });
-                    count -= 1;
-                    correct -= 1;
+                    count--;
+                    correct--;
                     fever = false;
                   }
                 });
@@ -1325,14 +1325,14 @@ function showdown1() {
                       $("#smell").css({
                         "background-color": "lightblue",
                       });
+                      smell = true;
                     }
-                    smell = true;
                   } else {
                     $("#smell").css({
                       "background-color": "cadetblue",
                     });
-                    count -= 1;
-                    correct -= 1;
+                    count--;
+                    correct--;
                     smell = false;
                   }
                 });
@@ -1349,14 +1349,14 @@ function showdown1() {
                       $("#chills").css({
                         "background-color": "lightblue",
                       });
+                      chills = true;
                     }
-                    chills = true;
                   } else {
                     $("#chills").css({
                       "background-color": "cadetblue",
                     });
-                    count -= 1;
-                    correct -= 1;
+                    count--;
+                    correct--;
                     chills = false;
                   }
                 });
@@ -1373,14 +1373,14 @@ function showdown1() {
                       $("#headache").css({
                         "background-color": "lightblue",
                       });
+                      headache = true;
                     }
-                    headache = true;
                   } else {
                     $("#headache").css({
                       "background-color": "cadetblue",
                     });
-                    count -= 1;
-                    correct -= 1;
+                    count--;
+                    correct--;
                     headache = false;
                   }
                 });
@@ -1396,14 +1396,13 @@ function showdown1() {
                       $("#nosebleed").css({
                         "background-color": "lightblue",
                       });
+                      nosebleed = true;
                     }
-                    nosebleed = true;
                   } else {
                     $("#nosebleed").css({
                       "background-color": "cadetblue",
                     });
-                    count -= 1;
-                    correct -= 1;
+                    count--;
                     nosebleed = false;
                   }
                 });
@@ -1419,14 +1418,13 @@ function showdown1() {
                       $("#hunger").css({
                         "background-color": "lightblue",
                       });
+                      hunger = true;
                     }
-                    hunger = true;
                   } else {
                     $("#hunger").css({
                       "background-color": "cadetblue",
                     });
-                    count -= 1;
-                    correct -= 1;
+                    count--;
                     hunger = false;
                   }
                 });
@@ -1442,19 +1440,19 @@ function showdown1() {
                       $("#stomachache").css({
                         "background-color": "lightblue",
                       });
+                      stomachache = true;
                     }
-                    stomachache = true;
                   } else {
                     $("#stomachache").css({
                       "background-color": "cadetblue",
                     });
-                    count -= 1;
-                    correct -= 1;
+                    count--;
                     stomachache = false;
                   }
                 });
 
                 $("#showdownSubmit").click(function () {
+                  localStorage.firstQuiz = correct
                   $("#showdownSubmit").remove();
                   $("#showdown1-intro").append(
                     `<h4 style="text-align: center;">Your score: ${correct}/5</h4>`
