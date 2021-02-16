@@ -2875,7 +2875,7 @@ function endOfGame() {
   let username = localStorage.getItem("name");
   let d = new Date();
   let time = d.getTime() - localStorage.getItem("time");
-  let point = localStorage.getItem("points");
+  let point = localStorage.firstQuiz+localStorage.secondQuiz;
   var jsondata = { name: username, points: point, time: time };
   var setting = {
     async: true,
