@@ -1691,9 +1691,10 @@ function newspaper() {
       <div id = "newspaperRightLastSeen"></div>
       <div id ="newspaperRightStatus"></div>
     </div>
-  </div>
+  </div><br><br>
 </div>`);
   $("button").hide();
+  $("#newspaper").css({"border-style":"solid double ridge ridge"})
   $(domScene).css({ "font-size": "14pt" });
   $("h2").css({ "text-align": "center" });
   $(".col-sm").css({ margin: "auto 40px" });
@@ -1706,6 +1707,7 @@ function newspaper() {
     "border-style": "none none solid none",
     "margin-left": "65%",
   });
+  $("#newspaperLeft").css({"margin-top":"0px"})
   let domh4 = "#newspaperLeft h4";
   let heading = "Safe Distancing Measures Implemented";
   typingline(heading, 70, domh4);
@@ -1717,6 +1719,7 @@ times when they are out of their homes. Citizens
 are to stay 1 meter or 6 feet apart when in queue.
 Avoid crowded places. Now Ascend city is hunting
 down Sir Suriv.`;
+
   typingline(paragraph, 20, domp).then(function () {
     $("button").show();
   });
@@ -1727,7 +1730,7 @@ down Sir Suriv.`;
     typingline(name, 30, "#newspaperRightName").then(function () {
       typingline(lastScene, 30, "#newspaperRightLastSeen").then(function () {
         typingline(status, 30, "#newspaperRightStatus").then(function () {
-          $("#newspaperRight").append(`<img src="#" alt="map location">`);
+          $("#newspaperRight").append(`<img src="Images/Newspaper-location.png" alt="map location">`);
         });
       });
     });
@@ -1762,6 +1765,8 @@ function newspaperp2() {
   </div>
   <br>
 </div>`);
+$("#newspaperp2").css({"border-style":"solid double ridge ridge"})
+$("#newspaperLeft, #safeMangementMeasure h4").css({"margin-top":"0px"})
   $(domScene).css({ "font-size": "14pt" });
   $("h2").css({ "text-align": "center" });
   $(".col-sm").css({ margin: "auto 40px" });
@@ -1902,15 +1907,15 @@ function scene7() {
     "You heard a maniac laughter a distance away, and you walked towards the sound";
   let sevenSentence = ". . . . .";
   let eightSentence = "The laughter seems to be behind these doors";
-  typingline(firstSentence, 50, domFirst).then(function () {
-    typingline(secondSentence, 75, domSecond).then(function () {
-      typingline(thirdSentence, 50, domThird).then(function () {
+  typingline(firstSentence, 40, domFirst).then(function () {
+    typingline(secondSentence, 65, domSecond).then(function () {
+      typingline(thirdSentence, 40, domThird).then(function () {
         //Maybe can allow player to choose the police pass
-        typingline(fourthSentence, 50, domFourth).then(function () {
-          typingline(fifthSentence, 50, domFifth).then(function () {
-            typingline(sixthSentence, 50, domSixth).then(function () {
-              typingline(sevenSentence, 500, domSeven).then(function () {
-                typingline(eightSentence, 50, domEight).then(function () {
+        typingline(fourthSentence, 40, domFourth).then(function () {
+          typingline(fifthSentence, 40, domFifth).then(function () {
+            typingline(sixthSentence, 40, domSixth).then(function () {
+              typingline(sevenSentence, 400, domSeven).then(function () {
+                typingline(eightSentence, 40, domEight).then(function () {
                   $(domScene).append(
                     `<button id = "scene8Button">Kick the doors open!</button>`
                   );
