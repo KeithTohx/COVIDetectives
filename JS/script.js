@@ -959,7 +959,7 @@ function scene1_2() {
           Name of Virus: <b>COVID-19</b><br>
           Name of Villain: <b>Sir Suriv</b><br>
           Villain Last Seen: <b>Viole City</b><br>
-          Sir Suriv has stole the only vial of covid 19. This vial is necessary for scientist to formulate a vaccine to protect the people.
+          Sir Suriv has stole the only vial of COVID-19. This vial is necessary for scientist to formulate a vaccine to protect the people.
       </p>
       <h4 style="padding-top: 20px;">Mission</h4>
       <p>
@@ -1127,9 +1127,19 @@ function scene5() {
   $("#information").fadeIn(1600);
   $("#information").prepend(`
   <h4 style="padding-bottom: 20px;">Virus Information</h4>
-  <div class="row" id="symptoms"">
-  <div class="col-sm" id="symptomTitle"></div>
-  <div class="col-sm" id="symptomList"></div>
+  <div id="symptoms">
+  <div class="row" id="symptomsCommon">
+  <div class="col-sm" id="symptomCommonTitle"></div>
+  <div class="col-sm" id="symptomCommonList"></div>
+  </div>
+  <div class="row" id="symptomsEarly">
+  <div class="col-sm" id="symptomEarlyTitle"></div>
+  <div class="col-sm" id="symptomEarlyList"></div>
+  </div>
+  <div class="row" id="symptomsOther">
+  <div class="col-sm" id="symptomOtherTitle"></div>
+  <div class="col-sm" id="symptomOtherList"></div>
+  </div>
   </div>
   <button id="symptomsBtn1" class="symptomsBtn1" style="margin: 10px;">Next</button>`);
   $("#symptomsBtn1").css({
@@ -1137,11 +1147,23 @@ function scene5() {
     "margin-left": "70%",
     "border-style": "none",
   });
-  $("#symptomTitle").append(
-    `<h5 style="text-align: right">Symptoms of Virus:</h5>`
+  $("#symptomCommonTitle").append(
+    `<h5 style="text-align: right">Common Symptom(s):</h5>`
   );
-  $("#symptomList").append(`<h5><ol>
-  <li>Fever</li><li>Cough</li><li>Chills</li><li>Lose sense of smell</li><li>Headache</li></ol></h5>`);
+  $("#symptomCommonList").append(`<h5><ol>
+  <li>Fever</li><li>Cough</li><li>Tiredness</li></ol></h5>`);
+
+  $("#symptomEarlyTitle").append(
+    `<h5 style="text-align: right">Early Symptom(s):</h5>`
+  );
+  $("#symptomEarlyList").append(`<h5><ol>
+  <li>Lose sense of smell</li></ol></h5>`);
+
+  $("#symptomOtherTitle").append(
+    `<h5 style="text-align: right">Other Possible Symptom(s):</h5>`
+  );
+  $("#symptomOtherList").append(`<h5><ol>
+  <li>Chills</li><li>Headache</li><li>Sore throat</li><li>Running nose</li><li>Shortness of breath</li></ol></h5>`);
 
   $("#symptomsBtn1").click(function () {
     $("#symptomsBtn1").remove();
