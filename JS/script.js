@@ -1452,7 +1452,7 @@ function showdown1() {
                 });
 
                 $("#showdownSubmit").click(function () {
-                  localStorage.firstQuiz = correct
+                  localStorage.firstQuiz = correct;
                   $("#showdownSubmit").remove();
                   $("#showdown1-intro").append(
                     `<h4 style="text-align: center;">Your score: ${correct}/5</h4>`
@@ -1486,9 +1486,29 @@ let domScene = "#scenes";
 //Checkpoint 1 onwards
 function clue1() {
   localStorage.checkpoint = 7;
-  $(domScene).append(`<div id="clue1">
-  <img src="#" alt="plan">
+  $(domScene).append(`<div id = "beforeClue1">
+  <div id="firstSentence"></div>
+  <div id="secondSentence"></div>
+  </div> `);
+  $("#beforeClue1").css({"font-size":"15pt"})
+  let firstSentence = "You found a plan written by Sir Suriv";
+  let domFirst = "#firstSentence";
+  let secondSentence = "You took a look at it";
+  let domSecond = "#secondSentence";
+  typingline(firstSentence, 40, domFirst).then(function () {
+    typingline(secondSentence, 40, domSecond).then(function () {
+      $("#beforeClue1").append(`<button id = "clue1Btn">See plan!</button>`);
+      $("#clue1Btn").css({
+        "font-size": "15pt",
+        "margin-left": "70%",
+        "border-style": "none",
+      });
+      $("#clue1Btn").click(function () {
+        $("#beforeClue1").remove()
+        $(domScene).append(`<div id="clue1">
+  <div id = "image"><img src="Images/Plan.png" alt="plan"></div><br><br>
   <h2></h2>
+  <h6>Lab Personal: Sir Suriv</h6>
   <div>
       ------------------------------------------------------------------------------
   </div>
@@ -1513,46 +1533,55 @@ function clue1() {
   <button id ="map2Button">Next</button>
   <div id="clue1-filler"></div>
 </div>`);
-  $("h2").css({ "margin-top": "50px" });
-  $("h2,div").css({ "text-align": "center" });
-  $("#clue1").css({
-    "border-style": "solid",
-    "border-width": "1px",
-    "border-color": "black",
-    "font-size": "20pt",
-    "margin-top": "50px",
-    "background-color": "#EEEEEE",
-  });
-  $("h3").css({ "text-align": "left" });
-  $("#clue1 li").css({ "text-align": "left" });
-  $("#clue1 ol").css({ "margin-left": "25px", padding: "0px" });
-  $("#clue1 section").css({ "margin-left": "145px" });
-  $("#clue1 section div").css({ "text-align": "left" });
-  $("#clue1-filler").css({ "margin-bottom": "50px" });
-  $("#map2Button").css({
-    "font-size": "12pt",
-    "margin-left": "70%",
-    "border-style": "none",
-  });
-  let disp = "Viole Royal Lab Report";
-  let dom = "#clue1 h2";
-  typingline(disp, 120, dom);
+        $("img").css({
+          height: "100px",
+          float: "left",
+          margin: "20px",
+          "margin-bottom": "0px",
+        });
+        $("h2").css({ "margin-top": "50px" });
+        $("h2,div").css({ "text-align": "center" });
+        $("#clue1").css({
+          "border-style": "solid",
+          "border-width": "1px",
+          "border-color": "black",
+          "font-size": "20pt",
+          "margin-top": "50px",
+          "background-color": "#EEEEEE",
+        });
+        $("h3").css({ "text-align": "left" });
+        $("#clue1 li").css({ "text-align": "left" });
+        $("#clue1 ol").css({ "margin-left": "25px", padding: "0px" });
+        $("#clue1 section").css({ "margin-left": "145px" });
+        $("#clue1 section div").css({ "text-align": "left" });
+        $("#clue1-filler").css({ "margin-bottom": "50px" });
+        $("#map2Button").css({
+          "font-size": "12pt",
+          "margin-left": "70%",
+          "border-style": "none",
+        });
+        let disp = "Viole Royal Lab Report";
+        let dom = "#clue1 h2";
+        typingline(disp, 120, dom);
 
-  // transition to next show map
-  $("#map2Button").click(function () {
-    $(domScene).append(
-      `<div id = "map2"><img class ="img-fluid" src='#' alt="map image"></div>`
-    );
-    $("#clue1").remove();
-    //when it is clicked
-    $("#map2 img").click(function (evt) {
-      var offset = $(this).offset();
-      var x = offset.left;
-      var y = offset.top;
-      var mousex = evt.pageX - x;
-      var mousey = evt.pageY - y;
-      //If above selection is correct
-      scene6();
+        // transition to next show map
+        $("#map2Button").click(function () {
+          $(domScene).append(
+            `<div id = "map2"><img class ="img-fluid" src='#' alt="map image"></div>`
+          );
+          $("#clue1").remove();
+          //when it is clicked
+          $("#map2 img").click(function (evt) {
+            var offset = $(this).offset();
+            var x = offset.left;
+            var y = offset.top;
+            var mousex = evt.pageX - x;
+            var mousey = evt.pageY - y;
+            //If above selection is correct
+            scene6();
+          });
+        });
+      });
     });
   });
 }
