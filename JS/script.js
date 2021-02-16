@@ -710,7 +710,13 @@ $(document).ready(function () {
 $("#ackn").click(function () {
   window.location.href = "acknowledge.html";
 });
-
+$("#leaderBoardBtn").click(function () {
+  $("#startGame").remove();
+    $("#content").append(
+      `<div id="scenes" class="container" style="padding: 20px;">`
+    );
+    leaderboard()
+});
 $("#start").click(function () {
   $("#start,#ackn").remove();
   let pastGame = localStorage.checkpoint;
