@@ -958,7 +958,8 @@ function scene1_2() {
       <p>
           Name of Virus: <b>COVID-19</b><br>
           Name of Villain: <b>Sir Suriv</b><br>
-          Villain Last Seen: <b>Viole City</b>
+          Villain Last Seen: <b>Viole City</b><br>
+          Sir Suriv has stole the only vial of covid 19. This vial is necessary for scientist to formulate a vaccine to protect the people.
       </p>
       <h4 style="padding-top: 20px;">Mission</h4>
       <p>
@@ -1141,15 +1142,10 @@ function scene5() {
   );
   $("#symptomList").append(`<h5><ol>
   <li>Fever</li><li>Cough</li><li>Chills</li><li>Lose sense of smell</li><li>Headache</li></ol></h5>`);
-  $("#symptoms").after(`<div id="rates" class="flex-container">
-  <div style="padding: 30px; background-color:lightgrey;"><h5 id="deathRate">Death Rate:</h5></div>
-  <div style="padding: 30px; background-color:lightgrey;"><h5 id="infectedRate">Infected Rate:</h5></div>
-  </div>`);
 
   $("#symptomsBtn1").click(function () {
     $("#symptomsBtn1").remove();
-    $("#symptoms").fadeOut(1600);
-    $("#rates").fadeOut(1600, function () {
+    $("#symptoms").fadeOut(1600, function () {
       $("#information").append(`<h5>Cities informed: Ascend City, Ace City</h5>
         <h5>Villian Last Seen: Viole Secret Royal Lab</h5>
         <h5>Image of Lab:</h5>
