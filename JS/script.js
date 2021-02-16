@@ -812,12 +812,14 @@ function userChar() {
   $("#male").click(function () {
     document.getElementById("genderF").remove();
     let dom = "#userInputM";
+    localStorage.gender = "m"
     form(dom);
   });
 
   $("#female").click(function () {
     document.getElementById("genderM").remove();
     let dom = "#userInputF";
+    localStorage.gender="f"
     form(dom);
   });
   function form(dom) {
@@ -944,22 +946,22 @@ function scene1_2() {
   <div class="clipboard" id="clipboard"></div>
   <h4 id="scene2-intro"></h4>`);
   $("#clipboard").hide();
-
+  let name = localStorage.name
   var disp1 =
-    "Head Detective, you are in a meeting room in the Headquarter of Detectives and given the following information:";
+    `Head Detective ${name}, you are in a meeting room in the Headquarter of Detectives and given the following information:`;
   var dom1 = "#scene1-intro";
 
   var disp2 =
     "After understanding the whole situation, you left the meeting room and head out to find Sir Suriv...";
   var dom2 = "#scene2-intro";
 
-  typingline(disp1, 80, dom1).then(function () {
+  typingline(disp1, 40, dom1).then(function () {
     $("#scene1-intro")
-      .delay(800)
-      .fadeOut(1600, function () {
+      .delay(1000)
+      .fadeOut(1000, function () {
         $("#clipboard").fadeIn(1600);
         $("#clipboard").prepend(`
-      <h4 style="text-align: left; padding: 20px;"><i>To Head Detective,</i></h4>
+      <h4 style="text-align: left; padding: 20px;"><i>To Head Detective ${name},</i></h4>
       <h4>Background Information</h4>
       <p>
           Name of Virus: <b>COVID-19</b><br>
@@ -969,7 +971,8 @@ function scene1_2() {
       </p>
       <h4 style="padding-top: 20px;">Mission</h4>
       <p>
-          Locate Sir Suriv and find out what is his intention with that val<br>
+          <h6>Head to Viole City</h6>
+          Locate Sir Suriv and find out what is his intention with that vial<br>
           Apprehend him as soon as possible. The whole world is counting on you to bring about peace.
       </p>
       <h4 style="text-align: left; padding: 20px;"><i>From Global Task Force</i></h4>
@@ -998,23 +1001,33 @@ function scene1_2() {
 
 function map1() {
   localStorage.checkpoint = 2;
-  $("#scenes").append(`<h4 id="map1-intro"></h4>`);
   var disp = "Click on the next city to proceed:";
-  var dom = "#map1-intro";
 
-  typingline(disp, 100, dom).then(function () {
-    $("#map1-intro").append(`<ul>
-      <li>Headquarter</li>
-      <li>Viole City</li>
-      <li>Ascend City</li>
-      <li>Ace City</li>
-      </ul>`);
-    //need fix map1 (replace with img)
-    $("#map1-intro")
-      .delay(1000)
-      .fadeOut(1600, function () {
-        scene3();
-      });
+  $("#scenes").append(
+    `<h3></h3>
+    <div id = "map1"><img class ="img-fluid" src="Images/map.png" alt="map image"></div>`
+  );
+  typingline(disp,30,"h3")
+  //when it is clicked
+  $("#map1 img").click(function (evt) {
+    var offset = $(this).offset();
+    var x = offset.left;
+    var y = offset.top;
+    var mousex = evt.pageX - x;
+    var mousey = evt.pageY - y;
+    let width = $(this).width()
+    let height = $(this).height()
+    //If above selection is correct
+    if(mousex <width*.75 && mousex>width*.25){
+      if(mousey<height*.5){
+        $("h3, #map1").remove()
+        scene3()
+      }else{
+        alert("Wrong city!")
+      }
+    }else{
+      alert("Wrong city!")
+    }
   });
 }
 
