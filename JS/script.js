@@ -1171,6 +1171,7 @@ function scene5() {
       $("#information").append(`<h5>Cities informed: Ascend City, Ace City</h5>
         <h5>Villian Last Seen: Viole Secret Royal Lab</h5>
         <h5>Image of Lab:</h5>
+        <img src="Images/lab.png" style="width:360px;padding:10px;">
         <button id="symptomsBtn2" class="symptomsBtn2" style="margin: 10px;">Next</button>`);
       $("#symptomsBtn2").css({
         "font-size": "12pt",
