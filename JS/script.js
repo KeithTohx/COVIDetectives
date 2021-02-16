@@ -947,6 +947,8 @@ function userChar() {
 
 function scene1_2() {
   localStorage.checkpoint = 1;
+  let imageURL = "Images/hq.png"
+  $("body").css({"background-image":"url("+imageURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"})
   $("#scenes").append(`<h4 id="scene1-intro"></h4>
   <div class="clipboard" id="clipboard"></div>
   <h4 id="scene2-intro"></h4>`);
