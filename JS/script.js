@@ -2757,21 +2757,23 @@ $.ajax(setting).done(function (response) {
     });
     $("button").click(leaderboard)
   })
-  
 }
 function leaderboard(){
   localStorage.clear()
   $("#endOfGame,button").remove()
-  $(domScene).append(`<div id="leaderBoard">
+  $(domScene).append(`<div id="leaderBoard"><div>
   <h2>Leader Board</h2>
-  <table width="100%">
+  <table width="70%">
     <tr>
       <th>Name</th>
       <th>Point</th>
       <th>Time taken</th>
     </tr>
-  </table>
+  </table><br></div>
 </div>`)
+$("#leaderBoard").css({"background-color":"lightyellow","text-align":"center","font-size":"14pt"})
+$("table").css({margin:"20px auto"})
+$("th").css({"border-width":"1px","border-style":"solid"})
 let apiKey = "6028ae7d5ad3610fb5bb5fe6";
 var settings = {
   async: true,
@@ -2787,7 +2789,6 @@ var settings = {
 $.ajax(settings).done(function (response) {
   response.sort(sortTime);
   response.sort(sortPoints);
-  console.log(response);
   let len;
   if (response.length < 30) {
     len = response.length;
@@ -2819,14 +2820,20 @@ $.ajax(settings).done(function (response) {
         disp = `${hour} Hour `+disp
       }
     }
-    $("table").append(`<tr><td>${dataName}</td><td>${dataPoint}</td><td>${disp}</td></tr>`)
+    $("table").append(`<tr><td>${dataName}</td><td>${dataPoint}</td><td class="dispTime">${disp}</td></tr>`)
+    $("td").css({"border-width":"1px","border-style":"solid",})
+    $(".dispTime").css({"text-align":"right"})
   }
+  
   $("#leaderBoard").append(`<button><a href="acknowledge.html">Acknowledgement</a></button>`)
   $("button").css({
     "border-style": "ridged",
     "background-color": "white",
-    "font-size": "14pt",
+    "font-size": "12pt",
+    "border-radius":"10px",
+    "text-decoration":"none",
   });
+  
   function sortTime(task1, task2) {
     if (task1.time > task2.time) {
       return 1;
