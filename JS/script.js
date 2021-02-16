@@ -1936,6 +1936,7 @@ function scene7() {
   });
 }
 function scene8() {
+  let name = localStorage.name
   localStorage.checkpoint = 11;
   $("#scene7, #scene8Button").remove();
   $(domScene).append(`<div id ="scene8">
@@ -1993,7 +1994,7 @@ function preEncounter() {
   <h1>Encounter!</h1><br>
   <h3>Defeat Sir Suriv and obtain the vial of virus</h3><br>
   <h3>Try your best to answer all questions right</h3><br>
-  <h3>There are X number of questions.</h3><br>
+  <h3>There are 5 questions.</h3><br>
   <h3>Good luck.</h3>
   <button id="questionsButton">Arrest him!</button>
   </div>`);
@@ -2007,6 +2008,7 @@ function preEncounter() {
   $("#questionsButton").click(encounter);
 }
 function encounter() {
+  let name = localStorage.name
   $("#pre-encounter").remove();
   $(domScene).append(`<div id = "encounter">
   <div class ="row">
@@ -2072,11 +2074,11 @@ function encounter() {
   let domQuestions = "#questions";
   //Questions
   // To be created later
-  let question1 = "Answer is c";
-  let question2 = "Answer is A";
-  let question3 = "Answer is C";
-  let question4 = "Answer is D";
-  let question5 = "Answer is B";
+  let question1 = "Which option below is not effective in stopping covid-19?";
+  let question2 = "When should you take off your mask?";
+  let question3 = "Why must citizens stand 1 meter / 6 feet apart when they are out of their homes?";
+  let question4 = "How can companies reduce the chance of catching covid-19 by their staffs?";
+  let question5 = "What should citizens avoid doing during this period?";
   //number of questions right
   let qRight = 0;
   let playerHealth = 100;
@@ -2154,10 +2156,10 @@ function encounter() {
     });
   }
   function firstQuestion() {
-    let optionA = "A is wrong";
-    let optionB = "B is wrong";
-    let optionC = "C is correct";
-    let optionD = "D is wrong";
+    let optionA = "(A) Standing 1 meter apart.";
+    let optionB = "(B) Wearing a mask.";
+    let optionC = "(C) Not working from home.";
+    let optionD = "(D) Refrain from participating in large social events";
     typingline(question1, 50, domQuestion1);
     typingline(optionA, 50, "#q1A");
     typingline(optionB, 50, "#q1B");
@@ -2173,10 +2175,10 @@ function encounter() {
     });
   }
   function secondQuestion() {
-    let optionA = "A is right";
-    let optionB = "B is wrong";
-    let optionC = "C is wrong";
-    let optionD = "D is wrong";
+    let optionA = "(A) Eating or drinking";
+    let optionB = "(B) Speaking to another person";
+    let optionC = "(C) Riding the public transport";
+    let optionD = "(D) Listening to lecturers teaching, while being out of your house";
     typingline(question2, 50, domQuestions);
     typingline(optionA, 50, "#q1A");
     typingline(optionB, 50, "#q1B");
@@ -2192,10 +2194,10 @@ function encounter() {
     });
   }
   function thirdQuestion() {
-    let optionA = "A is wrong";
-    let optionB = "B is wrong";
-    let optionC = "C is correct";
-    let optionD = "D is wrong";
+    let optionA = "(A) Covid-19 can be transmitted easily through a far contact";
+    let optionB = "(B) Because it is cool to stand 1 meter apart.";
+    let optionC = "(C) Covid-19 can be transmitted easily through close contact";
+    let optionD = "(D) Covid-19 cannot be trasmitted easily through close contact";
     typingline(question3, 50, domQuestions);
     typingline(optionA, 50, "#q1A");
     typingline(optionB, 50, "#q1B");
@@ -2211,10 +2213,10 @@ function encounter() {
     });
   }
   function fourthQuestion() {
-    let optionA = "A is wrong";
-    let optionB = "B is wrong";
-    let optionC = "C is wrong";
-    let optionD = "D is right";
+    let optionA = "(A) Force employees to work at the office.";
+    let optionB = "(B) Allow employees to have close contact with one another.";
+    let optionC = "(C) Force employees to work overtime.";
+    let optionD = "(D) For work that can be done at home, employees are to work from home.";
     typingline(question4, 50, domQuestions);
     typingline(optionA, 50, "#q1A");
     typingline(optionB, 50, "#q1B");
@@ -2230,10 +2232,10 @@ function encounter() {
     });
   }
   function fifthQuestion() {
-    let optionA = "A is wrong";
-    let optionB = "B is right";
-    let optionC = "C is wrong";
-    let optionD = "D is wrong";
+    let optionA = "(A) Practice good hygiene";
+    let optionB = "(B) Attend mass gatherings such as football matches.";
+    let optionC = "(C) Stand 1 meter apart.";
+    let optionD = "(D) Stop exercising completely";
     typingline(question5, 50, domQuestions);
     typingline(optionA, 50, "#q1A");
     typingline(optionB, 50, "#q1B");
@@ -2250,6 +2252,7 @@ function encounter() {
   }
 }
 function encounterReview(qRight) {
+  localStorage.secondQuiz = qRight;
   $("#encounter").remove();
   $(domScene).append(`<div id = "encounterReview">
   <h1>You got <span id ="qRight"></span>/5 questions correct!</h1>
@@ -2275,6 +2278,7 @@ function encounterReview(qRight) {
   });
 }
 function postEncounter(qRight) {
+  let name = localStorage.name
   $("#encounterReview").remove();
   $(domScene).append(`<div id ="postEncounter">
   <div id="firstSentence"></div>
