@@ -1126,7 +1126,7 @@ function scene5() {
 
   $("#information").fadeIn(1600);
   $("#information").prepend(`
-  <h4 style="padding-bottom: 20px;">Virus Information</h4>
+  <h4 style="padding: 15px;">Virus Information</h4>
   <div id="symptoms">
   <div class="row" id="symptomsCommon">
   <div class="col-sm" id="symptomCommonTitle"></div>
