@@ -1490,7 +1490,7 @@ function clue1() {
   <div id="firstSentence"></div>
   <div id="secondSentence"></div>
   </div> `);
-  $("#beforeClue1").css({"font-size":"15pt"})
+  $("#beforeClue1").css({ "font-size": "15pt" });
   let firstSentence = "You found a plan written by Sir Suriv";
   let domFirst = "#firstSentence";
   let secondSentence = "You took a look at it";
@@ -1504,7 +1504,7 @@ function clue1() {
         "border-style": "none",
       });
       $("#clue1Btn").click(function () {
-        $("#beforeClue1").remove()
+        $("#beforeClue1").remove();
         $(domScene).append(`<div id="clue1">
   <div id = "image"><img src="Images/Plan.png" alt="plan"></div><br><br>
   <h2></h2>
@@ -1566,19 +1566,41 @@ function clue1() {
 
         // transition to next show map
         $("#map2Button").click(function () {
-          $(domScene).append(
-            `<div id = "map2"><img class ="img-fluid" src='#' alt="map image"></div>`
-          );
           $("#clue1").remove();
-          //when it is clicked
-          $("#map2 img").click(function (evt) {
-            var offset = $(this).offset();
-            var x = offset.left;
-            var y = offset.top;
-            var mousex = evt.pageX - x;
-            var mousey = evt.pageY - y;
-            //If above selection is correct
-            scene6();
+          $(domScene).append(`<div id = "afterClue1"></div>`);
+          typingline(
+            "You look at the plan and realised you need to head to Ascend City",
+            60,
+            "#afterClue1"
+          ).then(function () {
+            $("#afterClue1")
+              .delay(2000)
+              .fadeOut(500, function () {
+                $(domScene).append(
+                  `<div id = "map2"><img class ="img-fluid" src='Images/map.png' alt="map image"></div>`
+                );
+                //when it is clicked
+                $("#map2 img").click(function (evt) {
+                  var offset = $(this).offset();
+                  var x = offset.left;
+                  var y = offset.top;
+                  var mousex = evt.pageX - x;
+                  var mousey = evt.pageY - y;
+                  let width = $(this).width();
+                  let height = $(this).height();
+                  //If above selection is correct
+                  if (mousex < width * 0.75 && mousex > width * 0.25) {
+                    if (mousey >= height * 0.5) {
+                      $("h3, #map1").remove();
+                      scene6();
+                    } else {
+                      alert("Wrong city!");
+                    }
+                  } else {
+                    alert("Wrong city!");
+                  }
+                });
+              });
           });
         });
       });
