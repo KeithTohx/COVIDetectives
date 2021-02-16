@@ -712,15 +712,15 @@ $("#ackn").click(function () {
 });
 $("#leaderBoardBtn").click(function () {
   $("#startGame").remove();
-    $("#content").append(
-      `<div id="scenes" class="container" style="padding: 20px;">`
-    );
-    leaderboard()
+  $("#content").append(
+    `<div id="scenes" class="container" style="padding: 20px;">`
+  );
+  leaderboard();
 });
 $("#start").click(function () {
   $("#start,#ackn").remove();
   let pastGame = localStorage.checkpoint;
-  if (pastGame >0 && pastGame <17) {
+  if (pastGame > 0 && pastGame < 17) {
     $("#startGame").remove();
     $("#content").append(
       `<div id="scenes" class="container" style="padding: 20px;">`
@@ -812,14 +812,14 @@ function userChar() {
   $("#male").click(function () {
     document.getElementById("genderF").remove();
     let dom = "#userInputM";
-    localStorage.gender = "m"
+    localStorage.gender = "m";
     form(dom);
   });
 
   $("#female").click(function () {
     document.getElementById("genderM").remove();
     let dom = "#userInputF";
-    localStorage.gender="f"
+    localStorage.gender = "f";
     form(dom);
   });
   function form(dom) {
@@ -841,8 +841,13 @@ function userChar() {
       margin: "0px",
       "justify-content": "center",
     });
-    $("button").css({ float: "left","border-width":"1px","border-radius":"15px","font-size":"12pt"});
-    $("#button").css({"text-align":"left"})
+    $("button").css({
+      float: "left",
+      "border-width": "1px",
+      "border-radius": "15px",
+      "font-size": "12pt",
+    });
+    $("#button").css({ "text-align": "left" });
     //Search function
     $("#userCountry").keyup(function () {
       $("#countryList").remove();
@@ -926,9 +931,9 @@ function userChar() {
         if (countryFilled == true) {
           localStorage.name = userName;
           localStorage.country = country;
-          let d = new Date()
-          let time = d.getTime()
-          localStorage.time = time
+          let d = new Date();
+          let time = d.getTime();
+          localStorage.time = time;
           document.getElementById("charInfo").remove();
           $("#content").append(
             `<div id="scenes" class="container" style="padding: 20px;">`
@@ -946,9 +951,8 @@ function scene1_2() {
   <div class="clipboard" id="clipboard"></div>
   <h4 id="scene2-intro"></h4>`);
   $("#clipboard").hide();
-  let name = localStorage.name
-  var disp1 =
-    `Head Detective ${name}, you are in a meeting room in the Headquarter of Detectives and given the following information:`;
+  let name = localStorage.name;
+  var disp1 = `Head Detective ${name}, you are in a meeting room in the Headquarter of Detectives and given the following information:`;
   var dom1 = "#scene1-intro";
 
   var disp2 =
@@ -1007,7 +1011,7 @@ function map1() {
     `<h3></h3>
     <div id = "map1"><img class ="img-fluid" src="Images/map.png" alt="map image"></div>`
   );
-  typingline(disp,30,"h3")
+  typingline(disp, 30, "h3");
   //when it is clicked
   $("#map1 img").click(function (evt) {
     var offset = $(this).offset();
@@ -1015,18 +1019,18 @@ function map1() {
     var y = offset.top;
     var mousex = evt.pageX - x;
     var mousey = evt.pageY - y;
-    let width = $(this).width()
-    let height = $(this).height()
+    let width = $(this).width();
+    let height = $(this).height();
     //If above selection is correct
-    if(mousex <width*.75 && mousex>width*.25){
-      if(mousey<height*.5){
-        $("h3, #map1").remove()
-        scene3()
-      }else{
-        alert("Wrong city!")
+    if (mousex < width * 0.75 && mousex > width * 0.25) {
+      if (mousey < height * 0.5) {
+        $("h3, #map1").remove();
+        scene3();
+      } else {
+        alert("Wrong city!");
       }
-    }else{
-      alert("Wrong city!")
+    } else {
+      alert("Wrong city!");
     }
   });
 }
@@ -1046,14 +1050,14 @@ function scene3() {
   var disp3 = "You then walk towards the administration office of the city...";
   var dom3 = "#scene3-text2";
 
-  typingline(disp1, 100, dom1).then(function () {
-    typingline(disp2, 100, dom2).then(function () {
-      typingline(disp3, 100, dom3).then(function () {
+  typingline(disp1, 50, dom1).then(function () {
+    typingline(disp2, 50, dom2).then(function () {
+      typingline(disp3, 50, dom3).then(function () {
         $("#scene3-intro").delay(800).fadeOut(1600);
         $("#scene3-text1").delay(800).fadeOut(1600);
         $("#scene3-text2")
-          .delay(800)
-          .fadeOut(1600, function () {
+          .delay(1000)
+          .fadeOut(1000, function () {
             scene4();
           });
       });
@@ -1070,11 +1074,11 @@ function scene4() {
   <h4 id="scene4-text4"></h4>
   <h4 id="scene4-text5"></h4>
   <h4 id="scene4-text6"></h4>`);
-
+  let name = localStorage.name;
   var disp1 = "The Mayor of the city came to greet you.";
-  var disp2 = `"Dear Head Detective, have you come to see the situation?"`;
+  var disp2 = `"Dear Head Detective ${name}, have you come to see the situation?"`;
   var disp3 = "You nodded you head.";
-  var disp4 = `He replied, "Well, this is the doing of Sir Suriv testing out a type of virus..."`;
+  var disp4 = `He replied, "Sir Suriv opened the vial of virus, releasing some of the virus into the city."`;
   var disp5 = "He then searched his drawers for a moment.";
   var disp6 = `"We are still investigating the situation. Here's what we know at this moment. Please have a look."`;
   var disp7 = "He handed you a deck of information:";
@@ -1108,16 +1112,16 @@ function scene4() {
     });
   }
 
-  typingline(disp1, 100, dom1).then(function () {
+  typingline(disp1, 50, dom1).then(function () {
     $("#scene4-intro")
-      .delay(800)
-      .fadeOut(1600, function () {
-        typingline(disp2, 80, dom2).then(function () {
-          typingline(disp3, 80, dom3).then(function () {
-            typingline(disp4, 80, dom4).then(function () {
-              typingline(disp5, 80, dom5).then(function () {
-                typingline(disp6, 80, dom6).then(function () {
-                  typingline(disp7, 80, dom7).then(function () {
+      .delay(1000)
+      .fadeOut(1000, function () {
+        typingline(disp2, 40, dom2).then(function () {
+          typingline(disp3, 40, dom3).then(function () {
+            typingline(disp4, 40, dom4).then(function () {
+              typingline(disp5, 40, dom5).then(function () {
+                typingline(disp6, 40, dom6).then(function () {
+                  typingline(disp7, 40, dom7).then(function () {
                     $("#scene4-text1").delay(800).fadeOut(1600);
                     $("#scene4-text2").delay(800).fadeOut(1600);
                     $("#scene4-text3").delay(800).fadeOut(1600);
@@ -1227,16 +1231,18 @@ function showdown1() {
   var dom4 = "#showdown1-text4";
   var dom5 = "#showdown1-intro";
 
-  typingline(disp1, 100, dom1).then(function () {
-    typingline(disp2, 80, dom2).then(function () {
-      typingline(disp3, 80, dom3).then(function () {
+  typingline(disp1, 60, dom1).then(function () {
+    typingline(disp2, 50, dom2).then(function () {
+      typingline(disp3, 50, dom3).then(function () {
         $("#showdown1-text1").fadeOut(1600);
         $("#showdown1-text2").fadeOut(1600);
         $("#showdown1-text3").fadeOut(1600, function () {
-          typingline(disp4, 100, dom4).then(function () {
+          typingline(disp4, 60, dom4).then(function () {
             $("#showdown1-text4").fadeOut(1600, function () {
-              typingline(disp5, 100, dom5).then(function () {
-                $("#showdown1-intro").append(`<div id="showdown1-quiz" class="flex-container2">
+              typingline(disp5, 60, dom5).then(function () {
+                $(
+                  "#showdown1-intro"
+                ).append(`<div id="showdown1-quiz" class="flex-container2">
                 <div id="nosebleed" style="background-color: cadetblue;"><p>#1 </br> Nosebleed</p></div>
                 <div id="cough" style="background-color: cadetblue;"><p>#2 </br> Cough</p></div>
                 <div id="fever" style="background-color: cadetblue;"><p>#3 </br> Fever</p></div>
@@ -1250,121 +1256,212 @@ function showdown1() {
 
                 let count = 0;
                 let correct = 0;
+                let cough = false;
+                let fever = false;
+                let smell = false;
+                let chills = false;
+                let headache = false;
+                let nosebleed = false;
+                let stomachache = false;
+                let hunger = false;
+                $("#cough").click(function () {
+                  if (cough == false) {
+                    if (count == 5) {
+                      alert(
+                        "You have selected 5 symptoms already. Please click Submit."
+                      );
+                    }
+                    if (count < 5) {
+                      count++;
+                      correct++;
+                      $("#cough").css({
+                        "background-color": "lightblue",
+                      });
+                      cough = true;
+                    }
+                  } else {
+                    $("#cough").css({
+                      "background-color": "cadetblue",
+                    });
+                    count -= 1;
+                    correct -= 1;
+                    cough = false;
+                  }
+                });
+                $("#fever").click(function () {
+                  if (fever == false) {
+                    if (count == 5) {
+                      alert(
+                        "You have selected 5 symptoms already. Please click Submit."
+                      );
+                    }
+                    if (count < 5) {
+                      count++;
+                      correct++;
+                      $("#fever").css({
+                        "background-color": "lightblue",
+                      });
+                    }
+                    fever = true;
+                  } else {
+                    $("#fever").css({
+                      "background-color": "cadetblue",
+                    });
+                    count -= 1;
+                    correct -= 1;
+                    fever = false;
+                  }
+                });
+                $("#smell").click(function () {
+                  if (smell == false) {
+                    if (count == 5) {
+                      alert(
+                        "You have selected 5 symptoms already. Please click Submit."
+                      );
+                    }
+                    if (count < 5) {
+                      count++;
+                      correct++;
+                      $("#smell").css({
+                        "background-color": "lightblue",
+                      });
+                    }
+                    smell = true;
+                  } else {
+                    $("#smell").css({
+                      "background-color": "cadetblue",
+                    });
+                    count -= 1;
+                    correct -= 1;
+                    smell = false;
+                  }
+                });
+                $("#chills").click(function () {
+                  if (chills == false) {
+                    if (count == 5) {
+                      alert(
+                        "You have selected 5 symptoms already. Please click Submit."
+                      );
+                    }
+                    if (count < 5) {
+                      count++;
+                      correct++;
+                      $("#chills").css({
+                        "background-color": "lightblue",
+                      });
+                    }
+                    chills = true;
+                  } else {
+                    $("#chills").css({
+                      "background-color": "cadetblue",
+                    });
+                    count -= 1;
+                    correct -= 1;
+                    chills = false;
+                  }
+                });
+                $("#headache").click(function () {
+                  if (headache == false) {
+                    if (count == 5) {
+                      alert(
+                        "You have selected 5 symptoms already. Please click Submit."
+                      );
+                    }
+                    if (count < 5) {
+                      count++;
+                      correct++;
+                      $("#headache").css({
+                        "background-color": "lightblue",
+                      });
+                    }
+                    headache = true;
+                  } else {
+                    $("#headache").css({
+                      "background-color": "cadetblue",
+                    });
+                    count -= 1;
+                    correct -= 1;
+                    headache = false;
+                  }
+                });
+                $("#nosebleed").click(function () {
+                  if (nosebleed == false) {
+                    if (count == 5) {
+                      alert(
+                        "You have selected 5 symptoms already. Please click Submit."
+                      );
+                    }
+                    if (count < 5) {
+                      count++;
+                      $("#nosebleed").css({
+                        "background-color": "lightblue",
+                      });
+                    }
+                    nosebleed = true;
+                  } else {
+                    $("#nosebleed").css({
+                      "background-color": "cadetblue",
+                    });
+                    count -= 1;
+                    correct -= 1;
+                    nosebleed = false;
+                  }
+                });
+                $("#hunger").click(function () {
+                  if (hunger == false) {
+                    if (count == 5) {
+                      alert(
+                        "You have selected 5 symptoms already. Please click Submit."
+                      );
+                    }
+                    if (count < 5) {
+                      count++;
+                      $("#hunger").css({
+                        "background-color": "lightblue",
+                      });
+                    }
+                    hunger = true;
+                  } else {
+                    $("#hunger").css({
+                      "background-color": "cadetblue",
+                    });
+                    count -= 1;
+                    correct -= 1;
+                    hunger = false;
+                  }
+                });
+                $("#stomachache").click(function () {
+                  if (stomachache == false) {
+                    if (count == 5) {
+                      alert(
+                        "You have selected 5 symptoms already. Please click Submit."
+                      );
+                    }
+                    if (count < 5) {
+                      count++;
+                      $("#stomachache").css({
+                        "background-color": "lightblue",
+                      });
+                    }
+                    stomachache = true;
+                  } else {
+                    $("#stomachache").css({
+                      "background-color": "cadetblue",
+                    });
+                    count -= 1;
+                    correct -= 1;
+                    stomachache = false;
+                  }
+                });
 
-                $("#cough").click(function(){
-                    if (count==5)
-                    {
-                        alert("You have selected 5 symptoms already. Please click Submit.");
-                    }
-                    if (count<5)
-                    {
-                        count++;
-                        correct++;
-                        $("#cough").css({
-                            "background-color" : "lightblue"
-                        });
-                    }
-                });
-                $("#fever").click(function(){
-                    if (count==5)
-                    {
-                        alert("You have selected 5 symptoms already. Please click Submit.");
-                    }
-                    if (count<5)
-                    {
-                        count++;
-                        correct++;
-                        $("#fever").css({
-                            "background-color" : "lightblue"
-                        });
-                    }
-                });
-                $("#smell").click(function(){
-                    if (count==5)
-                    {
-                        alert("You have selected 5 symptoms already. Please click Submit.");
-                    }
-                    if (count<5)
-                    {
-                        count++;
-                        correct++;
-                        $("#smell").css({
-                            "background-color" : "lightblue"
-                        });
-                    }
-                });
-                $("#chills").click(function(){
-                    if (count==5)
-                    {
-                        alert("You have selected 5 symptoms already. Please click Submit.");
-                    }
-                    if (count<5)
-                    {
-                        count++;
-                        correct++;
-                        $("#chills").css({
-                            "background-color" : "lightblue"
-                        });
-                    }
-                });
-                $("#headache").click(function(){
-                    if (count==5)
-                    {
-                        alert("You have selected 5 symptoms already. Please click Submit.");
-                    }
-                    if (count<5)
-                    {
-                        count++;
-                        correct++;
-                        $("#headache").css({
-                            "background-color" : "lightblue"
-                        });
-                    }
-                });
-                $("#nosebleed").click(function(){
-                    if (count==5)
-                    {
-                        alert("You have selected 5 symptoms already. Please click Submit.");
-                    }
-                    if (count<5)
-                    {
-                        count++;
-                        $("#nosebleed").css({
-                            "background-color" : "lightblue"
-                        });
-                    }
-                });
-                $("#hunger").click(function(){
-                    if (count==5)
-                    {
-                        alert("You have selected 5 symptoms already. Please click Submit.");
-                    }
-                    if (count<5)
-                    {
-                        count++;
-                        $("#hunger").css({
-                            "background-color" : "lightblue"
-                        });
-                    }
-                });
-                $("#stomachache").click(function(){
-                    if (count==5)
-                    {
-                        alert("You have selected 5 symptoms already. Please click Submit.");
-                    }
-                    if (count<5)
-                    {
-                        count++;
-                        $("#stomachache").css({
-                            "background-color" : "lightblue"
-                        });
-                    }
-                });
-
-                $("#showdownSubmit").click(function(){
+                $("#showdownSubmit").click(function () {
                   $("#showdownSubmit").remove();
-                  $("#showdown1-intro").append(`<h4 style="text-align: center;">Your score: ${correct}/5</h4>`);
-                  $("#showdown1-intro").append(`<button id="showdownNext" class="showdownNext">Next</button>`);
+                  $("#showdown1-intro").append(
+                    `<h4 style="text-align: center;">Your score: ${correct}/5</h4>`
+                  );
+                  $("#showdown1-intro").append(
+                    `<button id="showdownNext" class="showdownNext">Next</button>`
+                  );
 
                   $("#showdownNext").css({
                     "font-size": "12pt",
@@ -1372,12 +1469,12 @@ function showdown1() {
                     "border-style": "none",
                   });
 
-                  $("#showdownNext").click(function(){
+                  $("#showdownNext").click(function () {
                     $("#showdownNext").remove();
                     $("#showdown1-intro").fadeOut(1600, function () {
                       clue1();
                     });
-                  })
+                  });
                 });
               });
             });
@@ -1425,7 +1522,8 @@ function clue1() {
     "border-width": "1px",
     "border-color": "black",
     "font-size": "20pt",
-    "margin-top": "50px","background-color":"#EEEEEE"
+    "margin-top": "50px",
+    "background-color": "#EEEEEE",
   });
   $("h3").css({ "text-align": "left" });
   $("#clue1 li").css({ "text-align": "left" });
@@ -2693,51 +2791,51 @@ function vialFound(marks) {
 }
 
 function endOfGame() {
-  let country = localStorage.getItem("country")
+  let country = localStorage.getItem("country");
   var settings = {
     url: `https://disease.sh/v3/covid-19/countries/${country}`,
     method: "GET",
     timeout: 0,
-    error: function(){
-    $("#Country").text(country)
-    $("#Cases").text(0)
-    $("#Recovered").text(0)
-    $("#Critical").text(0)
-    $("#Dead").text(0)
-    $("#Test").text(0)
-    }
+    error: function () {
+      $("#Country").text(country);
+      $("#Cases").text(0);
+      $("#Recovered").text(0);
+      $("#Critical").text(0);
+      $("#Dead").text(0);
+      $("#Test").text(0);
+    },
   };
   $.ajax(settings).done(function (response) {
-    $("#Country").text(country)
-    $("#Cases").text(response.cases)
-    $("#Recovered").text(response.recovered)
-    $("#Critical").text(response.critical)
-    $("#Dead").text(response.deaths)
-    $("#Test").text(response.tests)
-  });       
+    $("#Country").text(country);
+    $("#Cases").text(response.cases);
+    $("#Recovered").text(response.recovered);
+    $("#Critical").text(response.critical);
+    $("#Dead").text(response.deaths);
+    $("#Test").text(response.tests);
+  });
   let apiKey = "6028ae7d5ad3610fb5bb5fe6";
-  let username = localStorage.getItem("name")
-  let d = new Date()
-  let time = d.getTime()-localStorage.getItem("time")
-  let point = localStorage.getItem("points")
-  var jsondata = {"name": username,"points": point,"time":time};
-var setting = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://leaderboard-30f1.restdb.io/rest/leaderboard",
-  "method": "POST",
-  "headers": {
-    "content-type": "application/json",
-    "x-apikey": apiKey,
-    "cache-control": "no-cache"
-  },
-  "processData": false,
-  "data": JSON.stringify(jsondata)
-}
+  let username = localStorage.getItem("name");
+  let d = new Date();
+  let time = d.getTime() - localStorage.getItem("time");
+  let point = localStorage.getItem("points");
+  var jsondata = { name: username, points: point, time: time };
+  var setting = {
+    async: true,
+    crossDomain: true,
+    url: "https://leaderboard-30f1.restdb.io/rest/leaderboard",
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "x-apikey": apiKey,
+      "cache-control": "no-cache",
+    },
+    processData: false,
+    data: JSON.stringify(jsondata),
+  };
 
-$.ajax(setting).done(function (response) {
-  console.log(response);
-});
+  $.ajax(setting).done(function (response) {
+    console.log(response);
+  });
   localStorage.removeItem("checkpoint");
   $("#vialFound,#endOfGameButton").remove();
   $(domScene).append(`
@@ -2767,19 +2865,19 @@ $.ajax(setting).done(function (response) {
   be able to tide through this crisis`,
     15,
     "#reminder"
-  ).then(function(){
-    $("#reminder").append(`<div><button>Leaderboard</button></div>`)
+  ).then(function () {
+    $("#reminder").append(`<div><button>Leaderboard</button></div>`);
     $("button").css({
       "border-style": "ridged",
       "background-color": "white",
       "font-size": "14pt",
     });
-    $("button").click(leaderboard)
-  })
+    $("button").click(leaderboard);
+  });
 }
-function leaderboard(){
-  localStorage.clear()
-  $("#endOfGame,button").remove()
+function leaderboard() {
+  localStorage.clear();
+  $("#endOfGame,button").remove();
   $(domScene).append(`<div id="leaderBoard"><div>
   <h2>Leader Board</h2>
   <table width="70%">
@@ -2789,87 +2887,95 @@ function leaderboard(){
       <th>Time taken</th>
     </tr>
   </table><br></div>
-</div>`)
-$("#leaderBoard").css({"background-color":"lightyellow","text-align":"center","font-size":"14pt"})
-$("table").css({margin:"20px auto"})
-$("th").css({"border-width":"1px","border-style":"solid"})
-let apiKey = "6028ae7d5ad3610fb5bb5fe6";
-var settings = {
-  async: true,
-  crossDomain: true,
-  url: "https://leaderboard-30f1.restdb.io/rest/leaderboard",
-  method: "GET",
-  headers: {
-    "content-type": "application/json",
-    "x-apikey": apiKey,
-    "cache-control": "no-cache",
-  },
-};
-$.ajax(settings).done(function (response) {
-  response.sort(sortTime);
-  response.sort(sortPoints);
-  let len;
-  if (response.length < 30) {
-    len = response.length;
-  } else {
-    len = 30;
-  }
-  for (i = 0; i < len; i++) {
-    let data = response[i];
-    let dataName = data.name;
-    let dataPoint = data.points;
-    let dataTime = data.time;
-    //Convert to Seconds
-    dataTime = Math.floor(dataTime / 1000);
-    //Calculate min
-    let sec;
-    let min;
-    let hour;
-    let disp;
-    sec = dataTime % 60;
-    dataTime -= sec;
-    disp = `${sec} Second`
-    if (dataTime > 0) {
-      let totalMin = dataTime / 60;
-      min = totalMin % 60;
-      disp = `${min} Minute `+disp
-      totalMin -= min;
-      if (totalMin > 0) {
-        hour = totalMin / 60;
-        disp = `${hour} Hour `+disp
+</div>`);
+  $("#leaderBoard").css({
+    "background-color": "lightyellow",
+    "text-align": "center",
+    "font-size": "14pt",
+  });
+  $("table").css({ margin: "20px auto" });
+  $("th").css({ "border-width": "1px", "border-style": "solid" });
+  let apiKey = "6028ae7d5ad3610fb5bb5fe6";
+  var settings = {
+    async: true,
+    crossDomain: true,
+    url: "https://leaderboard-30f1.restdb.io/rest/leaderboard",
+    method: "GET",
+    headers: {
+      "content-type": "application/json",
+      "x-apikey": apiKey,
+      "cache-control": "no-cache",
+    },
+  };
+  $.ajax(settings).done(function (response) {
+    response.sort(sortTime);
+    response.sort(sortPoints);
+    let len;
+    if (response.length < 30) {
+      len = response.length;
+    } else {
+      len = 30;
+    }
+    for (i = 0; i < len; i++) {
+      let data = response[i];
+      let dataName = data.name;
+      let dataPoint = data.points;
+      let dataTime = data.time;
+      //Convert to Seconds
+      dataTime = Math.floor(dataTime / 1000);
+      //Calculate min
+      let sec;
+      let min;
+      let hour;
+      let disp;
+      sec = dataTime % 60;
+      dataTime -= sec;
+      disp = `${sec} Second`;
+      if (dataTime > 0) {
+        let totalMin = dataTime / 60;
+        min = totalMin % 60;
+        disp = `${min} Minute ` + disp;
+        totalMin -= min;
+        if (totalMin > 0) {
+          hour = totalMin / 60;
+          disp = `${hour} Hour ` + disp;
+        }
+      }
+      $("table").append(
+        `<tr><td>${dataName}</td><td>${dataPoint}</td><td class="dispTime">${disp}</td></tr>`
+      );
+      $("td").css({ "border-width": "1px", "border-style": "solid" });
+      $(".dispTime").css({ "text-align": "right" });
+    }
+
+    $("#leaderBoard").append(
+      `<button><a href="acknowledge.html">Acknowledgement</a></button>`
+    );
+    $("button").css({
+      "border-style": "ridged",
+      "background-color": "white",
+      "font-size": "12pt",
+      "border-radius": "10px",
+      "text-decoration": "none",
+    });
+
+    function sortTime(task1, task2) {
+      if (task1.time > task2.time) {
+        return 1;
+      } else if (task1.time < task2.time) {
+        return -1;
+      } else {
+        return 0;
       }
     }
-    $("table").append(`<tr><td>${dataName}</td><td>${dataPoint}</td><td class="dispTime">${disp}</td></tr>`)
-    $("td").css({"border-width":"1px","border-style":"solid",})
-    $(".dispTime").css({"text-align":"right"})
-  }
-  
-  $("#leaderBoard").append(`<button><a href="acknowledge.html">Acknowledgement</a></button>`)
-  $("button").css({
-    "border-style": "ridged",
-    "background-color": "white",
-    "font-size": "12pt",
-    "border-radius":"10px",
-    "text-decoration":"none",
+    function sortPoints(task1, task2) {
+      if (task1.points < task2.points) {
+        return 1;
+      } else if (task1.points > task2.points) {
+        return -1;
+      } else {
+        return 0;
+      }
+    }
   });
-  
-  function sortTime(task1, task2) {
-    if (task1.time > task2.time) {
-      return 1;
-    } else if (task1.time < task2.time) {
-      return -1;
-    } else {
-      return 0;
-    }
-  }
-  function sortPoints(task1, task2) {
-    if (task1.points < task2.points) {
-      return 1;
-    } else if (task1.points > task2.points) {
-      return -1;
-    } else {
-      return 0;
-    }
-  }
-});
 }
