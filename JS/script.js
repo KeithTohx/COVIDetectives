@@ -1639,7 +1639,7 @@ function clue1() {
 function scene6() {
   //change scene
   let desolateUrl = "Images/Desolate.png";
-              $("body").css({"background-image":"url("+desolateUrl+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
+              $("body").css({"background-image":"url("+desolateUrl+")", "background-size":"100%","background-repeat":"no-repeat"});
   localStorage.checkpoint = 8;
   $("#map2").remove();
   //setting up elements to append content
@@ -1896,6 +1896,9 @@ $("#newspaperLeft, #safeMangementMeasure h4").css({"margin-top":"0px"})
     $("#scene7Button").click(scene7);
 }
 function scene7() {
+  $(".container").css({"background":"rgba(255,255,255,0)"})
+  let imageURL = "Images/Factory.svg";
+  $("body").css({"background-image":"url("+imageURL+")", "width":"100%", "background-size":"100%","background-repeat":"no-repeat"});
   localStorage.checkpoint = 10;
   $("#newspaperp2").remove();
   $(domScene).append(`<div id ="scene7">
@@ -1909,6 +1912,7 @@ function scene7() {
   <div id="eightSentence"></div>
   </div>`);
   //Css styling
+  $("#scene7").css({"background":"rgba(255,255,255,0.7)"})
   $(domScene).css({ "font-size": "18pt" });
   //The element selector
   let domFirst = "#firstSentence";
