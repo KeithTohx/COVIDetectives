@@ -1944,7 +1944,7 @@ function newspaperp2() {
     "border-style": "ridge",
     "border-radius": "15px",
     "border-width": "1px",
-    "margin-left": "45%",
+    //"margin-left": "45%",
   });
   $("#scene7Button").click(scene7);
 }
@@ -2711,6 +2711,7 @@ function mission() {
   typingline("Aim: Maintain World Peace By Creating A Vaccine", 30, "#aim");
 }
 function missingVial() {
+  $("body").css({ background: "rgb(255,255,255)" });
   localStorage.checkpoint = 16;
   $("#mission").remove();
   $(domScene).append(`<div id="missingVial">
@@ -2967,12 +2968,12 @@ function vialFound(marks) {
   if (marks > 3) {
     firstSentence = "You found the location of the vial";
     secondSentence = "You secure the vial and sent it to the headquarters";
-    thirdSentence = `Head Detective ${name}were awarded a medal of bravery`;
+    thirdSentence = `Head Detective ${name} were awarded a medal of bravery`;
   } else {
     firstSentence =
       "You almost did not managed to find the vial. With your experience, you managed to locate the vial.";
     secondSentence = "You secure the vial and sent it to the headquarters";
-    thirdSentence = `Head Detective ${name}were awarded a medal of bravery`;
+    thirdSentence = `Head Detective ${name} were awarded a medal of bravery`;
   }
   typingline(firstSentence, 30, domFirst).then(function () {
     typingline(secondSentence, 30, domSecond).then(function () {
@@ -3006,18 +3007,20 @@ function endOfGame() {
     },
   };
   $.ajax(settings).done(function (response) {
+    console.log(response)
     $("#Country").text(country);
     $("#Cases").text(response.cases);
     $("#Recovered").text(response.recovered);
     $("#Critical").text(response.critical);
     $("#Dead").text(response.deaths);
     $("#Test").text(response.tests);
+    $("img").attr("src",response.countryInfo.flag)
   });
   let apiKey = "6028ae7d5ad3610fb5bb5fe6";
   let username = localStorage.getItem("name");
   let d = new Date();
   let time = d.getTime() - localStorage.getItem("time");
-  let point = localStorage.firstQuiz + localStorage.secondQuiz +localStorage.finalQuiz;
+  let point = parseInt(localStorage.firstQuiz) + parseInt(localStorage.secondQuiz) +parseInt(localStorage.finalQuiz);
   var jsondata = { name: username, points: point, time: time };
   var setting = {
     async: true,
@@ -3041,7 +3044,7 @@ function endOfGame() {
   $(domScene).append(`
   <div id = "endOfGame">
   <div class = "row">
-  <div class ="col-sm"><img src="#" alt="image of award"></div>
+  <div class ="col-sm"><img src="#" alt="image of flag"></div>
   <div class ="col-sm">
   <h3></h3>
   <div>Country: <span id ="Country"></span></div>
@@ -3057,6 +3060,7 @@ function endOfGame() {
   </div>
   
   `);
+  
   typingline("Statistics", 50, "h3");
   typingline(
     `
@@ -3149,7 +3153,7 @@ function leaderboard() {
     }
 
     $("#leaderBoard").append(
-      `<button><a href="acknowledge.html">Acknowledgement</a></button>`
+      `<button><a href="index.html">Home Page</a></button>`
     );
     $("button").css({
       "border-style": "ridged",
