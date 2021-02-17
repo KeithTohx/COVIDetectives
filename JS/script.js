@@ -1638,6 +1638,8 @@ function clue1() {
 // Next function
 function scene6() {
   //change scene
+  let desolateUrl = "Images/Desolate.png";
+              $("body").css({"background-image":"url("+desolateUrl+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
   localStorage.checkpoint = 8;
   $("#map2").remove();
   //setting up elements to append content
