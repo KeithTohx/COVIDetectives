@@ -1063,6 +1063,7 @@ function scene3() {
     "background-size": "100%",
     "background-repeat": "no-repeat",
   });
+  $(".container").css({ background: "rgba(255,255,255,0.7)" });
 
   var disp1 =
     "As you walk into Viole city, you see symptoms of people getting sick.";
@@ -1076,11 +1077,12 @@ function scene3() {
   typingline(disp1, 50, dom1).then(function () {
     typingline(disp2, 50, dom2).then(function () {
       typingline(disp3, 50, dom3).then(function () {
-        $("#scene3-intro").delay(800).fadeOut(1600);
-        $("#scene3-text1").delay(800).fadeOut(1600);
+        $("#scene3-intro").delay(1000).fadeOut(1000);
+        $("#scene3-text1").delay(1000).fadeOut(1000);
         $("#scene3-text2")
           .delay(1000)
           .fadeOut(1000, function () {
+            $(".container").css({ background: "rgba(255,255,255,0)" });
             scene4();
           });
       });
@@ -1110,9 +1112,9 @@ function scene4() {
   var disp1 = "The Mayor of the city came to greet you.";
   var disp2 = `"Dear Head Detective ${name}, have you come to see the situation?"`;
   var disp3 = "You nodded you head.";
-  var disp4 = `He replied, "Sir Suriv opened the vial of virus, releasing some of the virus into the city."`;
+  var disp4 = `"Sir Suriv opened the vial of virus, releasing some of the virus into the city."`;
   var disp5 = "He then searched his drawers for a moment.";
-  var disp6 = `"We are still investigating the situation. Here's what we know at this moment. Please have a look."`;
+  var disp6 = `"We are still investigating the situation. Here's what we know now. Please have a look."`;
   var disp7 = "He handed you a deck of information:";
 
   var dom1 = "#scene4-intro";
