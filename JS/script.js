@@ -1640,6 +1640,7 @@ function clue1() {
           $(".container").css({ background: "rgba(255,255,255,0.7)" });
           $("#clue1").remove();
           $(domScene).append(`<div id = "afterClue1"></div>`);
+          $("#afterClue1").css({"font-size":"19pt"})
           typingline(
             "You look at the plan and realised you need to head to Ascend City",
             60,
@@ -1966,7 +1967,7 @@ function scene7() {
   </div>`);
   //Css styling
   $("#scene7").css({ background: "rgba(255,255,255,0.7)" });
-  $(domScene).css({ "font-size": "18pt" });
+  $(domScene).css({ "font-size": "18pt","text-align":"left" });
   //The element selector
   let domFirst = "#firstSentence";
   let domSecond = "#secondSentence";
@@ -2004,7 +2005,7 @@ function scene7() {
                   "background-repeat": "no-repeat",
                 });
                 typingline(eightSentence, 40, domEight).then(function () {
-                  $(domScene).append(
+                  $("#scene7").append(
                     `<button id = "scene8Button">Kick the doors open!</button>`
                   );
                   $("#scene8Button").css({
@@ -2032,7 +2033,7 @@ function scene8() {
   });
   let name = localStorage.name;
   localStorage.checkpoint = 11;
-  $("#scene7, #scene8Button").remove();
+  $("#scene7").remove();
   $(domScene).append(`<div id ="scene8">
   <div id="firstSentence"></div>
   <div id="secondSentence"></div>
@@ -2060,7 +2061,7 @@ function scene8() {
   let thirdSentence = "Sir Suriv turn around with a look of surprise";
   let fourthSentence = `"Well Well Well. Look who is here. Head Detective ${name}"`;
   let fifthSentence = `You snorted,"Freeze! By the way am I famous?"`;
-  let sixthSentence = `"Surrender yourself now. You have the right to remain silent and refuse to answer questions. Anything you say may be used against you in a court of law. You have the right to consult an attorney before speaking to the police and to have an attorney present during questioning now or in the future."`;
+  let sixthSentence = `"Surrender yourself now. You have the right to remain silent and refuse to answer questions."`;
   let seventhSentence = `He replied,"Your reputation precedes you. Ha Ha Ha"`;
   typingline(firstSentence, 50, domFirst).then(function () {
     typingline(secondSentence, 50, domSecond).then(function () {
