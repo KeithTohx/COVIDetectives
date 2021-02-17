@@ -1227,8 +1227,9 @@ function scene5() {
 }
 
 function showdown1() {
+  let officeURL = "Images/office.png";
+  $("body").css({"background-image":"url("+officeURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
   localStorage.checkpoint = 6;
-  $("body").css({"background-image":"none"});
   $("#scenes").append(`<h4 id="showdown1-text1"></h4>
   <h4 id="showdown1-text2"></h4>
   <h4 id="showdown1-text3"></h4>
@@ -1257,7 +1258,9 @@ function showdown1() {
           $("body").css({"background-image":"url("+imageURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
           typingline(disp4, 60, dom4).then(function () {
             $("#showdown1-text4").fadeOut(1600, function () {
-              $("body").css({"background-image":"none"});
+              $(".container").css({"background":"rgba(255,255,255,0.7)"})
+              let labURL = "Images/lab.png";
+              $("body").css({"background-image":"url("+labURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
               typingline(disp5, 30, dom5).then(function () {
                 $(
                   "#showdown1-intro"
@@ -1504,6 +1507,9 @@ function showdown1() {
 let domScene = "#scenes";
 //Checkpoint 1 onwards
 function clue1() {
+  $(".container").css({"background":"rgba(255,255,255,0.7)"})
+  let labURL = "Images/lab.png";
+              $("body").css({"background-image":"url("+labURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
   localStorage.checkpoint = 7;
   $(domScene).append(`<div id = "beforeClue1">
   <div id="firstSentence"></div>
@@ -1523,6 +1529,7 @@ function clue1() {
         "border-style": "none",
       });
       $("#clue1Btn").click(function () {
+        $(".container").css({"background":"rgba(255,255,255,0)"})
         $("#beforeClue1").remove();
         $(domScene).append(`<div id="clue1">
   <div id = "image"><img src="Images/Plan.png" alt="plan"></div><br><br>
@@ -1585,6 +1592,7 @@ function clue1() {
 
         // transition to next show map
         $("#map2Button").click(function () {
+          $(".container").css({"background":"rgba(255,255,255,0.7)"})
           $("#clue1").remove();
           $(domScene).append(`<div id = "afterClue1"></div>`);
           typingline(
@@ -1596,7 +1604,8 @@ function clue1() {
               .delay(2000)
               .fadeOut(500, function () {
                 $(domScene).append(
-                  `<div id = "map2"><img class ="img-fluid" src='Images/map.png' alt="map image"></div>`
+                  `<h3>Click on the next location</h3>
+                  <div id = "map2"><img class ="img-fluid" src='Images/map.png' alt="map image"></div>`
                 );
                 //when it is clicked
                 $("#map2 img").click(function (evt) {
@@ -1628,6 +1637,7 @@ function clue1() {
 }
 // Next function
 function scene6() {
+  //change scene
   localStorage.checkpoint = 8;
   $("#map2").remove();
   //setting up elements to append content
@@ -1729,7 +1739,7 @@ function newspaper() {
   $("#newspaperLeft").css({"margin-top":"0px"})
   let domh4 = "#newspaperLeft h4";
   let heading = "Safe Distancing Measures Implemented";
-  typingline(heading, 70, domh4);
+  typingline(heading, 10, domh4);
   let domp = "#newspaperLeft p";
   let paragraph = `With advance intel from Viole City, Ascend City 
 has started to implement safe-distancing
@@ -1738,17 +1748,16 @@ times when they are out of their homes. Citizens
 are to stay 1 meter or 6 feet apart when in queue.
 Avoid crowded places. Now Ascend city is hunting
 down Sir Suriv.`;
+$(domp).text(paragraph)
+$("button").show();
 
-  typingline(paragraph, 20, domp).then(function () {
-    $("button").show();
-  });
   let name = "Name : Sir Suriv";
   let lastScene = "Last Seen : Abandoned Factory";
   let status = "Status : Police cordoning of area suspected";
-  typingline("Wanted", 100, "#newspaperRight h2").then(function () {
-    typingline(name, 30, "#newspaperRightName").then(function () {
-      typingline(lastScene, 30, "#newspaperRightLastSeen").then(function () {
-        typingline(status, 30, "#newspaperRightStatus").then(function () {
+  typingline("Wanted", 10, "#newspaperRight h2").then(function () {
+    typingline(name, 10, "#newspaperRightName").then(function () {
+      typingline(lastScene, 10, "#newspaperRightLastSeen").then(function () {
+        typingline(status, 10, "#newspaperRightStatus").then(function () {
           $("#newspaperRight").append(`<img src="Images/Newspaper-location.png" alt="map location">`);
         });
       });
@@ -1799,8 +1808,8 @@ $("#newspaperLeft, #safeMangementMeasure h4").css({"margin-top":"0px"})
   let paragraph = `Company are to review their workplace measures. Jobs that can be done at home, 
   employees should work from home.
   Employers should ensure that there is work-life balance for employees working at home.`;
-  typingline(heading, 75, domh4);
-  typingline(paragraph, 20, domp).then(function () {
+  $(domh4).text(heading)
+  $(domp).text(paragraph)
     $("#safeMangementMeasure").append(
       `<nav><button><a href = "https://www.mom.gov.sg/covid-19/requirements-for-safe-management-measures" target ="blank">Click for more information</a></button></nav>`
     );
@@ -1811,7 +1820,6 @@ $("#newspaperLeft, #safeMangementMeasure h4").css({"margin-top":"0px"})
       "border-radius": "15px",
       "border-width": "1px",
       "text-decoration": "none",
-    });
   });
   // Mask portion
   let domMaskHeading = "#masks h4";
@@ -1820,8 +1828,8 @@ $("#newspaperLeft, #safeMangementMeasure h4").css({"margin-top":"0px"})
   let maskP = `All citizens are to wear a masks when they leave their house. 
     Masks should be worn at all times except when exercising or eating.
     Wearing a mask helps to reduce the spread of virus.`;
-  typingline(maskHeading, 75, domMaskHeading);
-  typingline(maskP, 20, dompMask).then(function () {
+  $(domMaskHeading).text(maskHeading)
+  $(dompMask).text(maskP)
     $("#masks").append(
       `<nav><button><a href = "https://www.gov.sg/article/the-science-behind-why-masks-help-prevent-covid-19-spread" target ="blank">Click for more information</a></button></nav>`
     );
@@ -1833,15 +1841,14 @@ $("#newspaperLeft, #safeMangementMeasure h4").css({"margin-top":"0px"})
       "border-width": "1px",
       "text-decoration": "none",
     });
-  });
   let domSDMp = "#safeDistancingMeasure p";
   let domSDMh4 = "#safeDistancingMeasure h4";
   let headingSDM = "Safe Distancing Measures";
   let pSDM = `Safe distancing measures are implemented to keep citizens safe.
    Citizens are to stand at least 1m or 6 feet apart from one another in queue, indoor and outdoor spaces. 
    Covid-19 can be transmitted easily through close contact.`;
-  typingline(headingSDM, 75, domSDMh4);
-  typingline(pSDM, 20, domSDMp).then(function () {
+   $(domSDMh4).text(headingSDM)
+   $(domSDMp).text(pSDM)
     $("#safeDistancingMeasure").append(
       `<nav><button><a href = "https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/social-distancing.html" target ="blank">Click for more information</a></button></nav><br>`
     );
@@ -1853,7 +1860,6 @@ $("#newspaperLeft, #safeMangementMeasure h4").css({"margin-top":"0px"})
       "border-width": "1px",
       "text-decoration": "none",
     });
-  });
   let domTRp = "#travelRestriction p";
   let domTRh4 = "#travelRestriction h4";
   let headingTR = "Travel Restriction";
@@ -1861,8 +1867,8 @@ $("#newspaperLeft, #safeMangementMeasure h4").css({"margin-top":"0px"})
   This is to stop the spread of the virus. Citizens are also advised not to travel for activities 
   that are large social gathering such as party or mass events such as concert. Citizens are also advised
   not to go on a holiday cruise during this period`;
-  typingline(headingTR, 75, domTRh4);
-  typingline(pTR, 15, domTRp).then(function () {
+  $(domTRh4).text(headingTR)
+  $(domTRp).text(pTR)
     $("#travelRestriction").append(
       `<nav><button><a href = "https://www.cdc.gov/coronavirus/2019-ncov/travelers/travel-during-covid19.html" target ="blank">Click for more information</a></button></nav>`
     );
@@ -1886,7 +1892,6 @@ $("#newspaperLeft, #safeMangementMeasure h4").css({"margin-top":"0px"})
       "margin-left": "45%",
     });
     $("#scene7Button").click(scene7);
-  });
 }
 function scene7() {
   localStorage.checkpoint = 10;
@@ -2033,7 +2038,7 @@ function encounter() {
   <div class ="row">
     <div class = "col-sm" id ="player">
       <h3>${name}</h3>
-      <img src ="#" alt= "Player character">
+      <div class = "image"><img src ="#" alt= "Player character"></div>
       <div>
         <div class="healthBar">
             <p class ="health"id="playerHealth">Health</p>
@@ -2042,7 +2047,7 @@ function encounter() {
     </div>
     <div class = "col-sm" id ="villain">
       <h3>Sir Suriv</h3>
-      <img src ="#" alt= "Villain character">
+      <div class = "image"><img src ="#" alt= "Villain character"></div>
       <div>
         <div class="healthBar">
             <div class ="health"id="villainHealth"><span>Health</span></div>
@@ -2065,6 +2070,14 @@ function encounter() {
     </div>
   </div>
 </div>`);
+$(".image").css({"text-align":"center"})
+$("img").css({"height":"275px", margin:"15px auto"})
+if(localStorage.gender = 'm'){
+  $("#player img").attr("src","Images/male.png")
+  
+}else{
+  $("#player img").attr("src","Images/female.png")
+}
   $(".healthBar").css({
     width: "80%",
     "border-style": "solid",
@@ -2179,11 +2192,11 @@ function encounter() {
     let optionB = "(B) Wearing a mask.";
     let optionC = "(C) Not working from home.";
     let optionD = "(D) Refrain from participating in large social events";
-    typingline(question1, 50, domQuestion1);
-    typingline(optionA, 50, "#q1A");
-    typingline(optionB, 50, "#q1B");
-    typingline(optionC, 50, "#q1C");
-    typingline(optionD, 50, "#q1D");
+    $(domQuestion1).text(question1)
+    $("#q1A").text(optionA)
+    $("#q1B").text(optionB)
+    $("#q1C").text(optionC)
+    $("#q1D").text(optionD)
     return new Promise(function (resolve) {
       $(`${domOptionA},${domOptionB},${domOptionD}`).click(function () {
         resolve("false");
@@ -2198,11 +2211,11 @@ function encounter() {
     let optionB = "(B) Speaking to another person";
     let optionC = "(C) Riding the public transport";
     let optionD = "(D) Listening to lecturers teaching, while being out of your house";
-    typingline(question2, 50, domQuestions);
-    typingline(optionA, 50, "#q1A");
-    typingline(optionB, 50, "#q1B");
-    typingline(optionC, 50, "#q1C");
-    typingline(optionD, 50, "#q1D");
+    $(domQuestions).text(question2)
+    $("#q1A").text(optionA)
+    $("#q1B").text(optionB)
+    $("#q1C").text(optionC)
+    $("#q1D").text(optionD)
     return new Promise(function (resolve) {
       $(`${domOptionC},${domOptionB},${domOptionD}`).click(function () {
         resolve("false");
@@ -2217,11 +2230,11 @@ function encounter() {
     let optionB = "(B) Because it is cool to stand 1 meter apart.";
     let optionC = "(C) Covid-19 can be transmitted easily through close contact";
     let optionD = "(D) Covid-19 cannot be trasmitted easily through close contact";
-    typingline(question3, 50, domQuestions);
-    typingline(optionA, 50, "#q1A");
-    typingline(optionB, 50, "#q1B");
-    typingline(optionC, 50, "#q1C");
-    typingline(optionD, 50, "#q1D");
+    $(domQuestions).text(question3)
+    $("#q1A").text(optionA)
+    $("#q1B").text(optionB)
+    $("#q1C").text(optionC)
+    $("#q1D").text(optionD)
     return new Promise(function (resolve) {
       $(`${domOptionA},${domOptionB},${domOptionD}`).click(function () {
         resolve("false");
@@ -2236,11 +2249,11 @@ function encounter() {
     let optionB = "(B) Allow employees to have close contact with one another.";
     let optionC = "(C) Force employees to work overtime.";
     let optionD = "(D) For work that can be done at home, employees are to work from home.";
-    typingline(question4, 50, domQuestions);
-    typingline(optionA, 50, "#q1A");
-    typingline(optionB, 50, "#q1B");
-    typingline(optionC, 50, "#q1C");
-    typingline(optionD, 50, "#q1D");
+    $(domQuestions).text(question4)
+    $("#q1A").text(optionA)
+    $("#q1B").text(optionB)
+    $("#q1C").text(optionC)
+    $("#q1D").text(optionD)
     return new Promise(function (resolve) {
       $(`${domOptionC},${domOptionB},${domOptionA}`).click(function () {
         resolve("false");
@@ -2255,11 +2268,11 @@ function encounter() {
     let optionB = "(B) Attend mass gatherings such as football matches.";
     let optionC = "(C) Stand 1 meter apart.";
     let optionD = "(D) Stop exercising completely";
-    typingline(question5, 50, domQuestions);
-    typingline(optionA, 50, "#q1A");
-    typingline(optionB, 50, "#q1B");
-    typingline(optionC, 50, "#q1C");
-    typingline(optionD, 50, "#q1D");
+    $(domQuestions).text(question5)
+    $("#q1A").text(optionA)
+    $("#q1B").text(optionB)
+    $("#q1C").text(optionC)
+    $("#q1D").text(optionD)
     return new Promise(function (resolve) {
       $(`${domOptionC},${domOptionD},${domOptionA}`).click(function () {
         resolve("false");
