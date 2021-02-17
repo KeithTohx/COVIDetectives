@@ -2072,7 +2072,7 @@ function encounter() {
 </div>`);
 $(".image").css({"text-align":"center"})
 $("img").css({"height":"275px", margin:"15px auto"})
-if(localStorage.gender = 'm'){
+if(localStorage.gender == 'm'){
   $("#player img").attr("src","Images/male.png")
   
 }else{
