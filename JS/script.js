@@ -64,7 +64,6 @@ let jsonCountry = [
   {
     country: "Benin",
   },
-
   {
     country: "Bermuda",
   },
@@ -266,7 +265,6 @@ let jsonCountry = [
   {
     country: "Haiti",
   },
-
   {
     country: "Holy See (Vatican City State)",
   },
@@ -423,7 +421,6 @@ let jsonCountry = [
   {
     country: "Mozambique",
   },
-
   {
     country: "Myanmar",
   },
@@ -436,7 +433,6 @@ let jsonCountry = [
   {
     country: "Netherlands",
   },
-
   {
     country: "New Caledonia",
   },
@@ -607,14 +603,12 @@ let jsonCountry = [
   {
     country: "Thailand",
   },
-
   {
     country: "Timor-Leste",
   },
   {
     country: "Togo",
   },
-
   {
     country: "Trinidad and Tobago",
   },
@@ -639,7 +633,6 @@ let jsonCountry = [
   {
     country: "Uganda",
   },
-
   {
     country: "Ukraine",
   },
@@ -769,11 +762,13 @@ $("#start").click(function () {
     <div class="row">
     <div id="genderM" class="col-sm">
       <a href="#" id="male" role="button" style="text-decoration: none;">Male</a><br>
+      <img id="maleImg" src="Images/male.png" style="height:260px;">
       <div id="userInputM" style="padding-top: 20px;">
       </div>
     </div>
     <div id="genderF" class="col-sm">
       <a href="#" id="female" role="button" style="text-decoration: none;">Female</a><br>
+      <img id="femaleImg" src="Images/female.png" style="height:260px;">
       <div id="userInputF" style="padding-top: 20px;">
       </div>
     </div>
@@ -811,6 +806,8 @@ function typingline(disp, speed, dom) {
 function userChar() {
   $("#male").click(function () {
     document.getElementById("genderF").remove();
+    $("#maleImg").remove();
+    $("#femaleImg").remove();
     let dom = "#userInputM";
     localStorage.gender = "m";
     form(dom);
@@ -818,6 +815,8 @@ function userChar() {
 
   $("#female").click(function () {
     document.getElementById("genderM").remove();
+    $("#maleImg").remove();
+    $("#femaleImg").remove();
     let dom = "#userInputF";
     localStorage.gender = "f";
     form(dom);
