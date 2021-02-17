@@ -833,7 +833,7 @@ function userChar() {
         <div id = "button"><button id="continue" class="continueBtn" style="margin-top: 10px; text-align: center;">Continue</button></div></div>
         `);
     $(dom).css({ width: "600px", margin: "0px auto" });
-    $("div").css({ "margin-top": "10px" });
+    $("div#name, div#age, div#uCountry").css({ "margin-top": "10px" });
     $("label").css({ float: "left" });
     $("input").css({ float: "right" });
     $("#userInput").css({
