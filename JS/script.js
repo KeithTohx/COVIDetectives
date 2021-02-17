@@ -1063,7 +1063,7 @@ function scene3() {
     "background-size": "100%",
     "background-repeat": "no-repeat",
   });
-  $(".container").css({ background: "rgba(255,255,255,0.7)" });
+  $("#scenes").css({ background: "rgba(255,255,255,0.7)" });
 
   var disp1 =
     "As you walk into Viole city, you see symptoms of people getting sick.";
@@ -1082,7 +1082,7 @@ function scene3() {
         $("#scene3-text2")
           .delay(1000)
           .fadeOut(1000, function () {
-            $(".container").css({ background: "rgba(255,255,255,0)" });
+            $("#scenes").css({ background: "rgba(255,255,255,0)" });
             scene4();
           });
       });
@@ -1295,7 +1295,7 @@ function showdown1() {
           });
           typingline(disp4, 60, dom4).then(function () {
             $("#showdown1-text4").fadeOut(1600, function () {
-              $(".container").css({ background: "rgba(255,255,255,0.7)" });
+              $("#scenes").css({ background: "rgba(255,255,255,0.7)" });
               let labURL = "Images/lab.png";
               $("body").css({
                 "background-image": "url(" + labURL + ")",
@@ -1549,7 +1549,7 @@ function showdown1() {
 let domScene = "#scenes";
 //Checkpoint 1 onwards
 function clue1() {
-  $(".container").css({ background: "rgba(255,255,255,0.7)" });
+  $("#scenes").css({ background: "rgba(255,255,255,0.7)" });
   let labURL = "Images/lab.png";
   $("body").css({
     "background-image": "url(" + labURL + ")",
@@ -1576,7 +1576,7 @@ function clue1() {
         "border-style": "none",
       });
       $("#clue1Btn").click(function () {
-        $(".container").css({ background: "rgba(255,255,255,0)" });
+        $("#scenes").css({ background: "rgba(255,255,255,0)" });
         $("#beforeClue1").remove();
         $(domScene).append(`<div id="clue1">
   <div id = "image"><img src="Images/Plan.png" alt="plan"></div><br><br>
