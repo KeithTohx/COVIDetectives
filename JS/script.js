@@ -947,7 +947,12 @@ function userChar() {
 function scene1_2() {
   localStorage.checkpoint = 1;
   let imageURL = "Images/hq.png";
-  $("body").css({"background-image":"url("+imageURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
+  $("body").css({
+    "background-image": "url(" + imageURL + ")",
+    height: "600px",
+    "background-size": "100%",
+    "background-repeat": "no-repeat",
+  });
   $("#scenes").append(`<h4 id="scene1-intro"></h4>
   <div class="clipboard" id="clipboard"></div>
   <h4 id="scene2-intro"></h4>`);
@@ -992,8 +997,13 @@ function scene1_2() {
           $("#misson").remove();
           $("#clipboard").fadeOut(1600, function () {
             let imageURL2 = "Images/exitHQ.png";
-            $("body").css({"background-image":"url("+imageURL2+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
-  
+            $("body").css({
+              "background-image": "url(" + imageURL2 + ")",
+              height: "600px",
+              "background-size": "100%",
+              "background-repeat": "no-repeat",
+            });
+
             typingline(disp2, 40, dom2).then(function () {
               $("#scene2-intro")
                 .delay(1000)
@@ -1009,7 +1019,7 @@ function scene1_2() {
 
 function map1() {
   localStorage.checkpoint = 2;
-  $("body").css({"background-image":"none"});
+  $("body").css({ "background-image": "none" });
   var disp = "Click on the next city to proceed:";
 
   $("#scenes").append(
@@ -1047,7 +1057,12 @@ function scene3() {
   <h4 id="scene3-text2"></h4>`);
 
   let imageURL = "Images/city.png";
-  $("body").css({"background-image":"url("+imageURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
+  $("body").css({
+    "background-image": "url(" + imageURL + ")",
+    height: "600px",
+    "background-size": "100%",
+    "background-repeat": "no-repeat",
+  });
 
   var disp1 =
     "As you walk into Viole city, you see symptoms of people getting sick.";
@@ -1075,9 +1090,14 @@ function scene3() {
 
 function scene4() {
   localStorage.checkpoint = 4;
-  $("body").css({"background-image":"none"});
+  $("body").css({ "background-image": "none" });
   let imageURL = "Images/office.png";
-  $("body").css({"background-image":"url("+imageURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
+  $("body").css({
+    "background-image": "url(" + imageURL + ")",
+    height: "600px",
+    "background-size": "100%",
+    "background-repeat": "no-repeat",
+  });
 
   $("#scenes").append(`<h4 id="scene4-intro"></h4>
   <h4 id="scene4-text1"></h4>
@@ -1157,7 +1177,12 @@ function scene4() {
 function scene5() {
   localStorage.checkpoint = 5;
   let imageURL = "Images/office.png";
-  $("body").css({"background-image":"url("+imageURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
+  $("body").css({
+    "background-image": "url(" + imageURL + ")",
+    height: "600px",
+    "background-size": "100%",
+    "background-repeat": "no-repeat",
+  });
 
   $("#scenes").append(`<div class="information" id="information"></div>`);
   $("#information").hide();
@@ -1228,7 +1253,12 @@ function scene5() {
 
 function showdown1() {
   let officeURL = "Images/office.png";
-  $("body").css({"background-image":"url("+officeURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
+  $("body").css({
+    "background-image": "url(" + officeURL + ")",
+    height: "600px",
+    "background-size": "100%",
+    "background-repeat": "no-repeat",
+  });
   localStorage.checkpoint = 6;
   $("#scenes").append(`<h4 id="showdown1-text1"></h4>
   <h4 id="showdown1-text2"></h4>
@@ -1255,12 +1285,22 @@ function showdown1() {
         $("#showdown1-text2").fadeOut(1600);
         $("#showdown1-text3").fadeOut(1600, function () {
           let imageURL = "Images/labDoor.png";
-          $("body").css({"background-image":"url("+imageURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
+          $("body").css({
+            "background-image": "url(" + imageURL + ")",
+            height: "600px",
+            "background-size": "100%",
+            "background-repeat": "no-repeat",
+          });
           typingline(disp4, 60, dom4).then(function () {
             $("#showdown1-text4").fadeOut(1600, function () {
-              $(".container").css({"background":"rgba(255,255,255,0.7)"})
+              $(".container").css({ background: "rgba(255,255,255,0.7)" });
               let labURL = "Images/lab.png";
-              $("body").css({"background-image":"url("+labURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
+              $("body").css({
+                "background-image": "url(" + labURL + ")",
+                height: "600px",
+                "background-size": "100%",
+                "background-repeat": "no-repeat",
+              });
               typingline(disp5, 30, dom5).then(function () {
                 $(
                   "#showdown1-intro"
@@ -1507,9 +1547,14 @@ function showdown1() {
 let domScene = "#scenes";
 //Checkpoint 1 onwards
 function clue1() {
-  $(".container").css({"background":"rgba(255,255,255,0.7)"})
+  $(".container").css({ background: "rgba(255,255,255,0.7)" });
   let labURL = "Images/lab.png";
-              $("body").css({"background-image":"url("+labURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
+  $("body").css({
+    "background-image": "url(" + labURL + ")",
+    height: "600px",
+    "background-size": "100%",
+    "background-repeat": "no-repeat",
+  });
   localStorage.checkpoint = 7;
   $(domScene).append(`<div id = "beforeClue1">
   <div id="firstSentence"></div>
@@ -1529,7 +1574,7 @@ function clue1() {
         "border-style": "none",
       });
       $("#clue1Btn").click(function () {
-        $(".container").css({"background":"rgba(255,255,255,0)"})
+        $(".container").css({ background: "rgba(255,255,255,0)" });
         $("#beforeClue1").remove();
         $(domScene).append(`<div id="clue1">
   <div id = "image"><img src="Images/Plan.png" alt="plan"></div><br><br>
@@ -1592,7 +1637,7 @@ function clue1() {
 
         // transition to next show map
         $("#map2Button").click(function () {
-          $(".container").css({"background":"rgba(255,255,255,0.7)"})
+          $(".container").css({ background: "rgba(255,255,255,0.7)" });
           $("#clue1").remove();
           $(domScene).append(`<div id = "afterClue1"></div>`);
           typingline(
@@ -1639,7 +1684,11 @@ function clue1() {
 function scene6() {
   //change scene
   let desolateUrl = "Images/Desolate.png";
-              $("body").css({"background-image":"url("+desolateUrl+")", "background-size":"100%","background-repeat":"no-repeat"});
+  $("body").css({
+    "background-image": "url(" + desolateUrl + ")",
+    "background-size": "100%",
+    "background-repeat": "no-repeat",
+  });
   localStorage.checkpoint = 8;
   $("#map2").remove();
   //setting up elements to append content
@@ -1725,7 +1774,7 @@ function newspaper() {
   </div><br><br>
 </div>`);
   $("button").hide();
-  $("#newspaper").css({"border-style":"solid double ridge ridge"})
+  $("#newspaper").css({ "border-style": "solid double ridge ridge" });
   $(domScene).css({ "font-size": "14pt" });
   $("h2").css({ "text-align": "center" });
   $(".col-sm").css({ margin: "auto 40px" });
@@ -1738,7 +1787,7 @@ function newspaper() {
     "border-style": "none none solid none",
     "margin-left": "65%",
   });
-  $("#newspaperLeft").css({"margin-top":"0px"})
+  $("#newspaperLeft").css({ "margin-top": "0px" });
   let domh4 = "#newspaperLeft h4";
   let heading = "Safe Distancing Measures Implemented";
   typingline(heading, 10, domh4);
@@ -1750,8 +1799,8 @@ times when they are out of their homes. Citizens
 are to stay 1 meter or 6 feet apart when in queue.
 Avoid crowded places. Now Ascend city is hunting
 down Sir Suriv.`;
-$(domp).text(paragraph)
-$("button").show();
+  $(domp).text(paragraph);
+  $("button").show();
 
   let name = "Name : Sir Suriv";
   let lastScene = "Last Seen : Abandoned Factory";
@@ -1760,7 +1809,9 @@ $("button").show();
     typingline(name, 10, "#newspaperRightName").then(function () {
       typingline(lastScene, 10, "#newspaperRightLastSeen").then(function () {
         typingline(status, 10, "#newspaperRightStatus").then(function () {
-          $("#newspaperRight").append(`<img src="Images/Newspaper-location.png" alt="map location">`);
+          $("#newspaperRight").append(
+            `<img src="Images/Newspaper-location.png" alt="map location">`
+          );
         });
       });
     });
@@ -1795,8 +1846,8 @@ function newspaperp2() {
   </div>
   <br>
 </div>`);
-$("#newspaperp2").css({"border-style":"solid double ridge ridge"})
-$("#newspaperLeft, #safeMangementMeasure h4").css({"margin-top":"0px"})
+  $("#newspaperp2").css({ "border-style": "solid double ridge ridge" });
+  $("#newspaperLeft, #safeMangementMeasure h4").css({ "margin-top": "0px" });
   $(domScene).css({ "font-size": "14pt" });
   $("h2").css({ "text-align": "center" });
   $(".col-sm").css({ margin: "auto 40px" });
@@ -1810,18 +1861,18 @@ $("#newspaperLeft, #safeMangementMeasure h4").css({"margin-top":"0px"})
   let paragraph = `Company are to review their workplace measures. Jobs that can be done at home, 
   employees should work from home.
   Employers should ensure that there is work-life balance for employees working at home.`;
-  $(domh4).text(heading)
-  $(domp).text(paragraph)
-    $("#safeMangementMeasure").append(
-      `<nav><button><a href = "https://www.mom.gov.sg/covid-19/requirements-for-safe-management-measures" target ="blank">Click for more information</a></button></nav>`
-    );
-    $("#safeMangementMeasure button").css({
-      "font-size": "9pt",
-      "background-color": "white",
-      "border-style": "ridge",
-      "border-radius": "15px",
-      "border-width": "1px",
-      "text-decoration": "none",
+  $(domh4).text(heading);
+  $(domp).text(paragraph);
+  $("#safeMangementMeasure").append(
+    `<nav><button><a href = "https://www.mom.gov.sg/covid-19/requirements-for-safe-management-measures" target ="blank">Click for more information</a></button></nav>`
+  );
+  $("#safeMangementMeasure button").css({
+    "font-size": "9pt",
+    "background-color": "white",
+    "border-style": "ridge",
+    "border-radius": "15px",
+    "border-width": "1px",
+    "text-decoration": "none",
   });
   // Mask portion
   let domMaskHeading = "#masks h4";
@@ -1830,38 +1881,38 @@ $("#newspaperLeft, #safeMangementMeasure h4").css({"margin-top":"0px"})
   let maskP = `All citizens are to wear a masks when they leave their house. 
     Masks should be worn at all times except when exercising or eating.
     Wearing a mask helps to reduce the spread of virus.`;
-  $(domMaskHeading).text(maskHeading)
-  $(dompMask).text(maskP)
-    $("#masks").append(
-      `<nav><button><a href = "https://www.gov.sg/article/the-science-behind-why-masks-help-prevent-covid-19-spread" target ="blank">Click for more information</a></button></nav>`
-    );
-    $("#masks button").css({
-      "font-size": "9pt",
-      "background-color": "white",
-      "border-style": "ridge",
-      "border-radius": "15px",
-      "border-width": "1px",
-      "text-decoration": "none",
-    });
+  $(domMaskHeading).text(maskHeading);
+  $(dompMask).text(maskP);
+  $("#masks").append(
+    `<nav><button><a href = "https://www.gov.sg/article/the-science-behind-why-masks-help-prevent-covid-19-spread" target ="blank">Click for more information</a></button></nav>`
+  );
+  $("#masks button").css({
+    "font-size": "9pt",
+    "background-color": "white",
+    "border-style": "ridge",
+    "border-radius": "15px",
+    "border-width": "1px",
+    "text-decoration": "none",
+  });
   let domSDMp = "#safeDistancingMeasure p";
   let domSDMh4 = "#safeDistancingMeasure h4";
   let headingSDM = "Safe Distancing Measures";
   let pSDM = `Safe distancing measures are implemented to keep citizens safe.
    Citizens are to stand at least 1m or 6 feet apart from one another in queue, indoor and outdoor spaces. 
    Covid-19 can be transmitted easily through close contact.`;
-   $(domSDMh4).text(headingSDM)
-   $(domSDMp).text(pSDM)
-    $("#safeDistancingMeasure").append(
-      `<nav><button><a href = "https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/social-distancing.html" target ="blank">Click for more information</a></button></nav><br>`
-    );
-    $("#safeDistancingMeasure button").css({
-      "font-size": "9pt",
-      "background-color": "white",
-      "border-style": "ridge",
-      "border-radius": "15px",
-      "border-width": "1px",
-      "text-decoration": "none",
-    });
+  $(domSDMh4).text(headingSDM);
+  $(domSDMp).text(pSDM);
+  $("#safeDistancingMeasure").append(
+    `<nav><button><a href = "https://www.cdc.gov/coronavirus/2019-ncov/prevent-getting-sick/social-distancing.html" target ="blank">Click for more information</a></button></nav><br>`
+  );
+  $("#safeDistancingMeasure button").css({
+    "font-size": "9pt",
+    "background-color": "white",
+    "border-style": "ridge",
+    "border-radius": "15px",
+    "border-width": "1px",
+    "text-decoration": "none",
+  });
   let domTRp = "#travelRestriction p";
   let domTRh4 = "#travelRestriction h4";
   let headingTR = "Travel Restriction";
@@ -1869,36 +1920,38 @@ $("#newspaperLeft, #safeMangementMeasure h4").css({"margin-top":"0px"})
   This is to stop the spread of the virus. Citizens are also advised not to travel for activities 
   that are large social gathering such as party or mass events such as concert. Citizens are also advised
   not to go on a holiday cruise during this period`;
-  $(domTRh4).text(headingTR)
-  $(domTRp).text(pTR)
-    $("#travelRestriction").append(
-      `<nav><button><a href = "https://www.cdc.gov/coronavirus/2019-ncov/travelers/travel-during-covid19.html" target ="blank">Click for more information</a></button></nav>`
-    );
-    $("#travelRestriction button").css({
-      "font-size": "9pt",
-      "background-color": "white",
-      "border-style": "ridge",
-      "border-radius": "15px",
-      "border-width": "1px",
-      "text-decoration": "none",
-    });
-    $("#newspaperp2").append(
-      `<button id="scene7Button">Read Finish-></button>`
-    );
-    $("#scene7Button").css({
-      "font-size": "13pt",
-      "background-color": "white",
-      "border-style": "ridge",
-      "border-radius": "15px",
-      "border-width": "1px",
-      "margin-left": "45%",
-    });
-    $("#scene7Button").click(scene7);
+  $(domTRh4).text(headingTR);
+  $(domTRp).text(pTR);
+  $("#travelRestriction").append(
+    `<nav><button><a href = "https://www.cdc.gov/coronavirus/2019-ncov/travelers/travel-during-covid19.html" target ="blank">Click for more information</a></button></nav>`
+  );
+  $("#travelRestriction button").css({
+    "font-size": "9pt",
+    "background-color": "white",
+    "border-style": "ridge",
+    "border-radius": "15px",
+    "border-width": "1px",
+    "text-decoration": "none",
+  });
+  $("#newspaperp2").append(`<button id="scene7Button">Read Finish-></button>`);
+  $("#scene7Button").css({
+    "font-size": "13pt",
+    "background-color": "white",
+    "border-style": "ridge",
+    "border-radius": "15px",
+    "border-width": "1px",
+    "margin-left": "45%",
+  });
+  $("#scene7Button").click(scene7);
 }
 function scene7() {
-  $(".container").css({"background":"rgba(255,255,255,0)"})
+  $(".container").css({ background: "rgba(255,255,255,0)" });
   let imageURL = "Images/Factory.svg";
-  $("body").css({"background-image":"url("+imageURL+")", "background-size":"100%","background-repeat":"no-repeat"});
+  $("body").css({
+    "background-image": "url(" + imageURL + ")",
+    "background-size": "100%",
+    "background-repeat": "no-repeat",
+  });
   localStorage.checkpoint = 10;
   $("#newspaperp2").remove();
   $(domScene).append(`<div id ="scene7">
@@ -1912,7 +1965,7 @@ function scene7() {
   <div id="eightSentence"></div>
   </div>`);
   //Css styling
-  $("#scene7").css({"background":"rgba(255,255,255,0.7)"})
+  $("#scene7").css({ background: "rgba(255,255,255,0.7)" });
   $(domScene).css({ "font-size": "18pt" });
   //The element selector
   let domFirst = "#firstSentence";
@@ -1945,7 +1998,11 @@ function scene7() {
             typingline(sixthSentence, 40, domSixth).then(function () {
               typingline(sevenSentence, 400, domSeven).then(function () {
                 let doorURL = "Images/Door.svg";
-                $("body").css({"background-image":"url("+doorURL+")", "background-size":"100%","background-repeat":"no-repeat"});
+                $("body").css({
+                  "background-image": "url(" + doorURL + ")",
+                  "background-size": "100%",
+                  "background-repeat": "no-repeat",
+                });
                 typingline(eightSentence, 40, domEight).then(function () {
                   $(domScene).append(
                     `<button id = "scene8Button">Kick the doors open!</button>`
@@ -1968,8 +2025,12 @@ function scene7() {
 }
 function scene8() {
   let imageURL = "Images/OpenDoor.svg";
-  $("body").css({"background-image":"url("+imageURL+")", "background-size":"100%","background-repeat":"no-repeat"});
-  let name = localStorage.name
+  $("body").css({
+    "background-image": "url(" + imageURL + ")",
+    "background-size": "100%",
+    "background-repeat": "no-repeat",
+  });
+  let name = localStorage.name;
   localStorage.checkpoint = 11;
   $("#scene7, #scene8Button").remove();
   $(domScene).append(`<div id ="scene8">
@@ -1984,7 +2045,7 @@ function scene8() {
   </div>`);
   //Css styling
   $(domScene).css({ "font-size": "18pt" });
-  $("#scene8").css({"background":"rgba(255,255,255,0.7)"})
+  $("#scene8").css({ background: "rgba(255,255,255,0.7)" });
   //The element selector
   let domFirst = "#firstSentence";
   let domSecond = "#secondSentence";
@@ -2005,7 +2066,11 @@ function scene8() {
     typingline(secondSentence, 50, domSecond).then(function () {
       typingline(thirdSentence, 50, domThird).then(function () {
         let roomURL = "Images/IntheRoom.svg";
-        $("body").css({"background-image":"url("+roomURL+")", "background-size":"100%","background-repeat":"no-repeat"});
+        $("body").css({
+          "background-image": "url(" + roomURL + ")",
+          "background-size": "100%",
+          "background-repeat": "no-repeat",
+        });
         typingline(fourthSentence, 50, domFourth).then(function () {
           typingline(fifthSentence, 50, domFifth).then(function () {
             typingline(sixthSentence, 30, domSixth).then(function () {
@@ -2024,6 +2089,12 @@ function scene8() {
   });
 }
 function preEncounter() {
+  let roomURL = "Images/IntheRoom.svg";
+  $("body").css({
+    "background-image": "url(" + roomURL + ")",
+    "background-size": "100%",
+    "background-repeat": "no-repeat",
+  });
   localStorage.checkpoint = 12;
   $("#scene8").remove();
   $(domScene).append(`<div id="pre-encounter">
@@ -2034,7 +2105,10 @@ function preEncounter() {
   <h3>Good luck.</h3>
   <button id="questionsButton">Arrest him!</button>
   </div>`);
-  $("#pre-encounter").css({ margin: "0px 200px" });
+  $("#pre-encounter").css({
+    margin: "0px 200px",
+    background: "rgba(255,255,255,0.7)",
+  });
   $("#questionsButton").css({
     "border-style": "none",
     "background-color": "white",
@@ -2044,7 +2118,7 @@ function preEncounter() {
   $("#questionsButton").click(encounter);
 }
 function encounter() {
-  let name = localStorage.name
+  let name = localStorage.name;
   $("#pre-encounter").remove();
   $(domScene).append(`<div id = "encounter">
   <div class ="row">
@@ -2082,14 +2156,18 @@ function encounter() {
     </div>
   </div>
 </div>`);
-$(".image").css({"text-align":"center"})
-$("img").css({"height":"275px", margin:"15px auto"})
-if(localStorage.gender == 'm'){
-  $("#player img").attr("src","Images/male.png")
-  
-}else{
-  $("#player img").attr("src","Images/female.png")
-}
+  $("#encounter").css({
+    background: "rgba(255,255,255,0.8)",
+    "font-size": "15pt",
+  });
+  $("h3").css({ "text-align": "center" });
+  $(".image").css({ "text-align": "center" });
+  $("img").css({ height: "275px", margin: "15px auto" });
+  if (localStorage.gender == "m") {
+    $("#player img").attr("src", "Images/male.png");
+  } else {
+    $("#player img").attr("src", "Images/female.png");
+  }
   $(".healthBar").css({
     width: "80%",
     "border-style": "solid",
@@ -2120,8 +2198,10 @@ if(localStorage.gender == 'm'){
   // To be created later
   let question1 = "Which option below is not effective in stopping covid-19?";
   let question2 = "When should you take off your mask?";
-  let question3 = "Why must citizens stand 1 meter / 6 feet apart when they are out of their homes?";
-  let question4 = "How can companies reduce the chance of catching covid-19 by their staffs?";
+  let question3 =
+    "Why must citizens stand 1 meter / 6 feet apart when they are out of their homes?";
+  let question4 =
+    "How can companies reduce the chance of catching covid-19 by their staffs?";
   let question5 = "What should citizens avoid doing during this period?";
   //number of questions right
   let qRight = 0;
@@ -2204,11 +2284,11 @@ if(localStorage.gender == 'm'){
     let optionB = "(B) Wearing a mask.";
     let optionC = "(C) Not working from home.";
     let optionD = "(D) Refrain from participating in large social events";
-    $(domQuestion1).text(question1)
-    $("#q1A").text(optionA)
-    $("#q1B").text(optionB)
-    $("#q1C").text(optionC)
-    $("#q1D").text(optionD)
+    $(domQuestion1).text(question1);
+    $("#q1A").text(optionA);
+    $("#q1B").text(optionB);
+    $("#q1C").text(optionC);
+    $("#q1D").text(optionD);
     return new Promise(function (resolve) {
       $(`${domOptionA},${domOptionB},${domOptionD}`).click(function () {
         resolve("false");
@@ -2222,12 +2302,13 @@ if(localStorage.gender == 'm'){
     let optionA = "(A) Eating or drinking";
     let optionB = "(B) Speaking to another person";
     let optionC = "(C) Riding the public transport";
-    let optionD = "(D) Listening to lecturers teaching, while being out of your house";
-    $(domQuestions).text(question2)
-    $("#q1A").text(optionA)
-    $("#q1B").text(optionB)
-    $("#q1C").text(optionC)
-    $("#q1D").text(optionD)
+    let optionD =
+      "(D) Listening to lecturers teaching, while being out of your house";
+    $(domQuestions).text(question2);
+    $("#q1A").text(optionA);
+    $("#q1B").text(optionB);
+    $("#q1C").text(optionC);
+    $("#q1D").text(optionD);
     return new Promise(function (resolve) {
       $(`${domOptionC},${domOptionB},${domOptionD}`).click(function () {
         resolve("false");
@@ -2238,15 +2319,18 @@ if(localStorage.gender == 'm'){
     });
   }
   function thirdQuestion() {
-    let optionA = "(A) Covid-19 can be transmitted easily through a far contact";
+    let optionA =
+      "(A) Covid-19 can be transmitted easily through a far contact";
     let optionB = "(B) Because it is cool to stand 1 meter apart.";
-    let optionC = "(C) Covid-19 can be transmitted easily through close contact";
-    let optionD = "(D) Covid-19 cannot be trasmitted easily through close contact";
-    $(domQuestions).text(question3)
-    $("#q1A").text(optionA)
-    $("#q1B").text(optionB)
-    $("#q1C").text(optionC)
-    $("#q1D").text(optionD)
+    let optionC =
+      "(C) Covid-19 can be transmitted easily through close contact";
+    let optionD =
+      "(D) Covid-19 cannot be trasmitted easily through close contact";
+    $(domQuestions).text(question3);
+    $("#q1A").text(optionA);
+    $("#q1B").text(optionB);
+    $("#q1C").text(optionC);
+    $("#q1D").text(optionD);
     return new Promise(function (resolve) {
       $(`${domOptionA},${domOptionB},${domOptionD}`).click(function () {
         resolve("false");
@@ -2260,12 +2344,13 @@ if(localStorage.gender == 'm'){
     let optionA = "(A) Force employees to work at the office.";
     let optionB = "(B) Allow employees to have close contact with one another.";
     let optionC = "(C) Force employees to work overtime.";
-    let optionD = "(D) For work that can be done at home, employees are to work from home.";
-    $(domQuestions).text(question4)
-    $("#q1A").text(optionA)
-    $("#q1B").text(optionB)
-    $("#q1C").text(optionC)
-    $("#q1D").text(optionD)
+    let optionD =
+      "(D) For work that can be done at home, employees are to work from home.";
+    $(domQuestions).text(question4);
+    $("#q1A").text(optionA);
+    $("#q1B").text(optionB);
+    $("#q1C").text(optionC);
+    $("#q1D").text(optionD);
     return new Promise(function (resolve) {
       $(`${domOptionC},${domOptionB},${domOptionA}`).click(function () {
         resolve("false");
@@ -2280,11 +2365,11 @@ if(localStorage.gender == 'm'){
     let optionB = "(B) Attend mass gatherings such as football matches.";
     let optionC = "(C) Stand 1 meter apart.";
     let optionD = "(D) Stop exercising completely";
-    $(domQuestions).text(question5)
-    $("#q1A").text(optionA)
-    $("#q1B").text(optionB)
-    $("#q1C").text(optionC)
-    $("#q1D").text(optionD)
+    $(domQuestions).text(question5);
+    $("#q1A").text(optionA);
+    $("#q1B").text(optionB);
+    $("#q1C").text(optionC);
+    $("#q1D").text(optionD);
     return new Promise(function (resolve) {
       $(`${domOptionC},${domOptionD},${domOptionA}`).click(function () {
         resolve("false");
@@ -2309,6 +2394,10 @@ function encounterReview(qRight) {
     "backgound-color": "white",
     "font-size": "10pt",
   });
+  $("#encounterReview").css({
+    background: "rgba(255,255,255,0.8)",
+    "font-size": "20pt",
+  });
   $("#qRight").text(qRight);
   if (qRight > 3) {
     let statement = "Excellent work detective!";
@@ -2322,7 +2411,7 @@ function encounterReview(qRight) {
   });
 }
 function postEncounter(qRight) {
-  let name = localStorage.name
+  let name = localStorage.name;
   $("#encounterReview").remove();
   $(domScene).append(`<div id ="postEncounter">
   <div id="firstSentence"></div>
@@ -2334,6 +2423,10 @@ function postEncounter(qRight) {
   <div id="sevenSentence"></div>
   <div id="eightSentence"></div>
   </div>`);
+  $("#postEncounter").css({
+    background: "rgba(255,255,255,0.8)",
+    "font-size": "20pt",
+  });
   let domFirst = "#firstSentence";
   let domSecond = "#secondSentence";
   let domThird = "#thirdSentence";
@@ -2369,9 +2462,16 @@ function postEncounter(qRight) {
         typingline(fourthSentence, 150, domFourth).then(function () {
           typingline(fifthSentence, 50, domFifth).then(function () {
             typingline(sixthSentence, 50, domSixth).then(function () {
+              let roomURL = "Images/Note.svg";
+              $("body").css({
+                "background-image": "url(" + roomURL + ")",
+                "background-size": "100%",
+                "background-repeat": "no-repeat",
+              });
               typingline(seventhSentence, 250, domSeven).then(function () {
                 typingline(eightSentence, 50, domSeven).then(function () {
                   typingline(nineSentence, 50, domEight).then(function () {
+                    $("body").css({ background: "rgb(000,000,000)" });
                     //add button to next function
                     $(domScene).append(
                       `<button id = "hospitalButton">Next</button>`
@@ -2394,6 +2494,7 @@ function postEncounter(qRight) {
   });
 }
 function hospitalScene() {
+  $("body").css({ background: "rgb(000,000,000)" });
   localStorage.checkpoint = 13;
   $("#postEncounter, #hospitalButton").remove();
   $(domScene).append(`<div id ="hospitalScene">
@@ -2407,7 +2508,10 @@ function hospitalScene() {
   <div id="sevenSentence"></div>
   <div id="eightSentence"></div>
   </div>`);
-
+  $("#hospitalScene").css({
+    background: "rgba(255,255,255,0.8)",
+    "font-size": "20pt",
+  });
   let domFirst = "#firstSentence";
   let domSecond = "#secondSentence";
   let domThird = "#thirdSentence";
@@ -2440,20 +2544,25 @@ function hospitalScene() {
       typingline(span, 100, domSpan3).then(function () {
         typingline(span, 100, domSpan4).then(function () {
           let imageURL = "Images/hospital.png";
-          $("body").css({"background-image":"url("+imageURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
-  
+          $("body").css({
+            "background-image": "url(" + imageURL + ")",
+            height: "600px",
+            "background-size": "100%",
+            "background-repeat": "no-repeat",
+          });
+
           typingline(firstSentence, 75, domFirst).then(function () {
             typingline(secondSentence, 50, domSecond).then(function () {
               typingline(thirdSentence, 50, domThird).then(function () {
-                typingline(fourthSentence, 150, domFourth).then(function () {
+                typingline(fourthSentence, 125, domFourth).then(function () {
                   typingline(fifthSentence, 50, domFifth).then(function () {
                     typingline(sixthSentence, 50, domSixth).then(function () {
-                      typingline(seventhSentence, 250, domSeven).then(
+                      typingline(seventhSentence, 100, domSeven).then(
                         function () {
                           typingline(eightSentence, 50, domEight).then(
                             function () {
                               //Add button to next function
-                              $(domScene).append(
+                              $("#hospitalScene").append(
                                 `<button id = "viewReportButton">View Report</button>`
                               );
                               $("#viewReportButton").css({
@@ -2479,67 +2588,65 @@ function hospitalScene() {
   });
 }
 function overview() {
+  let imageURL = "Images/hospital.png";
+  $("body").css({
+    "background-image": "url(" + imageURL + ")",
+    "background-size": "100%",
+    "background-repeat": "no-repeat",
+  });
   localStorage.checkpoint = 14;
-  $("body").css({"background-image":"none"});
-  $("#hospitalScene,#viewReportButton").remove();
+  $("#hospitalScene").remove();
   $(domScene).append(`
   <div id="overview">
-        <h1></h1>
-        <div id="firstSentence"></div>
-        <br>
-        <h3></h3>
-        <div id="secondSentence"></div>
-        <div id="thirdSentence"></div>
-        <h4></h4>
-        <div id="fourthSentence"></div>
-        <div id="fifthSentence"></div>
-        <div id="sixthSentence"></div>
-      </div>
-  </div>`);
-  let domFirst = "#firstSentence";
-  let domSecond = "#secondSentence";
-  let domThird = "#thirdSentence";
-  let domFourth = "#fourthSentence";
-  let domFifth = "#fifthSentence";
-  let domSixth = "#sixthSentence";
-  let firstSentence = `Sir Suriv was caught in Ace City`;
-  let secondSentence = `Due to the alerts given by Viole city and WHO"`;
-  let thirdSentence = `Ace City was notified and managed to capture Sir Suriv`;
-  let fourthSentence = `One of the method Ace City used is contact tracing`;
-  let fifthSentence = ``;
-  let sixthSentence = "However, the vial of virus is still missing!";
-  typingline("Overview", 50, "h1").then(function () {
-    typingline(firstSentence, 75, domFirst);
-    typingline("Debrief", 50, "h3").then(function () {
-      typingline(secondSentence, 50, domSecond).then(function () {
-        typingline(thirdSentence, 50, domThird).then(function () {
-          typingline("Contact Tracing", 50, "h4");
-          typingline(fourthSentence, 50, domFourth).then(function () {
-            typingline(fifthSentence, 50, domFifth).then(function () {
-              typingline(sixthSentence, 50, domSixth).then(function () {
-                $(domScene).append(
-                  `<button id = "missionButton">Mission!</button>`
-                );
-                $("#missionButton").css({
-                  "border-style": "none",
-                  "margin-left": "75%",
-                  "backgound-color": "white",
-                  "font-size": "10pt",
-                });
-                $("#missionButton").click(mission);
-              });
-            });
-          });
-        });
-      });
-    });
+                <h1>Overview</h1>
+                    <div id="firstSentence">Sir Suriv was caught in Ace City</div>
+                    <h3>Debrief</h3>
+                    <div id="secondSentence">Due to the alerts given by Viole city and WHO</div>
+                    <div id="thirdSentence">Ace City was notified and managed to capture Sir Suriv</div>
+                    <h4>Contact Tracing</h4>
+                    <div id="fourthSentence">One of the method Ace City used is contact tracing</div>
+                    <div id="fifthSentence">Contact tracing is used to identify people who had contact with an infected
+                        person.
+                        <br>By identifying and managing these people, the virus can be contained easily
+                    </div>
+                    <button class="infoBtn"><a href="">Click for more information</a></button>
+                    <div id="sixthSentence">However, the vial of virus is still missing!</div>
+            </div>`);
+  $("#overview").css({
+    "text-align": "center",
+    "font-size": "14pt",
+    width: "100%",
+    background: "rgb(255,255,255)",
   });
+  $(".infoBtn").css({
+    "font-size": "9pt",
+    "background-color": "white",
+    "border-style": "ridge",
+    "border-radius": "15px",
+    "border-width": "1px",
+    "text-decoration": "none",
+  });
+  $("#overview").append(`<button id = "missionButton">Mission!</button>`);
+  $("#missionButton").css({
+    "border-style": "none",
+    "margin-left": "75%",
+    "backgound-color": "white",
+    "font-size": "10pt",
+  });
+  $("#missionButton").click(mission);
 }
 function mission() {
+  let imageURL = "Images/hospital.png";
+  $("body").css({
+    "background-image": "url(" + imageURL + ")",
+    "background-size": "100%",
+    "background-repeat": "no-repeat",
+  });
   localStorage.checkpoint = 15;
-  $("#overview, #missionButton").remove();
+  $("#overview").remove();
   $(domScene).append(`
   <div id="mission">
+  <br>
   <h3></h3>
   <h5></h5>
   <p></p>
@@ -2553,6 +2660,13 @@ function mission() {
   <div id = "time"></div>
   <div id="aim"></div>
   </div>`);
+  $("#mission").css({
+    "text-align": "center",
+    "font-size": "18pt",
+    width: "100%",
+    background: "rgb(255,255,255)",
+  });
+  $("ol").css({"margin-left":"15%"})
   typingline("Mission Report", 50, "h4");
   typingline(`Head Detective ${name}`, 75, "h5");
   typingline(
@@ -2581,7 +2695,7 @@ function mission() {
     50,
     "#filler, #filler2"
   ).then(function () {
-    $(domScene).append(`<button id = "missingVialButton">Search!</button>`);
+    $("#mission").append(`<button id = "missingVialButton">Search!</button>`);
     $("#missingVialButton").css({
       "border-style": "none",
       "margin-left": "75%",
@@ -2595,7 +2709,7 @@ function mission() {
 }
 function missingVial() {
   localStorage.checkpoint = 16;
-  $("#mission,#missingVialButton").remove();
+  $("#mission").remove();
   $(domScene).append(`<div id="missingVial">
   <h1>Missing Vial!</h1><br>
   <h3>Get information on the location of the vial of virus</h3><br>
@@ -2923,7 +3037,7 @@ function endOfGame() {
   let username = localStorage.getItem("name");
   let d = new Date();
   let time = d.getTime() - localStorage.getItem("time");
-  let point = localStorage.firstQuiz+localStorage.secondQuiz;
+  let point = localStorage.firstQuiz + localStorage.secondQuiz;
   var jsondata = { name: username, points: point, time: time };
   var setting = {
     async: true,
