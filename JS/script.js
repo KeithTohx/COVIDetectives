@@ -2136,7 +2136,7 @@ function encounter() {
     </div>
     <div class = "col-sm" id ="villain">
       <h3>Sir Suriv</h3>
-      <div class = "image"><img src ="#" alt= "Villain character"></div>
+      <div class = "image"><img src ="Images/Villain.svg" alt= "Villain character"></div>
       <div>
         <div class="healthBar">
             <div class ="health"id="villainHealth"><span>Health</span></div>
