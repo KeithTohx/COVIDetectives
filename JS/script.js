@@ -992,6 +992,9 @@ function scene1_2() {
         $("#misson").click(function () {
           $("#misson").remove();
           $("#clipboard").fadeOut(1600, function () {
+            let imageURL2 = "Images/exitHQ.png"
+            $("body").css({"background-image":"url("+imageURL2+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"})
+  
             typingline(disp2, 80, dom2).then(function () {
               $("#scene2-intro")
                 .delay(800)
@@ -1007,6 +1010,7 @@ function scene1_2() {
 
 function map1() {
   localStorage.checkpoint = 2;
+  $("body").css({"background-color":"white"});
   var disp = "Click on the next city to proceed:";
 
   $("#scenes").append(
