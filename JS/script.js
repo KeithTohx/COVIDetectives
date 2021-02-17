@@ -2610,7 +2610,7 @@ function overview() {
                         person.
                         <br>By identifying and managing these people, the virus can be contained easily
                     </div>
-                    <button class="infoBtn"><a href="">Click for more information</a></button>
+                    <button class="infoBtn"><a href="https://www.cdc.gov/coronavirus/2019-ncov/daily-life-coping/contact-tracing.html" target="blank">Click for more information</a></button>
                     <div id="sixthSentence">However, the vial of virus is still missing!</div>
             </div>`);
   $("#overview").css({
@@ -2637,6 +2637,7 @@ function overview() {
   $("#missionButton").click(mission);
 }
 function mission() {
+  let name = localStorage.name
   let imageURL = "Images/hospital.png";
   $("body").css({
     "background-image": "url(" + imageURL + ")",
@@ -2680,12 +2681,12 @@ function mission() {
   );
   typingline("Head to Ace City", 50, "#list1").then(function () {
     typingline(
-      "Find the location of hidden vial of vaccine",
+      "Find the location of hidden vial of virus",
       30,
       "#list2"
     ).then(function () {
       typingline(
-        "Retrieve the vial of vaccine and deliver it back to headquarters",
+        "Retrieve the vial of virus and deliver it back to headquarters",
         30,
         "#list3"
       );
@@ -2715,7 +2716,7 @@ function missingVial() {
   <h1>Missing Vial!</h1><br>
   <h3>Get information on the location of the vial of virus</h3><br>
   <h3>Try your best to answer all questions right</h3><br>
-  <h3>There are X number of questions.</h3><br>
+  <h3>There are 6 number of questions.</h3><br>
   <h3>Good luck.</h3>
   <button id="questionsButton">Start Finding!</button>
   </div>`);
