@@ -947,8 +947,8 @@ function userChar() {
 
 function scene1_2() {
   localStorage.checkpoint = 1;
-  let imageURL = "Images/hq.png"
-  $("body").css({"background-image":"url("+imageURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"})
+  let imageURL = "Images/hq.png";
+  $("body").css({"background-image":"url("+imageURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
   $("#scenes").append(`<h4 id="scene1-intro"></h4>
   <div class="clipboard" id="clipboard"></div>
   <h4 id="scene2-intro"></h4>`);
@@ -992,8 +992,8 @@ function scene1_2() {
         $("#misson").click(function () {
           $("#misson").remove();
           $("#clipboard").fadeOut(1600, function () {
-            let imageURL2 = "Images/exitHQ.png"
-            $("body").css({"background-image":"url("+imageURL2+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"})
+            let imageURL2 = "Images/exitHQ.png";
+            $("body").css({"background-image":"url("+imageURL2+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
   
             typingline(disp2, 80, dom2).then(function () {
               $("#scene2-intro")
@@ -1010,7 +1010,7 @@ function scene1_2() {
 
 function map1() {
   localStorage.checkpoint = 2;
-  $("body").css({"background-color":"white"});
+  $("body").css({"background-image":"none"});
   var disp = "Click on the next city to proceed:";
 
   $("#scenes").append(
@@ -1047,6 +1047,9 @@ function scene3() {
   <h4 id="scene3-text1"></h4>
   <h4 id="scene3-text2"></h4>`);
 
+  let imageURL = "Images/city.png";
+  $("body").css({"background-image":"url("+imageURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
+
   var disp1 =
     "As you walk into Viole city, you see symptoms of people getting sick.";
   var dom1 = "#scene3-intro";
@@ -1073,6 +1076,10 @@ function scene3() {
 
 function scene4() {
   localStorage.checkpoint = 4;
+  $("body").css({"background-image":"none"});
+  let imageURL = "Images/office.png";
+  $("body").css({"background-image":"url("+imageURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
+
   $("#scenes").append(`<h4 id="scene4-intro"></h4>
   <h4 id="scene4-text1"></h4>
   <h4 id="scene4-text2"></h4>
@@ -1150,6 +1157,9 @@ function scene4() {
 
 function scene5() {
   localStorage.checkpoint = 5;
+  let imageURL = "Images/office.png";
+  $("body").css({"background-image":"url("+imageURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
+
   $("#scenes").append(`<div class="information" id="information"></div>`);
   $("#information").hide();
 
@@ -1219,6 +1229,7 @@ function scene5() {
 
 function showdown1() {
   localStorage.checkpoint = 6;
+  $("body").css({"background-image":"none"});
   $("#scenes").append(`<h4 id="showdown1-text1"></h4>
   <h4 id="showdown1-text2"></h4>
   <h4 id="showdown1-text3"></h4>
@@ -1243,8 +1254,11 @@ function showdown1() {
         $("#showdown1-text1").fadeOut(1600);
         $("#showdown1-text2").fadeOut(1600);
         $("#showdown1-text3").fadeOut(1600, function () {
+          let imageURL = "Images/labDoor.png";
+          $("body").css({"background-image":"url("+imageURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
           typingline(disp4, 60, dom4).then(function () {
             $("#showdown1-text4").fadeOut(1600, function () {
+              $("body").css({"background-image":"none"});
               typingline(disp5, 30, dom5).then(function () {
                 $(
                   "#showdown1-intro"
