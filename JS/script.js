@@ -1639,7 +1639,7 @@ function clue1() {
 
         // transition to next show map
         $("#map2Button").click(function () {
-          $(".container").css({ background: "rgba(255,255,255,0.7)" });
+          $("#scenes").css({ background: "rgba(255,255,255,0.7)" });
           $("#clue1").remove();
           $(domScene).append(`<div id = "afterClue1"></div>`);
           $("#afterClue1").css({ "font-size": "19pt" });
@@ -1686,6 +1686,7 @@ function clue1() {
 // Next function
 function scene6() {
   //change scene
+  $("#scenes").css({ background: "rgba(255,255,255,0)" });
   let desolateUrl = "Images/Desolate.png";
   $("body").css({
     "background-image": "url(" + desolateUrl + ")",
