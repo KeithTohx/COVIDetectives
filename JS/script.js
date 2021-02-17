@@ -1967,6 +1967,8 @@ function scene7() {
   });
 }
 function scene8() {
+  let imageURL = "Images/OpenDoor.svg";
+  $("body").css({"background-image":"url("+imageURL+")", "background-size":"100%","background-repeat":"no-repeat"});
   let name = localStorage.name
   localStorage.checkpoint = 11;
   $("#scene7, #scene8Button").remove();
@@ -1982,6 +1984,7 @@ function scene8() {
   </div>`);
   //Css styling
   $(domScene).css({ "font-size": "18pt" });
+  $("#scene8").css({"background":"rgba(255,255,255,0.7)"})
   //The element selector
   let domFirst = "#firstSentence";
   let domSecond = "#secondSentence";
@@ -2001,6 +2004,8 @@ function scene8() {
   typingline(firstSentence, 50, domFirst).then(function () {
     typingline(secondSentence, 50, domSecond).then(function () {
       typingline(thirdSentence, 50, domThird).then(function () {
+        let roomURL = "Images/IntheRoom.svg";
+        $("body").css({"background-image":"url("+roomURL+")", "background-size":"100%","background-repeat":"no-repeat"});
         typingline(fourthSentence, 50, domFourth).then(function () {
           typingline(fifthSentence, 50, domFifth).then(function () {
             typingline(sixthSentence, 30, domSixth).then(function () {
