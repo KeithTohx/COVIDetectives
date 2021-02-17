@@ -1778,7 +1778,7 @@ function newspaper() {
   </div><br><br>
 </div>`);
   $("button").hide();
-  $("#newspaper").css({ "border-style": "solid double ridge ridge" });
+  $("#newspaper").css({ "border-style": "solid double ridge ridge" ,background: "rgb(255,255,255)"});
   $(domScene).css({ "font-size": "14pt" });
   $("h2").css({ "text-align": "center" });
   $(".col-sm").css({ margin: "auto 40px" });
@@ -1850,7 +1850,7 @@ function newspaperp2() {
   </div>
   <br>
 </div>`);
-  $("#newspaperp2").css({ "border-style": "solid double ridge ridge" });
+  $("#newspaperp2").css({ "border-style": "solid double ridge ridge" ,background: "rgb(255,255,255)"});
   $("#newspaperLeft, #safeMangementMeasure h4").css({ "margin-top": "0px" });
   $(domScene).css({ "font-size": "14pt" });
   $("h2").css({ "text-align": "center" });
@@ -1944,7 +1944,7 @@ function newspaperp2() {
     "border-style": "ridge",
     "border-radius": "15px",
     "border-width": "1px",
-    //"margin-left": "45%",
+    "text-align":"center"
   });
   $("#scene7Button").click(scene7);
 }
@@ -2751,18 +2751,8 @@ function finalQuiz() {
     </div>
   </div>
 </div>`);
-  $(".healthBar").css({
-    width: "80%",
-    "border-style": "solid",
-    "border-width": "1px",
-    margin: "0px auto",
-    "border-radius": "10px",
-  });
-  $(".health").css({
-    margin: "0px",
-    "text-align": "center",
-    "background-color": "lightgreen",
-    "border-radius": "10px",
+  $("#finalQuiz").css({
+    "font-size":"18pt"
   });
   $("button").css({
     margin: "5px",
@@ -2903,10 +2893,10 @@ function finalQuiz() {
     $("#q1C").text(optionC);
     $("#q1D").text(optionD);
     return new Promise(function (resolve) {
-      $(`${domOptionA},${domOptionB},${domOptionD}`).click(function () {
+      $(`${domOptionA},${domOptionC},${domOptionD}`).click(function () {
         resolve("false");
       });
-      $(domOptionC).click(function () {
+      $(domOptionB).click(function () {
         resolve("true");
       });
     });
@@ -2959,6 +2949,9 @@ function vialFound(marks) {
   <div id="secondSentence"></div>
   <div id="thirdSentence"></div>
   </div>`);
+  $("#vialFound").css({
+    "font-size":"18pt"
+  });
   let domFirst = "#firstSentence";
   let domSecond = "#secondSentence";
   let domThird = "#thirdSentence";
@@ -3060,6 +3053,10 @@ function endOfGame() {
   </div>
   
   `);
+  $("#endOfGame").css({
+    "font-size":"18pt"
+  });
+  $("img").css({"border-style":"ridge","border-width":"4px","width":"450px"})
   
   typingline("Statistics", 50, "h3");
   typingline(
