@@ -2415,6 +2415,9 @@ function hospitalScene() {
     typingline(span, 100, domSpan2).then(function () {
       typingline(span, 100, domSpan3).then(function () {
         typingline(span, 100, domSpan4).then(function () {
+          let imageURL = "Images/hospital.png";
+          $("body").css({"background-image":"url("+imageURL+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
+  
           typingline(firstSentence, 75, domFirst).then(function () {
             typingline(secondSentence, 50, domSecond).then(function () {
               typingline(thirdSentence, 50, domThird).then(function () {
@@ -2453,6 +2456,7 @@ function hospitalScene() {
 }
 function overview() {
   localStorage.checkpoint = 14;
+  $("body").css({"background-image":"none"});
   $("#hospitalScene,#viewReportButton").remove();
   $(domScene).append(`
   <div id="overview">
@@ -2477,7 +2481,7 @@ function overview() {
   let firstSentence = `Sir Suriv was caught in Ace City`;
   let secondSentence = `Due to the alerts given by Viole city and WHO"`;
   let thirdSentence = `Ace City was notified and managed to capture Sir Suriv`;
-  let fourthSentence = `One of the method Ace City use is contact tracing`;
+  let fourthSentence = `One of the method Ace City used is contact tracing`;
   let fifthSentence = ``;
   let sixthSentence = "However, the vial of virus is still missing!";
   typingline("Overview", 50, "h1").then(function () {
