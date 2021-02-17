@@ -804,7 +804,7 @@ function typingline(disp, speed, dom) {
 }
 
 function userChar() {
-  $("#male").click(function () {
+  $("#genderM").click(function () {
     document.getElementById("genderF").remove();
     $("#maleImg").remove();
     $("#femaleImg").remove();
@@ -813,7 +813,7 @@ function userChar() {
     form(dom);
   });
 
-  $("#female").click(function () {
+  $("#genderF").click(function () {
     document.getElementById("genderM").remove();
     $("#maleImg").remove();
     $("#femaleImg").remove();
@@ -994,10 +994,10 @@ function scene1_2() {
             let imageURL2 = "Images/exitHQ.png";
             $("body").css({"background-image":"url("+imageURL2+")", "height":"600px", "background-size":"100%","background-repeat":"no-repeat"});
   
-            typingline(disp2, 80, dom2).then(function () {
+            typingline(disp2, 40, dom2).then(function () {
               $("#scene2-intro")
-                .delay(800)
-                .fadeOut(1600, function () {
+                .delay(1000)
+                .fadeOut(1000, function () {
                   map1();
                 });
             });
