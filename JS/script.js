@@ -1898,7 +1898,7 @@ $("#newspaperLeft, #safeMangementMeasure h4").css({"margin-top":"0px"})
 function scene7() {
   $(".container").css({"background":"rgba(255,255,255,0)"})
   let imageURL = "Images/Factory.svg";
-  $("body").css({"background-image":"url("+imageURL+")", "width":"100%", "background-size":"100%","background-repeat":"no-repeat"});
+  $("body").css({"background-image":"url("+imageURL+")", "background-size":"100%","background-repeat":"no-repeat"});
   localStorage.checkpoint = 10;
   $("#newspaperp2").remove();
   $(domScene).append(`<div id ="scene7">
@@ -1940,11 +1940,12 @@ function scene7() {
   typingline(firstSentence, 40, domFirst).then(function () {
     typingline(secondSentence, 65, domSecond).then(function () {
       typingline(thirdSentence, 40, domThird).then(function () {
-        //Maybe can allow player to choose the police pass
         typingline(fourthSentence, 40, domFourth).then(function () {
           typingline(fifthSentence, 40, domFifth).then(function () {
             typingline(sixthSentence, 40, domSixth).then(function () {
               typingline(sevenSentence, 400, domSeven).then(function () {
+                let doorURL = "Images/Door.svg";
+                $("body").css({"background-image":"url("+doorURL+")", "background-size":"100%","background-repeat":"no-repeat"});
                 typingline(eightSentence, 40, domEight).then(function () {
                   $(domScene).append(
                     `<button id = "scene8Button">Kick the doors open!</button>`
