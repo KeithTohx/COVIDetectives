@@ -72,13 +72,26 @@ By creating a storyline, we hope that visitors of the website will be engaged by
 * Leader Board retrieve data from database and display
 (Pass)
 
+#### Start Searching button(click)
+* The game should start running
+(Pass)
 ## Credits
 * API: COVID-19 Data from [Disease.sh](https://disease.sh/docs/)
 * Animations: [LottieFiles](https://lottiefiles.com/)
 * Fonts used: [Google Fonts](https://fonts.google.com/)
-* Inspirations for graphics in this website: [Google Images](https://www.google.com/)
+* Inspirations for graphics in this website: [Google Images](https://www.google.com/imghp?hl=en)
 
 To better use Javascript, jQuery, CSS, HTML:
 * [w3schools](https://www.w3schools.com/)
 * [MDN Web Docs](https://developer.mozilla.org/en-US/)
 * [jQuery](https://jquery.com/)
+  
+For information on Covid-19
+* [World Health Organization](https://www.who.int/)
+* [Centers for Disease Control and Prevention](https://www.cdc.gov/)
+* [Singapore Government](https://www.gov.sg/)
+* [Singapore Ministry Of Health](https://www.moh.gov.sg/covid-19)
+* [Singapore Ministry of Manpower](https://www.mom.gov.sg/covid-19)
+
+API used
+* [Novel Covid19 API (Disease.sh)](https://disease.sh/docs/)
