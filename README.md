@@ -1,21 +1,21 @@
 # ID_Assg3
-* Class: T03
 * Student Names: Keith Toh, Lim Xiang
 * Student ID: S10202764, S10205010
+* Class: T03
 
-Our project educates users on the pandemic through gamification.
-
-Aim: To educate public on the symptoms of Covid-19, some actions that people, businesses and government can take, the importance of contact tracing.
+Our project aims to educates users on the pandemic through gamification. Users will go through a fictitious detective game with true and useful information, referenced from official websites, provided in the storyline.
 
 __[Link to GitHub Page](https://keithtohx.github.io/ID_Assignment3/)__
+
 ## Design Process
-By creating a storyline, we hope that visitors of the website will be engaged by the storyline and play the game. By following the storyline, users can learn more about the symptoms of COVID-19, what they can do to protect themselves, where to get trusted information, know why contact tracing is important, and what businesses and government are able to do. There are links to offical websites, such as the WHO, CDC, MOH, displayed in our website to allow users to get more information on the pandemic. 
+By creating a storyline, we hope that visitors of the website will be engaged by the storyline and play the game. Following the storyline, users can learn more about the symptoms of COVID-19, actions they can take to protect themselves and their loved ones, where to get trusted information, know why contact tracing is important, and what businesses and government are able to do to prevent the spread of the virus. There are also links to offical websites, such as the WHO, CDC, MOH, displayed in our website to allow users to get more information on the pandemic beyond what was stated in our storyline. 
+
 ## Features
-### Existing Features
+### Existing Features Implemented
 1. __COVID-19 Global Cases Statistics__
     * Total number of cases, number of critical cases, number of deaths resulting from COVID-19 and number of recovered cases
 2. __COVID-19 Country Cases Statistics__
-    * Number of cases, number of critical cases, number of deaths, number of recovered and number of tests done by the respective country
+    * Total number of cases, number of critical cases, number of deaths, number of recovered cases and number of tests done by the respective country
 3. __Leaderboard__
     * Name of player, score and time they took to complete.
 4. __Checkpoint__
@@ -31,6 +31,7 @@ By creating a storyline, we hope that visitors of the website will be engaged by
 ### Features to Implement in the Future
 1. Randomise selection of symptoms of Covid-19 to be tested for first quiz
    * Out of all the symptoms of Covid-19, select some to be use to test users in the first quiz.
+
 ## Technologies Used
 * [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
   * HTML is used to create the structure of the website
@@ -50,6 +51,7 @@ By creating a storyline, we hope that visitors of the website will be engaged by
   * [W3C_Markup_Validation_Service](https://validator.w3.org/)
   * [W3C_CSS_Validation_Service](https://jigsaw.w3.org/css-validator/)
   * [JSHint](https://jshint.com/)
+
 ## Testing
 ### Landing Page
 * API global Covid-19 statistics should be loaded
@@ -76,22 +78,22 @@ By creating a storyline, we hope that visitors of the website will be engaged by
 * The game should start running
 (Pass)
 ## Credits
-* API: COVID-19 Data from [Disease.sh](https://disease.sh/docs/)
+API used:
+* [Novel Covid19 API (Disease.sh)](https://disease.sh/docs/)
+
+For visuals in this website:
 * Animations: [LottieFiles](https://lottiefiles.com/)
-* Fonts used: [Google Fonts](https://fonts.google.com/)
-* Inspirations for graphics in this website: [Google Images](https://www.google.com/imghp?hl=en)
+* Text fonts: [Google Fonts](https://fonts.google.com/)
+* Inspirations for graphics: [Google Images](https://www.google.com/imghp?hl=en)
 
 To better use Javascript, jQuery, CSS, HTML:
 * [w3schools](https://www.w3schools.com/)
 * [MDN Web Docs](https://developer.mozilla.org/en-US/)
 * [jQuery](https://jquery.com/)
   
-For information on Covid-19
+For information on Covid-19:
 * [World Health Organization](https://www.who.int/)
 * [Centers for Disease Control and Prevention](https://www.cdc.gov/)
-* [Singapore Government](https://www.gov.sg/)
+* [Singapore Government Agency](https://www.gov.sg/)
 * [Singapore Ministry Of Health](https://www.moh.gov.sg/covid-19)
 * [Singapore Ministry of Manpower](https://www.mom.gov.sg/covid-19)
-
-API used
-* [Novel Covid19 API (Disease.sh)](https://disease.sh/docs/)
