@@ -1384,7 +1384,7 @@ function showdown1() {
                       count++;
                       correct++;
                       $("#cough").css({
-                        "background-color": "lightblue",
+                        "background-color": "dodgerblue",
                       });
                       cough = true;
                     }
@@ -1408,7 +1408,7 @@ function showdown1() {
                       count++;
                       correct++;
                       $("#fever").css({
-                        "background-color": "lightblue",
+                        "background-color": "dodgerblue",
                       });
                       fever = true;
                     }
@@ -1432,7 +1432,7 @@ function showdown1() {
                       count++;
                       correct++;
                       $("#smell").css({
-                        "background-color": "lightblue",
+                        "background-color": "dodgerblue",
                       });
                       smell = true;
                     }
@@ -1456,7 +1456,7 @@ function showdown1() {
                       count++;
                       correct++;
                       $("#chills").css({
-                        "background-color": "lightblue",
+                        "background-color": "dodgerblue",
                       });
                       chills = true;
                     }
@@ -1480,7 +1480,7 @@ function showdown1() {
                       count++;
                       correct++;
                       $("#headache").css({
-                        "background-color": "lightblue",
+                        "background-color": "dodgerblue",
                       });
                       headache = true;
                     }
@@ -1503,7 +1503,7 @@ function showdown1() {
                     if (count < 5) {
                       count++;
                       $("#nosebleed").css({
-                        "background-color": "lightblue",
+                        "background-color": "dodgerblue",
                       });
                       nosebleed = true;
                     }
@@ -1525,7 +1525,7 @@ function showdown1() {
                     if (count < 5) {
                       count++;
                       $("#hunger").css({
-                        "background-color": "lightblue",
+                        "background-color": "dodgerblue",
                       });
                       hunger = true;
                     }
@@ -1547,7 +1547,7 @@ function showdown1() {
                     if (count < 5) {
                       count++;
                       $("#stomachache").css({
-                        "background-color": "lightblue",
+                        "background-color": "dodgerblue",
                       });
                       stomachache = true;
                     }
@@ -2036,18 +2036,18 @@ function scene7() {
   let domEight = "#eightSentence";
   //Sentences
   let firstSentence =
-    "You rushed over to the abandoned factory location seen from the newspaper";
+    "You rushed over to the abandoned factory location seen from the newspaper.";
   let secondSentence =
-    "When you arrived at the location, you see police tape around the building";
+    "When you arrived at the location, you see police tape around the building.";
   let thirdSentence =
-    "You tried to cross over the tape, and a police officer tried to stop you";
+    "You tried to cross over the tape, and a police officer tried to stop you.";
   let fourthSentence =
-    "You showed your detective pass and entered the abandoned building";
+    "You showed your detective pass and entered the abandoned building.";
   let fifthSentence = `"HA HA HA HA HA HA HA HA"`;
   let sixthSentence =
     "You heard a maniac laughter a distance away, and you walked towards the sound";
   let sevenSentence = ". . . . .";
-  let eightSentence = "The laughter seems to be behind these doors";
+  let eightSentence = "The laughter seems to be behind these doors!";
   typingline(firstSentence, 40, domFirst).then(function () {
     typingline(secondSentence, 65, domSecond).then(function () {
       typingline(thirdSentence, 40, domThird).then(function () {
@@ -2115,8 +2115,8 @@ function scene8() {
   //Sentences
   let firstSentence = `"Boom!"`;
   let secondSentence = "The doors burst open!";
-  let thirdSentence = "Sir Suriv turn around with a look of surprise";
-  let fourthSentence = `"Well Well Well. Look who is here. Head Detective ${name}"`;
+  let thirdSentence = "Sir Suriv turn around with a look of surprise.";
+  let fourthSentence = `"Well Well Well. Look who is here. Head Detective ${name}."`;
   let fifthSentence = `You snorted,"Freeze! By the way am I famous?"`;
   let sixthSentence = `"Surrender yourself now. You have the right to remain silent and refuse to answer questions."`;
   let seventhSentence = `He replied,"Your reputation precedes you. Ha Ha Ha"`;
@@ -2157,10 +2157,10 @@ function preEncounter() {
   $("#scene8").remove();
   $(domScene).append(`<div id="pre-encounter">
   <h1>Encounter!</h1><br>
-  <h3>Defeat Sir Suriv and obtain the vial of virus</h3><br>
-  <h3>Try your best to answer all questions right</h3><br>
+  <h3>Defeat Sir Suriv and obtain the vial of virus!</h3><br>
+  <h3>Try your best to answer all questions right!</h3><br>
   <h3>There are 5 questions.</h3><br>
-  <h3>Good luck.</h3>
+  <h3>Good luck</h3>
   <button id="questionsButton">Arrest him!</button>
   </div>`);
   $("#pre-encounter").css({
