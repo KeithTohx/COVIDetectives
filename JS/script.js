@@ -985,9 +985,10 @@ function scene1_2() {
     "background-size": "100%",
     "background-repeat": "no-repeat",
   });
-  $("#scenes").append(`<h4 id="scene1-intro"></h4>
+  $("#scenes").append(`<div id="scene1-intro"></div>
   <div class="clipboard" id="clipboard"></div>
-  <h4 id="scene2-intro"></h4>`);
+  <div id="scene2-intro"></div>`);
+  $("#scene1-intro, #scene2-intro").css({"font-size": "15pt"});
   $("#clipboard").hide();
   let name = localStorage.name;
   var disp1 = `Head Detective ${name}, you are in a meeting room in the Headquarter of Detectives and given the following information:`;
@@ -1055,10 +1056,10 @@ function map1() {
   var disp = "Click on the next city to proceed:";
 
   $("#scenes").append(
-    `<h3></h3>
+    `<h5></h5>
     <div id = "map1"><img class ="img-fluid" src="Images/map.png" alt="map image"></div>`
   );
-  typingline(disp, 30, "h3");
+  typingline(disp, 30, "h5");
   //when it is clicked
   $("#map1 img").click(function (evt) {
     var offset = $(this).offset();
@@ -1084,10 +1085,10 @@ function map1() {
 
 function scene3() {
   localStorage.checkpoint = 3;
-  $("#scenes").append(`<h4 id="scene3-intro"></h4>
-  <h4 id="scene3-text1"></h4>
-  <h4 id="scene3-text2"></h4>`);
-
+  $("#scenes").append(`<div id="scene3-intro"></div>
+  <div id="scene3-text1"></div>
+  <div id="scene3-text2"></div>`);
+  $("#scene3-intro, #scene3-text1, #scene3-text2").css({"font-size": "15pt"});
   let imageURL = "Images/city.png";
   $("body").css({
     "background-image": "url(" + imageURL + ")",
@@ -1132,13 +1133,14 @@ function scene4() {
     "background-repeat": "no-repeat",
   });
 
-  $("#scenes").append(`<h4 id="scene4-intro"></h4>
-  <h4 id="scene4-text1"></h4>
-  <h4 id="scene4-text2"></h4>
-  <h4 id="scene4-text3"></h4>
-  <h4 id="scene4-text4"></h4>
-  <h4 id="scene4-text5"></h4>
-  <h4 id="scene4-text6"></h4>`);
+  $("#scenes").append(`<div id="scene4-intro"></div>
+  <div id="scene4-text1"></div>
+  <div id="scene4-text2"></div>
+  <div id="scene4-text3"></div>
+  <div id="scene4-text4"></div>
+  <div id="scene4-text5"></div>
+  <div id="scene4-text6"></div>`);
+  $("#scene4-intro, #scene4-text1, #scene4-text2, #scene4-text3, #scene4-text4, #scene4-text5, #scene4-text6").css({"font-size": "15pt"});
   let name = localStorage.name;
   var disp1 = "The Mayor of the city came to greet you.";
   var disp2 = `"Dear Head Detective ${name}, have you come to see the situation?"`;
@@ -1293,11 +1295,12 @@ function showdown1() {
     "background-repeat": "no-repeat",
   });
   localStorage.checkpoint = 6;
-  $("#scenes").append(`<h4 id="showdown1-text1"></h4>
-  <h4 id="showdown1-text2"></h4>
-  <h4 id="showdown1-text3"></h4>
-  <h4 id="showdown1-text4"></h4>
-  <h4 id="showdown1-intro"></h4>`);
+  $("#scenes").append(`<div id="showdown1-text1"></div>
+  <div id="showdown1-text2"></div>
+  <div id="showdown1-text3"></div>
+  <div id="showdown1-text4"></div>
+  <div id="showdown1-intro"></div>`);
+  $("#showdown1-intro, #showdown1-text1, #showdown1-text2, #showdown1-text3, #showdown1-text4").css({"font-size": "15pt"});
 
   var disp1 = `You returned the pile of information to the Mayor.`;
   var disp2 = `The situation is worsening...`;
