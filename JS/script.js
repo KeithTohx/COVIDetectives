@@ -756,6 +756,7 @@ $("#start").click(function () {
       missingVial();
     }
   } else {
+    //Function to load game
     $("#startGame").fadeOut(750, function () {
       $("#content").append(
         `<div id="charInfo" class="container" style="padding: 30px;"></div>`
@@ -969,7 +970,8 @@ function loading() {
 
   // text content to be displayed
   var disp1 = "Loading... Please wait";
-  var disp2 = "The following story is purely fictitious and any resemblance to real persons, living or dead, or events is coincidental.";
+  var disp2 =
+    "The following story is purely fictitious and any resemblance to real persons, living or dead, or events is coincidental.";
   // location to dislay text
   var dom1 = "#loading-text";
   var dom2 = "#notice";
@@ -1019,7 +1021,8 @@ function scene1_2() {
 
   // text content to be displayed
   var disp1 = `Head Detective ${name}, you are in a meeting room in the Headquarter of Detectives and given the following information:`;
-  var disp2 = "After understanding the situation, you left the meeting room and head out to find Sir Suriv...";
+  var disp2 =
+    "After understanding the situation, you left the meeting room and head out to find Sir Suriv...";
 
   // location to dislay text
   var dom1 = "#scene1-intro";
@@ -1147,9 +1150,11 @@ function scene3() {
   $("#scenes").css({ background: "rgba(255,255,255,0.7)" });
 
   // text content to be displayed
-  var disp1 ="As you walk into Viole city, you see symptoms of people getting sick.";
+  var disp1 =
+    "As you walk into Viole city, you see symptoms of people getting sick.";
   var disp2 = `Questions started to pop into your head: "What happened here? Why are there so many people feeling sick? Is this because of Sir Suriv...?"`;
-  var disp3 = "You then walk quickly towards the administration office of the city...";
+  var disp3 =
+    "You then walk quickly towards the administration office of the city...";
 
   // location to dislay text
   var dom2 = "#scene3-text1";
@@ -1306,15 +1311,25 @@ function scene5() {
   });
 
   // display common symptoms
-  $("#symptomCommonTitle").append(`<h5 style="text-align: right">Common Symptom(s):</h5>`);
-  $("#symptomCommonList").append(`<h5><ol><li>Fever</li><li>Cough</li><li>Tiredness</li></ol></h5>`);
+  $("#symptomCommonTitle").append(
+    `<h5 style="text-align: right">Common Symptom(s):</h5>`
+  );
+  $("#symptomCommonList").append(
+    `<h5><ol><li>Fever</li><li>Cough</li><li>Tiredness</li></ol></h5>`
+  );
 
   // display early symptoms
-  $("#symptomEarlyTitle").append(`<h5 style="text-align: right">Early Symptom(s):</h5>`);
-  $("#symptomEarlyList").append(`<h5><ol><li>Lose sense of smell</li></ol></h5>`);
+  $("#symptomEarlyTitle").append(
+    `<h5 style="text-align: right">Early Symptom(s):</h5>`
+  );
+  $("#symptomEarlyList").append(
+    `<h5><ol><li>Lose sense of smell</li></ol></h5>`
+  );
 
   // display other possible symptoms
-  $("#symptomOtherTitle").append(`<h5 style="text-align: right">Other Possible Symptom(s):</h5>`);
+  $("#symptomOtherTitle").append(
+    `<h5 style="text-align: right">Other Possible Symptom(s):</h5>`
+  );
   $("#symptomOtherList").append(`<h5><ol>
   <li>Chills</li><li>Headache</li><li>Sore throat</li><li>Running nose</li><li>Shortness of breath</li></ol></h5>`);
 
@@ -1327,7 +1342,7 @@ function scene5() {
         <h5>Image of Lab:</h5>
         <img src="Images/lab.png" style="width:360px;padding:10px;">
         <button id="symptomsBtn2" class="symptomsBtn2" style="margin: 10px;">Next</button>`);
-      
+
       // set css styles of second button on info
       $("#symptomsBtn2").css({
         "font-size": "12pt",
@@ -1358,7 +1373,7 @@ function showdown1() {
     "background-repeat": "no-repeat",
   });
   localStorage.checkpoint = 6;
-  
+
   // append div for text content
   $("#scenes").append(`<div id="showdown1-text1"></div>
   <div id="showdown1-text2"></div>
@@ -1680,25 +1695,30 @@ function clue1() {
     "background-size": "100%",
     "background-repeat": "no-repeat",
   });
-
+  // Set checkpoint value
   localStorage.checkpoint = 7;
   $(domScene).append(`<div id = "beforeClue1">
   <div id="firstSentence"></div>
   <div id="secondSentence"></div>
   </div> `);
+  //CSS styling
   $("#beforeClue1").css({ "font-size": "15pt" });
+  //Sentence to be displayed
   let firstSentence = "You found a plan written by Sir Suriv";
   let domFirst = "#firstSentence";
   let secondSentence = "You took a look at it";
   let domSecond = "#secondSentence";
   typingline(firstSentence, 40, domFirst).then(function () {
     typingline(secondSentence, 40, domSecond).then(function () {
+      //Add button
       $("#beforeClue1").append(`<button id = "clue1Btn">See plan!</button>`);
+      //Button styling
       $("#clue1Btn").css({
         "font-size": "15pt",
         "margin-left": "70%",
         "border-style": "none",
       });
+      //Button click to show plan
       $("#clue1Btn").click(function () {
         $("#scenes").css({ background: "rgba(255,255,255,0)" });
         $("#beforeClue1").remove();
@@ -1730,6 +1750,7 @@ function clue1() {
   <button id ="map2Button">Next</button>
   <div id="clue1-filler"></div>
 </div>`);
+        //Stylings
         $("img").css({
           height: "100px",
           float: "left",
@@ -1757,6 +1778,7 @@ function clue1() {
           "margin-left": "70%",
           "border-style": "none",
         });
+        //Display
         let disp = "Viole Royal Lab Report";
         let dom = "#clue1 h2";
         typingline(disp, 120, dom);
@@ -1791,7 +1813,7 @@ function clue1() {
                   //If above selection is correct
                   if (mousex < width * 0.75 && mousex > width * 0.25) {
                     if (mousey >= height * 0.5) {
-                      $("h3, #map1").remove();
+                      $("h3, #map2").remove();
                       scene6();
                     } else {
                       alert("Wrong city!");
@@ -1807,9 +1829,9 @@ function clue1() {
     });
   });
 }
-// Next function
+// Next function set up the 6th scene
 function scene6() {
-  //change scene
+  //change scene and set background
   $("#scenes").css({ background: "rgba(255,255,255,0)" });
   let desolateUrl = "Images/Desolate.png";
   $("body").css({
@@ -1882,9 +1904,11 @@ function scene6() {
     });
   });
 }
+//This function display the newspaper scene
 function newspaper() {
   localStorage.checkpoint = 9;
   $("#scene6, #newspaperButton").remove();
+  //Append the elements needed for the scene
   $(domScene).append(`<div id = "newspaper">
   <h2>The Current Times</h2>
   <div class ="row">
@@ -1902,6 +1926,7 @@ function newspaper() {
   </div><br><br>
 </div>`);
   $("button").hide();
+  //Styline of the elements
   $("#newspaper").css({
     "border-style": "solid double ridge ridge",
     background: "rgb(255,255,255)",
@@ -1919,6 +1944,7 @@ function newspaper() {
     "margin-left": "65%",
   });
   $("#newspaperLeft").css({ "margin-top": "0px" });
+  //Display for the scene
   let domh4 = "#newspaperLeft h4";
   let heading = "Safe Distancing Measures Implemented";
   typingline(heading, 10, domh4);
@@ -1949,8 +1975,10 @@ down Sir Suriv.`;
   });
   $("button").click(newspaperp2);
 }
+//This function appends more information for users to read
 function newspaperp2() {
   $("#newspaper, #newspaperButton").remove();
+  // set up elements
   $(domScene).append(`<div id = "newspaperp2">
   <h2>The Current Times</h2>
   <div class ="row">
@@ -1977,6 +2005,7 @@ function newspaperp2() {
   </div>
   <br>
 </div>`);
+  //styling of the elements
   $("#newspaperp2").css({
     "border-style": "solid double ridge ridge",
     background: "rgb(255,255,255)",
@@ -2028,6 +2057,7 @@ function newspaperp2() {
     "border-width": "1px",
     "text-decoration": "none",
   });
+  // Safe Distancing Measure portion
   let domSDMp = "#safeDistancingMeasure p";
   let domSDMh4 = "#safeDistancingMeasure h4";
   let headingSDM = "Safe Distancing Measures";
@@ -2047,6 +2077,7 @@ function newspaperp2() {
     "border-width": "1px",
     "text-decoration": "none",
   });
+  //Travel restriction portion
   let domTRp = "#travelRestriction p";
   let domTRh4 = "#travelRestriction h4";
   let headingTR = "Travel Restriction";
@@ -2078,7 +2109,9 @@ function newspaperp2() {
   });
   $("#scene7Button").click(scene7);
 }
+//Continuation of the plot
 function scene7() {
+  // set new background
   $(".container").css({ background: "rgba(255,255,255,0)" });
   let imageURL = "Images/Factory.svg";
   $("body").css({
@@ -2088,6 +2121,7 @@ function scene7() {
   });
   localStorage.checkpoint = 10;
   $("#newspaperp2").remove();
+  //Add elements
   $(domScene).append(`<div id ="scene7">
   <div id="firstSentence"></div>
   <div id="secondSentence"></div>
@@ -2157,7 +2191,9 @@ function scene7() {
     });
   });
 }
+//Continuation of the plot
 function scene8() {
+  //Set background
   let imageURL = "Images/OpenDoor.svg";
   $("body").css({
     "background-image": "url(" + imageURL + ")",
@@ -2166,9 +2202,10 @@ function scene8() {
   });
   // get player name from local storage
   let name = localStorage.name;
-  
+
   localStorage.checkpoint = 11;
   $("#scene7").remove();
+  //Add new elements
   $(domScene).append(`<div id ="scene8">
   <div id="firstSentence"></div>
   <div id="secondSentence"></div>
@@ -2198,6 +2235,7 @@ function scene8() {
   let fifthSentence = `You snorted,"Freeze! By the way am I famous?"`;
   let sixthSentence = `"Surrender yourself now. You have the right to remain silent and refuse to answer questions."`;
   let seventhSentence = `He replied,"Your reputation precedes you. Ha Ha Ha"`;
+  // Display the sentences
   typingline(firstSentence, 50, domFirst).then(function () {
     typingline(secondSentence, 50, domSecond).then(function () {
       typingline(thirdSentence, 50, domThird).then(function () {
@@ -2224,7 +2262,9 @@ function scene8() {
     });
   });
 }
+// This function display the second quiz
 function preEncounter() {
+  // display the background
   let roomURL = "Images/IntheRoom.svg";
   $("body").css({
     "background-image": "url(" + roomURL + ")",
@@ -2233,6 +2273,7 @@ function preEncounter() {
   });
   localStorage.checkpoint = 12;
   $("#scene8").remove();
+  // append the elements
   $(domScene).append(`<div id="pre-encounter">
   <h1>Encounter!</h1><br>
   <h3>Defeat Sir Suriv and obtain the vial of virus!</h3><br>
@@ -2241,6 +2282,7 @@ function preEncounter() {
   <h3>Good luck</h3>
   <button id="questionsButton">Arrest him!</button>
   </div>`);
+  // Styling of the elements
   $("#pre-encounter").css({
     margin: "0px 200px",
     background: "rgba(255,255,255,0.7)",
@@ -2253,11 +2295,13 @@ function preEncounter() {
   });
   $("#questionsButton").click(encounter);
 }
+//Function for the second quiz
 function encounter() {
   // get player name from local storage
   let name = localStorage.name;
 
   $("#pre-encounter").remove();
+  //Append the elements
   $(domScene).append(`<div id = "encounter">
   <div class ="row">
     <div class = "col-sm" id ="player">
@@ -2294,6 +2338,7 @@ function encounter() {
     </div>
   </div>
 </div>`);
+  //Styling for the elements
   $("#encounter").css({
     background: "rgba(255,255,255,0.8)",
     "font-size": "15pt",
@@ -2306,6 +2351,7 @@ function encounter() {
   } else {
     $("#player img").attr("src", "Images/female.png");
   }
+  // styling for the health bar
   $(".healthBar").css({
     width: "80%",
     "border-style": "solid",
@@ -2368,7 +2414,7 @@ function encounter() {
   });
   function validateOption(message) {
     if (message == "true") {
-      //Need add points
+      //Change of health bar color
       villainHealth -= 19.8;
       let disp = villainHealth + "%";
       $("#villainHealth").css({ width: disp });
@@ -2379,11 +2425,12 @@ function encounter() {
       } else if (villainHealth < 65) {
         $("#villainHealth").css({ "background-color": "yellow" });
       }
+      //Add points for each question that is correct
       qRight += 1;
     } else {
       playerHealth -= 19.9;
       let disp = playerHealth + "%";
-      // need deduct point
+      //Change of health bar color
       $("#playerHealth").css({ width: disp });
       if (playerHealth < 25) {
         $("#playerHealth").css({ "background-color": "red" });
@@ -2394,6 +2441,7 @@ function encounter() {
       }
     }
   }
+  //function that resets the elements
   function questionSet() {
     $("#question").remove();
     $("#encounter").append(`
@@ -2417,6 +2465,9 @@ function encounter() {
       "border-width": "1px",
     });
   }
+  //this function input value into the respective element and return true for correct
+  // and false if user answer wrongly
+  // the response will be validated in validate Option
   function firstQuestion() {
     let optionA = "(A) Standing 1 meter apart.";
     let optionB = "(B) Wearing a mask.";
@@ -2518,14 +2569,17 @@ function encounter() {
     });
   }
 }
+// This function display the points that the person got correct
 function encounterReview(qRight) {
   localStorage.secondQuiz = qRight;
   $("#encounter").remove();
+  //Append new elements
   $(domScene).append(`<div id = "encounterReview">
   <h1>You got <span id ="qRight"></span>/5 questions correct!</h1>
   <div id ="statement"></div>
   <button>Next</button>
 </div>`);
+//Styling of elements
   $("button").css({
     "border-style": "none",
     "margin-left": "55%",
@@ -2551,7 +2605,7 @@ function encounterReview(qRight) {
 function postEncounter(qRight) {
   // get player name from local storage
   let name = localStorage.name;
-
+  //Set up the next scene
   $("#encounterReview").remove();
   $(domScene).append(`<div id ="postEncounter">
   <div id="firstSentence"></div>
@@ -2563,10 +2617,12 @@ function postEncounter(qRight) {
   <div id="sevenSentence"></div>
   <div id="eightSentence"></div>
   </div>`);
+  //Styling of elements
   $("#postEncounter").css({
     background: "rgba(255,255,255,0.8)",
     "font-size": "20pt",
   });
+  //DOM of where sentence will be displayed
   let domFirst = "#firstSentence";
   let domSecond = "#secondSentence";
   let domThird = "#thirdSentence";
@@ -2575,9 +2631,12 @@ function postEncounter(qRight) {
   let domSixth = "#sixthSentence";
   let domSeven = "#sevenSentence";
   let domEight = "#eightSentence";
+  //Sentences
   let firstSentence;
   let secondSentence;
   let thirdSentence;
+  // Depending on their score the sentences will display differently
+  //Note: Even if person gets all correct for the quiz, the villain will get away
   if (qRight > 3) {
     firstSentence = "You thought you got him";
     secondSentence = "His reaction was faster, he stunt you with a taser!";
@@ -2602,6 +2661,7 @@ function postEncounter(qRight) {
         typingline(fourthSentence, 150, domFourth).then(function () {
           typingline(fifthSentence, 50, domFifth).then(function () {
             typingline(sixthSentence, 50, domSixth).then(function () {
+              //Change background
               let roomURL = "Images/Note.svg";
               $("body").css({
                 "background-image": "url(" + roomURL + ")",
@@ -2611,6 +2671,7 @@ function postEncounter(qRight) {
               typingline(seventhSentence, 250, domSeven).then(function () {
                 typingline(eightSentence, 50, domSeven).then(function () {
                   typingline(nineSentence, 50, domEight).then(function () {
+                    //Create the blackout effect
                     $("body").css({ background: "rgb(000,000,000)" });
                     //add button to next function
                     $(domScene).append(
@@ -2633,13 +2694,15 @@ function postEncounter(qRight) {
     });
   });
 }
+//Display hospital scene
 function hospitalScene() {
   // get player name from local storage
-  let name = localStorage.name
+  let name = localStorage.name;
 
   $("body").css({ background: "rgb(000,000,000)" });
   localStorage.checkpoint = 13;
   $("#postEncounter, #hospitalButton").remove();
+  // Append elements
   $(domScene).append(`<div id ="hospitalScene">
   <div><span id = "firstSpan"></span> <span id = "secondSpan"></span> <span id = "thirdSpan"></span> <span id = "fourthSpan"></span></div>
   <div id="firstSentence"></div>
@@ -2651,10 +2714,12 @@ function hospitalScene() {
   <div id="sevenSentence"></div>
   <div id="eightSentence"></div>
   </div>`);
+  // styling
   $("#hospitalScene").css({
     background: "rgba(255,255,255,0.8)",
     "font-size": "20pt",
   });
+  //Dom elements of sentences where sentences will be displayed
   let domFirst = "#firstSentence";
   let domSecond = "#secondSentence";
   let domThird = "#thirdSentence";
@@ -2667,10 +2732,12 @@ function hospitalScene() {
   let domSpan2 = "#secondSpan";
   let domSpan3 = "#thirdSpan";
   let domSpan4 = "#fourthSpan";
+  // styling for span element
   $(domSpan1).css({ "font-size": "20pt" });
   $(domSpan2).css({ "font-size": "18pt" });
   $(domSpan3).css({ "font-size": "16pt" });
   $(domSpan4).css({ "font-size": "14pt" });
+  // Sentences
   let span = `"HA"`;
   let firstSentence =
     "You woke up in a start! The laughter continued to ring in your head";
@@ -2730,6 +2797,7 @@ function hospitalScene() {
     });
   });
 }
+// Display the overview of what happen after character blackout
 function overview() {
   let imageURL = "Images/hospital.png";
   $("body").css({
@@ -2739,6 +2807,7 @@ function overview() {
   });
   localStorage.checkpoint = 14;
   $("#hospitalScene").remove();
+  //Add elements
   $(domScene).append(`
   <div id="overview">
     <h1>Overview</h1>
@@ -2755,6 +2824,7 @@ function overview() {
       <button class="infoBtn"><a href="https://www.cdc.gov/coronavirus/2019-ncov/daily-life-coping/contact-tracing.html" target="blank">Click for more information</a></button>
       <div id="sixthSentence">However, the vial of virus is still missing!</div>
   </div>`);
+  //Styling of elements
   $("#overview").css({
     "text-align": "center",
     "font-size": "14pt",
@@ -2769,6 +2839,7 @@ function overview() {
     "border-width": "1px",
     "text-decoration": "none",
   });
+  //Add button to proceed to the next function
   $("#overview").append(`<button id = "missionButton">Mission!</button>`);
   $("#missionButton").css({
     "border-style": "none",
@@ -2778,6 +2849,8 @@ function overview() {
   });
   $("#missionButton").click(mission);
 }
+//Mission function display the mission
+//Directing player to the last quiz
 function mission() {
   // get player name from local storage
   let name = localStorage.name;
@@ -2790,6 +2863,7 @@ function mission() {
   });
   localStorage.checkpoint = 15;
   $("#overview").remove();
+  //Add elements
   $(domScene).append(`
   <div id="mission">
   <br>
@@ -2851,6 +2925,7 @@ function mission() {
   typingline("Time left: Not much time", 30, "#time");
   typingline("Aim: Maintain World Peace By Creating A Vaccine", 30, "#aim");
 }
+//Display a page before the final quiz
 function missingVial() {
   $("body").css({ background: "rgb(255,255,255)" });
   localStorage.checkpoint = 16;
@@ -2872,7 +2947,7 @@ function missingVial() {
   });
   $("#questionsButton").click(finalQuiz);
 }
-//To update questions and layout
+//Function for the final quiz
 function finalQuiz() {
   $("#missingVial").remove();
   $(domScene).append(`<div id = "finalQuiz">
@@ -2945,6 +3020,8 @@ function finalQuiz() {
       });
     });
   });
+  //This function will add points if user answers correctly
+  // At the same time it will change the image
   function validateOption(message) {
     if (message == "true") {
       qRight++;
@@ -2960,6 +3037,7 @@ function finalQuiz() {
     let margin = count * 175;
     $("img").css({ "margin-left": margin + "px" });
   }
+  //Resets the question
   function questionSet() {
     $("#question").remove();
     $("#finalQuiz").append(`
@@ -2983,6 +3061,7 @@ function finalQuiz() {
       "border-width": "1px",
     });
   }
+  //Set the questions and returns the appropriate response
   function firstQuestion() {
     let optionA = "(A) Take photos of him/ her and post them online.";
     let optionB = "(B) Stay away from him/ her";
@@ -3082,17 +3161,16 @@ function finalQuiz() {
   }
 }
 function vialFound(marks) {
-  
   let imageURL = "Images/Vial.svg";
   $("body").css({
     "background-image": "url(" + imageURL + ")",
     "background-size": "25%",
     "background-repeat": "no-repeat",
-    "background-position":"top center"
+    "background-position": "top center",
   });
   // get player name from local storage
   let name = localStorage.name;
-
+  //Set up the scene
   $("#finalQuiz").remove();
   $(domScene).append(`<div id ="vialFound">
   <div>You got ${marks}/5 correct</div>
@@ -3103,9 +3181,11 @@ function vialFound(marks) {
   $("#vialFound").css({
     "font-size": "18pt",
   });
+  //Dom elements
   let domFirst = "#firstSentence";
   let domSecond = "#secondSentence";
   let domThird = "#thirdSentence";
+  //Sentences
   let firstSentence;
   let secondSentence;
   let thirdSentence;
@@ -3119,6 +3199,7 @@ function vialFound(marks) {
     secondSentence = "You secure the vial and sent it to the headquarters";
     thirdSentence = `Head Detective ${name} were awarded a medal of bravery`;
   }
+  //Display sentences
   typingline(firstSentence, 30, domFirst).then(function () {
     typingline(secondSentence, 30, domSecond).then(function () {
       $("#vialFound").css({ background: "rgba(255,255,255,0.5)" });
@@ -3143,6 +3224,7 @@ function vialFound(marks) {
 }
 
 function endOfGame() {
+  //AJAX call to get specific information of the country
   let country = localStorage.getItem("country");
   var settings = {
     url: `https://disease.sh/v3/covid-19/countries/${country}`,
@@ -3167,6 +3249,7 @@ function endOfGame() {
     $("#Test").text(response.tests);
     $("img").attr("src", response.countryInfo.flag);
   });
+  //AJAX post to the leaderboard
   let apiKey = "6028ae7d5ad3610fb5bb5fe6";
   let username = localStorage.getItem("name");
   let d = new Date();
@@ -3193,6 +3276,7 @@ function endOfGame() {
   $.ajax(setting).done(function (response) {
     console.log(response);
   });
+  //Add elements to display ending page
   $("#vialFound,#endOfGameButton").remove();
   $(domScene).append(`
   <div id = "endOfGame">
@@ -3213,10 +3297,14 @@ function endOfGame() {
   </div>
   
   `);
-  $("#Country,#Cases,#Recovered,#Critical,#Dead,#Test").css({"font-size": "22pt","font-family":"'ZCOOL QingKe HuangYou', cursive"})
+  //Styling of elements
+  $("#Country,#Cases,#Recovered,#Critical,#Dead,#Test").css({
+    "font-size": "22pt",
+    "font-family": "'ZCOOL QingKe HuangYou', cursive",
+  });
   $("#endOfGame").css({
     "font-size": "18pt",
-    background: "rgba(255,255,255,0.8)"
+    background: "rgba(255,255,255,0.8)",
   });
   $("img").css({
     "border-style": "ridge",
@@ -3242,9 +3330,10 @@ function endOfGame() {
     $("button").click(leaderboard);
   });
 }
+//Display the leaderboard
 function leaderboard() {
-  if(localStorage.checkpoint == 16){
-    localStorage.clear()
+  if (localStorage.checkpoint == 16) {
+    localStorage.clear();
   }
   $("body").css({ background: "rgb(255,255,255)" });
   $("#endOfGame,button").remove();
@@ -3264,8 +3353,10 @@ function leaderboard() {
     "text-align": "center",
     "font-size": "14pt",
   });
+  //styling of elements
   $("table").css({ margin: "20px auto" });
   $("th").css({ "border-width": "1px", "border-style": "solid" });
+  //AJAX get to get information from restdb
   let apiKey = "6028ae7d5ad3610fb5bb5fe6";
   var settings = {
     async: true,
@@ -3329,7 +3420,7 @@ function leaderboard() {
       "border-radius": "10px",
       "text-decoration": "none",
     });
-
+    //Function to arrange data in order
     function sortTime(task1, task2) {
       if (task1.time > task2.time) {
         return 1;
