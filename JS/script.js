@@ -665,6 +665,7 @@ let jsonCountry = [
     country: "Zimbabwe",
   },
 ];
+
 $(document).ready(function () {
   $("#checkpoint-1").hide();
   $("div#userInputM").hide();
@@ -810,7 +811,6 @@ function userChar() {
     localStorage.gender = "m";
     form(dom);
   });
-
   $("#female").click(function () {
     $("div#genderM.col-sm").remove();
     $("#femaleImg").remove();
@@ -1003,22 +1003,22 @@ function scene1_2() {
       .fadeOut(1000, function () {
         $("#clipboard").fadeIn(1600);
         $("#clipboard").prepend(`
-      <h4 style="text-align: left; padding: 20px;"><i>To Head Detective ${name},</i></h4>
-      <h4>Background Information</h4>
-      <p>
-          Name of Virus: <b>COVID-19</b><br>
-          Name of Villain: <b>Sir Suriv</b><br>
-          Villain Last Seen: <b>Viole City</b><br>
-          Sir Suriv has stole the only vial of COVID-19. This vial is necessary for scientist to formulate a vaccine to protect the people.
-      </p>
-      <h4 style="padding-top: 20px;">Mission</h4>
-      <p>
-          <h6>Head to Viole City</h6>
-          Locate Sir Suriv and find out what is his intention with that vial.<br>
-          Apprehend him as soon as possible. The whole world is counting on you to bring about peace!
-      </p>
-      <h4 style="text-align: left; padding: 20px;"><i>From Global Task Force</i></h4>
-      <button id="misson" class="missonBtn" style="margin: 10px;">Next</button>`);
+        <h4 style="text-align: left; padding: 20px;"><i>To Head Detective ${name},</i></h4>
+        <h4>Background Information</h4>
+        <p>
+            Name of Virus: <b>COVID-19</b><br>
+            Name of Villain: <b>Sir Suriv</b><br>
+            Villain Last Seen: <b>Viole City</b><br>
+            Sir Suriv has stole the only vial of COVID-19. This vial is necessary for scientist to formulate a vaccine to protect the people.
+        </p>
+        <h4 style="padding-top: 20px;">Mission</h4>
+        <p>
+            <h6>Head to Viole City</h6>
+            Locate Sir Suriv and find out what is his intention with that vial.<br>
+            Apprehend him as soon as possible. The whole world is counting on you to bring about peace!
+        </p>
+        <h4 style="text-align: left; padding: 20px;"><i>From Global Task Force</i></h4>
+        <button id="misson" class="missonBtn" style="margin: 10px;">Next</button>`);
 
         $("#misson").css({
           "font-size": "12pt",
@@ -1143,6 +1143,7 @@ function scene4() {
   <div id="scene4-text4"></div>
   <div id="scene4-text5"></div>
   <div id="scene4-text6"></div>`);
+
   $(
     "#scene4-intro, #scene4-text1, #scene4-text2, #scene4-text3, #scene4-text4, #scene4-text5, #scene4-text6"
   ).css({ "font-size": "15pt" });
