@@ -2772,7 +2772,7 @@ function missingVial() {
   <h1>Missing Vial!</h1><br>
   <h3>Get information on the location of the vial of virus</h3><br>
   <h3>Try your best to answer all questions right</h3><br>
-  <h3>There are 6 number of questions.</h3><br>
+  <h3>There are 5 questions.</h3><br>
   <h3>Good luck.</h3>
   <button id="questionsButton">Start Finding!</button>
   </div>`);
