@@ -1,4 +1,4 @@
-# ID_Assg3
+# ID_Assg3 - COVIDetectives
 * Student Names: Keith Toh, Lim Xiang
 * Student ID: S10202764, S10205010
 * Class: T03
