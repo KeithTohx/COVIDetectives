@@ -1,5 +1,5 @@
 //Variables
-//List of Country
+//List of Countries
 let jsonCountry = [
   {
     country: "Afghanistan",
@@ -671,6 +671,7 @@ $(document).ready(function () {
   $("div#userInputM").hide();
   $("div#userInputF").hide();
 
+  // API - get Covid-19 data
   function getGlobal() {
     var settings = {
       url: "https://disease.sh/v3/covid-19/all",
@@ -682,35 +683,39 @@ $(document).ready(function () {
     };
 
     $.ajax(settings).done(function (response) {
-      console.log(response);
-
       var casesG = response.cases;
       var criticalG = response.critical;
       var deathsG = response.deaths;
       var recoveredG = response.recovered;
 
-      //display into html the global's content
+      //display into html (global's content)
       $("#globalCases").append(casesG);
       $("#globalCritical").append(criticalG);
       $("#globalDeaths").append(deathsG);
       $("#globalRecovered").append(recoveredG);
     });
   }
+  // call API function
   getGlobal();
 });
 
+// bring players to acknowledgements page
 $("#ackn").click(function () {
   window.location.href = "acknowledge.html";
 });
+
 $("#leaderBoardBtn").click(function () {
   $("#startGame").remove();
   $("#content").append(
     `<div id="scenes" class="container" style="padding: 20px;">`
   );
+  // displays leaderboard when button clicked
   leaderboard();
 });
+
 $("#start").click(function () {
   $("#start,#ackn").remove();
+  // get localStorage of player progress
   let pastGame = localStorage.checkpoint;
   if (pastGame > 0 && pastGame < 17) {
     $("#startGame").remove();
@@ -802,7 +807,9 @@ function typingline(disp, speed, dom) {
   });
 }
 
+// user input section - enter male/female, name, age & country
 function userChar() {
+  // when player select male
   $("#male").click(function () {
     $("div#genderF.col-sm").remove();
     $("#maleImg").remove();
@@ -811,6 +818,7 @@ function userChar() {
     localStorage.gender = "m";
     form(dom);
   });
+  // when player select female
   $("#female").click(function () {
     $("div#genderM.col-sm").remove();
     $("#femaleImg").remove();
@@ -820,6 +828,7 @@ function userChar() {
     form(dom);
   });
 
+  // insert input boxes (name, age, country)
   function form(dom) {
     $(dom).append(`<div id="userInput" style="padding-top: 20px;">
       <div id = "name"><label for="userName">Enter Your Name: </label>
@@ -846,6 +855,7 @@ function userChar() {
       "font-size": "12pt",
     });
     $("#button").css({ "text-align": "left" });
+
     //Search function
     $("#userCountry").keyup(function () {
       $("#countryList").remove();
@@ -891,6 +901,7 @@ function userChar() {
         $("#countryList").remove();
       });
     });
+
     //Validate Form
     $("#continue").click(function () {
       $("#userName,#userAge,#userCountry").css({ "background-color": "white" });
@@ -936,6 +947,7 @@ function userChar() {
           $("#content").append(
             `<div id="scenes" class="container" style="padding: 20px;">`
           );
+          // transit to loading scene
           loading();
         }
       }
@@ -943,7 +955,9 @@ function userChar() {
   }
 }
 
+// display loading animation & all persons fictitious disclaimer
 function loading() {
+  // insert animation and div for text content
   $("#scenes").append(`
   <div id="animation" class="animation-center">
     <div style="display:block;">
@@ -953,12 +967,14 @@ function loading() {
   <div id="loading-text" class="loading-text"></div>
   <h5 id="notice" class="loading-text" style="padding-top:50px;"></h5>`);
 
+  // text content to be displayed
   var disp1 = "Loading... Please wait";
-  var disp2 =
-    "The following story is purely fictitious and any resemblance to real persons, living or dead, or events is coincidental.";
+  var disp2 = "The following story is purely fictitious and any resemblance to real persons, living or dead, or events is coincidental.";
+  // location to dislay text
   var dom1 = "#loading-text";
   var dom2 = "#notice";
 
+  // typing effect for texts
   typingline(disp1, 80, dom1).then(function () {
     $("#animation").delay(2000).fadeOut(1000);
     $("#loading-text")
@@ -968,6 +984,7 @@ function loading() {
           $("#notice")
             .delay(1800)
             .fadeOut(1000, function () {
+              // transit to next scene
               scene1_2();
             });
         });
@@ -975,8 +992,12 @@ function loading() {
   });
 }
 
+// start of game
 function scene1_2() {
+  // checkpoint value for player progress
   localStorage.checkpoint = 1;
+
+  // set background image to HQ interior
   let imageURL = "Images/hq.png";
   $("body").css({
     "background-image": "url(" + imageURL + ")",
@@ -984,24 +1005,31 @@ function scene1_2() {
     "background-size": "100%",
     "background-repeat": "no-repeat",
   });
+  // append div for text content
   $("#scenes").append(`<div id="scene1-intro"></div>
   <div class="clipboard" id="clipboard"></div>
   <div id="scene2-intro"></div>`);
+
+  // set text font size
   $("#scene1-intro, #scene2-intro").css({ "font-size": "15pt" });
+
   $("#clipboard").hide();
   let name = localStorage.name;
+  // text content to be displayed
   var disp1 = `Head Detective ${name}, you are in a meeting room in the Headquarter of Detectives and given the following information:`;
-  var dom1 = "#scene1-intro";
+  var disp2 = "After understanding the situation, you left the meeting room and head out to find Sir Suriv...";
 
-  var disp2 =
-    "After understanding the situation, you left the meeting room and head out to find Sir Suriv...";
+  // location to dislay text
+  var dom1 = "#scene1-intro";
   var dom2 = "#scene2-intro";
 
+  // typing effect for texts
   typingline(disp1, 40, dom1).then(function () {
     $("#scene1-intro")
       .delay(1000)
       .fadeOut(1000, function () {
         $("#clipboard").fadeIn(1600);
+        // display background info of situation & mission
         $("#clipboard").prepend(`
         <h4 style="text-align: left; padding: 20px;"><i>To Head Detective ${name},</i></h4>
         <h4>Background Information</h4>
@@ -1020,14 +1048,18 @@ function scene1_2() {
         <h4 style="text-align: left; padding: 20px;"><i>From Global Task Force</i></h4>
         <button id="misson" class="missonBtn" style="margin: 10px;">Next</button>`);
 
+        // set css styles for mission button
         $("#misson").css({
           "font-size": "12pt",
           "margin-left": "70%",
           "border-style": "none",
         });
+
+        // when mission button is click
         $("#misson").click(function () {
           $("#misson").remove();
           $("#clipboard").fadeOut(1600, function () {
+            // set background image to HQ exit door (player leaves HQ)
             let imageURL2 = "Images/exitHQ.png";
             $("body").css({
               "background-image": "url(" + imageURL2 + ")",
@@ -1041,6 +1073,7 @@ function scene1_2() {
                 .delay(1000)
                 .fadeOut(1000, function () {
                   $("#scene1-intro, #scene2-intro, #clipboard").remove();
+                  // transit to next scene (map)
                   map1();
                 });
             });
@@ -1050,16 +1083,20 @@ function scene1_2() {
   });
 }
 
+// let player select where to go next
 function map1() {
   localStorage.checkpoint = 2;
+  // reset background image to none (white)
   $("body").css({ "background-image": "none" });
   var disp = "Click on the next city to proceed:";
 
+  // insert image of map
   $("#scenes").append(
     `<h5></h5>
     <div id = "map1"><img class ="img-fluid" src="Images/map.png" alt="map image"></div>`
   );
   typingline(disp, 30, "h5");
+
   //when it is clicked
   $("#map1 img").click(function (evt) {
     var offset = $(this).offset();
@@ -1073,6 +1110,7 @@ function map1() {
     if (mousex < width * 0.75 && mousex > width * 0.25) {
       if (mousey < height * 0.5) {
         $("h5, #map1").remove();
+        // transit to next scene
         scene3();
       } else {
         alert("Wrong city!");
@@ -1083,12 +1121,19 @@ function map1() {
   });
 }
 
+// after entering Viole City (walk along the street)
 function scene3() {
   localStorage.checkpoint = 3;
+
+  // append div for text content
   $("#scenes").append(`<div id="scene3-intro"></div>
   <div id="scene3-text1"></div>
   <div id="scene3-text2"></div>`);
+
+  // set text font size
   $("#scene3-intro, #scene3-text1, #scene3-text2").css({ "font-size": "15pt" });
+
+  // set background image to Viole City
   let imageURL = "Images/city.png";
   $("body").css({
     "background-image": "url(" + imageURL + ")",
@@ -1096,18 +1141,20 @@ function scene3() {
     "background-size": "100%",
     "background-repeat": "no-repeat",
   });
+  // insert translucent background below text
   $("#scenes").css({ background: "rgba(255,255,255,0.7)" });
 
-  var disp1 =
-    "As you walk into Viole city, you see symptoms of people getting sick.";
-  var dom1 = "#scene3-intro";
-
+  // text content to be displayed
+  var disp1 ="As you walk into Viole city, you see symptoms of people getting sick.";
   var disp2 = `Questions started to pop into your head: "What happened here? Why are there so many people feeling sick? Is this because of Sir Suriv...?"`;
+  var disp3 = "You then walk quickly towards the administration office of the city...";
+
+  // location to dislay text
   var dom2 = "#scene3-text1";
-  var disp3 =
-    "You then walk quickly towards the administration office of the city...";
+  var dom1 = "#scene3-intro";
   var dom3 = "#scene3-text2";
 
+  // typing effect for texts
   typingline(disp1, 50, dom1).then(function () {
     typingline(disp2, 50, dom2).then(function () {
       typingline(disp3, 50, dom3).then(function () {
@@ -1116,8 +1163,10 @@ function scene3() {
         $("#scene3-text2")
           .delay(1000)
           .fadeOut(1000, function () {
+            // reset text background to none
             $("#scenes").css({ background: "rgba(255,255,255,0)" });
             $("#scene3-intro, #scene3-text1, #scene3-text2").remove();
+            // transit to next scene
             scene4();
           });
       });
@@ -1125,9 +1174,13 @@ function scene3() {
   });
 }
 
+// in Mayor's office
 function scene4() {
   localStorage.checkpoint = 4;
+
+  // reset background image to none (white)
   $("body").css({ "background-image": "none" });
+  // set background image to office
   let imageURL = "Images/office.png";
   $("body").css({
     "background-image": "url(" + imageURL + ")",
@@ -1136,6 +1189,7 @@ function scene4() {
     "background-repeat": "no-repeat",
   });
 
+  // append div for text content
   $("#scenes").append(`<div id="scene4-intro"></div>
   <div id="scene4-text1"></div>
   <div id="scene4-text2"></div>
@@ -1144,10 +1198,13 @@ function scene4() {
   <div id="scene4-text5"></div>
   <div id="scene4-text6"></div>`);
 
+  // set text font size
   $(
     "#scene4-intro, #scene4-text1, #scene4-text2, #scene4-text3, #scene4-text4, #scene4-text5, #scene4-text6"
   ).css({ "font-size": "15pt" });
+
   let name = localStorage.name;
+  // text content to be displayed
   var disp1 = "The Mayor of the city came to greet you.";
   var disp2 = `"Dear Head Detective ${name}, have you come to see the situation?"`;
   var disp3 = "You nodded you head.";
@@ -1156,6 +1213,7 @@ function scene4() {
   var disp6 = `"We are still investigating the situation. Here's what we know currently. Please have a look."`;
   var disp7 = "He handed you a deck of information:";
 
+  // location to dislay text
   var dom1 = "#scene4-intro";
   var dom2 = "#scene4-text1";
   var dom3 = "#scene4-text2";
@@ -1164,27 +1222,7 @@ function scene4() {
   var dom6 = "#scene4-text5";
   var dom7 = "#scene4-text6";
 
-  function typingline(disp, speed, dom) {
-    var char = 0;
-    //Create a promise so that .then can the next function will wait till this
-    // function execute finish. Promise will return a result
-    return new Promise(function (resolve) {
-      //At set interval, the function will change the text on the screen
-      //when it is finish it will clear interval
-      var test = setInterval(type, speed);
-      function type() {
-        if (char <= disp.length) {
-          var display = disp.slice(0, char);
-          $(dom).text(display);
-          char++;
-        } else {
-          clearInterval(test);
-          resolve("done");
-        }
-      }
-    });
-  }
-
+  // typing effect for texts
   typingline(disp1, 50, dom1).then(function () {
     $("#scene4-intro")
       .delay(1000)
@@ -1206,6 +1244,7 @@ function scene4() {
                         $(
                           "#scene4-intro, #scene4-text1, #scene4-text2, #scene4-text3, #scene4-text4, #scene4-text5, #scene4-text6"
                         ).remove();
+                        // transit to next scene
                         scene5();
                       });
                   });
@@ -1218,8 +1257,11 @@ function scene4() {
   });
 }
 
+// view deck of info on virus situation in Viole City
 function scene5() {
   localStorage.checkpoint = 5;
+
+  // set background image to office
   let imageURL = "Images/office.png";
   $("body").css({
     "background-image": "url(" + imageURL + ")",
@@ -1228,10 +1270,12 @@ function scene5() {
     "background-repeat": "no-repeat",
   });
 
+  // append div for text content
   $("#scenes").append(`<div class="information" id="information"></div>`);
   $("#information").hide();
 
   $("#information").fadeIn(1600);
+  // insert virus info to div - symptoms
   $("#information").prepend(`
   <h4 style="padding: 15px;">Virus Information</h4>
   <div id="symptoms">
@@ -1249,46 +1293,50 @@ function scene5() {
   </div>
   </div>
   <button id="symptomsBtn1" class="symptomsBtn1" style="margin: 10px;">Next</button>`);
+
+  // set css styles of first button on info
   $("#symptomsBtn1").css({
     "font-size": "12pt",
     "margin-left": "70%",
     "border-style": "none",
   });
-  $("#symptomCommonTitle").append(
-    `<h5 style="text-align: right">Common Symptom(s):</h5>`
-  );
-  $("#symptomCommonList").append(`<h5><ol>
-  <li>Fever</li><li>Cough</li><li>Tiredness</li></ol></h5>`);
 
-  $("#symptomEarlyTitle").append(
-    `<h5 style="text-align: right">Early Symptom(s):</h5>`
-  );
-  $("#symptomEarlyList").append(`<h5><ol>
-  <li>Lose sense of smell</li></ol></h5>`);
+  // display common symptoms
+  $("#symptomCommonTitle").append(`<h5 style="text-align: right">Common Symptom(s):</h5>`);
+  $("#symptomCommonList").append(`<h5><ol><li>Fever</li><li>Cough</li><li>Tiredness</li></ol></h5>`);
 
-  $("#symptomOtherTitle").append(
-    `<h5 style="text-align: right">Other Possible Symptom(s):</h5>`
-  );
+  // display early symptoms
+  $("#symptomEarlyTitle").append(`<h5 style="text-align: right">Early Symptom(s):</h5>`);
+  $("#symptomEarlyList").append(`<h5><ol><li>Lose sense of smell</li></ol></h5>`);
+
+  // display other possible symptoms
+  $("#symptomOtherTitle").append(`<h5 style="text-align: right">Other Possible Symptom(s):</h5>`);
   $("#symptomOtherList").append(`<h5><ol>
   <li>Chills</li><li>Headache</li><li>Sore throat</li><li>Running nose</li><li>Shortness of breath</li></ol></h5>`);
 
   $("#symptomsBtn1").click(function () {
     $("#symptomsBtn1").remove();
     $("#symptoms").fadeOut(1600, function () {
+      // next page of info - villian & image of lab
       $("#information").append(`<h5>Cities Informed: Ascend City, Ace City</h5>
         <h5>Villian Last Seen: Viole Secret Royal Lab</h5>
         <h5>Image of Lab:</h5>
         <img src="Images/lab.png" style="width:360px;padding:10px;">
         <button id="symptomsBtn2" class="symptomsBtn2" style="margin: 10px;">Next</button>`);
+      
+      // set css styles of second button on info
       $("#symptomsBtn2").css({
         "font-size": "12pt",
         "margin-left": "70%",
         "border-style": "none",
       });
+
+      // when second button is clicked
       $("#symptomsBtn2").click(function () {
         $("#symptomsBtn2").remove();
         $("#information").fadeOut(1600, function () {
           $("#information").remove();
+          // move on to showdown
           showdown1();
         });
       });
@@ -1297,6 +1345,7 @@ function scene5() {
 }
 
 function showdown1() {
+  // set background image to office
   let officeURL = "Images/office.png";
   $("body").css({
     "background-image": "url(" + officeURL + ")",
@@ -1305,6 +1354,8 @@ function showdown1() {
     "background-repeat": "no-repeat",
   });
   localStorage.checkpoint = 6;
+  
+  // append div for text content
   $("#scenes").append(`<div id="showdown1-text1"></div>
   <div id="showdown1-text2"></div>
   <div id="showdown1-text3"></div>
@@ -1314,24 +1365,28 @@ function showdown1() {
     "#showdown1-intro, #showdown1-text1, #showdown1-text2, #showdown1-text3, #showdown1-text4"
   ).css({ "font-size": "15pt" });
 
+  // text content to be displayed
   var disp1 = `You returned the pile of information to the Mayor.`;
   var disp2 = `The situation is worsening...`;
   var disp3 = `You decided to head towards the Lab.`;
   var disp4 = `BANG! You kicked open the lab door...`;
   var disp5 = `You are now in the Lab. Click on the 5 symptoms of COVID-19 to find traces left behind by the villian!`;
 
+  // location to dislay text
   var dom1 = "#showdown1-text1";
   var dom2 = "#showdown1-text2";
   var dom3 = "#showdown1-text3";
   var dom4 = "#showdown1-text4";
   var dom5 = "#showdown1-intro";
 
+  // typing effect for texts
   typingline(disp1, 60, dom1).then(function () {
     typingline(disp2, 50, dom2).then(function () {
       typingline(disp3, 50, dom3).then(function () {
         $("#showdown1-text1").fadeOut(1600);
         $("#showdown1-text2").fadeOut(1600);
         $("#showdown1-text3").fadeOut(1600, function () {
+          // set background image to lab exterior
           let imageURL = "Images/labDoor.png";
           $("body").css({
             "background-image": "url(" + imageURL + ")",
@@ -1339,9 +1394,11 @@ function showdown1() {
             "background-size": "100%",
             "background-repeat": "no-repeat",
           });
+          // insert translucent background below text
           $("#scenes").css({ background: "rgba(255,255,255,0.7)" });
           typingline(disp4, 60, dom4).then(function () {
             $("#showdown1-text4").fadeOut(1600, function () {
+              // set background image to lab interior
               let labURL = "Images/lab.png";
               $("body").css({
                 "background-image": "url(" + labURL + ")",
@@ -1349,6 +1406,7 @@ function showdown1() {
                 "background-size": "100%",
                 "background-repeat": "no-repeat",
               });
+              // showdown - select 5 symptoms of Covid-19
               typingline(disp5, 30, dom5).then(function () {
                 $(
                   "#showdown1-intro"
@@ -1364,6 +1422,7 @@ function showdown1() {
                 </div>
                 <button id="showdownSubmit" class="showdownSubmit">Submit</button>`);
 
+                // initialise values for options
                 let count = 0;
                 let correct = 0;
                 let cough = false;
@@ -1374,6 +1433,8 @@ function showdown1() {
                 let nosebleed = false;
                 let stomachache = false;
                 let hunger = false;
+
+                // check for options selected
                 $("#cough").click(function () {
                   if (cough == false) {
                     if (count == 5) {
@@ -1561,9 +1622,11 @@ function showdown1() {
                   }
                 });
 
+                // when submit button is clicked
                 $("#showdownSubmit").click(function () {
                   localStorage.firstQuiz = correct;
                   $("#showdownSubmit").remove();
+                  // show player score of showdown
                   $("#showdown1-intro").append(
                     `<h4 style="text-align: center;">Your score: ${correct}/5</h4>`
                   );
@@ -1571,18 +1634,21 @@ function showdown1() {
                     `<button id="showdownNext" class="showdownNext">Next</button>`
                   );
 
+                  // set css styles of next button in showdown
                   $("#showdownNext").css({
                     "font-size": "12pt",
                     "margin-left": "70%",
                     "border-style": "none",
                   });
 
+                  // when next button is clicked
                   $("#showdownNext").click(function () {
                     $("#showdownNext").remove();
                     $("#showdown1-intro").fadeOut(1600, function () {
                       $(
                         "#showdown1-intro, #showdown1-text1, #showdown1-text2, #showdown1-text3, #showdown1-text4"
                       ).remove();
+                      // move on to next scene - clues
                       clue1();
                     });
                   });
@@ -1595,10 +1661,14 @@ function showdown1() {
     });
   });
 }
+
 let domScene = "#scenes";
 //Checkpoint 1 onwards
 function clue1() {
+  // insert translucent background below text
   $("#scenes").css({ background: "rgba(255,255,255,0.7)" });
+
+  // set background image to lab interior
   let labURL = "Images/lab.png";
   $("body").css({
     "background-image": "url(" + labURL + ")",
@@ -1606,6 +1676,7 @@ function clue1() {
     "background-size": "100%",
     "background-repeat": "no-repeat",
   });
+
   localStorage.checkpoint = 7;
   $(domScene).append(`<div id = "beforeClue1">
   <div id="firstSentence"></div>
