@@ -2590,7 +2590,7 @@ function hospitalScene() {
   $(domSpan4).css({ "font-size": "14pt" });
   let span = `"HA"`;
   let firstSentence =
-    "You woke up in a start! The laugther continued to ring in your head";
+    "You woke up in a start! The laughter continued to ring in your head";
   let secondSentence = `"Good Morning, Head Detective ${name}! I hope that you are not badly hurt from the incident"`;
   let thirdSentence = `Someone wearing a neat business suit greeted you.`;
   let fourthSentence = `You focused your eyes and looked at that person`;
@@ -3126,9 +3126,10 @@ function endOfGame() {
   </div>
   
   `);
+  $("#Country,#Cases,#Recovered,#Critical,#Dead,#Test").css({"font-size": "22pt","font-family":"'ZCOOL QingKe HuangYou', cursive"})
   $("#endOfGame").css({
     "font-size": "18pt",
-    background: "rgba(255,255,255,0.7)"
+    background: "rgba(255,255,255,0.8)"
   });
   $("img").css({
     "border-style": "ridge",
