@@ -2553,6 +2553,7 @@ function postEncounter(qRight) {
   });
 }
 function hospitalScene() {
+  let name = localStorage.name
   $("body").css({ background: "rgb(000,000,000)" });
   localStorage.checkpoint = 13;
   $("#postEncounter, #hospitalButton").remove();
@@ -3127,7 +3128,7 @@ function endOfGame() {
   `);
   $("#endOfGame").css({
     "font-size": "18pt",
-    background: "rgba(255,255,255,0.5)"
+    background: "rgba(255,255,255,0.7)"
   });
   $("img").css({
     "border-style": "ridge",
