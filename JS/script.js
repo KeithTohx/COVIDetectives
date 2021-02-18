@@ -3105,7 +3105,6 @@ function endOfGame() {
   $.ajax(setting).done(function (response) {
     console.log(response);
   });
-  localStorage.removeItem("checkpoint");
   $("#vialFound,#endOfGameButton").remove();
   $(domScene).append(`
   <div id = "endOfGame">
@@ -3155,8 +3154,10 @@ function endOfGame() {
   });
 }
 function leaderboard() {
+  if(localStorage.checkpoint == 16){
+    localStorage.clear()
+  }
   $("body").css({ background: "rgb(255,255,255)" });
-  localStorage.clear();
   $("#endOfGame,button").remove();
   $(domScene).append(`<div id="leaderBoard"><div>
   <div><img src ="Images/LeaderBoard.svg" alt = "Leader Board Heading"></div>
