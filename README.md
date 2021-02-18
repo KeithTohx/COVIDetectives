@@ -1,12 +1,13 @@
 # ID_Assg3
-Class: T03
-Student Names: Keith Toh, Lim Xiang
-Student Id: S10202764, S10205010
+* Class: T03
+* Student Names: Keith Toh, Lim Xiang
+* Student ID: S10202764, S10205010
+
 
 Our project educates users on the pandemic through gamification.
 Aim: To educate public on the symptoms of Covid-19, some actions that people, businesses and government can take, the importance of contact tracing.
 
-__Link to GitHub Page: (https://keithtohx.github.io/ID_Assignment3/)__
+__[Link to GitHub Page](https://keithtohx.github.io/ID_Assignment3/)__
 ## Design Process
 By creating a storyline, we hope that visitors of the website will be engaged by the storyline and play the game. By following the storyline, users can learn more about the symptoms of covid-19, what they can do to protect themselves, where to get trusted information, know why contact tracing is important, what businesses and government are able to do.
 ## Features
@@ -73,6 +74,7 @@ By creating a storyline, we hope that visitors of the website will be engaged by
 * API: COVID-19 Data from [Disease.sh](https://disease.sh/docs/)
 * Animations: [LottieFiles](https://lottiefiles.com/)
 * Fonts: [Google Fonts](https://fonts.google.com/)
+
 To better use Javascript, jQuery, CSS, HTML:
 * [w3schools](https://www.w3schools.com/)
 * [MDN Web Docs](https://developer.mozilla.org/en-US/)
