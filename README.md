@@ -6,6 +6,8 @@ Our project educates users on the pandemic through gamification.
 ## Features
 
 ### Existing Features
+1. COVID-19 Global Cases Statistics
+  * Total number of cases, number of critical cases, number of deaths resulting from COVID-19 and number of recovered cases
 ### Features to Implement in the Future
 
 ## Technologies Used
@@ -29,3 +31,5 @@ Our project educates users on the pandemic through gamification.
 
 ## Credits
 * API: COVID-19 Data from [Disease.sh](https://disease.sh/docs/)
+* Animations: [LottieFiles](https://lottiefiles.com/)
+* Fonts: [Google Fonts](https://fonts.google.com/)
