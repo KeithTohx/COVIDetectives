@@ -1282,6 +1282,7 @@ function scene5() {
       $("#symptomsBtn2").click(function () {
         $("#symptomsBtn2").remove();
         $("#information").fadeOut(1600, function () {
+          $("#information").remove();
           showdown1();
         });
       });
