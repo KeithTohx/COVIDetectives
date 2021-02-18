@@ -49,8 +49,31 @@ By creating a storyline, we hope that visitors of the website will be engaged by
   * [W3C_CSS_Validation_Service](https://jigsaw.w3.org/css-validator/)
   * [JSHint](https://jshint.com/)
 ## Testing
-
+### Landing Page
+* API global Covid-19 statistics should be loaded
+* Lottie animation of a virus should be shown
+* Buttons "Start Searching", "Acknowledgements","Leaderboard" should appear
+(Pass)
+#### Acknowledgement Button (click)
+* The user will be directed to Acknowledgement Page
+(Pass)
+### Acknowledgement Page
+* A list of hyperlink covid-19 related websites will be shown
+* Hyperlink for API used will be shown
+* "Back to Home Page" button is shown
+(Pass)
+#### Leader Board Button (click)
+* User will be directed to a leader board page
+(Pass)
+### LeaderBoard
+* Banner is shown
+* Leader Board retrieve data from database and display
+(Pass)
 ## Credits
 * API: COVID-19 Data from [Disease.sh](https://disease.sh/docs/)
 * Animations: [LottieFiles](https://lottiefiles.com/)
 * Fonts: [Google Fonts](https://fonts.google.com/)
+To better use Javascript, jQuery, CSS, HTML:
+* [w3schools](https://www.w3schools.com/)
+* [MDN Web Docs](https://developer.mozilla.org/en-US/)
+* [jQuery](https://jquery.com/)
