@@ -715,7 +715,7 @@ $("#leaderBoardBtn").click(function () {
 
 $("#start").click(function () {
   $("#start,#ackn").remove();
-  // get localStorage of player progress
+  // get local storage of player progress
   let pastGame = localStorage.checkpoint;
   if (pastGame > 0 && pastGame < 17) {
     $("#startGame").remove();
@@ -1014,7 +1014,9 @@ function scene1_2() {
   $("#scene1-intro, #scene2-intro").css({ "font-size": "15pt" });
 
   $("#clipboard").hide();
+  // get player name from local storage
   let name = localStorage.name;
+
   // text content to be displayed
   var disp1 = `Head Detective ${name}, you are in a meeting room in the Headquarter of Detectives and given the following information:`;
   var disp2 = "After understanding the situation, you left the meeting room and head out to find Sir Suriv...";
@@ -1203,7 +1205,9 @@ function scene4() {
     "#scene4-intro, #scene4-text1, #scene4-text2, #scene4-text3, #scene4-text4, #scene4-text5, #scene4-text6"
   ).css({ "font-size": "15pt" });
 
+  // get player name from local storage
   let name = localStorage.name;
+
   // text content to be displayed
   var disp1 = "The Mayor of the city came to greet you.";
   var disp2 = `"Dear Head Detective ${name}, have you come to see the situation?"`;
@@ -2160,7 +2164,9 @@ function scene8() {
     "background-size": "100%",
     "background-repeat": "no-repeat",
   });
+  // get player name from local storage
   let name = localStorage.name;
+  
   localStorage.checkpoint = 11;
   $("#scene7").remove();
   $(domScene).append(`<div id ="scene8">
@@ -2248,7 +2254,9 @@ function preEncounter() {
   $("#questionsButton").click(encounter);
 }
 function encounter() {
+  // get player name from local storage
   let name = localStorage.name;
+
   $("#pre-encounter").remove();
   $(domScene).append(`<div id = "encounter">
   <div class ="row">
@@ -2541,7 +2549,9 @@ function encounterReview(qRight) {
   });
 }
 function postEncounter(qRight) {
+  // get player name from local storage
   let name = localStorage.name;
+
   $("#encounterReview").remove();
   $(domScene).append(`<div id ="postEncounter">
   <div id="firstSentence"></div>
@@ -2624,7 +2634,9 @@ function postEncounter(qRight) {
   });
 }
 function hospitalScene() {
+  // get player name from local storage
   let name = localStorage.name
+
   $("body").css({ background: "rgb(000,000,000)" });
   localStorage.checkpoint = 13;
   $("#postEncounter, #hospitalButton").remove();
@@ -2767,7 +2779,9 @@ function overview() {
   $("#missionButton").click(mission);
 }
 function mission() {
+  // get player name from local storage
   let name = localStorage.name;
+
   let imageURL = "Images/hospital.png";
   $("body").css({
     "background-image": "url(" + imageURL + ")",
@@ -3076,7 +3090,9 @@ function vialFound(marks) {
     "background-repeat": "no-repeat",
     "background-position":"top center"
   });
+  // get player name from local storage
   let name = localStorage.name;
+
   $("#finalQuiz").remove();
   $(domScene).append(`<div id ="vialFound">
   <div>You got ${marks}/5 correct</div>
