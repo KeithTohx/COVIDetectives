@@ -951,29 +951,28 @@ function loading() {
     </div>
   </div>
   <div id="loading-text" class="loading-text"></div>
-  <h5 id="notice" class="loading-text" style="padding-top:50px;"></h5>`)
+  <h5 id="notice" class="loading-text" style="padding-top:50px;"></h5>`);
 
   var disp1 = "Loading... Please wait";
-  var disp2 = "The following story is purely fictitious and any resemblance to real persons, living or dead, or events is coincidental.";
+  var disp2 =
+    "The following story is purely fictitious and any resemblance to real persons, living or dead, or events is coincidental.";
   var dom1 = "#loading-text";
   var dom2 = "#notice";
 
-  typingline(disp1, 80, dom1).then(function(){
-    $("#animation")
-      .delay(2000)
-      .fadeOut(1000)
+  typingline(disp1, 80, dom1).then(function () {
+    $("#animation").delay(2000).fadeOut(1000);
     $("#loading-text")
       .delay(2000)
-      .fadeOut(1000, function(){
-        typingline(disp2, 60, dom2).then(function(){
+      .fadeOut(1000, function () {
+        typingline(disp2, 60, dom2).then(function () {
           $("#notice")
             .delay(1800)
-            .fadeOut(1000, function(){
-              scene1_2()
-            })
-        })
-      })
-  })
+            .fadeOut(1000, function () {
+              scene1_2();
+            });
+        });
+      });
+  });
 }
 
 function scene1_2() {
@@ -988,7 +987,7 @@ function scene1_2() {
   $("#scenes").append(`<div id="scene1-intro"></div>
   <div class="clipboard" id="clipboard"></div>
   <div id="scene2-intro"></div>`);
-  $("#scene1-intro, #scene2-intro").css({"font-size": "15pt"});
+  $("#scene1-intro, #scene2-intro").css({ "font-size": "15pt" });
   $("#clipboard").hide();
   let name = localStorage.name;
   var disp1 = `Head Detective ${name}, you are in a meeting room in the Headquarter of Detectives and given the following information:`;
@@ -1089,7 +1088,7 @@ function scene3() {
   $("#scenes").append(`<div id="scene3-intro"></div>
   <div id="scene3-text1"></div>
   <div id="scene3-text2"></div>`);
-  $("#scene3-intro, #scene3-text1, #scene3-text2").css({"font-size": "15pt"});
+  $("#scene3-intro, #scene3-text1, #scene3-text2").css({ "font-size": "15pt" });
   let imageURL = "Images/city.png";
   $("body").css({
     "background-image": "url(" + imageURL + ")",
@@ -1099,12 +1098,14 @@ function scene3() {
   });
   $("#scenes").css({ background: "rgba(255,255,255,0.7)" });
 
-  var disp1 = "As you walk into Viole city, you see symptoms of people getting sick.";
+  var disp1 =
+    "As you walk into Viole city, you see symptoms of people getting sick.";
   var dom1 = "#scene3-intro";
 
   var disp2 = `Questions started to pop into your head: "What happened here? Why are there so many people feeling sick? Is this because of Sir Suriv...?"`;
   var dom2 = "#scene3-text1";
-  var disp3 = "You then walk quickly towards the administration office of the city...";
+  var disp3 =
+    "You then walk quickly towards the administration office of the city...";
   var dom3 = "#scene3-text2";
 
   typingline(disp1, 50, dom1).then(function () {
@@ -1142,7 +1143,9 @@ function scene4() {
   <div id="scene4-text4"></div>
   <div id="scene4-text5"></div>
   <div id="scene4-text6"></div>`);
-  $("#scene4-intro, #scene4-text1, #scene4-text2, #scene4-text3, #scene4-text4, #scene4-text5, #scene4-text6").css({"font-size": "15pt"});
+  $(
+    "#scene4-intro, #scene4-text1, #scene4-text2, #scene4-text3, #scene4-text4, #scene4-text5, #scene4-text6"
+  ).css({ "font-size": "15pt" });
   let name = localStorage.name;
   var disp1 = "The Mayor of the city came to greet you.";
   var disp2 = `"Dear Head Detective ${name}, have you come to see the situation?"`;
@@ -1199,7 +1202,9 @@ function scene4() {
                     $("#scene4-text6")
                       .delay(800)
                       .fadeOut(1600, function () {
-                        $("#scene4-intro, #scene4-text1, #scene4-text2, #scene4-text3, #scene4-text4, #scene4-text5, #scene4-text6").remove();
+                        $(
+                          "#scene4-intro, #scene4-text1, #scene4-text2, #scene4-text3, #scene4-text4, #scene4-text5, #scene4-text6"
+                        ).remove();
                         scene5();
                       });
                   });
@@ -1304,7 +1309,9 @@ function showdown1() {
   <div id="showdown1-text3"></div>
   <div id="showdown1-text4"></div>
   <div id="showdown1-intro"></div>`);
-  $("#showdown1-intro, #showdown1-text1, #showdown1-text2, #showdown1-text3, #showdown1-text4").css({"font-size": "15pt"});
+  $(
+    "#showdown1-intro, #showdown1-text1, #showdown1-text2, #showdown1-text3, #showdown1-text4"
+  ).css({ "font-size": "15pt" });
 
   var disp1 = `You returned the pile of information to the Mayor.`;
   var disp2 = `The situation is worsening...`;
@@ -1572,7 +1579,9 @@ function showdown1() {
                   $("#showdownNext").click(function () {
                     $("#showdownNext").remove();
                     $("#showdown1-intro").fadeOut(1600, function () {
-                      $("#showdown1-intro, #showdown1-text1, #showdown1-text2, #showdown1-text3, #showdown1-text4").remove();
+                      $(
+                        "#showdown1-intro, #showdown1-text1, #showdown1-text2, #showdown1-text3, #showdown1-text4"
+                      ).remove();
                       clue1();
                     });
                   });
@@ -1817,7 +1826,10 @@ function newspaper() {
   </div><br><br>
 </div>`);
   $("button").hide();
-  $("#newspaper").css({ "border-style": "solid double ridge ridge" ,background: "rgb(255,255,255)"});
+  $("#newspaper").css({
+    "border-style": "solid double ridge ridge",
+    background: "rgb(255,255,255)",
+  });
   $(domScene).css({ "font-size": "14pt" });
   $("h2").css({ "text-align": "center" });
   $(".col-sm").css({ margin: "auto 40px" });
@@ -1889,7 +1901,10 @@ function newspaperp2() {
   </div>
   <br>
 </div>`);
-  $("#newspaperp2").css({ "border-style": "solid double ridge ridge" ,background: "rgb(255,255,255)"});
+  $("#newspaperp2").css({
+    "border-style": "solid double ridge ridge",
+    background: "rgb(255,255,255)",
+  });
   $("#newspaperLeft, #safeMangementMeasure h4").css({ "margin-top": "0px" });
   $(domScene).css({ "font-size": "14pt" });
   $("h2").css({ "text-align": "center" });
@@ -1983,7 +1998,7 @@ function newspaperp2() {
     "border-style": "ridge",
     "border-radius": "15px",
     "border-width": "1px",
-    "text-align":"center"
+    "text-align": "center",
   });
   $("#scene7Button").click(scene7);
 }
@@ -2791,7 +2806,7 @@ function finalQuiz() {
   </div>
 </div>`);
   $("#finalQuiz").css({
-    "font-size":"18pt"
+    "font-size": "18pt",
   });
   $("button").css({
     margin: "5px",
@@ -2980,6 +2995,14 @@ function finalQuiz() {
   }
 }
 function vialFound(marks) {
+  
+  let imageURL = "Images/Vial.svg";
+  $("body").css({
+    "background-image": "url(" + imageURL + ")",
+    "background-size": "25%",
+    "background-repeat": "no-repeat",
+    "background-position":"top center"
+  });
   let name = localStorage.name;
   $("#finalQuiz").remove();
   $(domScene).append(`<div id ="vialFound">
@@ -2989,7 +3012,7 @@ function vialFound(marks) {
   <div id="thirdSentence"></div>
   </div>`);
   $("#vialFound").css({
-    "font-size":"18pt"
+    "font-size": "18pt",
   });
   let domFirst = "#firstSentence";
   let domSecond = "#secondSentence";
@@ -3009,6 +3032,13 @@ function vialFound(marks) {
   }
   typingline(firstSentence, 30, domFirst).then(function () {
     typingline(secondSentence, 30, domSecond).then(function () {
+      $("#vialFound").css({ background: "rgba(255,255,255,0.5)" });
+      let hqURL = "Images/VialHq.svg";
+      $("body").css({
+        "background-image": "url(" + hqURL + ")",
+        "background-size": "100%",
+        "background-repeat": "no-repeat",
+      });
       typingline(thirdSentence, 30, domThird).then(function () {
         $(domScene).append(`<button id = "endOfGameButton">Finish!</button>`);
         $("#endOfGameButton").css({
@@ -3039,20 +3069,23 @@ function endOfGame() {
     },
   };
   $.ajax(settings).done(function (response) {
-    console.log(response)
+    console.log(response);
     $("#Country").text(country);
     $("#Cases").text(response.cases);
     $("#Recovered").text(response.recovered);
     $("#Critical").text(response.critical);
     $("#Dead").text(response.deaths);
     $("#Test").text(response.tests);
-    $("img").attr("src",response.countryInfo.flag)
+    $("img").attr("src", response.countryInfo.flag);
   });
   let apiKey = "6028ae7d5ad3610fb5bb5fe6";
   let username = localStorage.getItem("name");
   let d = new Date();
   let time = d.getTime() - localStorage.getItem("time");
-  let point = parseInt(localStorage.firstQuiz) + parseInt(localStorage.secondQuiz) +parseInt(localStorage.finalQuiz);
+  let point =
+    parseInt(localStorage.firstQuiz) +
+    parseInt(localStorage.secondQuiz) +
+    parseInt(localStorage.finalQuiz);
   var jsondata = { name: username, points: point, time: time };
   var setting = {
     async: true,
@@ -3093,10 +3126,15 @@ function endOfGame() {
   
   `);
   $("#endOfGame").css({
-    "font-size":"18pt"
+    "font-size": "18pt",
+    background: "rgba(255,255,255,0.5)"
   });
-  $("img").css({"border-style":"ridge","border-width":"4px","width":"450px"})
-  
+  $("img").css({
+    "border-style": "ridge",
+    "border-width": "4px",
+    width: "450px",
+  });
+
   typingline("Statistics", 50, "h3");
   typingline(
     `
@@ -3116,6 +3154,7 @@ function endOfGame() {
   });
 }
 function leaderboard() {
+  $("body").css({ background: "rgb(255,255,255)" });
   localStorage.clear();
   $("#endOfGame,button").remove();
   $(domScene).append(`<div id="leaderBoard"><div>
