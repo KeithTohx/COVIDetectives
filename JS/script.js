@@ -778,7 +778,7 @@ $("#start").click(function () {
 
 var disp = "It's great to see you, Detective!";
 var dom = "#heading";
-typingline(disp, 150, dom);
+typingline(disp, 100, dom);
 
 function typingline(disp, speed, dom) {
   var char = 0;
