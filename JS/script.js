@@ -802,21 +802,24 @@ function typingline(disp, speed, dom) {
 }
 
 function userChar() {
-  $("#genderM").click(function () {
-    document.getElementById("genderF").remove();
+  $("#male").click(function () {
+    $("div#genderF.col-sm").remove();
     $("#maleImg").remove();
+    document.getElementById("male").id = "m";
     let dom = "#userInputM";
     localStorage.gender = "m";
     form(dom);
   });
 
-  $("#genderF").click(function () {
-    document.getElementById("genderM").remove();
+  $("#female").click(function () {
+    $("div#genderM.col-sm").remove();
     $("#femaleImg").remove();
+    document.getElementById("female").id = "f";
     let dom = "#userInputF";
     localStorage.gender = "f";
     form(dom);
   });
+
   function form(dom) {
     $(dom).append(`<div id="userInput" style="padding-top: 20px;">
       <div id = "name"><label for="userName">Enter Your Name: </label>
@@ -957,12 +960,12 @@ function loading() {
 
   typingline(disp1, 80, dom1).then(function(){
     $("#animation")
-      .delay(1800)
+      .delay(2000)
       .fadeOut(1000)
     $("#loading-text")
-      .delay(1800)
+      .delay(2000)
       .fadeOut(1000, function(){
-        typingline(disp2, 80, dom2).then(function(){
+        typingline(disp2, 60, dom2).then(function(){
           $("#notice")
             .delay(1800)
             .fadeOut(1000, function(){
