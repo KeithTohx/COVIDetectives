@@ -1,13 +1,17 @@
 # ID_Assg3
 
 Our project educates users on the pandemic through gamification.
+
+__Link to GitHub Page: https://keithtohx.github.io/ID_Assignment3/__
 ## Design Process
 
 ## Features
 
 ### Existing Features
 1. COVID-19 Global Cases Statistics
-  * Total number of cases, number of critical cases, number of deaths resulting from COVID-19 and number of recovered cases
+    * Total number of cases, number of critical cases, number of deaths resulting from COVID-19 and number of recovered cases
+2. Leaderboard
+
 ### Features to Implement in the Future
 
 ## Technologies Used
