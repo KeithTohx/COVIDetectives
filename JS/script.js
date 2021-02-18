@@ -1072,7 +1072,7 @@ function map1() {
     //If above selection is correct
     if (mousex < width * 0.75 && mousex > width * 0.25) {
       if (mousey < height * 0.5) {
-        $("h3, #map1").remove();
+        $("h5, #map1").remove();
         scene3();
       } else {
         alert("Wrong city!");
@@ -1101,7 +1101,7 @@ function scene3() {
   var disp1 = "As you walk into Viole city, you see symptoms of people getting sick.";
   var dom1 = "#scene3-intro";
 
-  var disp2 = `Questions started to pop into your head: "What happened here? Why are so many people feeling sick? Is it because of Sir Suriv...?"`;
+  var disp2 = `Questions started to pop into your head: "What happened here? Why are there so many people feeling sick? Is this because of Sir Suriv...?"`;
   var dom2 = "#scene3-text1";
   var disp3 = "You then walk quickly towards the administration office of the city...";
   var dom3 = "#scene3-text2";
@@ -1147,7 +1147,7 @@ function scene4() {
   var disp3 = "You nodded you head.";
   var disp4 = `"Sir Suriv opened the vial of virus, releasing some of the virus into the city."`;
   var disp5 = "He then searched his drawers for a moment.";
-  var disp6 = `"We are still investigating the situation. Here's what we know now. Please have a look."`;
+  var disp6 = `"We are still investigating the situation. Here's what we know currently. Please have a look."`;
   var disp7 = "He handed you a deck of information:";
 
   var dom1 = "#scene4-intro";
