@@ -5,7 +5,7 @@
 
 Our project aims to educates users on the pandemic through gamification. Users will go through a fictitious detective game with true and useful information, referenced from official websites, provided in the storyline.
 
-__[Link to GitHub Page](https://keithtohx.github.io/ID_Assignment3/)__
+__[Link to GitHub Page](https://keithtohx.github.io/COVIDetectives/)__
 
 ## Design Process
 By creating a storyline, we hope that visitors of the website will be engaged by the storyline and play the game. Following the storyline, users can learn more about the symptoms of COVID-19, actions they can take to protect themselves and their loved ones, where to get trusted information, know why contact tracing is important, and what businesses and government are able to do to prevent the spread of the virus. There are also links to offical websites, such as the WHO, CDC, MOH, displayed in our website to allow users to get more information on the pandemic beyond what was stated in our storyline. 
