@@ -994,7 +994,7 @@ function scene1_2() {
   var dom1 = "#scene1-intro";
 
   var disp2 =
-    "After understanding the whole situation, you left the meeting room and head out to find Sir Suriv...";
+    "After understanding the situation, you left the meeting room and head out to find Sir Suriv...";
   var dom2 = "#scene2-intro";
 
   typingline(disp1, 40, dom1).then(function () {
@@ -1014,8 +1014,8 @@ function scene1_2() {
       <h4 style="padding-top: 20px;">Mission</h4>
       <p>
           <h6>Head to Viole City</h6>
-          Locate Sir Suriv and find out what is his intention with that vial<br>
-          Apprehend him as soon as possible. The whole world is counting on you to bring about peace.
+          Locate Sir Suriv and find out what is his intention with that vial.<br>
+          Apprehend him as soon as possible. The whole world is counting on you to bring about peace!
       </p>
       <h4 style="text-align: left; padding: 20px;"><i>From Global Task Force</i></h4>
       <button id="misson" class="missonBtn" style="margin: 10px;">Next</button>`);
@@ -1097,13 +1097,12 @@ function scene3() {
   });
   $("#scenes").css({ background: "rgba(255,255,255,0.7)" });
 
-  var disp1 =
-    "As you walk into Viole city, you see symptoms of people getting sick.";
+  var disp1 = "As you walk into Viole city, you see symptoms of people getting sick.";
   var dom1 = "#scene3-intro";
 
-  var disp2 = `A question pops into your head: "What happened here?"`;
+  var disp2 = `Questions started to pop into your head: "What happened here? Why are so many people feeling sick? Is it because of Sir Suriv...?"`;
   var dom2 = "#scene3-text1";
-  var disp3 = "You then walk towards the administration office of the city...";
+  var disp3 = "You then walk quickly towards the administration office of the city...";
   var dom3 = "#scene3-text2";
 
   typingline(disp1, 50, dom1).then(function () {
@@ -1265,7 +1264,7 @@ function scene5() {
   $("#symptomsBtn1").click(function () {
     $("#symptomsBtn1").remove();
     $("#symptoms").fadeOut(1600, function () {
-      $("#information").append(`<h5>Cities informed: Ascend City, Ace City</h5>
+      $("#information").append(`<h5>Cities Informed: Ascend City, Ace City</h5>
         <h5>Villian Last Seen: Viole Secret Royal Lab</h5>
         <h5>Image of Lab:</h5>
         <img src="Images/lab.png" style="width:360px;padding:10px;">
@@ -2634,20 +2633,20 @@ function overview() {
   $("#hospitalScene").remove();
   $(domScene).append(`
   <div id="overview">
-                <h1>Overview</h1>
-                    <div id="firstSentence">Sir Suriv was caught in Ace City</div>
-                    <h3>Debrief</h3>
-                    <div id="secondSentence">Due to the alerts given by Viole city and WHO</div>
-                    <div id="thirdSentence">Ace City was notified and managed to capture Sir Suriv</div>
-                    <h4>Contact Tracing</h4>
-                    <div id="fourthSentence">One of the method Ace City used is contact tracing</div>
-                    <div id="fifthSentence">Contact tracing is used to identify people who had contact with an infected
-                        person.
-                        <br>By identifying and managing these people, the virus can be contained easily
-                    </div>
-                    <button class="infoBtn"><a href="https://www.cdc.gov/coronavirus/2019-ncov/daily-life-coping/contact-tracing.html" target="blank">Click for more information</a></button>
-                    <div id="sixthSentence">However, the vial of virus is still missing!</div>
-            </div>`);
+    <h1>Overview</h1>
+      <div id="firstSentence">Sir Suriv was caught in Ace City</div>
+      <h3>Debrief</h3>
+      <div id="secondSentence">Due to the alerts given by Viole city and WHO</div>
+      <div id="thirdSentence">Ace City was notified and managed to capture Sir Suriv</div>
+      <h4>Contact Tracing</h4>
+      <div id="fourthSentence">One of the method Ace City used is contact tracing</div>
+      <div id="fifthSentence">Contact tracing is used to identify people who had contact with an infected
+          person.
+          <br>By identifying and managing these people, the virus can be contained easily
+      </div>
+      <button class="infoBtn"><a href="https://www.cdc.gov/coronavirus/2019-ncov/daily-life-coping/contact-tracing.html" target="blank">Click for more information</a></button>
+      <div id="sixthSentence">However, the vial of virus is still missing!</div>
+  </div>`);
   $("#overview").css({
     "text-align": "center",
     "font-size": "14pt",
@@ -2804,7 +2803,7 @@ function finalQuiz() {
   let question1 =
     "What should you do when you see someone unwell and not wearing a mask?";
   let question2 =
-    "When you are unwell or have symptoms of covid-19, what should you do?";
+    "When you are unwell or have symptoms of Covid-19, what should you do?";
   let question3 =
     "Where should you get information about Covid-19 or the situation of Covid-19 in your country?";
   let question4 =
