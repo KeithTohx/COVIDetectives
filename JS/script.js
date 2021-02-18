@@ -1041,6 +1041,7 @@ function scene1_2() {
               $("#scene2-intro")
                 .delay(1000)
                 .fadeOut(1000, function () {
+                  $("#scene1-intro, #scene2-intro, #clipboard").remove();
                   map1();
                 });
             });
@@ -1115,6 +1116,7 @@ function scene3() {
           .delay(1000)
           .fadeOut(1000, function () {
             $("#scenes").css({ background: "rgba(255,255,255,0)" });
+            $("#scene3-intro, #scene3-text1, #scene3-text2").remove();
             scene4();
           });
       });
@@ -1197,6 +1199,7 @@ function scene4() {
                     $("#scene4-text6")
                       .delay(800)
                       .fadeOut(1600, function () {
+                        $("#scene4-intro, #scene4-text1, #scene4-text2, #scene4-text3, #scene4-text4, #scene4-text5, #scene4-text6").remove();
                         scene5();
                       });
                   });
@@ -1568,6 +1571,7 @@ function showdown1() {
                   $("#showdownNext").click(function () {
                     $("#showdownNext").remove();
                     $("#showdown1-intro").fadeOut(1600, function () {
+                      $("#showdown1-intro, #showdown1-text1, #showdown1-text2, #showdown1-text3, #showdown1-text4").remove();
                       clue1();
                     });
                   });
