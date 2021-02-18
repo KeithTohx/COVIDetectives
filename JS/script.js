@@ -538,7 +538,6 @@ let jsonCountry = [
   {
     country: "Sierra Leone",
   },
-
   {
     country: "Singapore",
   },
@@ -584,7 +583,6 @@ let jsonCountry = [
   {
     country: "Sweden",
   },
-
   {
     country: "Switzerland",
   },
@@ -807,7 +805,6 @@ function userChar() {
   $("#genderM").click(function () {
     document.getElementById("genderF").remove();
     $("#maleImg").remove();
-    $("#femaleImg").remove();
     let dom = "#userInputM";
     localStorage.gender = "m";
     form(dom);
@@ -815,7 +812,6 @@ function userChar() {
 
   $("#genderF").click(function () {
     document.getElementById("genderM").remove();
-    $("#maleImg").remove();
     $("#femaleImg").remove();
     let dom = "#userInputF";
     localStorage.gender = "f";
@@ -937,11 +933,44 @@ function userChar() {
           $("#content").append(
             `<div id="scenes" class="container" style="padding: 20px;">`
           );
-          scene1_2();
+          loading();
         }
       }
     });
   }
+}
+
+function loading() {
+  $("#scenes").append(`
+  <div id="animation" class="animation-center">
+    <div style="display:block;">
+    <lottie-player src="https://assets3.lottiefiles.com/datafiles/bEYvzB8QfV3EM9a/data.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+    </div>
+  </div>
+  <div id="loading-text" class="loading-text"></div>
+  <h5 id="notice" class="loading-text" style="padding-top:50px;"></h5>`)
+
+  var disp1 = "Loading... Please wait";
+  var disp2 = "The following story is purely fictitious and any resemblance to real persons, living or dead, or events is coincidental.";
+  var dom1 = "#loading-text";
+  var dom2 = "#notice";
+
+  typingline(disp1, 80, dom1).then(function(){
+    $("#animation")
+      .delay(1800)
+      .fadeOut(1000)
+    $("#loading-text")
+      .delay(1800)
+      .fadeOut(1000, function(){
+        typingline(disp2, 80, dom2).then(function(){
+          $("#notice")
+            .delay(1800)
+            .fadeOut(1000, function(){
+              scene1_2()
+            })
+        })
+      })
+  })
 }
 
 function scene1_2() {
