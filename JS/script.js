@@ -1339,9 +1339,9 @@ function showdown1() {
             "background-size": "100%",
             "background-repeat": "no-repeat",
           });
+          $("#scenes").css({ background: "rgba(255,255,255,0.7)" });
           typingline(disp4, 60, dom4).then(function () {
             $("#showdown1-text4").fadeOut(1600, function () {
-              $("#scenes").css({ background: "rgba(255,255,255,0.7)" });
               let labURL = "Images/lab.png";
               $("body").css({
                 "background-image": "url(" + labURL + ")",
