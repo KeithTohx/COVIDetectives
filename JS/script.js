@@ -3158,7 +3158,7 @@ function leaderboard() {
   localStorage.clear();
   $("#endOfGame,button").remove();
   $(domScene).append(`<div id="leaderBoard"><div>
-  <h2>Leader Board</h2>
+  <div><img src ="Images/LeaderBoard.svg" alt = "Leader Board Heading"></div>
   <table width="70%">
     <tr>
       <th>Name</th>
