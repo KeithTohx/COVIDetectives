@@ -3166,6 +3166,7 @@ function leaderboard() {
       <th>Time taken</th>
     </tr>
   </table><br></div>
+  <div><small>Do inform us if any offensive name is shown</small></div><br>
 </div>`);
   $("#leaderBoard").css({
     "background-color": "lightyellow",
@@ -3228,7 +3229,7 @@ function leaderboard() {
     }
 
     $("#leaderBoard").append(
-      `<button><a href="index.html">Home Page</a></button>`
+      `<button><a href="index.html">Home Page</a></button><br><br>`
     );
     $("button").css({
       "border-style": "ridged",
