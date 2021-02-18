@@ -1,8 +1,9 @@
 # ID_Assg3
 
 Our project educates users on the pandemic through gamification.
+Aim: To educate public on the symptoms of Covid-19, some actions that people, businesses and government can take, the importance of contact tracing.
 
-__Link to GitHub Page: https://keithtohx.github.io/ID_Assignment3/__
+__Link to GitHub Page: (https://keithtohx.github.io/ID_Assignment3/)__
 ## Design Process
 
 ## Features
